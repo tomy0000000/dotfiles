@@ -1,0 +1,10 @@
+alias 'ps'='pip search'
+alias 'psh'='pip show'
+
+alias 'pi'='pip install'
+alias 'pir'='pip install -r requirements.txt'
+alias 'pu'='pip uninstall'
+
+alias 'pl'='pip list'
+alias 'pf'='pip freeze'
+alias 'pfr'='pip freeze > requirements.txt'

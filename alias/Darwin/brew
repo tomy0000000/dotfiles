@@ -1,13 +1,19 @@
-alias 'brf'='brew info'
-alias 'brs'='brew search'
 alias 'bri'='brew install'
 alias 'bric'='brew cask install'
 alias 'brui'='brew uninstall'
 alias 'bruic'='brew cask uninstall'
-alias 'brp'='brew pin'
+
+alias 'brs'='brew search'
+alias 'brf'='brew info'
+
+alias 'brc'='brew config'
+alias 'brd'='brew doctor'
+
 alias 'brl'='brew list'
 alias 'br1'='brew list -1'
+alias 'brp'='brew pin'
 alias 'brlp'='brew list --pinned'
+
 alias 'bro'='brew update && brew outdated'
 alias 'brof'='brew update && brew outdated --formula'
 alias 'broc'='brew update && brew outdated --cask'
