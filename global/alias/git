@@ -20,6 +20,9 @@ alias 'gaa'='git add --all'
 alias 'gcmsg'='git commit --message'
 alias 'gcamsg'='git commit --all --message'
 
+# clean
+alias 'gclean'='git clean -id'
+
 # submodule
 alias 'gsubi'='git submodule init'
 alias 'gsubu'='git submodule update'
@@ -61,7 +64,6 @@ alias 'grv'='git remote -v'
 # alias gcb='git checkout -b'
 # alias gcd='git checkout develop'
 # alias gcf='git config --list'
-# alias gclean='git clean -id'
 # alias gcm='git checkout $(git_main_branch)'
 # alias gcn!='git commit -v --no-edit --amend'
 # alias gco='git checkout'

@@ -7,12 +7,17 @@ alias 'brs'='brew search'
 alias 'brf'='brew info'
 
 alias 'brc'='brew config'
-alias 'brd'='brew doctor'
+alias 'brdt'='brew doctor'
 
 alias 'brl'='brew list'
+alias 'brle'='brew leaves'
 alias 'br1'='brew list -1'
 alias 'brp'='brew pin'
 alias 'brlp'='brew list --pinned'
+alias 'brd'='brew deps'
+alias 'brew leaves deps'='brew leaves | xargs brew deps --installed --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
+
+alias 'brt'='brew tap'
 
 alias 'bro'='brew update && brew outdated'
 alias 'brof'='brew update && brew outdated --formula'
