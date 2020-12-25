@@ -1,0 +1,27 @@
+{
+    "shortcuts": [
+        {
+            "command": "editmenu:clear-current",
+            "keys": [
+                "C",
+                "C"
+            ],
+            "selector": "[data-jp-kernel-user]:focus"
+        },
+        {
+            "command": "kernelmenu:restart",
+            "keys": [
+                ""
+            ],
+            "selector": "[data-jp-kernel-user]:focus"
+        },
+        {
+            "command": "kernelmenu:restart-and-clear",
+            "keys": [
+                "0",
+                "0"
+            ],
+            "selector": "[data-jp-kernel-user]:focus"
+        },
+    ]
+}
