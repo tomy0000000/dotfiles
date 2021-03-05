@@ -1,31 +1,39 @@
 SHELL = /bin/bash
-PATH := $(DOTFILES_DIR)/bin:$(PATH)
+OS := $(shell bin/distro)
+PATH := $(PWD)/bin:$(PATH)
 
-.PHONY: configs jupyter
+.PHONY: alias configs jupyter
 
 all: $(OS)
-macos: core-macos
-ubuntu: core-ubuntu
+macos: core-macos brew
+ubuntu: core-ubuntu zsh
 
 ### macOS ###
 
 core-macos:
-	echo "macOS"
+	echo "🖥 Operating System: macOS"
+	xcode-select --install
+
+brew:
+	xscript "scripts/homebrew.sh"
 
 ### Ubuntu ###
 
 core-ubuntu:
+	echo "🖥 Operating System: Ubuntu"
 	apt-get update
 	apt-get upgrade -y
 	apt-get dist-upgrade -f
 
+zsh:
+	apt-get update
+	apt-get install zsh -y
+	chsh -s "/bin/zsh"
+
 ### Universal ###
 
-zsh:
-	echo "zsh"
-	
 alias:
-	echo "alias"
+	xscript "scripts/alias.sh"
 
 configs:
 	for config in "configs/*"; do \
@@ -39,8 +47,8 @@ configs:
 
 jupyter:
 	mkdir -p "${HOME}/.jupyter/lab"
-	@if [ -d "${HOME}/.jupyter/lab/user-settings" ]; then \
+	if [ -d "${HOME}/.jupyter/lab/user-settings" ]; then \
 		echo "${HOME}/.jupyter/lab/user-settings already exists, backed up."; \
 		mv "${HOME}/.jupyter/lab/user-settings" "${HOME}/.jupyter/lab/user-settings.backup"; \
 	fi
-	stow --restow --dir "jupyter" --target "${HOME}/.jupyter/lab" "lab"
+	stow --target "${HOME}/.jupyter" "jupyter"

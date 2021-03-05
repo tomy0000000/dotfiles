@@ -1,3 +1,0 @@
-csslint
-eslint
-jshint

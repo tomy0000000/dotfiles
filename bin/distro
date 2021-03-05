@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if [ "$(uname)" = "Linux" ]; then
+    distro="$(. /etc/os-release; echo ${NAME})"
+    case $distro in
+        "Ubuntu")
+            echo -n "ubuntu"
+            ;;
+        "Arch Linux")
+            echo -n "arch"
+            ;;
+        "CentOS Linux")
+            echo -n "cent"
+            ;;
+        "Debian GNU/Linux")
+            echo -n "debian"
+            ;;
+        "Fedora")
+            echo -n "fedora"
+            ;;
+        *)
+            echo "linux"
+            ;;
+    esac
+elif [ "$(uname)" = "Darwin" ]; then
+    echo -n "macos"
+fi
