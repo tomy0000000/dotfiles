@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  install:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -15,5 +15,8 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     steps:
     - uses: actions/checkout@v2
+    - name: Clean up CI machine
+      if: runner.os == 'macOS'
+      run: rm -rf /Library/Developer/CommandLineTools
     - name: make
       run: sudo make
