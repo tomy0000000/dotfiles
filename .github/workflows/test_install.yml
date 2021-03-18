@@ -2,9 +2,9 @@ name: Test Installation
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
@@ -14,9 +14,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
     steps:
-    - uses: actions/checkout@v2
-    - name: Clean up CI machine
-      if: runner.os == 'macOS'
-      run: rm -rf /Library/Developer/CommandLineTools
-    - name: make
-      run: sudo make
+      - uses: actions/checkout@v2
+      - name: Clean up CI machine
+        if: runner.os == 'macOS'
+        run: sudo rm -rf /Library/Developer/CommandLineTools
+      - name: make
+        run: sudo make
