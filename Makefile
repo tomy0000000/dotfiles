@@ -1,6 +1,6 @@
 SHELL = /bin/bash
 OS := $(shell bin/distro)
-PATH := $(PWD)/bin:$(PATH)
+PATH := bin:$(PATH)
 
 .PHONY: alias configs jupyter
 
