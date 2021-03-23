@@ -12,7 +12,7 @@ ubuntu: core-ubuntu zsh
 
 core-macos:
 	echo "🖥 Operating System: macOS"
-	xcode-select --install
+	sudo xcode-select --install
 
 brew:
 	xscript "scripts/homebrew.sh"
@@ -21,13 +21,13 @@ brew:
 
 core-ubuntu:
 	echo "🖥 Operating System: Ubuntu"
-	apt-get update
-	apt-get upgrade -y
-	apt-get dist-upgrade -f
+	sudo apt-get update
+	sudo apt-get upgrade -y
+	sudo apt-get dist-upgrade -f
 
 zsh:
-	apt-get update
-	apt-get install zsh -y
+	sudo apt-get update
+	sudo apt-get install zsh -y
 	chsh -s "/bin/zsh"
 
 ### Universal ###

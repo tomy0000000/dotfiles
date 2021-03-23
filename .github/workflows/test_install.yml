@@ -19,4 +19,4 @@ jobs:
         if: runner.os == 'macOS'
         run: sudo rm -rf /Library/Developer/CommandLineTools
       - name: make
-        run: sudo make
+        run: make
