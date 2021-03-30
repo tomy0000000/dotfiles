@@ -6,7 +6,7 @@ PATH := bin:$(PATH)
 
 all: $(OS)
 macos: core-macos brew
-ubuntu: core-ubuntu zsh
+ubuntu: core-ubuntu
 
 ### macOS ###
 
@@ -25,10 +25,19 @@ core-ubuntu:
 	sudo apt-get upgrade -y
 	sudo apt-get dist-upgrade -f
 
+essential:
+	sudo apt-get update
+	ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+	sudo apt-get install -y build-essential curl git tzdata wget
+	dpkg-reconfigure --frontend noninteractive tzdata
+
 zsh:
 	sudo apt-get update
-	sudo apt-get install zsh -y
+	sudo apt-get install -y zsh
 	sudo chsh -s "/bin/zsh"
+
+dropbox: essential
+	xscript "scripts/dropbox.sh"
 
 ### Universal ###
 
