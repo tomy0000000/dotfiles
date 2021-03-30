@@ -29,7 +29,7 @@ essential:
 	sudo apt-get update
 	sudo ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 	sudo apt-get install -y build-essential curl git tzdata wget
-	dpkg-reconfigure --frontend noninteractive tzdata
+	sudo dpkg-reconfigure --frontend noninteractive tzdata
 
 zsh:
 	sudo apt-get update

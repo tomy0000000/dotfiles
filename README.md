@@ -24,12 +24,3 @@ apt update
 apt install -y sudo make
 ```
 
-
-
-```sh
-cd host
-apt update && apt install -y make sudo
-make
-make dropbox
-```
-
