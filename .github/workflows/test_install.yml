@@ -7,16 +7,29 @@ on:
     branches: [main]
 
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest]
+  macos:
+    runs-on: macos-latest
+    # runs-on: ${{ matrix.os }}
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     os: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v2
       - name: Clean up CI machine
-        if: runner.os == 'macOS'
+        # if: runner.os == 'macOS'
         run: sudo rm -rf /Library/Developer/CommandLineTools
       - name: make
         run: make
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Make All
+        run: make
+      - name: Essential
+        run: make essential
+      - name: Zsh
+        run: make zsh
+      - name: Dropbox
+        run: make dropbox
