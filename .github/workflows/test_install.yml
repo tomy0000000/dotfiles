@@ -7,22 +7,20 @@ on:
     branches: [main]
 
 jobs:
-  macos:
+  macOS:
     runs-on: macos-latest
-    # runs-on: ${{ matrix.os }}
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     os: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v2
       - name: Clean up CI machine
-        # if: runner.os == 'macOS'
         run: sudo rm -rf /Library/Developer/CommandLineTools
-      - name: make
+      - name: Make All
         run: make
-  ubuntu:
-    runs-on: ubuntu-latest
+  Ubuntu:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04]
     steps:
       - uses: actions/checkout@v2
       - name: Make All
