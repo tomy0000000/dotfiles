@@ -27,7 +27,7 @@ core-ubuntu:
 
 essential:
 	sudo apt-get update
-	ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+	sudo ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 	sudo apt-get install -y build-essential curl git tzdata wget
 	dpkg-reconfigure --frontend noninteractive tzdata
 
