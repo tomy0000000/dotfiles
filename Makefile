@@ -25,11 +25,22 @@ core-ubuntu:
 	sudo apt-get upgrade -y
 	sudo apt-get dist-upgrade -f
 
-essential:
+locale-zhtw:
+	sudo apt-get update
+	sudo apt-get install -y locales
+	sudo locale-gen zh_TW
+	sudo locale-gen zh_TW.UTF-8
+	sudo dpkg-reconfigure --frontend=noninteractive locales
+	sudo update-locale LANG="zh_TW.UTF-8" LANGUAGE="zh_TW"
+
+timezone:
 	sudo apt-get update
 	sudo ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime
-	sudo apt-get install -y build-essential curl git tzdata wget
+	sudo apt-get install -y tzdata
 	sudo dpkg-reconfigure --frontend noninteractive tzdata
+
+essential: timezone
+	sudo apt-get install -y build-essential curl git wget
 
 zsh:
 	sudo apt-get update
