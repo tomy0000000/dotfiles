@@ -24,6 +24,7 @@ core-ubuntu:
 	sudo apt-get update
 	sudo apt-get upgrade -y
 	sudo apt-get dist-upgrade -f
+	xargs sudo apt-get install ubuntu/apt.core
 
 locale-zhtw:
 	sudo apt-get update
