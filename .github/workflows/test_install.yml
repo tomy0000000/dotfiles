@@ -25,6 +25,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Make All
         run: make
+      - name: Locale
+        run: make locale-zhtw
+      - name: Timezone
+        run: make tz-taipei
       - name: Essential
         run: make essential
       - name: Zsh
