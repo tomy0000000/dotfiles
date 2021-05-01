@@ -24,7 +24,7 @@ core-ubuntu:
 	sudo apt-get update
 	sudo apt-get upgrade -y
 	sudo apt-get dist-upgrade -f
-	xargs sudo apt-get install ubuntu/apt.core
+	xargs sudo apt-get install < ubuntu/apt.core
 
 locale-zhtw:
 	sudo apt-get update
@@ -34,14 +34,14 @@ locale-zhtw:
 	sudo dpkg-reconfigure --frontend=noninteractive locales
 	sudo update-locale LANG="zh_TW.UTF-8" LANGUAGE="zh_TW"
 
-timezone:
+tz-taipei:
 	sudo apt-get update
 	sudo ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 	sudo apt-get install -y tzdata
 	sudo dpkg-reconfigure --frontend noninteractive tzdata
 
-essential: timezone
-	sudo apt-get install -y build-essential curl git wget
+essential: core-ubuntu tz-taipei
+	sudo apt-get install -y build-essential
 
 zsh:
 	sudo apt-get update
