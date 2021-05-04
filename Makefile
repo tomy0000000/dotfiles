@@ -46,7 +46,7 @@ essential: core-ubuntu tz-taipei
 zsh:
 	sudo apt-get update
 	sudo apt-get install -y zsh
-	sudo chsh -s "/bin/zsh"
+	sudo chsh -s "$(which zsh)"
 
 dropbox: essential
 	xscript "scripts/dropbox.sh"
