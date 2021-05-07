@@ -1,0 +1,7 @@
+# http://pylint.pycqa.org/en/latest/user_guide/run.html#command-line-options
+[MESSAGES CONTROL]
+disable = bad-continuation, # black
+          bad-whitespace # black
+
+[FORMAT]
+max-line-length = 88

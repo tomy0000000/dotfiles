@@ -1,0 +1,7 @@
+qladdict
+qlcolorcode
+qlimagesize
+qlmarkdown
+qlstephen
+quicklook-json
+quicklookase

@@ -1,0 +1,37 @@
+name: Test Installation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  macOS:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Clean up CI machine
+        run: sudo rm -rf /Library/Developer/CommandLineTools
+      - name: Make All
+        run: make
+  Ubuntu:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Make All
+        run: make
+      - name: Locale
+        run: make locale-zhtw
+      - name: Timezone
+        run: make tz-taipei
+      - name: Essential
+        run: make essential
+      - name: Zsh
+        run: make zsh
+      - name: Dropbox
+        run: make dropbox
