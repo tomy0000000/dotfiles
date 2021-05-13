@@ -12,7 +12,7 @@ ubuntu: ubuntu-core
 
 macos-core:
 	echo "🖥 Operating System: macOS"
-	sudo xcode-select --install
+	xscript "scripts/xcode_cli.sh"
 
 brew: macos-core
 	xscript "scripts/homebrew.sh"
