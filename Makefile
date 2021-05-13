@@ -5,16 +5,16 @@ PATH := bin:$(PATH)
 .PHONY: alias configs jupyter
 
 all: $(OS)
-macos: core-macos brew
-ubuntu: core-ubuntu
+macos: macos-core brew
+ubuntu: ubuntu-core
 
 ### macOS ###
 
-core-macos:
+macos-core:
 	echo "🖥 Operating System: macOS"
 	sudo xcode-select --install
 
-brew:
+brew: macos-core
 	xscript "scripts/homebrew.sh"
 
 macos-stow: brew
@@ -25,12 +25,15 @@ touch-id-sudo:
 
 ### Ubuntu ###
 
-core-ubuntu:
+ubuntu-core:
 	echo "🖥 Operating System: Ubuntu"
 	sudo apt-get update
 	sudo apt-get upgrade -y
 	sudo apt-get dist-upgrade -f
 	xargs sudo apt-get install < ubuntu/apt.core
+
+ubuntu-essential: ubuntu-core locale-zhtw tz-taipei ssh
+	sudo apt-get install -y build-essential
 
 locale-zhtw:
 	sudo apt-get update
@@ -46,8 +49,6 @@ tz-taipei:
 	sudo apt-get install -y tzdata
 	sudo dpkg-reconfigure --frontend noninteractive tzdata
 
-essential: core-ubuntu tz-taipei
-	sudo apt-get install -y build-essential
 ssh:
 	xscript "scripts/ssh.sh"
 
@@ -55,12 +56,12 @@ ubuntu-stow:
 	sudo apt-get update
 	sudo apt-get install -y stow
 
-zsh:
+ubuntu-zsh:
 	sudo apt-get update
 	sudo apt-get install -y zsh
 	sudo chsh -s "$(which zsh)"
 
-dropbox: essential
+dropbox: ubuntu-essential
 	xscript "scripts/dropbox.sh"
 
 ### Universal ###

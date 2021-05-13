@@ -1,0 +1,22 @@
+name: Test Manually
+
+on:
+  workflow_dispatch:
+    inputs:
+      feature:
+        description: Feature name
+        required: true
+      platform:
+        description: Platform to test on
+        required: true
+
+jobs:
+  test:
+    runs-on: ${{ github.event.inputs.platform }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Clean up CI machine
+        if: ${{ github.event.inputs.platform == 'macos-latest' }}
+        run: sudo rm -rf /Library/Developer/CommandLineTools
+      - name: Make ${{ github.event.inputs.formula }}
+        run: make ${{ github.event.inputs.formula }}

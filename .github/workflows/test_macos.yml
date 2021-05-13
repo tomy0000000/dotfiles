@@ -1,0 +1,31 @@
+name: Test macOS features
+
+on:
+  push:
+    branches: "**"
+  pull_request:
+    branches: "**"
+
+jobs:
+  macOS:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Clean up CI machine
+        run: sudo rm -rf /Library/Developer/CommandLineTools
+
+      - name: All
+        run: make
+      - name: Homebrew
+        run: make brew
+      - name: stow
+        run: make macos-stow
+      - name: Touch ID sudo
+        run: make touch-id-sudo
+
+      - name: Alias
+        run: make alias
+      - name: Configs
+        run: make configs
+      - name: Jupyter
+        run: make jupyter

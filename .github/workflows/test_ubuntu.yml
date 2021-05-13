@@ -1,20 +1,12 @@
-name: Test Installation
+name: Test Ubuntu features
 
 on:
   push:
-    branches: [main]
+    branches: "**"
   pull_request:
-    branches: [main]
+    branches: "**"
 
 jobs:
-  macOS:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Clean up CI machine
-        run: sudo rm -rf /Library/Developer/CommandLineTools
-      - name: Make All
-        run: make
   Ubuntu:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -23,15 +15,27 @@ jobs:
         os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04]
     steps:
       - uses: actions/checkout@v2
+
       - name: Make All
         run: make
+      - name: Essential
+        run: make ubuntu-essential
       - name: Locale
         run: make locale-zhtw
       - name: Timezone
         run: make tz-taipei
-      - name: Essential
-        run: make essential
+      - name: SSH
+        run: make ssh
+      - name: stow
+        run: make stow
       - name: Zsh
-        run: make zsh
+        run: make ubuntu-zsh
       - name: Dropbox
         run: make dropbox
+
+      - name: Alias
+        run: make alias
+      - name: Configs
+        run: make configs
+      - name: Jupyter
+        run: make jupyter
