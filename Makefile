@@ -48,6 +48,8 @@ tz-taipei:
 
 essential: core-ubuntu tz-taipei
 	sudo apt-get install -y build-essential
+ssh:
+	xscript "scripts/ssh.sh"
 
 ubuntu-stow:
 	sudo apt-get update
