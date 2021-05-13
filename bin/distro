@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ "$(uname)" = "Linux" ]; then
-    distro="$(. /etc/os-release; echo ${NAME})"
+    distro=$(. /etc/os-release; echo "${NAME}")
     case $distro in
         "Ubuntu")
             echo -n "ubuntu"
