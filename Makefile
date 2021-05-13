@@ -17,6 +17,9 @@ core-macos:
 brew:
 	xscript "scripts/homebrew.sh"
 
+macos-stow: brew
+	brew install stow
+
 touch-id-sudo:
 	xscript "scripts/touch_id_sudo.sh"
 
@@ -46,6 +49,10 @@ tz-taipei:
 essential: core-ubuntu tz-taipei
 	sudo apt-get install -y build-essential
 
+ubuntu-stow:
+	sudo apt-get update
+	sudo apt-get install -y stow
+
 zsh:
 	sudo apt-get update
 	sudo apt-get install -y zsh
@@ -56,23 +63,13 @@ dropbox: essential
 
 ### Universal ###
 
+stow: $(OS)-stow
+
 alias:
 	xscript "scripts/alias.sh"
 
-configs:
-	for config in "configs/*"; do \
-		echo "${config}"; \
-		if [ -f "${HOME}/${config}" ]; then \
-			echo "${config} already exists, backed up."; \
-			mv "${HOME}/${config}" "${HOME}/${config}.backup"; \
-		fi; \
-	done
-	stow --restow --target "${HOME}" "configs"
+configs: stow
+	xscript "scripts/configs.sh"
 
-jupyter:
-	mkdir -p "${HOME}/.jupyter/lab"
-	if [ -d "${HOME}/.jupyter/lab/user-settings" ]; then \
-		echo "${HOME}/.jupyter/lab/user-settings already exists, backed up."; \
-		mv "${HOME}/.jupyter/lab/user-settings" "${HOME}/.jupyter/lab/user-settings.backup"; \
-	fi
-	stow --target "${HOME}/.jupyter" "jupyter"
+jupyter: stow
+	xscript "scripts/jupyter.sh"
