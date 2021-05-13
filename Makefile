@@ -5,17 +5,21 @@ PATH := bin:$(PATH)
 .PHONY: alias configs jupyter
 
 all: $(OS)
+core: $(OS)-core
 macos: macos-core brew
 ubuntu: ubuntu-core
 
 ### macOS ###
 
-macos-core:
-	echo "🖥 Operating System: macOS"
-	sudo xcode-select --install
+xcode-cli:
+	xscript "scripts/xcode_cli.sh"
 
-brew: macos-core
+brew: xcode-cli
 	xscript "scripts/homebrew.sh"
+
+macos-core: brew
+	echo "🖥 Operating System: macOS"
+	brew install coreutils
 
 macos-stow: brew
 	brew install stow
@@ -68,7 +72,7 @@ dropbox: ubuntu-essential
 
 stow: $(OS)-stow
 
-alias:
+alias: core
 	xscript "scripts/alias.sh"
 
 configs: stow
