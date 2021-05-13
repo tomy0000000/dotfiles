@@ -17,6 +17,9 @@ core-macos:
 brew:
 	xscript "scripts/homebrew.sh"
 
+touch-id-sudo:
+	xscript "scripts/touch_id_sudo.sh"
+
 ### Ubuntu ###
 
 core-ubuntu:
