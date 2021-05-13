@@ -3,10 +3,11 @@ set -e
 echo "⚡️ Installing alias"
 
 # Check existed alias
-if [ -d "${HOME}/.alias" ]; then
+if [ -d "${HOME}/.alias" ]
+then
     echo ".alias already exists, backed up."
     mv "${HOME}/.alias" "${HOME}/.alias.backup"
-else
+fi
 
 # Stow the alias
 ln -s "$(realpath alias)" "${HOME}/.alias"
