@@ -24,6 +24,9 @@ macos-core: brew
 macos-stow: brew
 	exists stow || brew install stow
 
+macos-service-workflow: stow
+	xscript "scripts/service_workflow.sh"
+
 touch-id-sudo:
 	xscript "scripts/touch_id_sudo.sh"
 
