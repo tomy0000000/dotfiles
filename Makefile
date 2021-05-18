@@ -15,14 +15,14 @@ xcode-cli:
 	xscript "scripts/xcode_cli.sh"
 
 brew: xcode-cli
-	xscript "scripts/homebrew.sh"
+	exists brew || xscript "scripts/homebrew.sh"
 
 macos-core: brew
 	echo "🖥 Operating System: macOS"
-	brew install coreutils
+	exists realpath || brew install coreutils
 
 macos-stow: brew
-	brew install stow
+	exists stow || brew install stow
 
 touch-id-sudo:
 	xscript "scripts/touch_id_sudo.sh"
