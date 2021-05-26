@@ -2,7 +2,7 @@ SHELL = /bin/bash
 OS := $(shell bin/distro)
 PATH := bin:$(PATH)
 
-.PHONY: alias configs jupyter
+.PHONY: alias brew configs jupyter
 
 all: $(OS)
 core: $(OS)-core

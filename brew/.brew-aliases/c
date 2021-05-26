@@ -1,0 +1,6 @@
+#! /bin/bash
+# alias: brew c
+#:  * `c` [args...]
+#:    `brew c` is an alias for `brew cleanup`
+brew cleanup $*
+

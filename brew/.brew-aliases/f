@@ -1,0 +1,6 @@
+#! /bin/bash
+# alias: brew f
+#:  * `f` [args...]
+#:    `brew f` is an alias for `brew info`
+brew info $*
+
