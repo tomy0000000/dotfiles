@@ -38,7 +38,7 @@ ubuntu-core:
 	sudo apt-get dist-upgrade -f
 	xargs sudo apt-get install < ubuntu/apt.core
 
-ubuntu-essential: ubuntu-core locale-zhtw tz-taipei ssh
+ubuntu-essential: ubuntu-core ubuntu-locale-zhtw ubuntu-tz-taipei ubuntu-ssh
 	sudo apt-get install -y build-essential
 
 ubuntu-locale-zhtw:
