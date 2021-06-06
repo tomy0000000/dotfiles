@@ -16,22 +16,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Make All
+      - name: All (core)
         run: make
+      - name: stow
+        run: make stow
       - name: Essential
         run: make ubuntu-essential
       - name: Locale
-        run: make locale-zhtw
+        run: make ubuntu-locale-zhtw
       - name: Timezone
-        run: make tz-taipei
+        run: make ubuntu-tz-taipei
       - name: SSH
-        run: make ssh
-      - name: stow
-        run: make stow
+        run: make ubuntu-ssh
       - name: Zsh
         run: make ubuntu-zsh
       - name: Dropbox
-        run: make dropbox
+        run: make ubuntu-dropbox
 
       - name: Alias
         run: make alias

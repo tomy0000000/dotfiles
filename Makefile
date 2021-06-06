@@ -5,27 +5,29 @@ PATH := bin:$(PATH)
 .PHONY: alias brew configs jupyter
 
 all: $(OS)
-core: $(OS)-core
-macos: macos-core brew
+macos: macos-core
 ubuntu: ubuntu-core
+
+core: $(OS)-core
+stow: $(OS)-stow
 
 ### macOS ###
 
 macos-brew:
 	exists brew || xscript "scripts/homebrew.sh"
 
-macos-core: brew
+macos-core: macos-brew
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
 
-macos-stow: brew
+macos-stow: macos-brew
 	exists stow || brew install stow
+	
+macos-touch-id-sudo:
+	xscript "scripts/touch_id_sudo.sh"
 
 macos-service-workflow: stow
 	xscript "scripts/service_workflow.sh"
-
-touch-id-sudo:
-	xscript "scripts/touch_id_sudo.sh"
 
 ### Ubuntu ###
 
@@ -39,7 +41,7 @@ ubuntu-core:
 ubuntu-essential: ubuntu-core locale-zhtw tz-taipei ssh
 	sudo apt-get install -y build-essential
 
-locale-zhtw:
+ubuntu-locale-zhtw:
 	sudo apt-get update
 	sudo apt-get install -y locales
 	sudo locale-gen zh_TW
@@ -47,13 +49,13 @@ locale-zhtw:
 	sudo dpkg-reconfigure --frontend=noninteractive locales
 	sudo update-locale LANG="zh_TW.UTF-8" LANGUAGE="zh_TW"
 
-tz-taipei:
+ubuntu-tz-taipei:
 	sudo apt-get update
 	sudo ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 	sudo apt-get install -y tzdata
 	sudo dpkg-reconfigure --frontend noninteractive tzdata
 
-ssh:
+ubuntu-ssh:
 	xscript "scripts/ssh.sh"
 
 ubuntu-stow:
@@ -65,12 +67,10 @@ ubuntu-zsh:
 	sudo apt-get install -y zsh
 	sudo chsh -s "$(which zsh)"
 
-dropbox: ubuntu-essential
+ubuntu-dropbox: ubuntu-essential
 	xscript "scripts/dropbox.sh"
 
 ### Universal ###
-
-stow: $(OS)-stow
 
 alias: core
 	xscript "scripts/alias.sh"

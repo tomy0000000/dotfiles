@@ -12,12 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: All
+      - name: All (core)
         run: make
-      - name: Homebrew
-        run: make brew
       - name: stow
-        run: make macos-stow
+        run: make stow
       - name: Touch ID sudo
         run: make touch-id-sudo
 
