@@ -11,10 +11,7 @@ ubuntu: ubuntu-core
 
 ### macOS ###
 
-xcode-cli:
-	xscript "scripts/xcode_cli.sh"
-
-brew: xcode-cli
+macos-brew:
 	exists brew || xscript "scripts/homebrew.sh"
 
 macos-core: brew

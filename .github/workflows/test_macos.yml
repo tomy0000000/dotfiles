@@ -11,8 +11,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Clean up CI machine
-        run: sudo rm -rf /Library/Developer/CommandLineTools
 
       - name: All
         run: make
