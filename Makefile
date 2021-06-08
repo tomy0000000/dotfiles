@@ -16,7 +16,10 @@ stow: $(OS)-stow
 macos-brew:
 	exists brew || xscript "scripts/homebrew.sh"
 
-macos-core: macos-brew
+macos-mas: macos-brew
+	exists mas || brew install mas
+
+macos-core: macos-brew macos-mas
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
 
