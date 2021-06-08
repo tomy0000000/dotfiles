@@ -1,0 +1,7 @@
+tap "homebrew/cask"
+cask "qlcolorcode"
+cask "qlimagesize"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "quicklook-json"
+cask "quicklookase"
