@@ -20,6 +20,9 @@ jobs:
         run: make
       - name: stow
         run: make stow
+      - name: handful
+        run: make handful
+
       - name: Essential
         run: make ubuntu-essential
       - name: Locale

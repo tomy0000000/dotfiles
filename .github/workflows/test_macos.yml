@@ -16,6 +16,9 @@ jobs:
         run: make
       - name: stow
         run: make stow
+      - name: handful
+        run: make handful
+
       - name: Touch ID sudo
         run: make macos-touch-id-sudo
       - name: Service Workflow

@@ -10,6 +10,7 @@ ubuntu: ubuntu-core
 
 core: $(OS)-core
 stow: $(OS)-stow
+handful: $(OS)-handful
 
 ### macOS ###
 
@@ -25,6 +26,9 @@ macos-core: macos-brew macos-mas
 
 macos-stow: macos-brew
 	exists stow || brew install stow
+	
+macos-handful:
+	brew bundle --no-lock --file "macos/lists/handful.Brewfile"
 	
 macos-touch-id-sudo:
 	xscript "scripts/touch_id_sudo.sh"
@@ -64,6 +68,9 @@ ubuntu-ssh:
 ubuntu-stow:
 	sudo apt-get update
 	sudo apt-get install -y stow
+	
+ubuntu-handful:
+	echo "There is no handful util for ubuntu for now."
 
 ubuntu-zsh:
 	sudo apt-get update
