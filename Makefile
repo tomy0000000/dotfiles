@@ -2,7 +2,7 @@ SHELL = /bin/bash
 OS := $(shell bin/distro)
 PATH := bin:$(PATH)
 
-.PHONY: alias brew configs jupyter
+.PHONY: alias brew configs git jupyter
 
 all: $(OS)
 macos: macos-core
@@ -87,6 +87,9 @@ alias: core
 
 configs: stow
 	xscript "scripts/configs.sh"
+
+git:
+	xscript "scripts/git.sh"
 
 jupyter: stow
 	xscript "scripts/jupyter.sh"

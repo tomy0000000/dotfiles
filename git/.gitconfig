@@ -1,0 +1,18 @@
+# https://git-scm.com/docs/git-config
+[user]
+    name = Tomy Hsieh
+    email = tomy0000000@gmail.com
+
+[core]
+    editor = "nano"
+    excludesfile = "~/.gitignore_global"
+    ignoreCase = false
+
+[color]
+    ui = true
+
+[init]
+    defaultBranch = main
+
+[include]
+    path = "~/.gitalias"
