@@ -1,7 +1,22 @@
 #!/bin/bash
 set -e
-echo "Setting up git"
+echo " Setting up git"
 
-ln -s "$(realpath git/.gitalias)" "${HOME}/.gitalias"
-ln -s "$(realpath git/.gitconfig)" "${HOME}/.gitconfig"
-ln -s "$(realpath git/.gitignore_global)" "${HOME}/.gitignore_global"
+configs=".gitalias .gitattributes .gitconfig .gitignore_global"
+git_dir="git"
+
+for config in ${configs}
+do
+    if [ -f "${HOME}/${config}" ]
+    then
+        if ! (diff -r "${git_dir}/${config}" "${HOME}/${config}")
+        then
+            echo "⚠️ ${config} already exists, backed up."
+            mv "${HOME}/${config}" "${HOME}/${config}.backup"
+        else
+            # Same config already exists
+            rm -r "${HOME:?}/${config:?}"
+        fi
+    fi
+    ln -s "$(realpath git/"${config}")" "${HOME}"
+done

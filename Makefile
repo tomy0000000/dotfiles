@@ -9,8 +9,9 @@ macos: macos-core
 ubuntu: ubuntu-core
 
 core: $(OS)-core
-stow: $(OS)-stow
 handful: $(OS)-handful
+nano: $(OS)-nano
+stow: $(OS)-stow
 
 ### macOS ###
 
@@ -23,6 +24,8 @@ macos-mas: macos-brew
 macos-core: macos-brew macos-mas
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
+
+macos-nano: ;
 
 macos-stow: macos-brew
 	exists stow || brew install stow
@@ -65,6 +68,10 @@ ubuntu-tz-taipei:
 ubuntu-ssh:
 	xscript "scripts/ssh.sh"
 
+ubuntu-nano:
+	sudo apt-get update
+	sudo apt-get install -y nano
+
 ubuntu-stow:
 	sudo apt-get update
 	sudo apt-get install -y stow
@@ -88,7 +95,7 @@ alias: core
 configs: stow
 	xscript "scripts/configs.sh"
 
-git:
+git: nano
 	xscript "scripts/git.sh"
 
 jupyter: stow
