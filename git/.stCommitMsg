@@ -1,0 +1,26 @@
+# Title (50 chars)
+# <type>[optional scope]: <description>
+#
+# Add a ! after type is this is a BREAKING CHANGE.
+#
+# 🧹 chore: 
+# ⌛️ ci: 
+# 📖 docs: 
+# 🌟 feat: 
+# 🛠 fix: 
+# 🏎 perf: 
+# ❇️ refactor: 
+# 💅🏻 style: 
+# 🧪 test: 
+##################################################
+#
+# Body (Optional)
+#
+
+#
+# Co-authored-by: Tomy Hsieh <tomy0000000@gmail.com>
+# Co-authored-by: 
+#
+# Footer (Optional)
+# BREAKING CHANGE: 
+#

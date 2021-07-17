@@ -1,18 +1,36 @@
 # https://git-scm.com/docs/git-config
 [user]
-    name = Tomy Hsieh
-    email = tomy0000000@gmail.com
-
-[core]
-    editor = "nano"
-    excludesfile = "~/.gitignore_global"
-    ignoreCase = false
+    name = "Tomy Hsieh"
+    email = "tomy0000000@gmail.com"
 
 [color]
-    ui = true
+    interactive = "auto"
+    ui = "auto"
 
-[init]
-    defaultBranch = main
+[commit]
+    template = "~/.stCommitMsg"
+
+[core]
+    excludesFile = "~/.gitignore_global"
+    editor = "nano"
+    attributesFile = "~/.gitattributes"
+
+[grep]
+    extendedRegexp = true
+	lineNumber = true
+
+[help]
+    # Autofix the command and execute after 3 secs
+	autocorrect = 30
 
 [include]
+    path = "~/.gitconfig-custom"
     path = "~/.gitalias"
+
+[init]
+    # https://github.blog/changelog/2020-10-01-the-default-branch-for-newly-created-repositories-is-now-main/
+    defaultBranch = "main"
+
+[merge]
+    # https://nvie.com/posts/a-successful-git-branching-model/#incorporating-a-finished-feature-on-develop
+    ff = false

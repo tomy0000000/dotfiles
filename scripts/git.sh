@@ -2,7 +2,7 @@
 set -e
 echo " Setting up git"
 
-configs=".gitalias .gitattributes .gitconfig .gitignore_global"
+configs=".gitalias .gitattributes .gitconfig .gitignore_global .stCommitMsg"
 git_dir="git"
 
 for config in ${configs}
