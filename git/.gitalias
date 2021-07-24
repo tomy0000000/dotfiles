@@ -1,15 +1,59 @@
 [alias]
-
 a = "add"
 b = "branch"
 c = "commit"
 d = "diff"
 f = "fetch"
-g = "grep"
+g = "grep --break --heading --line-number"
 l = "log"
 m = "merge"
 o = "checkout"
 p = "pull"
 r = "remote"
-s = "status"
+s = "status --short --branch"
 w = "whatchanged"
+
+tower = "!gittower ."
+unstage = "reset HEAD --"
+
+### add ###
+a-a = "add --all --ignore-removal" # New, Modified
+a-ar = "add --all" # New, Modified, Deletion
+a-u = "add --update" # Modified, Deletion
+a-p = "add --patch"
+
+### clone ###
+cl = "clone"
+cl-r = "clone --recursive"
+
+### commit ###
+c-i = "commit --interactive"
+c-m = "commit --message"
+am = "commit --amend"
+am-m = "commit --amend --message"
+
+### grep ###
+grep-all = !"f() { git rev-list --all | xargs git grep \"$@\"; }; f"
+grep-ack = \
+    -c color.grep.linenumber=\"bold yellow\" \
+    -c color.grep.filename=\"bold green\" \
+    -c color.grep.match=\"reverse yellow\" \
+    grep --break --heading --line-number
+
+## ls-files ##
+ls = "ls-files"
+ls-ignored = "ls-files --others --i --exclude-standard"
+
+### functions ###
+
+# Generate .gitignore file
+# https://docs.gitignore.io/install/command-line
+gen-ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+
+remote-ref = !"sh -c ' \
+local_ref=$(git symbolic-ref HEAD); \
+local_name=${local_ref##refs/heads/}; \
+remote=$(git config branch.\"#local_name\".remote || echo origin); \
+remote_ref=$(git config branch.\"$local_name\".merge); \
+remote_name=${remote_ref##refs/heads/}; \
+echo remotes/$remote/$remote_name'"
