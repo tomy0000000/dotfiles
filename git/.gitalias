@@ -40,11 +40,28 @@ grep-ack = \
     -c color.grep.match=\"reverse yellow\" \
     grep --break --heading --line-number
 
-## ls-files ##
+### ls-files ###
 ls = "ls-files"
 ls-ignored = "ls-files --others --i --exclude-standard"
 
+### remote ###
+r-ls = "remote -v"
+
+### submodule ###
+sm = "submodule"
+sm-u = "submodule update --init"
+sm-ur = "submodule update --init --recursive"
+
+
 ### functions ###
+
+# Last tag in current branch
+lasttag = describe --tags --abbrev=0
+# Last tag in all branches
+lasttagged = !git describe --tags `git rev-list --tags --max-count=1`
+
+# fixup = "commit --amend --no-edit"
+# fixup = "!f() { TARGET=$(git rev-parse "${1:-HEAD}"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
 
 # Generate .gitignore file
 # https://docs.gitignore.io/install/command-line
