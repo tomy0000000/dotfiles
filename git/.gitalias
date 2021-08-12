@@ -14,7 +14,9 @@ s = "status --short --branch"
 w = "whatchanged"
 
 tower = "!gittower ."
-unstage = "reset HEAD --"
+unadd = "reset HEAD"
+unstage = "reset HEAD"
+uncommit = "reset --soft HEAD~1"
 
 ### add ###
 a-a = "add --all --ignore-removal" # New, Modified
