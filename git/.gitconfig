@@ -11,9 +11,9 @@
     template = "~/.stCommitMsg"
 
 [core]
+    attributesFile = "~/.gitattributes"
     excludesFile = "~/.gitignore_global"
     editor = "nano"
-    attributesFile = "~/.gitattributes"
 
 [grep]
     extendedRegexp = true
@@ -30,6 +30,10 @@
 [init]
     # https://github.blog/changelog/2020-10-01-the-default-branch-for-newly-created-repositories-is-now-main/
     defaultBranch = "main"
+
+[log]
+    abbrevCommit = true
+    date = "human"
 
 [merge]
     # https://nvie.com/posts/a-successful-git-branching-model/#incorporating-a-finished-feature-on-develop
