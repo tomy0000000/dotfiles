@@ -1,5 +1,4 @@
 [alias]
-b = "branch"
 d = "diff"
 f = "fetch"
 l = "log"
@@ -19,6 +18,16 @@ a-a = "add --all --ignore-removal" # New, Modified
 a-ar = "add --all" # New, Modified, Deletion
 a-u = "add --update" # Modified, Deletion
 a-p = "add --patch"
+
+### branch ###
+b = "branch"
+b-m = "branch --merged"
+b-nm = "branch --no-merged"
+
+### checkout & clean ###
+o = "checkout"
+discard = "checkout --" # discard changes
+cleanout = !"git clean -df && git checkout -- ." # discard changes and remove untracked
 
 ### clone ###
 cl = "clone"
