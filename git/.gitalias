@@ -1,7 +1,6 @@
 [alias]
 d = "diff"
 f = "fetch"
-l = "log"
 m = "merge"
 o = "checkout"
 s = "status --short --branch"
@@ -56,6 +55,14 @@ g-ack = \
     -c color.grep.filename=\"bold green\" \
     -c color.grep.match=\"reverse yellow\" \
     grep --break --heading
+
+### log ###
+l = "log"
+l-g = "log --graph --topo-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
+l-ls = "log --oneline --date-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
+l-p = "log --patch"
+head = "log -n1"
+history = "log --oneline --date-order --reverse --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
 
 ### ls-files ###
 ls = "ls-files"
