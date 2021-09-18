@@ -7,8 +7,8 @@ s = "status --short --branch"
 w = "whatchanged"
 
 tower = "!gittower ."
-unadd = "reset HEAD"
-unstage = "reset HEAD"
+unadd = "reset HEAD" # put staged back to unstaged
+unstage = "reset HEAD" # put staged back to unstaged
 uncommit = "reset --soft HEAD~1"
 
 ### add ###
@@ -37,8 +37,9 @@ c = "commit"
 c-i = "commit --interactive"
 c-m = "commit --message"
 amend = "commit --amend"
-am = "commit --amend"
-am-m = "commit --amend --message"
+amd = "commit --amend"
+amd-m = "commit --amend --date=\"$(git log -n 1 --format=%aD)\"" # edit message without changing date
+amd-d = !"git commit --amend --no-edit --date=\"$(date '+%s %z')\"" # update timestamp without changing message
 
 ### config ###
 cf = "config"
