@@ -2,7 +2,6 @@
 d = "diff"
 f = "fetch"
 m = "merge"
-o = "checkout"
 s = "status --short --branch"
 w = "whatchanged"
 
@@ -66,8 +65,12 @@ head = "log -n1"
 history = "log --oneline --date-order --reverse --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
 
 ### ls-files ###
-ls = "ls-files"
-ls-ignored = "ls-files --others --i --exclude-standard"
+ls = "ls-files --exclude-standard"
+ls-new = "ls-files --others --exclude-standard" # Untracked
+ls-untracked = "ls-files --others --exclude-standard" # New
+ls-modified = "ls-files --modified --exclude-standard" # Tracked and modified
+ls-stagable = "ls-files --modified --others --exclude-standard" # Untracked + modified
+ls-ignored = "ls-files --ignored --others --exclude-standard" # Ignored by .gitignore
 
 ### pull ###
 p = "pull"
