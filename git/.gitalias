@@ -5,10 +5,17 @@ m = "merge"
 s = "status --short --branch"
 w = "whatchanged"
 
-tower = "!gittower ."
+head = "log -n1"
+history = "log --oneline --date-order --reverse --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
+load = "stash apply"
+pop = "stash pop"
+save = "stash push"
+tower = !"gittower ."
 unadd = "reset HEAD" # put staged back to unstaged
-unstage = "reset HEAD" # put staged back to unstaged
 uncommit = "reset --soft HEAD~1"
+unstage = "reset HEAD" # put staged back to unstaged
+discard = "checkout --" # discard changes
+cleanout = !"git clean -df && git checkout -- ." # discard changes and remove untracked
 
 ### add ###
 a = "add"
@@ -22,10 +29,8 @@ b = "branch"
 b-m = "branch --merged"
 b-nm = "branch --no-merged"
 
-### checkout & clean ###
+### checkout ###
 o = "checkout"
-discard = "checkout --" # discard changes
-cleanout = !"git clean -df && git checkout -- ." # discard changes and remove untracked
 
 ### clone ###
 cl = "clone"
@@ -61,8 +66,6 @@ l = "log"
 l-g = "log --graph --topo-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
 l-ls = "log --oneline --date-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
 l-p = "log --patch"
-head = "log -n1"
-history = "log --oneline --date-order --reverse --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
 
 ### ls-files ###
 ls = "ls-files --exclude-standard"
@@ -84,9 +87,6 @@ st = "stash"
 st-l = "stash list"
 st-s = "stash show"
 st-p = "stash pop"
-save = "stash push"
-load = "stash apply"
-pop = "stash pop"
 
 ### submodule ###
 sm = "submodule"
