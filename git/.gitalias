@@ -78,6 +78,22 @@ ls-ignored = "ls-files --ignored --others --exclude-standard" # Ignored by .giti
 ### pull ###
 p = "pull"
 
+### push ###
+ps = "push"
+ps-a = "!git remote | xargs -I% -n1 git push %" # Push to all remotes
+ps-f = "push --force-with-lease"
+ps-ff = "push --force"
+
+### rebase ###
+rb = "rebase"
+rb-a = "rebase --abort"
+rb-c = "rebase --continue"
+rb-s = "rebase --skip"
+rb-i = "rebase --interactive"
+
+### reflog ###
+rl = "reflog"
+
 ### remote ###
 r = "remote"
 r-ls = "remote -v"
