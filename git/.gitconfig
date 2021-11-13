@@ -1,40 +1,43 @@
 # https://git-scm.com/docs/git-config
 [user]
-    name = "Tomy Hsieh"
-    email = "tomy0000000@gmail.com"
+name = "Tomy Hsieh"
+email = "tomy0000000@gmail.com"
 
 [color]
-    interactive = "auto"
-    ui = "auto"
+interactive = "auto"
+ui = "auto"
 
 [commit]
-    template = "~/.stCommitMsg"
+template = "~/.stCommitMsg"
 
 [core]
-    attributesFile = "~/.gitattributes"
-    excludesFile = "~/.gitignore_global"
-    editor = "nano"
+attributesFile = "~/.gitattributes"
+excludesFile = "~/.gitignore_global"
+editor = "nano"
 
 [grep]
-    extendedRegexp = true
-	lineNumber = true
+extendedRegexp = true
+lineNumber = true
 
 [help]
-    # Autofix the command and execute after 3 secs
-	autocorrect = 30
+# Autofix the command and execute after 3 secs
+autocorrect = 30
 
 [include]
-    path = "~/.gitconfig-custom"
-    path = "~/.gitalias"
+path = "~/.gitconfig-custom"
+path = "~/.gitalias"
 
 [init]
-    # https://github.blog/changelog/2020-10-01-the-default-branch-for-newly-created-repositories-is-now-main/
-    defaultBranch = "main"
+# https://github.blog/changelog/2020-10-01-the-default-branch-for-newly-created-repositories-is-now-main/
+defaultBranch = "main"
 
 [log]
-    abbrevCommit = true
-    date = "human"
+abbrevCommit = true
+date = "human"
 
 [merge]
-    # https://nvie.com/posts/a-successful-git-branching-model/#incorporating-a-finished-feature-on-develop
-    ff = false
+# https://nvie.com/posts/a-successful-git-branching-model/#incorporating-a-finished-feature-on-develop
+ff = false
+
+[pull]
+ff = only
