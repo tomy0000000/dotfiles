@@ -34,10 +34,10 @@ macos-handful:
 	brew bundle --no-lock --file "macos/lists/handful.Brewfile"
 	
 macos-touch-id-sudo:
-	xscript "scripts/touch_id_sudo.sh"
+	xscript "macos/touch_id_sudo.sh"
 
 macos-service-workflow: stow
-	xscript "scripts/service_workflow.sh"
+	xscript "macos/service_workflow.sh"
 
 ### Ubuntu ###
 
