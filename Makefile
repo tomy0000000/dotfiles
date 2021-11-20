@@ -27,6 +27,9 @@ macos-core: macos-brew macos-mas
 
 macos-nano: ;
 
+macos-git: macos-brew
+	exists git || brew install git git-extras
+
 macos-stow: macos-brew
 	exists stow || brew install stow
 	
@@ -65,6 +68,9 @@ ubuntu-tz-taipei:
 	sudo apt-get install -y tzdata
 	sudo dpkg-reconfigure --frontend noninteractive tzdata
 
+ubuntu-git:
+	sudo apt-get install -y git git-extras
+
 ubuntu-ssh:
 	xscript "scripts/ssh.sh"
 
@@ -95,7 +101,7 @@ alias: core
 configs: stow
 	xscript "scripts/configs.sh"
 
-git: nano
+git: $(OS)-git nano
 	xscript "scripts/git.sh"
 
 jupyter: stow
