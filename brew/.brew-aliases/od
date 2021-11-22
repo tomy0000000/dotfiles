@@ -3,4 +3,3 @@
 #:  * `od` [args...]
 #:    `brew od` is an alias for `brew update && brew outdated`
 brew outdated $*
-

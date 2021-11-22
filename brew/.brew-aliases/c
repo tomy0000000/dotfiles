@@ -3,4 +3,3 @@
 #:  * `c` [args...]
 #:    `brew c` is an alias for `brew cleanup`
 brew cleanup $*
-

@@ -3,4 +3,3 @@
 #:  * `ud` [args...]
 #:    `brew ud` is an alias for `brew update`
 brew update $*
-

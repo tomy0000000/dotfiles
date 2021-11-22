@@ -3,4 +3,3 @@
 #:  * `exist` [args...]
 #:    `brew exist` is an alias for `brew list -1 | grep`
 brew list -1 | grep $*
-

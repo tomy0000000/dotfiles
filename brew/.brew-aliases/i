@@ -3,4 +3,3 @@
 #:  * `i` [args...]
 #:    `brew i` is an alias for `brew install`
 brew install $*
-

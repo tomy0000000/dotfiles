@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 if eval "${@}"; then
-    echo "✅ ${*}"
+	echo "✅ ${*}"
 else
-    echo "🛑 ${*}"
-    exit 1
+	echo "🛑 ${*}"
+	exit 1
 fi

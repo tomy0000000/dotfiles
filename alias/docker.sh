@@ -23,8 +23,8 @@ alias 'dk-c-up-f'="docker-compose up --build --detach"
 
 # Handy functions
 dk-i-rm-all() {
-    docker images --filter="reference=${1}" --format='{{.Repository}}:{{.Tag}}' | xargs docker rmi
+	docker images --filter="reference=${1}" --format='{{.Repository}}:{{.Tag}}' | xargs docker rmi
 }
 dk-v-ls-items() {
-    docker run -it --rm -v "${1}:/volume" busybox ls -lh /volume
+	docker run -it --rm -v "${1}:/volume" busybox ls -lh /volume
 }

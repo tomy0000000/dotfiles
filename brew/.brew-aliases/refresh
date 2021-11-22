@@ -3,4 +3,3 @@
 #:  * `refresh` [args...]
 #:    `brew refresh` is an alias for `brew update && brew outdated && brew upgrade && brew cleanup`
 brew update && brew outdated && brew upgrade && brew cleanup $*
-

@@ -3,4 +3,3 @@
 #:  * `ri` [args...]
 #:    `brew ri` is an alias for `brew reinstall`
 brew reinstall $*
-

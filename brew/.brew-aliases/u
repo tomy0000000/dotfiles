@@ -3,4 +3,3 @@
 #:  * `u` [args...]
 #:    `brew u` is an alias for `brew uninstall`
 brew uninstall $*
-

@@ -3,4 +3,3 @@
 #:  * `t` [args...]
 #:    `brew t` is an alias for `brew tap`
 brew tap $*
-
