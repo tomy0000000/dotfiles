@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+if [ "${#}" -ne 2 ]; then
+    echo "Usage: ${0} OLD_FILE NEW_FILE" >&2
+    exit 1
+fi
+
+if [ -e "${1}" ]; then
+    if ! (diff -r "${2}" "${1}"); then
+        echo "⚠️ $(basename "${2}") already exists, backed up."
+        mv "${1}" "${1}.backup"
+    else
+        # Same config already exists
+        echo "⚠️ $(basename "${2}") already exists but content is identical, replace with new."
+        rm -r "${1}"
+    fi
+elif [ -L "${1}" ]; then
+    # Same config already exists
+    echo "⚠️ $(basename "${2}") is a bad link, replace with new."
+    rm -r "${1}"
+fi
