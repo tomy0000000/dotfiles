@@ -2,7 +2,10 @@
 set -e
 
 setting="${HOME}/.jupyter/lab/user-settings"
-jupyter_dir="unix/jupyter"
+stow_dir="unix"
+stow_package="jupyter"
+jupyter_dir="${stow_dir}/${stow_package}"
+
 mkdir -p "${HOME}/.jupyter/lab"
 
 if [ -d "${setting}" ]; then
@@ -10,4 +13,4 @@ if [ -d "${setting}" ]; then
 	mv "${setting}" "${setting}.backup"
 fi
 
-stow --restow --target "${HOME}/.jupyter" "${jupyter_dir}"
+stow --restow --target "${HOME}/.jupyter" --dir "${stow_dir}" "${stow_package}"
