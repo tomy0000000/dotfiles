@@ -8,9 +8,13 @@ if [ "$(uname)" = "Linux" ]; then
 	)
 	case $distro in
 	'Ubuntu')
+		if [ "$EUID" -eq 0 ]; then
+			echo "Do not run as root"
+			exit 1
+		fi
 		# Install crucial commands
-		apt update
-		apt install -y sudo make git
+		sudo apt update
+		sudo apt install -y make git
 		;;
 	*)
 		echo 'Unsupported distro'
