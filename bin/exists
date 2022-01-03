@@ -3,5 +3,6 @@
 if ! command -v "${1}" &>/dev/null; then
 	exit 1
 else
+	echo "${1} is installed"
 	exit 0
 fi

@@ -9,7 +9,8 @@ sudo apt-get install -y openssh-server
 ssh-import-id gh:tomy0000000
 
 # Disable password login
-sudo sed -i "s/#PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config
+sudo sed -i "s/PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config
+sudo sed -i "s/#PasswordAuthentication/PasswordAuthentication/g" /etc/ssh/sshd_config
 
 # Restart Service
 sudo service ssh restart
