@@ -1,8 +1,4 @@
 # https://git-scm.com/docs/git-config
-[user]
-name = "Tomy Hsieh"
-email = "tomy0000000@gmail.com"
-
 [color]
 interactive = "auto"
 ui = "auto"
@@ -24,7 +20,7 @@ lineNumber = true
 autocorrect = 30
 
 [include]
-path = "~/.gitconfig-custom"
+path = "~/.gitconfig-custom" # include the user block
 path = "~/.gitalias"
 
 [init]
