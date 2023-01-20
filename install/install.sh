@@ -25,6 +25,15 @@ function create_user {
 	chown "${username}:${username}" -R "${HOME}"
 	echo "export PATH=\"${HOME}/.local/bin:"'${PATH}'"\"" >>"${HOME}/.bashrc"
 	echo -e "User created: ${GREEN}${username}${NC}"
+	if [ -f "/root/.ssh/authorized_keys" ]; then
+		mkdir -p "${HOME}/.ssh"
+		cp "/root/.ssh/authorized_keys" "${HOME}/.ssh/authorized_keys"
+		chown "${username}:${username}" "${HOME}/.ssh"
+		chmod 700 "${HOME}/.ssh"
+	else
+		echo -e "${YELLOW}No authorized_keys for root${NC}"
+		echo -e "${YELLOW}Make user to run 'make ubuntu-ssh' to setup SSH Key later${NC}"
+	fi
 }
 
 function setup_user {
