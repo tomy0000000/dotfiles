@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>imageType</key>
-					<string>PNG</string>
+					<string>JPEG</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.ChangeImageType</string>
