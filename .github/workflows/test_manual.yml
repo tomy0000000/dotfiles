@@ -14,7 +14,7 @@ jobs:
   test-feature:
     runs-on: ${{ github.event.inputs.platform }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Clean up CI machine
         if: ${{ github.event.inputs.platform == 'macos-latest' }}
         run: sudo rm -rf /Library/Developer/CommandLineTools
