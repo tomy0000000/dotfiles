@@ -1,0 +1,8 @@
+// ~/Library/Application Support/Code/User/snippets/markdown.json
+{
+  "Insert Pagebreak": {
+    "prefix": "pagebreak",
+    "body": ["<div style=\"page-break-after: always;\"></div>"],
+    "description": "Pagebreak"
+  }
+}

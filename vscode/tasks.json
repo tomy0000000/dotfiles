@@ -1,0 +1,94 @@
+// ~/Library/Application Support/Code/User/tasks.json
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Open Project in Finder",
+      "type": "shell",
+      "command": "open",
+      "args": ["${workspaceFolder}"],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open File in Finder",
+      "type": "shell",
+      "command": "open",
+      "args": ["--reveal", "${file}"],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open remote site",
+      "type": "shell",
+      "command": "git",
+      "args": ["browse"],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open in Tower",
+      "type": "shell",
+      "command": "open",
+      "args": ["-a", "Tower.app", "&&", "git", "tower"],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open in Typora",
+      "type": "shell",
+      "command": "open",
+      "args": ["-a", "Typora", "${file}"],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open in MarkEdit",
+      "type": "shell",
+      "command": "open",
+      "args": ["-a", "MarkEdit", "${file}"],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open in Sublime Text",
+      "type": "shell",
+      "command": "subl",
+      "args": ["${file}"],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open in Browser",
+      "type": "shell",
+      "command": "open",
+      "args": ["${file}"],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false
+      },
+      "problemMatcher": []
+    }
+  ]
+}
