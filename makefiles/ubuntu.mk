@@ -3,7 +3,7 @@ ubuntu-core:
 	sudo apt-get update
 	sudo apt-get upgrade -y
 	sudo apt-get dist-upgrade -f
-	xargs sudo apt-get install < ubuntu/apt.core
+	xargs sudo apt-get install < aptfiles/core.Aptfile
 	
 ubuntu-handful:
 	echo "There is no handful util for ubuntu for now."
