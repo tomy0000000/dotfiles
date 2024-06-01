@@ -9,7 +9,7 @@ macos-core: macos-brew macos-mas
 	exists realpath || brew install coreutils
 	
 macos-handful:
-	brew bundle --no-lock --file "macos/lists/handful.Brewfile"
+	brew bundle --no-lock --file "brewfiles/handful.Brewfile"
 
 macos-nano: ;
 

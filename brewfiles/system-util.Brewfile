@@ -1,0 +1,8 @@
+tap "homebrew/cask"
+cask "appcleaner"
+cask "backuploupe"
+cask "bartender"
+cask "find-any-file"
+cask "hazel"
+cask "macs-fan-control"
+cask "monitorcontrol"
