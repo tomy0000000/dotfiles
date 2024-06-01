@@ -1,5 +1,5 @@
 macos-brew:
-	exists brew || xscript "macos/brew.sh"
+	exists brew || xscript "scripts/macos-brew.sh"
 
 macos-mas: macos-brew
 	exists mas || brew install mas
@@ -20,7 +20,7 @@ macos-git: macos-brew
 	exists git || brew install git git-extras
 	
 macos-touch-id-sudo:
-	xscript "macos/touch_id_sudo.sh"
+	xscript "scripts/macos-touch-id-sudo.sh"
 
 macos-service-workflow: stow
-	xscript "macos/service_workflow.sh"
+	xscript "scripts/macos-service-workflow.sh"

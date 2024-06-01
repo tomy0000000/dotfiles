@@ -23,16 +23,16 @@ ubuntu-essential: ubuntu-core ubuntu-locale-zhtw ubuntu-tz-taipei ubuntu-ssh
 	sudo apt-get install -y build-essential
 
 ubuntu-locale-zhtw:
-	xscript "ubuntu/locale-zhtw.sh"
+	xscript "scripts/debian-locale-zhtw.sh"
 
 ubuntu-tz-taipei:
-	xscript "ubuntu/tz-taipei.sh"
+	xscript "scripts/debian-tz-taipei.sh"
 
 ubuntu-dropbox: ubuntu-essential
 	xscript "linux/dropbox.sh"
 
 ubuntu-ssh:
-	xscript "ubuntu/ssh.sh"
+	xscript "scripts/debian-ssh.sh"
 
 ubuntu-zsh:
 	sudo apt-get update

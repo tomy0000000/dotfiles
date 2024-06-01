@@ -13,12 +13,12 @@ handful: $(OS)-handful
 nano: $(OS)-nano
 stow: $(OS)-stow
 alias: core
-	xscript "unix/alias.sh"
+	xscript "scripts/alias.sh"
 configs: stow
-	xscript "unix/configs.sh"
+	xscript "scripts/configs.sh"
 git: $(OS)-git nano
-	xscript "unix/git.sh"
+	xscript "scripts/git.sh"
 jupyter: stow
-	xscript "unix/jupyter.sh"
+	xscript "scripts/jupyter.sh"
 
 include makefiles/*.mk
