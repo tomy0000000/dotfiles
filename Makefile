@@ -21,5 +21,4 @@ git: $(OS)-git nano
 jupyter: stow
 	xscript "unix/jupyter.sh"
 
-include macos.mk
-include ubuntu.mk
+include makefiles/*.mk
