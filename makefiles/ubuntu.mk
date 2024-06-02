@@ -29,7 +29,7 @@ ubuntu-tz-taipei:
 	xscript "scripts/debian-tz-taipei.sh"
 
 ubuntu-dropbox: ubuntu-essential
-	xscript "linux/dropbox.sh"
+	xscript "scripts/dropbox.sh"
 
 ubuntu-ssh:
 	xscript "scripts/debian-ssh.sh"
