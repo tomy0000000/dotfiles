@@ -24,3 +24,7 @@ macos-touch-id-sudo:
 
 macos-service-workflow: stow
 	xscript "scripts/macos-service-workflow.sh"
+
+macos-chromium-app-icon:
+	exists fileicon || brew install fileicon
+	xscript "scripts/macos-chromium-app-icon.sh"

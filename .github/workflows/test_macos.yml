@@ -21,6 +21,8 @@ jobs:
         run: make macos-touch-id-sudo
       - name: Service Workflow
         run: make macos-service-workflow
+      - name: Chromium App Icon
+        run: make macos-chromium-app-icon
 
       - name: Alias
         run: make alias
