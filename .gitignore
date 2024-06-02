@@ -33,8 +33,3 @@ Temporary Items
 .nova/*
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,nova
-
-### Custom ###
-DRAFT.md
-DEPENDENCIES.md
-*draft*
