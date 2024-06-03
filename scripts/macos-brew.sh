@@ -1,12 +1,15 @@
 #!/bin/bash
-set -e
-
-brew_dir="macos/brew"
+set -euo pipefail
 
 # Homebrew core
 echo "🍺 Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+# Homebrew bundle
+brew tap homebrew/bundle
+
+# Homebrew extensions
+brew bundle --no-lock --file 'brewfiles/core.Brewfile'
+
 # Homebrew aliases
-brew tap 'homebrew/aliases'
-ln -s "$(realpath "${brew_dir}/.brew-aliases")" "${HOME}/.brew-aliases"
+ln -s "$(realpath 'macos-brew/.brew-aliases')" "${HOME}/.brew-aliases"
