@@ -12,4 +12,4 @@ brew tap homebrew/bundle
 brew bundle --no-lock --file 'brewfiles/core.Brewfile'
 
 # Homebrew aliases
-ln -s "$(realpath 'macos-brew/.brew-aliases')" "${HOME}/.brew-aliases"
+ln -s "$(realpath 'macos-brew/dot-brew-aliases')" "${HOME}/.brew-aliases"
