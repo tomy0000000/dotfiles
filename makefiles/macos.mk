@@ -29,3 +29,9 @@ macos-service-workflow: macos-brew
 macos-chromium-app-icon:
 	exists fileicon || brew install fileicon
 	xscript "scripts/macos-chromium-app-icon.sh"
+
+macos-zsh: macos-brew
+	exists curl || brew install curl
+	exists antigen || brew install antigen
+	exists starship || brew install starship
+	xscript "scripts/macos-zsh.sh"
