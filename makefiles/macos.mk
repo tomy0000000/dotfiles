@@ -22,8 +22,9 @@ macos-git: macos-brew
 macos-touch-id-sudo:
 	xscript "scripts/macos-touch-id-sudo.sh"
 
-macos-service-workflow: stow
-	xscript "scripts/macos-service-workflow.sh"
+macos-service-workflow: macos-brew
+	exists stow || brew install stow
+	stow --target "${HOME}/Library/Services" 'macos-services'
 
 macos-chromium-app-icon:
 	exists fileicon || brew install fileicon
