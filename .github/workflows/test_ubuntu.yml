@@ -34,8 +34,6 @@ jobs:
       - name: Dropbox
         run: make ubuntu-dropbox
 
-      - name: Alias
-        run: make alias
       - name: Configs
         run: make configs
       - name: Jupyter

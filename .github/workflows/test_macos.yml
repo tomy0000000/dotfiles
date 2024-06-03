@@ -24,8 +24,6 @@ jobs:
       - name: Chromium App Icon
         run: make macos-chromium-app-icon
 
-      - name: Alias
-        run: make alias
       - name: Configs
         run: make configs
       - name: Jupyter

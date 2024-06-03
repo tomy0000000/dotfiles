@@ -12,8 +12,6 @@ core: $(OS)-core
 handful: $(OS)-handful
 nano: $(OS)-nano
 stow: $(OS)-stow
-alias: core
-	xscript "scripts/alias.sh"
 configs: stow
 	xscript "scripts/configs.sh"
 git: $(OS)-git nano
