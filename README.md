@@ -17,13 +17,13 @@ apt update && apt install -y curl
 #### `curl`
 
 ```sh
-curl -fsSL https://init.tomy.tech | bash
+bash -c "$(curl -fsSL https://init.tomy.tech)"
 ```
 
 #### `wget`
 
 ```sh
-wget -O - https://init.tomy.tech | bash
+bash -c "$(wget -O - https://init.tomy.tech)"
 ```
 
 ### Manually
