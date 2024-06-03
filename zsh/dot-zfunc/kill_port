@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+pnpm dlx kill-port "${1}"
