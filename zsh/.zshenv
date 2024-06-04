@@ -1,10 +1,12 @@
+#!/bin/zsh
+
 # Language
 export LANG="en_US.UTF-8" # English
 export LANG="zh_TW.UTF-8" # Chinese (Taiwan)
 
 # Editor
 export EDITOR="/usr/local/bin/subl" # Sublime Text
-export EDITOR="/usr/bin/nano"       # nano
+# export EDITOR="/usr/bin/nano"       # nano
 
 # Additional PATHs
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}" # sed
