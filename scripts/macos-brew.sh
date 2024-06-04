@@ -11,5 +11,8 @@ brew tap homebrew/bundle
 # Homebrew extensions
 brew bundle --no-lock --file 'brewfiles/core.Brewfile'
 
-# Homebrew aliases
-ln -s "$(realpath 'macos-brew/dot-brew-aliases')" "${HOME}/.brew-aliases"
+# GNU stow
+brew install stow
+
+# Homebrew configurations
+stow --no-folding --target "${HOME}" macos-brew
