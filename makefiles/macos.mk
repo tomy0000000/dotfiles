@@ -33,7 +33,5 @@ macos-chromium-app-icon: macos-brew
 	xscript "scripts/macos-chromium-app-icon.sh"
 
 macos-zsh: macos-brew
-	exists curl || brew install curl
-	exists antigen || brew install antigen
-	exists starship || brew install starship
+	brew bundle --no-lock --file 'brewfiles/zsh.Brewfile'
 	xscript "scripts/macos-zsh.sh"

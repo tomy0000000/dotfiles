@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+rm -f ~/.zcompdump
+antigen reset
+compinit
