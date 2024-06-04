@@ -12,19 +12,32 @@ jobs:
 
       - name: All (core)
         run: make
-      - name: stow
-        run: make stow
+
+      - name: git
+        run: make git
       - name: handful
         run: make handful
+      - name: nano
+        run: make nano
+      - name: stow
+        run: make stow
+      - name: Zsh
+        run: make zsh
 
-      - name: Touch ID sudo
-        run: make macos-touch-id-sudo
-      - name: Service Workflow
-        run: make macos-service-workflow
+      - name: Homebrew
+        run: make macos-brew
       - name: Chromium App Icon
         run: make macos-chromium-app-icon
+      - name: GNU CLI
+        run: make macos-gnu-cli
+      - name: mas
+        run: make macos-mas
+      - name: Service Workflow
+        run: make macos-service-workflow
+      - name: Touch ID sudo
+        run: make macos-touch-id-sudo
 
-      - name: Configs
-        run: make configs
-      - name: Jupyter
-        run: make jupyter
+      - name: JavaScript
+        run: make javascript
+      - name: Python
+        run: make python

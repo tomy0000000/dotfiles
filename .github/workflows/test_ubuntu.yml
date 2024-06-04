@@ -16,25 +16,30 @@ jobs:
 
       - name: All (core)
         run: make
-      - name: stow
-        run: make stow
+
+      - name: git
+        run: make git
       - name: handful
         run: make handful
-
-      - name: Essential
-        run: make ubuntu-essential
-      - name: Locale
-        run: make ubuntu-locale-zhtw
-      - name: Timezone
-        run: make ubuntu-tz-taipei
-      - name: SSH
-        run: make ubuntu-ssh
+      - name: nano
+        run: make nano
+      - name: stow
+        run: make stow
       - name: Zsh
-        run: make ubuntu-zsh
+        run: make zsh
+
       - name: Dropbox
         run: make ubuntu-dropbox
+      - name: Essential
+        run: make ubuntu-essential
+      - name: Locale (Taiwan)
+        run: make ubuntu-locale-zhtw
+      - name: SSH
+        run: make ubuntu-ssh
+      - name: Timezone (Taipei)
+        run: make ubuntu-tz-taipei
 
-      - name: Configs
-        run: make configs
-      - name: Jupyter
-        run: make jupyter
+      - name: JavaScript
+        run: make javascript
+      - name: Python
+        run: make python
