@@ -13,6 +13,11 @@ macos-handful:
 
 macos-nano: ;
 
+macos-gnu-cli: macos-brew
+	exists stow || brew install stow
+	brew bundle --no-lock --file 'brewfiles/gnu-cli.Brewfile'
+	stow --no-folding --target "${HOME}" 'gnu-cli'
+
 macos-stow: macos-brew
 	exists stow || brew install stow
 

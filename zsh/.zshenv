@@ -16,10 +16,7 @@ export EDITOR="/usr/local/bin/subl" # Sublime Text
 export TERM="xterm-256color"
 
 # Additional PATHs
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}" # sed
-export PATH="/usr/local/opt/grep/libexec/gnubin:${PATH}"    # grep, fgrep, egrep
-export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"      # make
-export PATH="/usr/local/opt/openjdk/bin:${PATH}"            # java
+export PATH="/usr/local/opt/openjdk/bin:${PATH}" # java
 
 # Additional FPATHs
 export FPATH="${HOME}/.zfunc:${FPATH}"
