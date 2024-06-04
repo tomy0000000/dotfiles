@@ -19,5 +19,7 @@ configs: stow
 	xscript "scripts/configs.sh"
 python: stow
 	stow --no-folding --target "${HOME}" 'python'
+javascript: stow
+	stow --no-folding --target "${HOME}" 'javascript'
 
 include makefiles/*.mk

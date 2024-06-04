@@ -1,0 +1,18 @@
+{
+  "plugins": ["prettier-plugin-sql"],
+  "overrides": [
+    {
+      "files": "*.code-snippets",
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": "*.sql",
+      "options": {
+        "language": "mysql",
+        "keywordCase": "upper"
+      }
+    }
+  ]
+}
