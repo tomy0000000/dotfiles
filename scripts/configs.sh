@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-configs=".flake8 .isort.cfg .npmrc .pylintrc"
+configs=".npmrc"
 stow_dir="unix"
 stow_package="configs"
 config_dir="${stow_dir}/${stow_package}"

@@ -17,7 +17,7 @@ zsh: $(OS)-zsh
 
 configs: stow
 	xscript "scripts/configs.sh"
-jupyter: stow
-	xscript "scripts/jupyter.sh"
+python: stow
+	stow --no-folding --target "${HOME}" 'python'
 
 include makefiles/*.mk
