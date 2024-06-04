@@ -19,7 +19,7 @@ macos-stow: macos-brew
 # This is a full suite of git plugins and configurations
 # Most other target that requires git don't need this
 macos-git: macos-brew
-	exists git || brew install git git-extras
+	brew bundle --no-lock --file 'brewfiles/git.Brewfile'
 
 macos-touch-id-sudo:
 	xscript "scripts/macos-touch-id-sudo.sh"

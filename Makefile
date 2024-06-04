@@ -9,6 +9,7 @@ macos: macos-core
 ubuntu: ubuntu-core
 
 core: $(OS)-core
+git: $(OS)-git
 handful: $(OS)-handful
 nano: $(OS)-nano
 stow: $(OS)-stow
@@ -16,8 +17,6 @@ zsh: $(OS)-zsh
 
 configs: stow
 	xscript "scripts/configs.sh"
-git: $(OS)-git nano
-	xscript "scripts/git.sh"
 jupyter: stow
 	xscript "scripts/jupyter.sh"
 

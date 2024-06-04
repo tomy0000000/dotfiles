@@ -44,6 +44,7 @@ amend = "commit --amend"
 amd = "commit --amend"
 amd-m = "commit --amend --date=\"$(git log -n 1 --format=%aD)\"" # edit message without changing date
 amd-d = !"git commit --amend --no-edit --date=\"$(date '+%s %z')\"" # update timestamp without changing message
+amd-cpd = !"GIT_COMMITTER_DATE="$(git log -1 --format=%aD)" git commit --amend --no-edit" # copy author date to commit date
 
 ### config ###
 cf = "config"

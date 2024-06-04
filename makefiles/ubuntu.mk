@@ -17,7 +17,7 @@ ubuntu-stow:
 	sudo apt-get install -y stow
 
 ubuntu-git:
-	sudo apt-get install -y git git-extras
+	xargs sudo apt-get install < aptfiles/git.Aptfile
 
 ubuntu-essential: ubuntu-core ubuntu-locale-zhtw ubuntu-tz-taipei ubuntu-ssh
 	sudo apt-get install -y build-essential

@@ -4,12 +4,15 @@ interactive = "auto"
 ui = "auto"
 
 [commit]
-template = "~/.stCommitMsg"
+template = "~/.git_commit_template"
 
 [core]
 attributesFile = "~/.gitattributes"
 excludesFile = "~/.gitignore_global"
 editor = "nano"
+
+[diff]
+wordRegex = "."
 
 [grep]
 extendedRegexp = true
