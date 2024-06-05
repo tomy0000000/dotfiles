@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # -A shows hidden files
 # -G colorizes output
 # -h human readable sizes

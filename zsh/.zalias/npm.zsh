@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 alias "npi"="npm install"
 alias "npig"="npm install --global"
 alias "npid"="npm install --save-dev"

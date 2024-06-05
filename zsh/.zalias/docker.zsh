@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Playground
 alias 'dk-python'="docker run --name some-python --volume \${PWD}:/host -it --rm python:latest python"
 alias 'dk-arch'="docker run --name some-archlinux --volume \${PWD}:/host -it --rm archlinux:latest bash"

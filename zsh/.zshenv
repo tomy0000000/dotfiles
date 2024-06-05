@@ -21,6 +21,10 @@ export PATH="/usr/local/opt/openjdk/bin:${PATH}" # java
 # Additional FPATHs
 export FPATH="${HOME}/.zfunc:${FPATH}"
 
+# Additional MANPATHs
+
+# Additional INFOPATHs
+
 # Oh My Zsh library settings
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#library-settings
 HYPHEN_INSENSITIVE="true"

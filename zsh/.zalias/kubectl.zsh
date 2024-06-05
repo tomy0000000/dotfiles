@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 alias k='kubectl'
 
 # Apply

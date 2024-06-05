@@ -1,7 +1,0 @@
-alias gitconfig="${EDITOR} ~/.gitconfig"
-alias hosts="${EDITOR} /etc/hosts"
-alias p10kconfig="${EDITOR} ~/.p10k.zsh"
-alias sshconfig="${EDITOR} ~/.ssh/config"
-alias zshrc="${EDITOR} ~/.zshrc"
-alias ansiblecfg="${EDITOR} ~/.ansible.cfg"
-alias ansiblehosts="${EDITOR} ~/.ansible/hosts"
