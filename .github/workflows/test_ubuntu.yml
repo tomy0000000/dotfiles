@@ -18,7 +18,7 @@ jobs:
         run: make
 
       - name: Network CLI
-        run: make network-cli
+        run: make cli-network
       - name: git
         run: make git
       - name: handful
