@@ -1,4 +1,3 @@
-tap "homebrew/cask-fonts"
 cask "font-jf-open-huninn"
 cask "font-noto-color-emoji"
 cask "font-noto-emoji"
