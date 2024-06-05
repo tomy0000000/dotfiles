@@ -1,0 +1,8 @@
+tap "homebrew/cask-fonts"
+cask "font-jf-open-huninn"
+cask "font-noto-color-emoji"
+cask "font-noto-emoji"
+cask "font-noto-sans"
+cask "font-noto-sans-cjk-tc"
+cask "font-noto-serif"
+cask "font-noto-serif-cjk-tc"

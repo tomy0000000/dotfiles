@@ -9,6 +9,9 @@ macos-core: macos-brew macos-mas
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
 
+macos-font: macos-brew
+	brew bundle --no-lock --file 'brewfiles/font.Brewfile'
+
 # This is a full suite of git plugins and configurations
 # Most other target that requires git don't need this
 macos-git: macos-brew

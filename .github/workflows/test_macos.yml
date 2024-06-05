@@ -28,6 +28,8 @@ jobs:
         run: make macos-brew
       - name: Chromium App Icon
         run: make macos-chromium-app-icon
+      - name: Font
+        run: make macos-font
       - name: GNU CLI
         run: make macos-gnu-cli
       - name: mas
