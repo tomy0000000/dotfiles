@@ -34,6 +34,8 @@ jobs:
         run: make macos-font
       - name: GNU CLI
         run: make macos-gnu-cli
+      - name: 1Password
+        run: make macos-one-password
       - name: Service Workflow
         run: make macos-service-workflow
       - name: Touch ID sudo

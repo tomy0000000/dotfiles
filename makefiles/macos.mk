@@ -35,6 +35,11 @@ macos-handful:
 
 macos-nano: ;
 
+macos-one-password: macos-brew
+	exists stow || brew install stow
+	brew bundle --no-lock --file 'brewfiles/one-password.Brewfile'
+	stow --no-folding --target "${HOME}" 'macos-one-password'
+
 macos-service-workflow: macos-brew
 	exists stow || brew install stow
 	stow --target "${HOME}/Library/Services" 'macos-services'
