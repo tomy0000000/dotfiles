@@ -20,6 +20,8 @@ ansible: stow
 	stow --no-folding --target "${HOME}" 'ansible'
 javascript: stow
 	stow --no-folding --target "${HOME}" 'javascript'
+micro: stow
+	stow --no-folding --target "${HOME}" 'micro'
 python: stow
 	stow --no-folding --target "${HOME}" 'python'
 ruby: stow

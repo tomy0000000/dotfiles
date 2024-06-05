@@ -45,6 +45,8 @@ jobs:
         run: make ansible
       - name: JavaScript
         run: make javascript
+      - name: Micro
+        run: make micro
       - name: Python
         run: make python
       - name: Ruby
