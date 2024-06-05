@@ -47,3 +47,5 @@ jobs:
         run: make javascript
       - name: Python
         run: make python
+      - name: Ruby
+        run: make ruby
