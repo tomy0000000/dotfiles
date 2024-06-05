@@ -12,6 +12,11 @@ macos-core: macos-brew macos-mas
 macos-cli-network: macos-brew
 	brew bundle --no-lock --file 'brewfiles/cli-network.Brewfile'
 
+macos-docker: macos-brew
+	exists stow || brew install stow
+	brew bundle --no-lock --file 'brewfiles/docker.Brewfile'
+	stow --no-folding --target "${HOME}" 'docker'
+
 macos-font: macos-brew
 	brew bundle --no-lock --file 'brewfiles/font.Brewfile'
 
