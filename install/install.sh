@@ -1,14 +1,26 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+function prompt_yes_no {
+	read -r -p "${1} [y/N] " response
+	case "${response}" in
+	[yY][eE][sS] | [yY])
+		true
+		;;
+	*)
+		false
+		;;
+	esac
+}
+
 function check_command {
 	if ! command -v "${1}" &>/dev/null; then
-		echo -e "${YELLOW}Command ${1} is not available, install now...${NC}"
+		echo "${YELLOW}Command ${1} is not available, install now...${NC}"
 		if [ "${1}" = 'sudo' ]; then
 			apt-get install -qqq -y sudo >/dev/null
 		else
@@ -17,73 +29,84 @@ function check_command {
 	fi
 }
 
-function create_user {
-	useradd "${username}" --shell="/bin/bash" --groups="root,sudo" --home-dir="${HOME}"
+function setup_user {
+	# Prompt for username
+	while true; do
+		read -r -p 'Enter username: ' username
+		if id "${username}" &>/dev/null; then
+			echo "${RED}User ${username} already exists, please choose another one${NC}"
+		else
+			break
+		fi
+	done
+
+	# Prompt for password
+	while true; do
+		read -r -p 'Enter password (leave blank to generate): ' password
+		if [ -z "${password}" ]; then
+			break
+		else
+			read -r -p 'Confirm password: ' confirm_password
+			if [ "${password}" = "${confirm_password}" ]; then
+				break
+			else
+				echo "${RED}Password does not match, please try again${NC}"
+			fi
+		fi
+	done
+
+	# Create user
+	home="/home/${username}"
+	useradd "${username}" --shell="/bin/bash" --groups="root,sudo" --home-dir="${home}"
 	echo "${username}:${password}" | chpasswd
 	echo "root:${password}" | chpasswd
-	cp -r /etc/skel/. "${HOME}"
-	chown "${username}:${username}" -R "${HOME}"
-	echo "export PATH=\"${HOME}/.local/bin:"'${PATH}'"\"" >>"${HOME}/.bashrc"
-	echo -e "User created: ${GREEN}${username}${NC}"
+
+	# Setup home directory
+	cp -r /etc/skel/. "${home}"
+	chown "${username}:${username}" -R "${home}"
+
+	echo "export PATH=\"${home}/.local/bin:"'${PATH}'"\"" >>"${home}/.bashrc"
+	echo "User created: ${GREEN}${username}${NC}"
 	if [ -f "/root/.ssh/authorized_keys" ]; then
-		mkdir -p "${HOME}/.ssh"
-		cp "/root/.ssh/authorized_keys" "${HOME}/.ssh/authorized_keys"
-		chown "${username}:${username}" "${HOME}/.ssh"
-		chmod 700 "${HOME}/.ssh"
+		mkdir -p "${home}/.ssh"
+		cp "/root/.ssh/authorized_keys" "${home}/.ssh/authorized_keys"
+		chown "${username}:${username}" "${home}/.ssh"
+		chmod 700 "${home}/.ssh"
 	else
-		echo -e "${YELLOW}No authorized_keys for root${NC}"
-		echo -e "${YELLOW}Make user to run 'make ubuntu-ssh' to setup SSH Key later${NC}"
+		echo "${YELLOW}No authorized_keys for root${NC}"
+		echo "${YELLOW}Make user to run 'make ubuntu-ssh' to setup SSH Key later${NC}"
 	fi
 }
 
-function setup_user {
-	username="${username:-tomy0000000}"
-	HOME="/home/${username}"
-	if id "${username}" &>/dev/null; then
-		echo -e "${YELLOW}User ${username} already exists, skip creation${NC}"
-	else
-		if [ -z "${password}" ]; then
-			echo -e "${YELLOW}Password is not set, generate one${NC}"
-			check_command 'openssl'
-			password="$(openssl rand -base64 32)"
-			create_user
-			echo "${password}" >>"${HOME}/.password"
-			echo -e "${RED}MAKE SURE TO SAVE AND REMOVE PASSWORD at ${YELLOW}${HOME}/.password${NC}"
-		else
-			create_user
-		fi
+function main {
+	# Check OS
+	if [ "$(uname)" = "Linux" ]; then
+		distro=$(
+			. /etc/os-release
+			echo "${NAME}"
+		)
+		case "${distro}" in
+		'Ubuntu')
+			if [ "${EUID}" -eq 0 ]; then
+				apt-get update -qq
+				check_command 'sudo'
+				echo "You are running as root."
+				prompt_yes_no 'Do you want to create a new user?' && setup_user
+			else
+				sudo apt-get update -qq
+			fi
+			# Install crucial commands
+			check_command 'git'
+			check_command 'make'
+			;;
+		*)
+			echo 'Unsupported distro'
+			exit 1
+			;;
+		esac
 	fi
+
+	# Clone dotfiles
+	git clone -q 'https://github.com/tomy0000000/dotfiles.git' "${HOME}/.dotfiles"
+	echo "dotfiles is ready to be installed at ${GREEN}${HOME}/.dotfiles${NC}"
 }
-
-if [ "$(uname)" = "Linux" ]; then
-	distro=$(
-		. /etc/os-release
-		echo "${NAME}"
-	)
-	case "${distro}" in
-	'Ubuntu')
-		if [ "${EUID}" -eq 0 ]; then
-			apt-get update -qq
-			check_command 'sudo'
-			setup_user
-		else
-			sudo apt-get update -qq
-		fi
-		# Install crucial commands
-		check_command 'git'
-		check_command 'make'
-		;;
-	*)
-		echo 'Unsupported distro'
-		exit 1
-		;;
-	esac
-elif [ "$(uname)" = 'Darwin' ]; then
-	# Install Xcode command line tools
-	if [ ! -d "$(xcode-select -p)" ]; then
-		sudo xcode-select --install
-	fi
-fi
-
-git clone -q 'https://github.com/tomy0000000/dotfiles.git' "${HOME}/.dotfiles"
-echo -e "dotfiles is ready to be installed at ${GREEN}${HOME}/.dotfiles${NC}"
