@@ -1,0 +1,6 @@
+[group]
+name       ansible_host=ip.or.hostname
+
+[all:vars]
+ansible_user=tomy0000000
+ansible_python_interpreter=/usr/bin/python3

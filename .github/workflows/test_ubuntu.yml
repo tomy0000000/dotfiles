@@ -39,6 +39,8 @@ jobs:
       - name: Timezone (Taipei)
         run: make ubuntu-tz-taipei
 
+      - name: Ansible
+        run: make ansible
       - name: JavaScript
         run: make javascript
       - name: Python

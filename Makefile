@@ -15,6 +15,8 @@ nano: $(OS)-nano
 stow: $(OS)-stow
 zsh: $(OS)-zsh
 
+ansible: stow
+	stow --no-folding --target "${HOME}" 'ansible'
 javascript: stow
 	stow --no-folding --target "${HOME}" 'javascript'
 python: stow

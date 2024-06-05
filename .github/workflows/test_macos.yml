@@ -37,6 +37,8 @@ jobs:
       - name: Touch ID sudo
         run: make macos-touch-id-sudo
 
+      - name: Ansible
+        run: make ansible
       - name: JavaScript
         run: make javascript
       - name: Python
