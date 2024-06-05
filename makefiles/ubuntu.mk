@@ -5,6 +5,8 @@ ubuntu-core:
 	sudo apt-get dist-upgrade -f
 	xargs sudo apt-get install -y < aptfiles/core.Aptfile
 
+ubuntu-clean: ;
+
 ubuntu-cli-network:
 	xargs sudo apt-get install -y < aptfiles/cli-network.Aptfile
 

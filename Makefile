@@ -2,13 +2,14 @@ SHELL = /bin/bash
 OS := $(shell bin/distro)
 PATH := bin:$(PATH)
 
-.PHONY: macos-brew git
+.PHONY: clean git macos-brew
 
 all: $(OS)
 macos: macos-core
 ubuntu: ubuntu-core
 
 core: $(OS)-core
+clean: $(OS)-clean
 cli-network: $(OS)-cli-network
 git: $(OS)-git
 handful: $(OS)-handful

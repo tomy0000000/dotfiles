@@ -5,6 +5,9 @@ macos-chromium-app-icon: macos-brew
 	exists fileicon || brew install fileicon
 	xscript "scripts/macos-chromium-app-icon.sh"
 
+macos-clean:
+	find . -name ".DS_Store" -delete
+
 macos-core: macos-brew
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
@@ -12,8 +15,7 @@ macos-core: macos-brew
 macos-cli-network: macos-brew
 	brew bundle --no-lock --file 'brewfiles/cli-network.Brewfile'
 
-macos-docker: macos-brew
-	exists stow || brew install stow
+macos-docker: macos-brew macos-clean
 	brew bundle --no-lock --file 'brewfiles/docker.Brewfile'
 	stow --no-folding --target "${HOME}" 'docker'
 
@@ -25,8 +27,7 @@ macos-font: macos-brew
 macos-git: macos-brew
 	brew bundle --no-lock --file 'brewfiles/git.Brewfile'
 
-macos-gnu-cli: macos-brew
-	exists stow || brew install stow
+macos-gnu-cli: macos-brew macos-clean
 	brew bundle --no-lock --file 'brewfiles/gnu-cli.Brewfile'
 	stow --no-folding --target "${HOME}" 'gnu-cli'
 
@@ -35,21 +36,18 @@ macos-handful:
 
 macos-nano: ;
 
-macos-one-password: macos-brew
-	exists stow || brew install stow
+macos-one-password: macos-brew macos-clean
 	brew bundle --no-lock --file 'brewfiles/one-password.Brewfile'
 	stow --no-folding --target "${HOME}" 'macos-one-password'
 
-macos-service-workflow: macos-brew
-	exists stow || brew install stow
+macos-service-workflow: macos-brew macos-clean
 	stow --target "${HOME}/Library/Services" 'macos-services'
 
-macos-shellcheck: macos-brew
-	exists stow || brew install stow
+macos-shellcheck: macos-brew macos-clean
 	exists shellcheck || brew install shellcheck
 	stow --no-folding --target "${HOME}" 'shellcheck'
 
-macos-stow: macos-brew
+macos-stow: macos-brew macos-clean
 	exists stow || brew install stow
 
 macos-touch-id-sudo:
