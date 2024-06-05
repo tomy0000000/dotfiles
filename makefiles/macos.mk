@@ -37,6 +37,11 @@ macos-service-workflow: macos-brew
 	exists stow || brew install stow
 	stow --target "${HOME}/Library/Services" 'macos-services'
 
+macos-shellcheck: macos-brew
+	exists stow || brew install stow
+	exists shellcheck || brew install shellcheck
+	stow --no-folding --target "${HOME}" 'shellcheck'
+
 macos-stow: macos-brew
 	exists stow || brew install stow
 
