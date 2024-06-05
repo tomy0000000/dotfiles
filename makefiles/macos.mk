@@ -5,7 +5,7 @@ macos-chromium-app-icon: macos-brew
 	exists fileicon || brew install fileicon
 	xscript "scripts/macos-chromium-app-icon.sh"
 
-macos-core: macos-brew macos-mas
+macos-core: macos-brew
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
 
@@ -32,9 +32,6 @@ macos-gnu-cli: macos-brew
 
 macos-handful:
 	brew bundle --no-lock --file 'brewfiles/handful.Brewfile'
-
-macos-mas: macos-brew
-	exists mas || brew install mas
 
 macos-nano: ;
 
