@@ -1,0 +1,8 @@
+iproute2
+iputils-ping
+dnsutils
+netcat
+net-tools
+nmap
+telnet
+traceroute

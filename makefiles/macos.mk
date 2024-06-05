@@ -9,6 +9,9 @@ macos-core: macos-brew macos-mas
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
 
+macos-cli-network: macos-brew
+	brew bundle --no-lock --file 'brewfiles/cli-network.Brewfile'
+
 macos-font: macos-brew
 	brew bundle --no-lock --file 'brewfiles/font.Brewfile'
 

@@ -9,6 +9,7 @@ macos: macos-core
 ubuntu: ubuntu-core
 
 core: $(OS)-core
+cli-network: $(OS)-cli-network
 git: $(OS)-git
 handful: $(OS)-handful
 nano: $(OS)-nano
