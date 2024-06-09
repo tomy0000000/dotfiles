@@ -15,7 +15,7 @@ macos-core: macos-brew
 macos-cli-network: macos-brew
 	brew bundle --no-lock --file 'brewfiles/cli-network.Brewfile'
 
-macos-docker: macos-brew macos-clean
+macos-docker: macos-brew macos-stow
 	brew bundle --no-lock --file 'brewfiles/docker.Brewfile'
 	stow --no-folding --target "${HOME}" 'docker'
 
@@ -27,27 +27,27 @@ macos-font: macos-brew
 macos-git: macos-brew
 	brew bundle --no-lock --file 'brewfiles/git.Brewfile'
 
-macos-gnu-cli: macos-brew macos-clean
+macos-gnu-cli: macos-brew macos-stow
 	brew bundle --no-lock --file 'brewfiles/gnu-cli.Brewfile'
 	stow --no-folding --target "${HOME}" 'gnu-cli'
 
-macos-handful:
+macos-handful: macos-brew
 	brew bundle --no-lock --file 'brewfiles/handful.Brewfile'
 
-macos-micro: macos-brew macos-clean
+macos-micro: macos-brew macos-stow
 	brew bundle --no-lock --file 'brewfiles/micro.Brewfile'
 	stow --no-folding --target "${HOME}" 'micro'
 
 macos-nano: ;
 
-macos-one-password: macos-brew macos-clean
+macos-one-password: macos-brew macos-stow
 	brew bundle --no-lock --file 'brewfiles/one-password.Brewfile'
 	stow --no-folding --target "${HOME}" 'macos-one-password'
 
-macos-service-workflow: macos-brew macos-clean
+macos-service-workflow: macos-stow
 	stow --target "${HOME}/Library/Services" 'macos-services'
 
-macos-shellcheck: macos-brew macos-clean
+macos-shellcheck: macos-brew macos-stow
 	exists shellcheck || brew install shellcheck
 	stow --no-folding --target "${HOME}" 'shellcheck'
 
