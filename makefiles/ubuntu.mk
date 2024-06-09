@@ -25,6 +25,10 @@ ubuntu-handful:
 ubuntu-locale-zhtw:
 	xscript "scripts/debian-locale-zhtw.sh"
 
+ubuntu-micro: ubuntu-stow
+	xscript "scripts/debian-micro.sh"
+	stow --no-folding --target "${HOME}" 'micro'
+
 ubuntu-nano:
 	sudo apt-get update
 	sudo apt-get install -y nano

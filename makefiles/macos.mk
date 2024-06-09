@@ -34,6 +34,10 @@ macos-gnu-cli: macos-brew macos-clean
 macos-handful:
 	brew bundle --no-lock --file 'brewfiles/handful.Brewfile'
 
+macos-micro: macos-brew macos-clean
+	brew bundle --no-lock --file 'brewfiles/micro.Brewfile'
+	stow --no-folding --target "${HOME}" 'micro'
+
 macos-nano: ;
 
 macos-one-password: macos-brew macos-clean

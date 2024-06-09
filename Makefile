@@ -13,6 +13,7 @@ clean: $(OS)-clean
 cli-network: $(OS)-cli-network
 git: $(OS)-git
 handful: $(OS)-handful
+micro: $(OS)-micro
 nano: $(OS)-nano
 stow: $(OS)-stow
 zsh: $(OS)-zsh
@@ -21,8 +22,6 @@ ansible: stow
 	stow --no-folding --target "${HOME}" 'ansible'
 javascript: stow
 	stow --no-folding --target "${HOME}" 'javascript'
-micro: stow
-	stow --no-folding --target "${HOME}" 'micro'
 python: stow
 	stow --no-folding --target "${HOME}" 'python'
 ruby: stow

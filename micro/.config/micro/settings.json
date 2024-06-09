@@ -1,5 +1,17 @@
-
 {
-    "_docs": "https://github.com/zyedidia/micro/blob/master/runtime/help/options.md#settingsjson-file",
-    "enable-logging": false
+  "_docs": "https://github.com/zyedidia/micro/blob/master/runtime/help/options.md#settingsjson-file",
+  "tabsize": 4,
+  "tabstospaces": true,
+  "*.rb": {
+    "tabsize": 2
+  },
+  "*.js": {
+    "tabsize": 2
+  },
+  "*.json": {
+    "tabsize": 2
+  },
+  "*.ts": {
+    "tabsize": 2
+  }
 }
