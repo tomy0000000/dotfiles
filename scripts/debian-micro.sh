@@ -5,6 +5,7 @@ set -euo pipefail
 bash -c "$(curl -fsSL https://getmic.ro)"
 
 # Move micro to /usr/bin
+ls -lah
 if [ -f micro ]; then
     sudo mv micro /usr/bin/micro
 else
