@@ -18,6 +18,7 @@ antigen bundle starship # hook
 antigen bundle sudo
 antigen bundle thefuck # alias
 antigen bundle MichaelAquilina/zsh-you-should-use
+antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle atuinsh/atuin@main
