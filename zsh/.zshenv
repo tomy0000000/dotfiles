@@ -32,6 +32,8 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Third-party integrations
-for script in "${HOME}"/.zenv/*; do
-    source "${script}"
-done
+if [ -n "$(ls -A "${HOME}/.zenv")" ]; then
+    for script in "${HOME}"/.zenv/*; do
+        source "${script}"
+    done
+fi
