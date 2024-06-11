@@ -43,7 +43,5 @@ ubuntu-stow:
 ubuntu-tz-taipei:
 	xscript "scripts/debian-tz-taipei.sh"
 
-ubuntu-zsh:
-	sudo apt-get update
-	sudo apt-get install -y zsh
-	sudo chsh -s "$(which zsh)"
+ubuntu-zsh: ubuntu-stow
+	xscript "scripts/debian-zsh.sh"
