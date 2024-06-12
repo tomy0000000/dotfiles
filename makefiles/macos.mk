@@ -57,6 +57,6 @@ macos-stow: macos-brew macos-clean
 macos-touch-id-sudo:
 	xscript "scripts/macos-touch-id-sudo.sh"
 
-macos-zsh: macos-brew
+macos-zsh: macos-brew macos-stow
 	brew bundle --no-lock --file 'brewfiles/zsh.Brewfile'
 	xscript "scripts/macos-zsh.sh"

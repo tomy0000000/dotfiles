@@ -4,6 +4,10 @@
 source "/usr/local/share/antigen/antigen.zsh"
 antigen use oh-my-zsh # this implicitly runs compinit
 
+# Init bash completions
+autoload -U +X bashcompinit
+bashcompinit
+
 # Theme
 antigen theme "dracula/zsh"
 
@@ -23,6 +27,11 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle atuinsh/atuin@main
 
+# Third-party integrations
+for script in "${HOME}"/.zsh/*; do
+    source "${script}"
+done
+
 # Autoload all functions
 for func in "${HOME}"/.zfunc/*; do
     autoload -U ${func:t}
@@ -31,11 +40,6 @@ done
 # Alias
 for alias in "${HOME}"/.zalias/*; do
     source "${alias}"
-done
-
-# Third-party integrations
-for script in "${HOME}"/.zsh/*; do
-    source "${script}"
 done
 
 # Apply antigen bundles
