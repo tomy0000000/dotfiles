@@ -43,6 +43,8 @@ jobs:
       #   run: make macos-one-password
       - name: Service Workflow
         run: make macos-service-workflow
+      - name: Terminal
+        run: make macos-terminal
       - name: Touch ID sudo
         run: make macos-touch-id-sudo
 

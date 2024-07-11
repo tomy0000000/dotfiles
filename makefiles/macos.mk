@@ -58,6 +58,9 @@ macos-shellcheck: macos-brew macos-stow
 macos-stow: macos-brew macos-clean
 	exists stow || brew install stow
 
+macos-terminal: macos-brew
+	brew bundle --no-lock --file 'brewfiles/terminal.Brewfile'
+
 macos-touch-id-sudo:
 	xscript "scripts/macos-touch-id-sudo.sh"
 
