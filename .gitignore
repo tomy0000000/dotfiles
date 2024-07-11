@@ -33,3 +33,6 @@ Temporary Items
 .nova/*
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,nova
+
+# Custom
+/zsh/.zsh_history

@@ -25,6 +25,9 @@ export FPATH="${HOME}/.zfunc:${FPATH}"
 
 # Additional INFOPATHs
 
+# Zsh
+ZDOTDIR="${HOME}/.dotfiles/zsh"
+
 # Oh My Zsh library settings
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#library-settings
 HYPHEN_INSENSITIVE="true"
