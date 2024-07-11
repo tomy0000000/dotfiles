@@ -1,5 +1,4 @@
 {
-  "plugins": ["prettier-plugin-sql"],
   "overrides": [
     {
       "files": "*.code-snippets",
@@ -10,6 +9,7 @@
     {
       "files": "*.sql",
       "options": {
+        "plugins": ["prettier-plugin-sql"],
         "language": "mysql",
         "keywordCase": "upper"
       }
