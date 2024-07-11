@@ -34,6 +34,10 @@ macos-gnu-cli: macos-brew macos-stow
 macos-handful: macos-brew
 	brew bundle --no-lock --file 'brewfiles/handful.Brewfile'
 
+macos-iterm: macos-brew
+	brew bundle --no-lock --file 'brewfiles/iterm.Brewfile'
+	xscript "scripts/macos-iterm.sh"
+
 macos-micro: macos-brew macos-stow
 	brew bundle --no-lock --file 'brewfiles/micro.Brewfile'
 	stow --no-folding --target "${HOME}" 'micro'

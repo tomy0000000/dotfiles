@@ -36,6 +36,8 @@ jobs:
         run: make macos-font
       - name: GNU CLI
         run: make macos-gnu-cli
+      - name: iTerm
+        run: make macos-iterm
       # This test is skipped because mas is can't run without login on GitHub Actions.
       # - name: 1Password
       #   run: make macos-one-password
