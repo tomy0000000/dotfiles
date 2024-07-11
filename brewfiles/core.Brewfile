@@ -1,7 +1,5 @@
 tap "homebrew/aliases"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/command-not-found"
-tap "homebrew/core"
 tap "homebrew/services"
