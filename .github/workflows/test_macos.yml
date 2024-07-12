@@ -38,7 +38,7 @@ jobs:
         run: make macos-gnu-cli
       - name: iTerm
         run: make macos-iterm
-      # This test is skipped because mas is can't run without login on GitHub Actions.
+      # This test is skipped because mas can't run without login on GitHub Actions.
       # - name: 1Password
       #   run: make macos-one-password
       - name: Service Workflow
@@ -47,8 +47,9 @@ jobs:
         run: make macos-terminal
       - name: Touch ID sudo
         run: make macos-touch-id-sudo
-      - name: Xcode
-        run: make macos-xcode
+      # This test is skipped because mas can't run without login on GitHub Actions.
+      # - name: Xcode
+      #   run: make macos-xcode
 
       - name: Ansible
         run: make ansible
