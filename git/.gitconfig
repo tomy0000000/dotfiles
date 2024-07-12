@@ -9,6 +9,7 @@ current = cyan bold reverse
 local = white
 plain =
 remote = cyan
+
 [color "diff"]
 commit =
 func = cyan
@@ -18,18 +19,22 @@ meta = white
 frag = cyan bold reverse
 old = red
 new = green
+
 [color "grep"]
 context =
 filename =
-function = linenumber = white
+function =
+linenumber= white
 match =
 selected =
 separator =
+
 [color "interactive"]
 error =
 header =
 help =
 prompt =
+
 [color "status"]
 added = green
 changed = yellow
