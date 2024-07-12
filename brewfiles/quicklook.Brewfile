@@ -1,4 +1,3 @@
-tap "homebrew/cask"
 cask "qlcolorcode"
 cask "qlimagesize"
 cask "qlmarkdown"

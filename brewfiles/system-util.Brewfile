@@ -1,4 +1,3 @@
-tap "homebrew/cask"
 cask "appcleaner"
 cask "backuploupe"
 cask "bartender"
