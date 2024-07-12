@@ -64,6 +64,9 @@ macos-terminal: macos-brew
 macos-touch-id-sudo:
 	xscript "scripts/macos-touch-id-sudo.sh"
 
+macos-xcode: macos-brew
+	brew bundle --no-lock --file 'brewfiles/xcode.Brewfile'
+
 macos-zsh: macos-brew macos-stow
 	brew bundle --no-lock --file 'brewfiles/zsh.Brewfile'
 	xscript "scripts/macos-zsh.sh"

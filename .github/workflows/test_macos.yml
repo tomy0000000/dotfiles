@@ -47,6 +47,8 @@ jobs:
         run: make macos-terminal
       - name: Touch ID sudo
         run: make macos-touch-id-sudo
+      - name: Xcode
+        run: make macos-xcode
 
       - name: Ansible
         run: make ansible
