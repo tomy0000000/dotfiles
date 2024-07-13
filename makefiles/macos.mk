@@ -31,6 +31,10 @@ macos-gnu-cli: macos-brew macos-stow
 	brew bundle --no-lock --file 'brewfiles/gnu-cli.Brewfile'
 	stow --no-folding --target "${HOME}" 'gnu-cli'
 
+macos-hammerspoon: macos-brew macos-stow
+	brew bundle --no-lock --file 'brewfiles/hammerspoon.Brewfile'
+	stow --no-folding --target "${HOME}" 'hammerspoon'
+
 macos-handful: macos-brew
 	brew bundle --no-lock --file 'brewfiles/handful.Brewfile'
 
