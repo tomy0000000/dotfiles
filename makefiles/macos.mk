@@ -27,9 +27,8 @@ macos-font: macos-brew
 macos-git: macos-brew
 	brew bundle --no-lock --file 'brewfiles/git.Brewfile'
 
-macos-gnu-cli: macos-brew macos-stow
+macos-gnu-cli: macos-brew
 	brew bundle --no-lock --file 'brewfiles/gnu-cli.Brewfile'
-	stow --no-folding --target "${HOME}" 'gnu-cli'
 
 macos-hammerspoon: macos-brew macos-stow
 	brew bundle --no-lock --file 'brewfiles/hammerspoon.Brewfile'
