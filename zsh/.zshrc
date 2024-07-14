@@ -27,6 +27,9 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle atuinsh/atuin@main
 
+# Apply antigen bundles
+antigen apply
+
 # Third-party integrations
 for script in "${HOME}"/.zsh/*; do
     source "${script}"
@@ -41,6 +44,3 @@ done
 for alias in "${HOME}"/.zalias/*; do
     source "${alias}"
 done
-
-# Apply antigen bundles
-antigen apply
