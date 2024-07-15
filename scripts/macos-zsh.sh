@@ -2,12 +2,13 @@
 set -euo pipefail
 
 # Change default shell to zsh
-if [ "${SHELL}" = "/bin/zsh" ]; then
-    echo "📟 Zsh is already the default shell"
-else
-    echo "Your current shell is: ${SHELL}"
-    echo "📟 Changing default shell to zsh"
-    chsh -s "/bin/zsh"
+if [ -n "${GITHUB_ACTIONS:-}" ]; then
+    if [ "${SHELL}" != "/bin/zsh" ]; then
+        echo "📟 Changing default shell to zsh"
+        chsh -s "/bin/zsh"
+    else
+        echo "📟 Zsh is already the default shell"
+    fi
 fi
 
 # Install zsh dotfiles
