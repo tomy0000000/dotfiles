@@ -23,7 +23,14 @@ echo "Downloading script from ${URL} and saving it to ${FILENAME}..."
 curl -SsL "${URL}" >"${FILENAME}"
 chmod +x "${FILENAME}"
 
+INSTALL_PATH="/opt/iterm2/bin"
+if [ ! -d "${INSTALL_PATH}" ]; then
+    echo "Creating directory ${INSTALL_PATH}..."
+    sudo mkdir -p "${INSTALL_PATH}"
+fi
+
 for U in "${UTILITIES[@]}"; do
-    echo "Downloading $U..."
-    curl -fSsL "https://iterm2.com/utilities/$U" >"/usr/local/bin/$U" && chmod +x "/usr/local/bin/$U"
+    echo "Downloading ${U}..."
+    curl -fSsL "https://iterm2.com/utilities/${U}" >"${INSTALL_PATH}/${U}"
+    chmod +x "${INSTALL_PATH}/${U}"
 done
