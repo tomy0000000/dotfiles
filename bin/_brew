@@ -4,7 +4,10 @@ set -euo pipefail
 # This wrapper script monkey-patches the environment to ensure that Homebrew can runs smoothly
 # even if shell is not properly configured to use Homebrew.
 #
-# Just replace `brew` with `_brew` in your scripts and you are good to go.
+# Just replace `brew` with `_brew` in your scripts and double-quote all arguments.
+# e.g.
+#
+# _brew "install stow"
 
 # If brew command is available, use it
 if command -v brew &>/dev/null; then

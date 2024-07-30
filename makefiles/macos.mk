@@ -14,42 +14,42 @@ macos-core: macos-brew macos-stow macos-zsh
 	exists realpath || brew install coreutils
 
 macos-cli-network: macos-brew
-	brew bundle --no-lock --file 'brewfiles/cli-network.Brewfile'
+	brew bundle --no-lock --file brewfiles/cli-network.Brewfile
 
 macos-docker: macos-brew macos-stow
-	brew bundle --no-lock --file 'brewfiles/docker.Brewfile'
+	brew bundle --no-lock --file brewfiles/docker.Brewfile
 	stow --no-folding --target "${HOME}" 'docker'
 
 macos-font: macos-brew
-	brew bundle --no-lock --file 'brewfiles/font.Brewfile'
+	brew bundle --no-lock --file brewfiles/font.Brewfile
 
 # This is a full suite of git plugins and configurations
 # Most other target that requires git don't need this
 macos-git: macos-brew
-	brew bundle --no-lock --file 'brewfiles/git.Brewfile'
+	brew bundle --no-lock --file brewfiles/git.Brewfile
 
 macos-gnu-cli: macos-brew
-	brew bundle --no-lock --file 'brewfiles/gnu-cli.Brewfile'
+	brew bundle --no-lock --file brewfiles/gnu-cli.Brewfile
 
 macos-hammerspoon: macos-brew macos-stow
-	brew bundle --no-lock --file 'brewfiles/hammerspoon.Brewfile'
+	brew bundle --no-lock --file brewfiles/hammerspoon.Brewfile
 	stow --no-folding --target "${HOME}" 'hammerspoon'
 
 macos-handful: macos-brew
-	brew bundle --no-lock --file 'brewfiles/handful.Brewfile'
+	brew bundle --no-lock --file brewfiles/handful.Brewfile
 
 macos-iterm: macos-brew
-	brew bundle --no-lock --file 'brewfiles/iterm.Brewfile'
+	brew bundle --no-lock --file brewfiles/iterm.Brewfile
 	xscript "scripts/macos-iterm.sh"
 
 macos-micro: macos-brew macos-stow
-	brew bundle --no-lock --file 'brewfiles/micro.Brewfile'
+	brew bundle --no-lock --file brewfiles/micro.Brewfile
 	stow --no-folding --target "${HOME}" 'micro'
 
 macos-nano: ;
 
 macos-one-password: macos-brew macos-stow
-	brew bundle --no-lock --file 'brewfiles/one-password.Brewfile'
+	brew bundle --no-lock --file brewfiles/one-password.Brewfile
 	stow --no-folding --target "${HOME}" 'macos-one-password'
 
 macos-service-workflow: macos-stow
@@ -60,17 +60,17 @@ macos-shellcheck: macos-brew macos-stow
 	stow --no-folding --target "${HOME}" 'shellcheck'
 
 macos-stow: macos-brew macos-clean
-	exists stow || _brew install stow
+	exists stow || _brew "install stow"
 
 macos-terminal: macos-brew
-	brew bundle --no-lock --file 'brewfiles/terminal.Brewfile'
+	brew bundle --no-lock --file brewfiles/terminal.Brewfile
 
 macos-touch-id-sudo:
 	xscript "scripts/macos-touch-id-sudo.sh"
 
 macos-xcode: macos-brew
-	brew bundle --no-lock --file 'brewfiles/xcode.Brewfile'
+	brew bundle --no-lock --file brewfiles/xcode.Brewfile
 
 macos-zsh: macos-brew macos-stow
-	_brew bundle --no-lock --file 'brewfiles/zsh.Brewfile'
+	_brew "bundle --no-lock --file brewfiles/zsh.Brewfile"
 	xscript "scripts/macos-zsh.sh"
