@@ -80,7 +80,9 @@ function setup_user {
 
 function main {
 	# Check OS
-	if [ "$(uname)" = "Linux" ]; then
+	OS=$(uname)
+	case "${OS}" in
+	Linux)
 		distro=$(
 			. /etc/os-release
 			echo "${NAME}"
@@ -104,7 +106,19 @@ function main {
 			exit 1
 			;;
 		esac
-	fi
+		;;
+	Darwin)
+		# Check developer tools with git
+		if ! git &>/dev/null; then
+			echo "${YELLOW}Developer tools are not available, install now...${NC}"
+			xcode-select --install
+		fi
+		;;
+	*)
+		echo 'Unsupported OS'
+		exit 1
+		;;
+	esac
 
 	# Clone dotfiles
 	git clone -q 'https://github.com/tomy0000000/dotfiles.git' "${HOME}/.dotfiles"
