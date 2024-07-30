@@ -6,6 +6,7 @@ echo "🍺 Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Setup homebrew for this particular shell
+UNAME_MACHINE="$(/usr/bin/uname -m)"
 if [[ "${UNAME_MACHINE}" == "arm64" ]]; then
     # On ARM macOS, this script installs to /opt/homebrew only
     HOMEBREW_PREFIX="/opt/homebrew"
