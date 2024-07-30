@@ -27,6 +27,7 @@ INSTALL_PATH="/opt/iterm2/bin"
 if [ ! -d "${INSTALL_PATH}" ]; then
     echo "Creating directory ${INSTALL_PATH}..."
     sudo mkdir -p "${INSTALL_PATH}"
+    sudo chown -R "$(whoami)":admin "${INSTALL_PATH}"
 fi
 
 for U in "${UTILITIES[@]}"; do
