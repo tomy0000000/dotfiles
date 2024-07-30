@@ -12,7 +12,6 @@ macos-chromium-app-icon: macos-brew
 macos-clean:
 	find . -name ".DS_Store" -delete
 
-# For each target that needs brew, and immediately invokes brew, use _brew
 macos-core: macos-brew macos-stow macos-zsh
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
@@ -64,7 +63,8 @@ macos-shellcheck: macos-brew macos-stow
 	stow --no-folding --target "${HOME}" 'shellcheck'
 
 macos-stow: macos-brew macos-clean
-	exists stow || _brew "install stow"
+	$(eval BREW_BIN := $(shell bin/brew_bin))
+	exists stow || ${BREW_BIN}/brew "install stow"
 
 macos-terminal: macos-brew
 	brew bundle --no-lock --file brewfiles/terminal.Brewfile
