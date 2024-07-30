@@ -1,3 +1,6 @@
+macos-app-dev: macos-brew macos-iterm
+	brew bundle --no-lock --file brewfiles/app-dev.Brewfile
+
 macos-brew:
 	$(eval BREW_BIN := $(shell bin/brew_bin))
 	exists brew || xscript "scripts/macos-brew.sh"
