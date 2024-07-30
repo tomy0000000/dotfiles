@@ -1,7 +1,7 @@
+# exists brew || xscript "scripts/macos-brew.sh"
 macos-brew:
-	exists brew || xscript "scripts/macos-brew.sh"
 	echo "$(which brew)"
-	xscript "scripts/inject-brew.sh"
+	xscript "scripts/macos-inject-brew.sh"
 	echo "$(which brew)"
 	source "${HOME}/.zshrc" && brew update
 
