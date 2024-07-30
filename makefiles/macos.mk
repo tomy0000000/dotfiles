@@ -1,3 +1,8 @@
+macos-app-private: macos-brew macos-app-dev macos-one-password
+	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
+	brew bundle --no-lock --file brewfiles/app-private.Brewfile
+	brew bundle --no-lock --file brewfiles/app-social.Brewfile
+
 macos-app-dev: macos-brew macos-iterm
 	brew bundle --no-lock --file brewfiles/app-dev.Brewfile
 
