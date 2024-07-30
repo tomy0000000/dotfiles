@@ -1,6 +1,15 @@
 #!/bin/bash
 set -euo pipefail
 
+# This wrapper script monkey-patches the environment to ensure that Homebrew can runs smoothly
+# even if shell is not properly configured to use Homebrew.
+
+# If brew command is available, use it
+if command -v brew &>/dev/null; then
+    brew "${@}"
+    exit 0
+fi
+
 # Setup homebrew for this particular shell
 UNAME_MACHINE="$(/usr/bin/uname -m)"
 if [[ "${UNAME_MACHINE}" == "arm64" ]]; then
@@ -12,6 +21,4 @@ else
 fi
 eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 
-# Setup temporary Homebrew alias
-# shellcheck disable=SC2139
-alias brew="${HOMEBREW_PREFIX}/bin/brew"
+"${HOMEBREW_PREFIX}/bin/brew" "${@}"

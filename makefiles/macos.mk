@@ -1,9 +1,10 @@
-# exists brew || xscript "scripts/macos-brew.sh"
-# source "${HOME}/.zshrc" && brew update
+macos-test-patch-brew:
+	echo "$(which brew)"
+	PATH := bin:$(PATH)
+	echo "$(which brew)"
+
 macos-brew:
-	echo "$(which brew)"
-	source "scripts/macos-inject-brew.sh"
-	echo "$(which brew)"
+	exists brew || xscript "scripts/macos-brew.sh"
 
 macos-chromium-app-icon: macos-brew
 	exists fileicon || brew install fileicon
