@@ -15,4 +15,3 @@ fi
 
 # Install zsh dotfiles
 git clean -dfX zsh/
-stow --no-folding --target "${HOME}" zsh

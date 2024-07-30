@@ -1,5 +1,8 @@
 macos-brew:
 	exists brew || xscript "scripts/macos-brew.sh"
+	${BREW_BIN}/brew "tap homebrew/bundle"
+	${BREW_BIN}/brew bundle --no-lock --file brewfiles/core.Brewfile
+	${BREW_BIN}/stow --no-folding --target "${HOME}" macos-brew
 
 macos-chromium-app-icon: macos-brew
 	exists fileicon || brew install fileicon
@@ -72,5 +75,7 @@ macos-xcode: macos-brew
 	brew bundle --no-lock --file brewfiles/xcode.Brewfile
 
 macos-zsh: macos-brew macos-stow
-	_brew "bundle --no-lock --file brewfiles/zsh.Brewfile"
+	$(eval BREW_BIN := $(shell bin/brew_bin))
+	${BREW_BIN}/brew bundle --no-lock --file brewfiles/zsh.Brewfile
 	xscript "scripts/macos-zsh.sh"
+	${BREW_BIN}/stow --no-folding --target "${HOME}" zsh

@@ -114,7 +114,7 @@ function main {
 			xcode-select --install
 			# Wait for developer tools to be installed
 			until git --version >/dev/null 2>&1; do
-				sleep 1
+				sleep 5
 				echo "${YELLOW}Waiting for developer tools to be installed...${NC}"
 			done
 		fi
