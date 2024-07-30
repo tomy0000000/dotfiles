@@ -1,8 +1,3 @@
-macos-test-patch-brew:
-	echo "$(which brew)"
-	PATH := bin:$(PATH)
-	echo "$(which brew)"
-
 macos-brew:
 	exists brew || xscript "scripts/macos-brew.sh"
 
@@ -13,6 +8,7 @@ macos-chromium-app-icon: macos-brew
 macos-clean:
 	find . -name ".DS_Store" -delete
 
+# For each target that needs brew, and immediately invokes brew, use _brew
 macos-core: macos-brew macos-stow macos-zsh
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
@@ -64,7 +60,7 @@ macos-shellcheck: macos-brew macos-stow
 	stow --no-folding --target "${HOME}" 'shellcheck'
 
 macos-stow: macos-brew macos-clean
-	exists stow || brew install stow
+	exists stow || _brew install stow
 
 macos-terminal: macos-brew
 	brew bundle --no-lock --file 'brewfiles/terminal.Brewfile'
@@ -76,5 +72,5 @@ macos-xcode: macos-brew
 	brew bundle --no-lock --file 'brewfiles/xcode.Brewfile'
 
 macos-zsh: macos-brew macos-stow
-	brew bundle --no-lock --file 'brewfiles/zsh.Brewfile'
+	_brew bundle --no-lock --file 'brewfiles/zsh.Brewfile'
 	xscript "scripts/macos-zsh.sh"

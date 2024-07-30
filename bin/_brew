@@ -3,10 +3,13 @@ set -euo pipefail
 
 # This wrapper script monkey-patches the environment to ensure that Homebrew can runs smoothly
 # even if shell is not properly configured to use Homebrew.
+#
+# Just replace `brew` with `_brew` in your scripts and you are good to go.
 
 # If brew command is available, use it
 if command -v brew &>/dev/null; then
-    brew "${@}"
+    # shellcheck disable=SC2068
+    brew ${@}
     exit 0
 fi
 
@@ -21,4 +24,5 @@ else
 fi
 eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 
-"${HOMEBREW_PREFIX}/bin/brew" "${@}"
+# shellcheck disable=SC2068
+"${HOMEBREW_PREFIX}/bin/brew" ${@}
