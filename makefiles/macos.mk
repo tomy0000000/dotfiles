@@ -8,7 +8,7 @@ macos-chromium-app-icon: macos-brew
 macos-clean:
 	find . -name ".DS_Store" -delete
 
-macos-core: macos-brew
+macos-core: macos-brew macos-stow macos-zsh
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
 
