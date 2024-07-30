@@ -109,12 +109,12 @@ function main {
 		;;
 	Darwin)
 		# Check developer tools with git
-		if ! git &>/dev/null; then
+		if ! "$(git --version)" &>/dev/null; then
 			echo "${YELLOW}Developer tools are not available, install now...${NC}"
 			xcode-select --install
 			# Wait for developer tools to be installed
-			until git &>/dev/null; do
-				sleep 30
+			until "$(git --version)" &>/dev/null; do
+				sleep 10
 				echo "${YELLOW}Waiting for developer tools to be installed...${NC}"
 			done
 		fi
