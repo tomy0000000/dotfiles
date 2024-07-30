@@ -110,3 +110,5 @@ function main {
 	git clone -q 'https://github.com/tomy0000000/dotfiles.git' "${HOME}/.dotfiles"
 	echo "dotfiles is ready to be installed at ${GREEN}${HOME}/.dotfiles${NC}"
 }
+
+main
