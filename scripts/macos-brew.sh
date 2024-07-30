@@ -5,6 +5,20 @@ set -euo pipefail
 echo "🍺 Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+# Setup homebrew for this particular shell
+if [[ "${UNAME_MACHINE}" == "arm64" ]]; then
+    # On ARM macOS, this script installs to /opt/homebrew only
+    HOMEBREW_PREFIX="/opt/homebrew"
+else
+    # On Intel macOS, this script installs to /usr/local only
+    HOMEBREW_PREFIX="/usr/local"
+fi
+eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
+
+# Setup temporary Homebrew alias
+# shellcheck disable=SC2139
+alias brew="${HOMEBREW_PREFIX}/bin/brew"
+
 # Homebrew bundle
 brew tap homebrew/bundle
 
