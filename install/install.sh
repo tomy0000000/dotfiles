@@ -112,6 +112,11 @@ function main {
 		if ! git &>/dev/null; then
 			echo "${YELLOW}Developer tools are not available, install now...${NC}"
 			xcode-select --install
+			# Wait for developer tools to be installed
+			until git &>/dev/null; do
+				sleep 30
+				echo "${YELLOW}Waiting for developer tools to be installed...${NC}"
+			done
 		fi
 		;;
 	*)
