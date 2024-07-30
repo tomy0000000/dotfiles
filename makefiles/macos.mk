@@ -1,4 +1,5 @@
 macos-brew:
+	$(eval BREW_BIN := $(shell bin/brew_bin))
 	exists brew || xscript "scripts/macos-brew.sh"
 	${BREW_BIN}/brew "tap homebrew/bundle"
 	${BREW_BIN}/brew bundle --no-lock --file brewfiles/core.Brewfile
