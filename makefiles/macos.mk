@@ -2,11 +2,16 @@ macos-app-private: macos-brew macos-app-dev macos-one-password
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 	brew bundle --no-lock --file brewfiles/app-private.Brewfile
 	brew bundle --no-lock --file brewfiles/app-social.Brewfile
+	brew bundle --no-lock --file brewfiles/app-entertainment.Brewfile
+	brew bundle --no-lock --file brewfiles/app-productivity.Brewfile
+	brew bundle --no-lock --file brewfiles/app-utility.Brewfile
+	brew bundle --no-lock --file brewfiles/app-design.Brewfile
+	brew bundle --no-lock --file brewfiles/app-multimedia.Brewfile
 
 macos-app-work: macos-brew macos-app-dev
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 
-macos-app-dev: macos-brew macos-iterm
+macos-app-dev: macos-brew macos-iterm macos-xcode git
 	brew bundle --no-lock --file brewfiles/app-dev.Brewfile
 
 macos-brew:
@@ -35,7 +40,7 @@ macos-docker: macos-brew macos-stow
 	stow --no-folding --target "${HOME}" 'docker'
 
 macos-font: macos-brew
-	brew bundle --no-lock --file brewfiles/font.Brewfile
+	brew bundle --no-lock --file brewfiles/ext-font.Brewfile
 
 # This is a full suite of git plugins and configurations
 # Most other target that requires git don't need this
@@ -55,7 +60,7 @@ macos-handful: macos-brew
 
 macos-iterm: macos-brew
 	brew bundle --no-lock --file brewfiles/iterm.Brewfile
-	xscript "scripts/macos-iterm.sh"
+	exists imgcat || xscript "scripts/macos-iterm.sh"
 
 macos-micro: macos-brew macos-stow
 	brew bundle --no-lock --file brewfiles/micro.Brewfile

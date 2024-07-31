@@ -1,0 +1,5 @@
+cask "doppler"
+cask "iina"
+cask "screenflow"
+cask "spotify"
+cask "vlc"

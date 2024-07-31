@@ -1,2 +1,2 @@
-# cask "1password"
+# macos-one-password
 cask "dropbox"

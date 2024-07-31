@@ -1,5 +1,9 @@
-# cask "iterm2"
+# macos-iterm
+# macos-xcode
+cask "hex-fiend"
+cask "jupyter-notebook-viewer"
+cask "kaleidoscope"
+cask "postman"
 cask "sublime-text"
 cask "tower"
 cask "visual-studio-code"
-mas "Xcode", id: 497799835
