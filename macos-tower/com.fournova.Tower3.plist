@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <!-- Default directory for cloned repositories -->
+    <key>GTUserDefaultsDefaultCloningDirectory</key>
+    <string>/Users/tomyhsieh/Dropbox/Developing</string>
+    <!-- Automatically fetch remote repositories: Every 10 Minutes -->
+    <key>GTUserDefaultsAutoFetchTimeInterval</key>
+	  <integer>600</integer>
+    <!-- Always update Submodules automatically -->
+    <key>GTUserDefaultsAlwaysAutoUpdateSubmodules</key>
+    <true/>
+    <!-- Don't Warn when discarding changes in a chunk -->
+    <key>GTUserDefaultsAlwaysDiscardDiffContent</key>
+	  <true/>
+    <!-- Number of commits in history: 500 commits -->
+    <key>GTUserDefaultsNumberOfCommitsInHistory</key>
+    <integer>500</integer>
+    <!-- Diff tool: Kaleidoscope -->
+    <key>GTUserDefaultsDiffToolIdentifier</key>
+    <string>kaleidoscope</string>
+    <!-- Merge tool: Kaleidoscope -->
+    <key>GTUserDefaultsMergeToolIdentifier</key>
+    <string>kaleidoscope</string>
+    <!-- Enable Syntax Coloring -->
+    <key>GTUserDefaultsColorSyntax</key>
+    <true/>
+    <!-- Syntax Coloring in Diffs -->
+    <key>GTUserDefaultsColorSyntaxInDiffs</key>
+    <true/>
+    <!-- Show invisible characters -->
+    <key>GTUserDefaultsShowInvisibleCharacters</key>
+    <true/>
+    <!-- Tab width: 4 spaces -->
+    <key>GTUserDefaultsSpacesPerTab</key>
+    <integer>4</integer>
+    <!-- Light Themes -->
+    <key>GTUserDefaultsLightTheme</key>
+    <string>Dracula</string>
+    <!-- Dark Themes -->
+    <key>GTUserDefaultsDarkTheme</key>
+	  <string>Dracula</string>
+  </dict>
+</plist>

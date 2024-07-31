@@ -86,6 +86,10 @@ macos-stow: macos-brew macos-clean
 macos-terminal: macos-brew
 	brew bundle --no-lock --file brewfiles/terminal.Brewfile
 
+macos-tower: macos-brew
+	brew bundle --no-lock --file brewfiles/tower.Brewfile
+	xscript "scripts/macos-tower.sh"
+
 macos-touch-id-sudo:
 	xscript "scripts/macos-touch-id-sudo.sh"
 
