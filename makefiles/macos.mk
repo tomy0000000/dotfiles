@@ -39,8 +39,9 @@ macos-font: macos-brew
 
 # This is a full suite of git plugins and configurations
 # Most other target that requires git don't need this
-macos-git: macos-brew
+macos-git: macos-brew macos-stow
 	brew bundle --no-lock --file brewfiles/git.Brewfile
+	stow --no-folding --target "${HOME}" 'git'
 
 macos-gnu-cli: macos-brew
 	brew bundle --no-lock --file brewfiles/gnu-cli.Brewfile

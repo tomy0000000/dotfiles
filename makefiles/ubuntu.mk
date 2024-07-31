@@ -16,8 +16,9 @@ ubuntu-dropbox: ubuntu-essential
 ubuntu-essential: ubuntu-core ubuntu-locale-zhtw ubuntu-tz-taipei ubuntu-ssh
 	sudo apt-get install -y build-essential
 
-ubuntu-git:
+ubuntu-git: ubuntu-stow
 	xargs sudo apt-get install -y < aptfiles/git.Aptfile
+	stow --no-folding --target "${HOME}" 'git'
 
 ubuntu-handful:
 	echo "There is no handful util for ubuntu for now."
