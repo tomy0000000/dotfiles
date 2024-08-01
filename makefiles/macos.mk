@@ -39,6 +39,9 @@ macos-docker: macos-brew macos-stow
 	brew bundle --no-lock --file brewfiles/docker.Brewfile
 	stow --no-folding --target "${HOME}" 'docker'
 
+macos-finder:
+	xscript "scripts/macos-finder.sh"
+
 macos-font: macos-brew
 	brew bundle --no-lock --file brewfiles/ext-font.Brewfile
 
