@@ -21,10 +21,6 @@ macos-brew:
 	${BREW_BIN}/brew bundle --no-lock --file brewfiles/core.Brewfile
 	${BREW_BIN}/stow --no-folding --target "${HOME}" macos-brew
 
-macos-chromium-app-icon: macos-brew
-	exists fileicon || brew install fileicon
-	xscript "scripts/macos-chromium-app-icon.sh"
-
 macos-clean:
 	find . -name ".DS_Store" -delete
 
@@ -60,6 +56,10 @@ macos-hammerspoon: macos-brew macos-stow
 
 macos-handful: macos-brew
 	brew bundle --no-lock --file brewfiles/handful.Brewfile
+
+macos-icon: macos-brew
+	exists fileicon || brew install fileicon
+	xscript "scripts/macos-icons"
 
 macos-iterm: macos-brew
 	brew bundle --no-lock --file brewfiles/iterm.Brewfile

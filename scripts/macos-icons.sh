@@ -1,7 +1,13 @@
 #!/bin/bash
+set -euo pipefail
 
+ICON_DIR="${HOME}/Dropbox/Pictures/Icons/Mac Apps"
 BASE_DIR="${HOME}/Applications/"
-BROWSER_DIRS=("Chrome Apps.localized" "Brave Browser Apps.localized")
+BROWSER_DIRS=(
+    "${BASE_DIR}/Chrome Apps.localized"
+    "${BASE_DIR}/Brave Browser Apps.localized"
+    "/Applications"
+)
 
 declare -a pids
 declare -a app_paths
@@ -12,10 +18,10 @@ apply_icon() {
 }
 
 main() {
-    for icon_path in "${BASE_DIR}"/Icons/*.png; do
+    for icon_path in "${ICON_DIR}"/*.png; do
         app="$(basename "${icon_path}" .png)"
         for browser_dir in "${BROWSER_DIRS[@]}"; do
-            app_path="${BASE_DIR}/${browser_dir}/${app}.app"
+            app_path="${browser_dir}/${app}.app"
             if [ -d "${app_path}" ]; then
                 apply_icon "${app_path}" "${icon_path}" &
                 pid=$!
