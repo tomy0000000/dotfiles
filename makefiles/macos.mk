@@ -1,4 +1,4 @@
-macos-app-private: macos-brew macos-app-dev macos-one-password
+macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 	brew bundle --no-lock --file brewfiles/app-private.Brewfile
 	brew bundle --no-lock --file brewfiles/app-social.Brewfile
@@ -8,11 +8,15 @@ macos-app-private: macos-brew macos-app-dev macos-one-password
 	brew bundle --no-lock --file brewfiles/app-design.Brewfile
 	brew bundle --no-lock --file brewfiles/app-multimedia.Brewfile
 
-macos-app-work: macos-brew macos-app-dev
+macos-app-work: macos-brew macos-app-dev macos-appcleaner
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 
 macos-app-dev: macos-brew macos-iterm macos-xcode git
 	brew bundle --no-lock --file brewfiles/app-dev.Brewfile
+
+macos-appcleaner: macos-brew
+	brew bundle --no-lock --file brewfiles/appcleaner.Brewfile
+	defaults import net.freemacsoft.AppCleaner macos-appcleaner/net.freemacsoft.AppCleaner.plist
 
 macos-brew:
 	$(eval BREW_BIN := $(shell bin/brew_bin))
