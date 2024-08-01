@@ -1,4 +1,4 @@
-macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner
+macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner macos-markedit
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 	brew bundle --no-lock --file brewfiles/app-private.Brewfile
 	brew bundle --no-lock --file brewfiles/app-social.Brewfile
@@ -68,6 +68,10 @@ macos-icon: macos-brew
 macos-iterm: macos-brew
 	brew bundle --no-lock --file brewfiles/iterm.Brewfile
 	exists imgcat || xscript "scripts/macos-iterm.sh"
+
+macos-markedit: macos-brew
+	brew bundle --no-lock --file brewfiles/markedit.Brewfile
+	xscript "scripts/macos-markedit.sh"
 
 macos-micro: macos-brew macos-stow
 	brew bundle --no-lock --file brewfiles/micro.Brewfile
