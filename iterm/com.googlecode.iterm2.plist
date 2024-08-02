@@ -5,7 +5,7 @@
 	<key>Actions</key>
 	<array/>
 	<key>AlternateMouseScroll</key>
-	<false/>
+	<true/>
 	<key>AutoCommandHistory</key>
 	<false/>
 	<key>BootstrapDaemon</key>

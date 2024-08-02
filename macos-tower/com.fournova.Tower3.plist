@@ -31,7 +31,7 @@
     <true/>
     <!-- Show invisible characters -->
     <key>GTUserDefaultsShowInvisibleCharacters</key>
-    <true/>
+    <false/>
     <!-- Tab width: 4 spaces -->
     <key>GTUserDefaultsSpacesPerTab</key>
     <integer>4</integer>
