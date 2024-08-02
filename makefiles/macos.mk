@@ -28,6 +28,10 @@ macos-brew:
 macos-clean:
 	find . -name ".DS_Store" -delete
 
+macos-cleanshot: macos-brew
+	brew bundle --no-lock --file brewfiles/cleanshot.Brewfile
+	xscript "scripts/macos-cleanshot.sh"
+
 macos-core: macos-brew macos-stow macos-zsh
 	echo "🖥 Operating System: macOS"
 	exists realpath || brew install coreutils
