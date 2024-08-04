@@ -1,3 +1,4 @@
 cask "alfred"
-cask "appcleaner"
 cask "brave-browser"
+cask "popclip"
+# macos-appcleaner

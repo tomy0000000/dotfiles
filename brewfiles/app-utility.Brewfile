@@ -1,7 +1,6 @@
-# macos-alfred
 cask "appcleaner"
 cask "bartender"
 cask "hazel"
-cask "popclip"
+cask "pearcleaner"
 cask "rectangle-pro"
 cask "uninstallpkg"

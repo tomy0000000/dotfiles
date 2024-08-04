@@ -1,0 +1,7 @@
+brew "autojump"
+brew "chroma"
+brew "direnv"
+brew "thefuck"
+brew "trash-cli"
+brew "watch"
+brew "fileicon"

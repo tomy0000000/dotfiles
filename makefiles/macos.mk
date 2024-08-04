@@ -1,12 +1,11 @@
 macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner macos-markedit
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 	brew bundle --no-lock --file brewfiles/app-private.Brewfile
-	brew bundle --no-lock --file brewfiles/app-social.Brewfile
-	brew bundle --no-lock --file brewfiles/app-entertainment.Brewfile
-	brew bundle --no-lock --file brewfiles/app-productivity.Brewfile
-	brew bundle --no-lock --file brewfiles/app-utility.Brewfile
 	brew bundle --no-lock --file brewfiles/app-design.Brewfile
 	brew bundle --no-lock --file brewfiles/app-multimedia.Brewfile
+	brew bundle --no-lock --file brewfiles/app-productivity.Brewfile
+	brew bundle --no-lock --file brewfiles/app-social.Brewfile
+	brew bundle --no-lock --file brewfiles/app-utility.Brewfile
 
 macos-app-work: macos-brew macos-app-dev macos-appcleaner
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
@@ -33,8 +32,6 @@ macos-cleanshot: macos-brew
 	xscript "scripts/macos-cleanshot.sh"
 
 macos-core: macos-brew macos-stow macos-zsh
-	echo "🖥 Operating System: macOS"
-	exists realpath || brew install coreutils
 
 macos-cli-network: macos-brew
 	brew bundle --no-lock --file brewfiles/cli-network.Brewfile
@@ -54,9 +51,6 @@ macos-font: macos-brew
 macos-git: macos-brew macos-stow
 	brew bundle --no-lock --file brewfiles/git.Brewfile
 	stow --no-folding --target "${HOME}" 'git'
-
-macos-gnu-cli: macos-brew
-	brew bundle --no-lock --file brewfiles/gnu-cli.Brewfile
 
 macos-hammerspoon: macos-brew macos-stow
 	brew bundle --no-lock --file brewfiles/hammerspoon.Brewfile
@@ -101,7 +95,7 @@ macos-stow: macos-brew macos-clean
 macos-terminal: macos-brew
 	brew bundle --no-lock --file brewfiles/terminal.Brewfile
 
-macos-tower: macos-brew
+macos-tower: macos-brew macos-git
 	brew bundle --no-lock --file brewfiles/tower.Brewfile
 	xscript "scripts/macos-tower.sh"
 
