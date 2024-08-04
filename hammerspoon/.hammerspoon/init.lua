@@ -1,3 +1,6 @@
+-- Credits:
+-- https://github.com/zzamboni/dot-hammerspoon/blob/master/init.lua
+
 -- Print timestamp for debugging
 print("Loading init.lua at " .. os.date("%Y-%m-%d %H:%M:%S"))
 
@@ -15,17 +18,11 @@ spoon.ReloadConfiguration.watch_paths = { hs.configdir, "~/.dotfiles/hammerspoon
 spoon.ReloadConfiguration:start()
 
 -- Auto switch input method
-require('AutoIME')
+require('auto_ime')
 
---- Type clipboard content
-hs.hotkey.bind({ "control" }, "v", function()
-    hs.eventtap.keyStrokes(hs.pasteboard.getContents())
-end)
+-- Hotkeys
+require('hotkeys')
 
---- Shutdown Hotkey
-hs.hotkey.bind({ "control", "option" }, "f12", function()
-    hs.execute("shutdown -h now")
-end)
-hs.hotkey.bind({ "control", "option" }, "end", function()
-    hs.execute("shutdown -h now")
-end)
+-- Menu tasks
+require('menu_tasks')
+
