@@ -34,8 +34,6 @@ jobs:
         run: make macos-chromium-app-icon
       - name: Font
         run: make macos-font
-      - name: GNU CLI
-        run: make macos-gnu-cli
       - name: HammerSpoon
         run: make macos-hammerspoon
       - name: iTerm
