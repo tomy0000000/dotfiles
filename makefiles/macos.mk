@@ -1,4 +1,4 @@
-macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner macos-markedit
+macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner macos-alfred macos-markedit
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 	brew bundle --no-lock --file brewfiles/app-private.Brewfile
 	brew bundle --no-lock --file brewfiles/app-design.Brewfile
@@ -7,11 +7,15 @@ macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner 
 	brew bundle --no-lock --file brewfiles/app-social.Brewfile
 	brew bundle --no-lock --file brewfiles/app-utility.Brewfile
 
-macos-app-work: macos-brew macos-app-dev macos-appcleaner
+macos-app-work: macos-brew macos-app-dev macos-appcleaner macos-alfred
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 
 macos-app-dev: macos-brew macos-iterm macos-xcode git
 	brew bundle --no-lock --file brewfiles/app-dev.Brewfile
+
+macos-alfred: macos-brew
+	brew bundle --no-lock --file brewfiles/alfred.Brewfile
+	xscript "scripts/macos-alfred.sh"
 
 macos-appcleaner: macos-brew
 	brew bundle --no-lock --file brewfiles/appcleaner.Brewfile
