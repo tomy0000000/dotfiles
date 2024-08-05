@@ -15,8 +15,9 @@ jobs:
 
       - name: Network CLI
         run: make cli-network
-      - name: git
-        run: make git
+      # CI machine contains existed .gitconfig file
+      # - name: git
+      #   run: make git
       - name: handful
         run: make handful
       - name: Micro
