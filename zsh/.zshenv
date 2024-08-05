@@ -16,6 +16,7 @@ export EDITOR="/usr/local/bin/subl" # Sublime Text
 export TERM="xterm-256color"
 
 # Additional PATHs
+export PATH="/opt/iterm2/bin:${PATH}"            # iTerm2 utilities
 export PATH="/usr/local/opt/openjdk/bin:${PATH}" # java
 
 # Additional FPATHs

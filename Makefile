@@ -1,6 +1,7 @@
 SHELL = /bin/bash
 OS := $(shell bin/distro)
 PATH := bin:$(PATH)
+ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 .PHONY: clean git macos-brew
 

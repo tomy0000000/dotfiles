@@ -35,5 +35,7 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/macos,nova
 
 # Custom
+/zsh/.zcompdump
 /zsh/.zsh_history
 /zsh/.zsh_sessions
+/zsh/.zshrc.zwc

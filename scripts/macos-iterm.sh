@@ -13,7 +13,7 @@ defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 #
 # Main differences
 # 1. source .iterm2_shell_integration.zsh in iterm.zsh instead of .zshrc
-# 2. Install utilites to /usr/local/bin instead of ~/.iterm2
+# 2. Install utilites to /opt/iterm2/bin instead of ~/.iterm2
 SHELL=${SHELL##*/}
 FILENAME="${HOME}/.iterm2_shell_integration.${SHELL}"
 URL="https://iterm2.com/shell_integration/zsh"
