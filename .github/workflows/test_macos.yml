@@ -31,8 +31,8 @@ jobs:
 
       - name: Homebrew
         run: make macos-brew
-      - name: Chromium App Icon
-        run: make macos-chromium-app-icon
+      - name: Icon
+        run: make macos-icon
       - name: Font
         run: make macos-font
       - name: HammerSpoon
