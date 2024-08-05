@@ -65,7 +65,7 @@ macos-handful: macos-brew
 
 macos-icon: macos-brew
 	exists fileicon || brew install fileicon
-	xscript "scripts/macos-icons"
+	xscript "scripts/macos-icons.sh"
 
 macos-iterm: macos-brew
 	brew bundle --no-lock --file brewfiles/iterm.Brewfile
