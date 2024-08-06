@@ -1,0 +1,18 @@
+// https://www.sublimetext.com/docs/key_bindings.html#command-key
+[
+  {
+    "command": "swap_line_up",
+    "keys": ["alt+up"]
+  },
+  {
+    "command": "swap_line_down",
+    "keys": ["alt+down"]
+  },
+  {
+    "args": {
+      "setting": "word_wrap"
+    },
+    "command": "toggle_setting",
+    "keys": ["alt+z"]
+  }
+]

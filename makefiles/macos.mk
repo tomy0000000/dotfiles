@@ -96,6 +96,12 @@ macos-stow: macos-brew macos-clean
 	$(eval BREW_BIN := $(shell bin/brew_bin))
 	exists stow || ${BREW_BIN}/brew install stow
 
+macos-sublime: macos-brew macos-stow
+	brew bundle --no-lock --file brewfiles/sublime.Brewfile
+	xscript "scripts/macos-sublime.sh"
+	stow --no-folding --target "${HOME}/Library/Application Support/Sublime Text" 'sublime'
+	stow --no-folding --dir 'private' --target "${HOME}/Library/Application Support/Sublime Text" 'sublime'
+
 macos-terminal: macos-brew
 	brew bundle --no-lock --file brewfiles/terminal.Brewfile
 

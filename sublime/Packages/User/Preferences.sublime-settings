@@ -1,0 +1,16 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+  "color_scheme": "auto",
+  "dark_color_scheme": "Packages/Dracula Pro/Dracula Pro.tmTheme",
+  "dark_theme": "Adaptive.sublime-theme",
+  "font_size": 15,
+  "ignored_packages": ["Vintage"],
+  "index_files": true,
+  "light_color_scheme": "Packages/Dracula Pro/Dracula Pro (Alucard).tmTheme",
+  "light_theme": "Adaptive.sublime-theme",
+  "native_tabs": "disabled",
+  "tab_size": 4,
+  "theme": "Adaptive.sublime-theme",
+  "translate_tabs_to_spaces": true
+}
