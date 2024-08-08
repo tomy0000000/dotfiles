@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Antigen
-source "${HOMEBREW_PREFIX}/share/antigen/antigen.zsh"
+source "${HOMEBREW_PREFIX:-/usr/local}/share/antigen/antigen.zsh"
 antigen use oh-my-zsh # this implicitly runs compinit
 
 # Init bash completions
