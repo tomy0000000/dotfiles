@@ -1,6 +1,13 @@
 --- Type clipboard content
 hs.hotkey.bind({ "control" }, "v", function()
-    hs.eventtap.keyStrokes(hs.pasteboard.getContents())
+    for _, c in utf8.codes(hs.pasteboard.getContents()) do
+        local char = utf8.char(c)
+        if char == "\n" then
+            hs.eventtap.keyStroke({}, "return")
+        else
+            hs.eventtap.keyStrokes(char)
+        end
+    end
 end)
 
 --- Shutdown Hotkey
