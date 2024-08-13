@@ -47,8 +47,9 @@ macos-docker: macos-brew macos-stow
 macos-finder:
 	xscript "scripts/macos-finder.sh"
 
-macos-font: macos-brew
+macos-font: macos-brew macos-stow
 	brew bundle --no-lock --file brewfiles/ext-font.Brewfile
+	cp -r macos-font/collection/ "${HOME}/Library/FontCollections"
 
 # This is a full suite of git plugins and configurations
 # Most other target that requires git don't need this
