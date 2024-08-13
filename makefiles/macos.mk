@@ -81,9 +81,8 @@ macos-micro: macos-brew macos-stow
 
 macos-nano: ;
 
-macos-one-password: macos-brew macos-stow
+macos-one-password: macos-brew
 	brew bundle --no-lock --file brewfiles/one-password.Brewfile
-	stow --no-folding --target "${HOME}" 'macos-one-password'
 
 macos-service-workflow: macos-stow
 	stow --target "${HOME}/Library/Services" 'macos-services'
