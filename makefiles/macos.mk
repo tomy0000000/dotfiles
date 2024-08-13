@@ -40,9 +40,8 @@ macos-core: macos-brew macos-stow macos-zsh
 macos-cli-network: macos-brew
 	brew bundle --no-lock --file brewfiles/cli-network.Brewfile
 
-macos-docker: macos-brew macos-stow
+macos-docker: macos-brew
 	brew bundle --no-lock --file brewfiles/docker.Brewfile
-	stow --no-folding --target "${HOME}" 'docker'
 
 macos-finder:
 	xscript "scripts/macos-finder.sh"
