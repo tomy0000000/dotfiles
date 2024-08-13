@@ -25,7 +25,5 @@ javascript: stow
 	stow --no-folding --target "${HOME}" 'javascript'
 python: stow
 	stow --no-folding --target "${HOME}" 'python'
-ruby: stow
-	stow --no-folding --target "${HOME}" 'ruby'
 
 include makefiles/*.mk
