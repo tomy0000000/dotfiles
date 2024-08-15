@@ -10,7 +10,7 @@ macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner 
 macos-app-work: macos-brew macos-app-dev macos-appcleaner macos-alfred macos-popclip
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 
-macos-app-dev: macos-brew macos-iterm macos-xcode git
+macos-app-dev: git macos-brew macos-iterm macos-sublime macos-terminal macos-xcode
 	brew bundle --no-lock --file brewfiles/app-dev.Brewfile
 
 macos-alfred: macos-brew
