@@ -18,7 +18,6 @@ ubuntu-essential: ubuntu-core ubuntu-locale-zhtw ubuntu-tz-taipei ubuntu-ssh
 
 ubuntu-git: ubuntu-stow
 	xargs sudo apt-get install -y < aptfiles/git.Aptfile
-	stow --no-folding --target "${HOME}" 'git'
 
 ubuntu-handful:
 	echo "There is no handful util for ubuntu for now."
@@ -28,7 +27,6 @@ ubuntu-locale-zhtw:
 
 ubuntu-micro: ubuntu-stow
 	xscript "scripts/debian-micro.sh"
-	stow --no-folding --target "${HOME}" 'micro'
 
 ubuntu-nano:
 	sudo apt-get update

@@ -54,7 +54,6 @@ macos-font: macos-brew macos-stow
 # Most other target that requires git don't need this
 macos-git: macos-brew macos-stow
 	brew bundle --no-lock --file brewfiles/git.Brewfile
-	stow --no-folding --target "${HOME}" 'git'
 
 macos-hammerspoon: macos-brew macos-stow
 	brew bundle --no-lock --file brewfiles/hammerspoon.Brewfile
@@ -77,7 +76,6 @@ macos-markedit: macos-brew
 
 macos-micro: macos-brew macos-stow
 	brew bundle --no-lock --file brewfiles/micro.Brewfile
-	stow --no-folding --target "${HOME}" 'micro'
 
 macos-nano: ;
 

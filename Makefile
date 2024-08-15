@@ -12,13 +12,15 @@ ubuntu: ubuntu-core
 core: $(OS)-core
 clean: $(OS)-clean
 cli-network: $(OS)-cli-network
-git: $(OS)-git
 handful: $(OS)-handful
-micro: $(OS)-micro
 nano: $(OS)-nano
 stow: $(OS)-stow
 zsh: $(OS)-zsh
 
+git: $(OS)-git
+	stow --no-folding --target "${HOME}" 'git'
+micro: $(OS)-micro
+	stow --no-folding --target "${HOME}" 'micro'
 ansible: stow
 	stow --no-folding --target "${HOME}" 'ansible'
 javascript: stow
