@@ -1,4 +1,4 @@
-macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner macos-alfred macos-markedit
+macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner macos-alfred macos-popclip macos-markedit
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 	brew bundle --no-lock --file brewfiles/app-private.Brewfile
 	brew bundle --no-lock --file brewfiles/app-design.Brewfile
@@ -7,7 +7,7 @@ macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner 
 	brew bundle --no-lock --file brewfiles/app-social.Brewfile
 	brew bundle --no-lock --file brewfiles/app-utility.Brewfile
 
-macos-app-work: macos-brew macos-app-dev macos-appcleaner macos-alfred
+macos-app-work: macos-brew macos-app-dev macos-appcleaner macos-alfred macos-popclip
 	brew bundle --no-lock --file brewfiles/app-essential.Brewfile
 
 macos-app-dev: macos-brew macos-iterm macos-xcode git
@@ -83,6 +83,10 @@ macos-nano: ;
 
 macos-one-password: macos-brew
 	brew bundle --no-lock --file brewfiles/one-password.Brewfile
+
+macos-popclip: macos-brew
+	brew bundle --no-lock --file brewfiles/popclip.Brewfile
+	xscript "scripts/macos-popclip.sh"
 
 macos-service-workflow: macos-stow
 	stow --target "${HOME}/Library/Services" 'macos-services'
