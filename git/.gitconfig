@@ -7,13 +7,13 @@ ui = "auto"
 [color "branch"]
 current = cyan bold reverse
 local = white
-plain =
+# plain =
 remote = cyan
 
 [color "diff"]
-commit =
+# commit =
 func = cyan
-plain =
+# plain =
 whitespace = magenta reverse
 meta = white
 frag = cyan bold reverse
@@ -21,26 +21,26 @@ old = red
 new = green
 
 [color "grep"]
-context =
-filename =
-function =
-linenumber= white
-match =
-selected =
-separator =
+# context =
+# filename =
+# function =
+linenumber = white
+# match =
+# selected =
+# separator =
 
 [color "interactive"]
-error =
-header =
-help =
-prompt =
+# error =
+# header =
+# help =
+# prompt =
 
 [color "status"]
 added = green
 changed = yellow
-header =
-localBranch =
-nobranch =
+# header =
+# localBranch =
+# nobranch =
 remoteBranch = cyan bold
 unmerged = magenta bold reverse
 untracked = red

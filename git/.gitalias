@@ -1,128 +1,89 @@
 [alias]
-d = "diff"
+
+### Simple alias ###
+
+###############################################################################
+# Snippets                                                                    #
+###############################################################################b = "branch"
+c = "checkout"
+cf = "config"
+cl = "clone"
 f = "fetch"
-m = "merge"
-s = "status --short --branch"
+l = "log"
+p = "pull"
+ps = "push"
+s = "stash --include-untracked" # Default to include untracked files
 w = "whatchanged"
 
-head = "log -n1"
-history = "log --oneline --date-order --reverse --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
-load = "stash apply"
-pop = "stash pop"
-save = "stash push"
-tower = !"gittower ."
-unadd = "reset HEAD" # put staged back to unstaged
-uncommit = "reset --soft HEAD~1"
-unstage = "reset HEAD" # put staged back to unstaged
-discard = "checkout --" # discard changes
-cleanout = !"git clean -df && git checkout -- ." # discard changes and remove untracked
+###############################################################################
+# Snippets                                                                    #
+###############################################################################
 
-### add ###
-a = "add"
-a-a = "add --all --ignore-removal" # New, Modified
-a-ar = "add --all" # New, Modified, Deletion
-a-u = "add --update" # Modified, Deletion
-a-p = "add --patch"
-
-### branch ###
-b = "branch"
-b-m = "branch --merged"
-b-nm = "branch --no-merged"
-
-### checkout ###
-o = "checkout"
-
-### clone ###
-cl = "clone"
-cl-r = "clone --recursive"
-
-### commit ###
-c = "commit"
-c-i = "commit --interactive"
-c-m = "commit --message"
-amend = "commit --amend"
-amd = "commit --amend"
-amd-m = "commit --amend --date=\"$(git log -n 1 --format=%aD)\"" # edit message without changing date
-amd-d = !"git commit --amend --no-edit --date=\"$(date '+%s %z')\"" # update timestamp without changing message
-amd-cpd = !"GIT_COMMITTER_DATE="$(git log -1 --format=%aD)" git commit --amend --no-edit" # copy author date to commit date
-
-### config ###
-cf = "config"
-cf-e = !"git config --edit --file ${HOME}/.gitconfig-custom"
-cf-l = "config --list"
-cf-ll = "config --list --show-scope"
-cf-lll = "config --list --show-scope --show-origin"
-
-### grep ###
-g = "grep --break --heading"
-g-all = !"f() { git rev-list --all | xargs git grep \"$@\"; }; f"
-g-ack = \
-    -c color.grep.linenumber=\"bold yellow\" \
-    -c color.grep.filename=\"bold green\" \
-    -c color.grep.match=\"reverse yellow\" \
-    grep --break --heading
-
-### log ###
-l = "log"
-l-g = "log --graph --topo-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
-l-ls = "log --oneline --date-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
-l-p = "log --patch"
-
-### ls-files ###
-ls = "ls-files --exclude-standard"
-ls-new = "ls-files --others --exclude-standard" # Untracked
-ls-untracked = "ls-files --others --exclude-standard" # New
-ls-modified = "ls-files --modified --exclude-standard" # Tracked and modified
-ls-stagable = "ls-files --modified --others --exclude-standard" # Untracked + modified
-ls-ignored = "ls-files --ignored --others --exclude-standard" # Ignored by .gitignore
-
-### pull ###
-p = "pull"
-
-### push ###
-ps = "push"
-ps-a = "!git remote | xargs -I% -n1 git push %" # Push to all remotes
-ps-f = "push --force-with-lease"
-ps-ff = "push --force"
-
-### rebase ###
-rb = "rebase"
-rb-a = "rebase --abort"
-rb-c = "rebase --continue"
-rb-s = "rebase --skip"
-rb-i = "rebase --interactive"
-
-### reflog ###
-rl = "reflog"
-
-### remote ###
-r = "remote"
-r-ls = "remote -v"
-
-### stash ###
-st = "stash"
-st-l = "stash list"
-st-s = "stash show"
-st-p = "stash pop"
-
-### submodule ###
-sm = "submodule"
-sm-u = "submodule update --init"
-sm-ur = "submodule update --init --recursive"
-
-### functions ###
-
-# Last tag in current branch
-lasttag = describe --tags --abbrev=0
-# Last tag in all branches
-lasttagged = !git describe --tags `git rev-list --tags --max-count=1`
-
-# fixup = "commit --amend --no-edit"
-# fixup = "!f() { TARGET=$(git rev-parse "${1:-HEAD}"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
+# Get the main branch name
+# https://stackoverflow.com/a/67672350/10325430
+main-branch = !"git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4"
 
 # Generate .gitignore file
 # https://docs.gitignore.io/install/command-line
 gen-ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
 
-# Show branches sort by date
-refs-by-date = "for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'"
+###############################################################################
+# Commands                                                                    #
+###############################################################################
+
+### add ###
+# !Dont't alias, Prefer GUI
+
+### branch ###
+b-d = "branch -d" # Delete branch
+b-m = "branch -m" # Rename branch
+
+### commit ###
+# !Dont't alias, Prefer GUI
+
+### checkout ###
+c-b = "checkout -b"                  # Create and checkout new branch
+c-m = !"git checkout $(main-branch)" # Checkout main/master branch
+
+### config ###
+
+### clone ###
+cl-r = "clone --recursive"
+
+### diff ###
+
+### fetch ###
+
+### grep ###
+
+### log ###
+l-g = "log --graph --topo-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
+l-ls = "log --oneline --date-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
+
+### merge ###
+
+### pull ###
+
+### push ###
+ps-f = "push --force-with-lease"
+ps-ff = "push --force"
+
+### rebase ###
+rb-m = !"git rebase $(main-branch)" # Rebase with main/master branch
+rb-i = "rebase --interactive"
+
+### remote ###
+
+### reset ###
+
+### stash ###
+s-l = "stash list"
+s-a = "stash apply"
+s-p = "stash pop"
+
+### status ###
+# !Dont't alias, Prefer GUI
+
+### tag ###
+
+### whatchanged ###
