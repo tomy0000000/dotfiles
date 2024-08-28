@@ -86,6 +86,9 @@ macos-popclip: macos-brew
 	brew bundle --no-lock --file brewfiles/popclip.Brewfile
 	xscript "scripts/macos-popclip.sh"
 
+macos-screensaver: macos-brew
+	brew bundle --no-lock --file brewfiles/ext-screensaver.Brewfile
+
 macos-service-workflow: macos-stow
 	stow --target "${HOME}/Library/Services" 'macos-services'
 
