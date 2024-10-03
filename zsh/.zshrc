@@ -13,7 +13,6 @@ antigen theme "dracula/zsh"
 
 # Plugins
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
-antigen bundle autojump
 antigen bundle colored-man-pages
 antigen bundle colorize # ccat, cless
 antigen bundle direnv   # hook
