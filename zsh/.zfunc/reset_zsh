@@ -1,5 +1,7 @@
 #!/bin/zsh
 
-rm -f ~/.zcompdump
+rm -f "${HOME}/.zcompdump*"
+rm -f "${HOME}/.antigen/init.zsh"
+rm -f "${HOME}/.antigen/init.zsh.zwc"
 antigen reset
 compinit
