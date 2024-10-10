@@ -19,7 +19,6 @@ antigen bundle direnv   # hook
 antigen bundle macos    # commands
 antigen bundle starship # hook
 antigen bundle sudo
-antigen bundle thefuck # alias
 antigen bundle MichaelAquilina/zsh-you-should-use
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
