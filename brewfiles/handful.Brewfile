@@ -1,2 +1,2 @@
 cask "alfred"
-cask "hookshot"
+cask "rectangle-pro"
