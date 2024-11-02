@@ -19,5 +19,5 @@ if [ -f "${PRE_BREW_PREFIX}/bin/brew" ]; then
     export FPATH="${HOMEBREW_PREFIX}/share/zsh-completions:${FPATH}"    # zsh-completions
 
     # In favor of homebrew-autoupdate
-    export HOMEBREW_NO_AUTO_UPDATETE="1"
+    export HOMEBREW_NO_AUTO_UPDATE=true
 fi
