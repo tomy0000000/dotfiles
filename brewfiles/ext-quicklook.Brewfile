@@ -1,6 +1,6 @@
-cask "qlcolorcode"
-cask "qlimagesize"
-cask "qlmarkdown"
-cask "qlstephen"
-cask "quicklook-json"
-cask "quicklookase"
+cask "apparency" # App
+cask "betterzip" # Zip
+cask "qlmarkdown" # Markdown
+cask "qlvideo" # .asf, .avi, .flv, .mkv, .rm, .webm, .wmf
+cask "suspicious-package" # Pkg
+cask "syntax-highlight" # Source code

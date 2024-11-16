@@ -86,6 +86,9 @@ macos-popclip: macos-brew
 	brew bundle --no-lock --file brewfiles/popclip.Brewfile
 	xscript "scripts/macos-popclip.sh"
 
+macos-quicklook: macos-brew
+	brew bundle --no-lock --file brewfiles/ext-quicklook.Brewfile
+
 macos-screensaver: macos-brew
 	brew bundle --no-lock --file brewfiles/ext-screensaver.Brewfile
 
