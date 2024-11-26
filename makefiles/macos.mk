@@ -70,6 +70,9 @@ macos-iterm: macos-brew
 	brew bundle --no-lock --file brewfiles/iterm.Brewfile
 	exists imgcat || xscript "scripts/macos-iterm.sh"
 
+macos-javascript: macos-brew
+	brew bundle --no-lock --file brewfiles/javascript.Brewfile
+
 macos-markedit: macos-brew
 	brew bundle --no-lock --file brewfiles/markedit.Brewfile
 	xscript "scripts/macos-markedit.sh"
