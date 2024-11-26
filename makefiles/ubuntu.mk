@@ -20,7 +20,10 @@ ubuntu-git: ubuntu-stow
 	xargs sudo apt-get install -y < aptfiles/git.Aptfile
 
 ubuntu-handful:
-	echo "There is no handful util for ubuntu for now."
+	echo "NOT IMPLEMENTED!"
+
+ubuntu-javascript:
+	echo "NOT IMPLEMENTED!"
 
 ubuntu-locale-zhtw:
 	xscript "scripts/debian-locale-zhtw.sh"
