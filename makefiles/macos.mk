@@ -82,6 +82,10 @@ macos-nano: ;
 macos-one-password: macos-brew
 	brew bundle --no-lock --file brewfiles/one-password.Brewfile
 
+macos-perl:
+	stow --no-folding --target "${HOME}" 'perl'
+	xscript "scripts/macos-perl.sh"
+
 macos-popclip: macos-brew
 	brew bundle --no-lock --file brewfiles/popclip.Brewfile
 	xscript "scripts/macos-popclip.sh"
