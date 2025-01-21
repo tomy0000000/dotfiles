@@ -72,6 +72,7 @@ macos-iterm: macos-brew
 
 macos-javascript: macos-brew
 	brew bundle --no-lock --file brewfiles/javascript.Brewfile
+	echo "Installed node with `pnpm env add --global lts`"
 
 macos-markedit: macos-brew
 	brew bundle --no-lock --file brewfiles/markedit.Brewfile

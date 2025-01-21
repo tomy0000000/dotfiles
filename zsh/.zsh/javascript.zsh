@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-# nodenv hook
-if command -v nodenv 1>/dev/null 2>&1; then
-    eval "$(nodenv init - zsh)"
+# pnpm
+if command -v pnpm &>/dev/null; then
+    export PNPM_HOME="${HOME}/Library/pnpm"
+    export PATH="${PNPM_HOME}:${PATH}"
 fi
