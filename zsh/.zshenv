@@ -6,11 +6,15 @@ export LANG="zh_TW.UTF-8"   # Chinese (Taiwan)
 export LC_ALL="en_US.UTF-8" # English
 
 # Editor
-export EDITOR="/usr/local/bin/subl" # Sublime Text
-# export EDITOR="/usr/bin/nano"       # nano
+export EDITOR="subl" # Sublime Text
+# export EDITOR="code"  # VS Code
+# export EDITOR="micro" # micro
+# export EDITOR="nano"  # nano
+# export EDITOR="vim"   # vim
 
 # Pager
 # export PAGER="less"
+# export PAGER="delta"
 
 # Terminal
 export TERM="xterm-256color"
