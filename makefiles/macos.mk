@@ -27,6 +27,7 @@ macos-brew:
 	${BREW_BIN}/brew tap homebrew/bundle
 	${BREW_BIN}/brew bundle --no-lock --file brewfiles/core.Brewfile
 	${BREW_BIN}/stow --no-folding --target "${HOME}" macos-brew
+	${BREW_BIN}/brew autoupdate start
 
 macos-clean:
 	find . -name ".DS_Store" -delete
