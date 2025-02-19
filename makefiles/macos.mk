@@ -41,6 +41,9 @@ macos-app-dev: git macos-brew macos-iterm macos-sublime macos-terminal macos-xco
 macos-cli-network: macos-brew
 	brew bundle --no-lock --file brewfiles/cli-network.Brewfile
 
+macos-cli-useful: macos-brew
+	brew bundle --no-lock --file brewfiles/cli-useful.Brewfile
+
 ###############################################################################
 # Apps                                                                        #
 ###############################################################################
