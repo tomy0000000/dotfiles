@@ -158,5 +158,8 @@ macos-screensaver: macos-brew
 macos-service-workflow: macos-stow
 	stow --target "${HOME}/Library/Services" 'macos-services'
 
+macos-settings:
+	xscript "scripts/macos-settings.sh"
+
 macos-touch-id-sudo:
 	xscript "scripts/macos-touch-id-sudo.sh"
