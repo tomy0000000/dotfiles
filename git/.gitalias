@@ -1,23 +1,24 @@
 [alias]
 
-### Simple alias ###
-
 ###############################################################################
-# Snippets                                                                    #
-###############################################################################b = "branch"
-c = "checkout"
-cf = "config"
-cl = "clone"
-f = "fetch"
-l = "log"
-p = "pull"
-ps = "push"
-s = "stash --include-untracked" # Default to include untracked files
-w = "whatchanged"
+# Apps                                                                        #
+###############################################################################
+
+tower = !"gittower ."
 
 ###############################################################################
 # Snippets                                                                    #
 ###############################################################################
+
+# Give up changes made
+discard = "checkout --"
+
+# Tear down the most recent commit and keep changes
+uncommit = "reset --soft HEAD~1"
+
+# Touch the last commit to update the timestamp
+# but not changing the commit
+touch = !"git commit --amend --no-edit --date=\"$(date '+%s %z')\""
 
 # Get the main branch name
 # https://stackoverflow.com/a/67672350/10325430
@@ -32,39 +33,61 @@ gen-ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$
 ###############################################################################
 
 ### add ###
-# !Dont't alias, Prefer GUI
+#! Favor GUI
+
+### apply ###
+
+### bisect ###
+
+### blame ###
 
 ### branch ###
-b-d = "branch -d" # Delete branch
+b = "branch"
+b-d = "branch -D" # Delete branch without confirmation
 b-m = "branch -m" # Rename branch
 
 ### commit ###
-# !Dont't alias, Prefer GUI
+#! Favor GUI
 
 ### checkout ###
-c-b = "checkout -b"                  # Create and checkout new branch
-c-m = !"git checkout $(main-branch)" # Checkout main/master branch
+c = "checkout"
+c-b = "checkout -b"                      # Create and checkout new branch
+c-m = !"git checkout $(git main-branch)" # Checkout main/master branch
 
-### config ###
+### cherry-pick ###
+#! Favor GUI
+
+### clean ###
 
 ### clone ###
-cl-r = "clone --recursive"
+#! Favor Copy-and-Paste
+
+### config ###
+cf = "config"
+
+### describe ###
 
 ### diff ###
+d = "diff"
 
 ### fetch ###
+f = "fetch"
 
 ### grep ###
 
 ### log ###
+l = "log"
 l-g = "log --graph --topo-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
 l-ls = "log --oneline --date-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
 
 ### merge ###
+m = "merge"
 
 ### pull ###
+p = "pull"
 
 ### push ###
+ps = "push"
 ps-f = "push --force-with-lease"
 ps-ff = "push --force"
 
@@ -76,14 +99,21 @@ rb-i = "rebase --interactive"
 
 ### reset ###
 
+### revert ###
+
+### rm ###
+#! Favor delete-and-add
+
 ### stash ###
+s = "stash --include-untracked" # Default to include untracked files
 s-l = "stash list"
 s-a = "stash apply"
 s-p = "stash pop"
 
 ### status ###
-# !Dont't alias, Prefer GUI
+#! Favor GUI
 
 ### tag ###
 
 ### whatchanged ###
+w = "whatchanged"
