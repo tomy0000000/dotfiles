@@ -1,4 +1,3 @@
-cask "appcleaner"
 cask "bartender"
 cask "hazel"
 cask "pearcleaner"

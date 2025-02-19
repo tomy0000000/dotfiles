@@ -12,5 +12,7 @@ brew "gnu-tar" # tar
 brew "grep" # grep, fgrep, egrep
 brew "make" # make
 brew "moreutils" # sponge, errno
+brew "rename"
 brew "stow" # stow
+brew "tree"
 brew "wget"
