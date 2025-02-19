@@ -34,9 +34,6 @@ macos-app-work: macos-brew macos-app-dev macos-appcleaner macos-alfred macos-pop
 macos-app-dev: git macos-brew macos-iterm macos-sublime macos-terminal macos-xcode
 	brew bundle --no-lock --file brewfiles/app-dev.Brewfile
 
-macos-handful: macos-brew
-	brew bundle --no-lock --file brewfiles/handful.Brewfile
-
 ###############################################################################
 # CLI Suite                                                                   #
 ###############################################################################
