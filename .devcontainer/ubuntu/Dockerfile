@@ -7,4 +7,10 @@ WORKDIR /workspace
 COPY . .
 
 # Install default targets
-CMD ["make"]
+RUN make
+
+# Install Shell
+RUN make ubuntu-zsh
+
+# Start shell
+CMD ["zsh"]
