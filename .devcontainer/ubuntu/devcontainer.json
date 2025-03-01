@@ -1,0 +1,7 @@
+{
+  "name": "Ubuntu",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "make"
+}
