@@ -26,4 +26,5 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 sudo chsh -s "$(which zsh)" "$(whoami)"
 
 # Install zsh dotfiles
-stow --no-folding --target "${HOME}" zsh
+stow --dir=zsh --no-folding --target "${HOME}/.config" .config
+ln -s .dotfiles/zsh/.zshenv "${HOME}/.zshenv"

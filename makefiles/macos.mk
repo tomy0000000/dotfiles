@@ -10,7 +10,9 @@ macos-brew:
 	${BREW_BIN}/brew tap homebrew/bundle
 	${BREW_BIN}/brew bundle --no-lock --file brewfiles/core.Brewfile
 	${BREW_BIN}/stow --no-folding --target "${HOME}" macos-brew
-	${BREW_BIN}/brew autoupdate start
+	@if ${BREW_BIN}/brew autoupdate status | grep -q "stopped"; then \
+		${BREW_BIN}/brew autoupdate start; \
+	fi
 
 macos-clean:
 	find . -name ".DS_Store" -delete
@@ -127,7 +129,9 @@ macos-zsh: macos-brew macos-stow
 	$(eval BREW_BIN := $(shell bin/brew_bin))
 	${BREW_BIN}/brew bundle --no-lock --file brewfiles/zsh.Brewfile
 	xscript "scripts/macos-zsh.sh"
-	${BREW_BIN}/stow --no-folding --target "${HOME}" zsh
+	mkdir -p .config
+	${BREW_BIN}/stow --dir=zsh --no-folding --target "${HOME}/.config" .config
+	ln -s .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
 
 ###############################################################################
 # Dev                                                                         #
