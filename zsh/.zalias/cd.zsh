@@ -1,9 +1,10 @@
 #!/bin/zsh
 
-alias ...='../..'
-alias ....='../../..'
-alias .....='../../../..'
-alias ......='../../../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 alias 1='cd -'
 alias 2='cd -2'
 alias 3='cd -3'
