@@ -29,16 +29,16 @@ antigen bundle atuinsh/atuin@main
 antigen apply
 
 # Third-party integrations
-for script in "${HOME}"/.dotfiles/zsh/.zsh/*; do
+for script in "${ZDOTDIR}"/.zsh/*; do
     source "${script}"
 done
 
 # Autoload all functions
-for func in "${HOME}"/.dotfiles/zsh/.zfunc/*; do
+for func in "${ZDOTDIR}"/.zfunc/*; do
     autoload -U ${func:t}
 done
 
 # Alias
-for alias in "${HOME}"/.dotfiles/zsh/.zalias/*; do
+for alias in "${ZDOTDIR}"/.zalias/*; do
     source "${alias}"
 done
