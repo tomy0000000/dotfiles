@@ -20,3 +20,12 @@ end)
 hs.hotkey.bind({ "control", "option", "command" }, "end", function()
     hs.caffeinate.shutdownSystem()
 end)
+
+-- Spotify Copy
+hs.hotkey.bind({ "ctrl" }, "C", function()
+    local app = hs.application.get("Spotify")
+    if app and app:isFrontmost() then
+        local scriptPath = hs.configdir .. "/scripts/spotify_copy.scpt"
+        hs.task.new("/usr/bin/osascript", nil, { scriptPath }):start()
+    end
+end)
