@@ -1,4 +1,4 @@
 #!/bin/zsh
 
 # rbenv hook
-antigen bundle rbenv
+zinit snippet OMZP::rbenv
