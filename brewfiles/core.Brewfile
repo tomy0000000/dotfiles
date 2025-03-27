@@ -1,4 +1,3 @@
-tap "homebrew/aliases"
 tap "homebrew/autoupdate"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
