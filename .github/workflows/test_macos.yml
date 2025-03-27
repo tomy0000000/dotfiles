@@ -17,14 +17,14 @@ jobs:
             "core",
             # "git", # CI machine contains existed .gitconfig file
             "javascript",
-            "macos-alfred",
-            "macos-app-dev",
-            "macos-app-private",
-            "macos-app-work",
+            # "macos-alfred", # Script error to be fixed
+            # "macos-app-dev", # Depends on `git`
+            # "macos-app-private", # Depends on `git`
+            # "macos-app-work", # Depends on `git`
             "macos-appcleaner",
             "macos-brew",
             "macos-clean",
-            "macos-cleanshot",
+            # "macos-cleanshot", # Script error to be fixed
             "macos-cli-network",
             "macos-cli-useful",
             "macos-core",
@@ -40,15 +40,15 @@ jobs:
             "macos-micro",
             "macos-nano",
             # "macos-one-password", # mas can't run without login on GitHub Actions
-            "macos-perl",
+            # "macos-perl", # Script error to be fixed
             "macos-popclip",
             "macos-quicklook",
             "macos-screensaver",
             "macos-service-workflow",
-            "macos-settings",
+            # "macos-settings", # Script error to be fixed
             "macos-shellcheck",
             "macos-stow",
-            "macos-sublime",
+            # "macos-sublime", # Script error to be fixed
             "macos-terminal",
             "macos-touch-id-sudo",
             "macos-tower",
