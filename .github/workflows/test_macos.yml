@@ -16,7 +16,6 @@ jobs:
             "cli-network",
             "core",
             # "git", # CI machine contains existed .gitconfig file
-            "handful",
             "javascript",
             "macos-alfred",
             "macos-app-dev",

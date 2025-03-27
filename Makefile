@@ -12,7 +12,6 @@ ubuntu: ubuntu-core
 core: $(OS)-core
 clean: $(OS)-clean
 cli-network: $(OS)-cli-network
-handful: $(OS)-handful
 nano: $(OS)-nano
 stow: $(OS)-stow
 zsh: $(OS)-zsh
