@@ -11,7 +11,7 @@ set -euo pipefail
 # References:
 # https://github.com/mathiasbynens/dotfiles/issues/820#issuecomment-498324762
 echo "This script require Full Disk Access enabled for Terminal..."
-echo "Please add this terminal (${TERM_PROGRAM}) to the list in"
+echo "Please add this terminal (${TERM_PROGRAM:-}) to the list in"
 echo "System Preferences > Privacy & Security > Privacy > Full Disk Access"
 echo ""
 echo "If you have already done this, press any key to continue..."
