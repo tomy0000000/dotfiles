@@ -4,9 +4,11 @@
   "useTabs": false,
   "semi": false,
   "singleQuote": false,
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true,
-  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "plugins": [
+    "/Users/tomyhsieh/Library/pnpm/global/5/node_modules/prettier-plugin-sql/lib/index.cjs",
+    "/Users/tomyhsieh/Library/pnpm/global/5/node_modules/prettier-plugin-sort-json/dist/index.js",
+    "/Users/tomyhsieh/Library/pnpm/global/5/node_modules/prettier-plugin-organize-imports/index.js"
+  ],
   "overrides": [
     {
       "files": "*.code-snippets",
@@ -17,8 +19,8 @@
     {
       "files": "*.sql",
       "options": {
-        "plugins": ["prettier-plugin-sql"],
-        "language": "mysql",
+        "plugins": [],
+        "language": "postgresql",
         "keywordCase": "upper"
       }
     }
