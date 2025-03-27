@@ -1,6 +1,5 @@
 tap "homebrew/aliases"
 tap "homebrew/autoupdate"
-tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 brew "coreutils" # ls, cp, mv, etc.
