@@ -10,42 +10,30 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, ubuntu-22.04, ubuntu-latest]
+        os: [ubuntu-20.04, ubuntu-22.04, ubuntu-24.04, ubuntu-latest]
+        features:
+          [
+            "ansible",
+            "clean",
+            "cli-network",
+            "core",
+            "git",
+            "handful",
+            "javascript",
+            "micro",
+            "nano",
+            "python",
+            "stow",
+            "ubuntu-dropbox",
+            "ubuntu-essential",
+            "ubuntu-locale-zhtw",
+            "ubuntu-ssh",
+            "ubuntu-tz-taipei",
+            "zsh",
+          ]
     steps:
-      - uses: actions/checkout@v4
+      - name: 🛒 Checkout
+        uses: actions/checkout@v4
 
-      - name: All (core)
-        run: make
-
-      - name: Network CLI
-        run: make cli-network
-      - name: git
-        run: make git
-      - name: handful
-        run: make handful
-      - name: Micro
-        run: make micro
-      - name: nano
-        run: make nano
-      - name: stow
-        run: make stow
-      - name: Zsh
-        run: make zsh
-
-      - name: Dropbox
-        run: make ubuntu-dropbox
-      - name: Essential
-        run: make ubuntu-essential
-      - name: Locale (Taiwan)
-        run: make ubuntu-locale-zhtw
-      - name: SSH
-        run: make ubuntu-ssh
-      - name: Timezone (Taipei)
-        run: make ubuntu-tz-taipei
-
-      - name: Ansible
-        run: make ansible
-      - name: JavaScript
-        run: make javascript
-      - name: Python
-        run: make python
+      - name: 🧪 Test "${{ matrix.features }}"
+        run: make ${{ matrix.features }}
