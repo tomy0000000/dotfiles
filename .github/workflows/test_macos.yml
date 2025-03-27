@@ -7,54 +7,68 @@ on:
 jobs:
   macOS:
     runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        features: [
+            "ansible",
+            "clean",
+            "cli-network",
+            "core",
+            # "git", # CI machine contains existed .gitconfig file
+            "handful",
+            "javascript",
+            "macos-alfred",
+            "macos-app-dev",
+            "macos-app-private",
+            "macos-app-work",
+            "macos-appcleaner",
+            "macos-brew",
+            "macos-clean",
+            "macos-cleanshot",
+            "macos-cli-network",
+            "macos-cli-useful",
+            "macos-core",
+            "macos-docker",
+            "macos-finder",
+            "macos-font",
+            "macos-git",
+            "macos-hammerspoon",
+            "macos-icon",
+            "macos-iterm",
+            "macos-javascript",
+            "macos-markedit",
+            "macos-micro",
+            "macos-nano",
+            # "macos-one-password", # mas can't run without login on GitHub Actions
+            "macos-perl",
+            "macos-popclip",
+            "macos-quicklook",
+            "macos-screensaver",
+            "macos-service-workflow",
+            "macos-settings",
+            "macos-shellcheck",
+            "macos-stow",
+            "macos-sublime",
+            "macos-terminal",
+            "macos-touch-id-sudo",
+            "macos-tower",
+            # "macos-xcode", # mas can't run without login on GitHub Actions
+            "macos-zsh",
+            "micro",
+            "nano",
+            "python",
+            "stow",
+            "ubuntu-dropbox",
+            "ubuntu-essential",
+            "ubuntu-locale-zhtw",
+            "ubuntu-ssh",
+            "ubuntu-tz-taipei",
+            "zsh",
+          ]
     steps:
-      - uses: actions/checkout@v4
+      - name: 🛒 Checkout
+        uses: actions/checkout@v4
 
-      - name: All (core)
-        run: make
-
-      - name: Network CLI
-        run: make cli-network
-      # CI machine contains existed .gitconfig file
-      # - name: git
-      #   run: make git
-      - name: handful
-        run: make handful
-      - name: Micro
-        run: make micro
-      - name: nano
-        run: make nano
-      - name: stow
-        run: make stow
-      - name: Zsh
-        run: make zsh
-
-      - name: Homebrew
-        run: make macos-brew
-      - name: Icon
-        run: make macos-icon
-      - name: Font
-        run: make macos-font
-      - name: HammerSpoon
-        run: make macos-hammerspoon
-      - name: iTerm
-        run: make macos-iterm
-      # This test is skipped because mas can't run without login on GitHub Actions.
-      # - name: 1Password
-      #   run: make macos-one-password
-      - name: Service Workflow
-        run: make macos-service-workflow
-      - name: Terminal
-        run: make macos-terminal
-      - name: Touch ID sudo
-        run: make macos-touch-id-sudo
-      # This test is skipped because mas can't run without login on GitHub Actions.
-      # - name: Xcode
-      #   run: make macos-xcode
-
-      - name: Ansible
-        run: make ansible
-      - name: JavaScript
-        run: make javascript
-      - name: Python
-        run: make python
+      - name: 🧪 Test "${{ matrix.features }}"
+        run: make ${{ matrix.features }}
