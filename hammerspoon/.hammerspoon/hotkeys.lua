@@ -22,10 +22,17 @@ hs.hotkey.bind({ "control", "option", "command" }, "end", function()
 end)
 
 -- Spotify Copy
-hs.hotkey.bind({ "ctrl" }, "C", function()
-    local app = hs.application.get("Spotify")
-    if app and app:isFrontmost() then
+local spotifyHotkey
+
+spotifyHotkey = hs.hotkey.bind({ "ctrl" }, "c", function()
+    local app = hs.application.frontmostApplication()
+    if app and app:name() == "Spotify" then
         local scriptPath = hs.configdir .. "/scripts/spotify_copy.scpt"
         hs.task.new("/usr/bin/osascript", nil, { scriptPath }):start()
+    else
+        -- Dispatch to other app by temporarily disable to avoid self-trigger
+        spotifyHotkey:disable()
+        hs.eventtap.keyStroke({ "ctrl" }, "c")
+        spotifyHotkey:enable()
     end
 end)
