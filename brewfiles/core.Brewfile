@@ -1,6 +1,5 @@
 tap "homebrew/autoupdate"
 tap "homebrew/command-not-found"
-tap "homebrew/services"
 brew "coreutils" # ls, cp, mv, etc.
 brew "curl"
 brew "findutils"
