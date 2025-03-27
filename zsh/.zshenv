@@ -2,6 +2,7 @@
 
 # Zsh
 ZDOTDIR="${HOME}/.dotfiles/zsh"
+ZIM_HOME="${HOME}/.zim"
 
 # Language
 export LANG="en_US.UTF-8"   # English

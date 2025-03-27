@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+# Plugins
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+zmodule ohmyzsh/ohmyzsh --root plugins/colored-man-pages
+zmodule ohmyzsh/ohmyzsh --root plugins/colorize          # ccat, cless
+zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found # homebrew-command-not-found hook
+zmodule ohmyzsh/ohmyzsh --root plugins/direnv            # hook
+zmodule ohmyzsh/ohmyzsh --root plugins/macos             # commands
+zmodule ohmyzsh/ohmyzsh --root plugins/rbenv             # hook
+zmodule ohmyzsh/ohmyzsh --root plugins/pip               # completions
+zmodule ohmyzsh/ohmyzsh --root plugins/starship          # hook
+zmodule ohmyzsh/ohmyzsh --root plugins/sudo
+
+zmodule MichaelAquilina/zsh-you-should-use
+zmodule zsh-users/zsh-completions
+
+# zmodule completion
+
+zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-syntax-highlighting
