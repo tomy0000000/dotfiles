@@ -6,7 +6,7 @@ xattr -d -r com.apple.quarantine /Applications/PopClip.app
 
 # Open PopClip
 # so that macOS later knows this app can open .popclipextz file
-open -a PopClip
+open /Applications/PopClip.app
 
 # List of PopClip extensions to install
 # https://www.popclip.app/extensions/
