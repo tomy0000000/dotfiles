@@ -108,10 +108,10 @@ macos-docker: macos-brew
 
 # This is a full suite of git plugins and configurations
 # Most other target that requires git don't need this
-macos-git: macos-brew macos-stow
+macos-git: macos-brew
 	brew bundle --file brewfiles/git.Brewfile
 
-macos-micro: macos-brew macos-stow
+macos-micro: macos-brew
 	brew bundle --file brewfiles/micro.Brewfile
 
 macos-nano: ;
@@ -140,7 +140,7 @@ macos-javascript: macos-brew
 	brew bundle --file brewfiles/javascript.Brewfile
 	echo "Installed node with `pnpm env add --global lts`"
 
-macos-perl:
+macos-perl: macos-stow
 	stow --no-folding --target "${HOME}" 'perl'
 	xscript "scripts/macos-perl.sh"
 
@@ -148,7 +148,7 @@ macos-perl:
 # Misc                                                                        #
 ###############################################################################
 
-macos-font: macos-brew macos-stow
+macos-font: macos-brew
 	brew bundle --file brewfiles/ext-font.Brewfile
 	cp -r macos-font/collection/ "${HOME}/Library/FontCollections"
 
