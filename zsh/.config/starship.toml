@@ -1,11 +1,40 @@
+# https://starship.rs/config/
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Inserts a blank line between shell prompts
 add_newline = true
 
+# Use the color palette
+palette = "dracula"
+
+# Define Dracula color palette
+[palettes.dracula]
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
+
 [aws]
+style = "bold orange"
 disabled = true
+
+[character]
+error_symbol = "[λ](bold red)"
+success_symbol = "[λ](bold green)"
+
+[cmd_duration]
+style = "bold yellow"
+
+[directory]
+style = "bold green"
 
 [docker_context]
 disabled = true
@@ -13,9 +42,20 @@ disabled = true
 [gcloud]
 disabled = true
 
+[git_branch]
+style = "bold pink"
+
+[git_status]
+style = "bold red"
+
+[hostname]
+style = "bold purple"
+
 [time]
 disabled = false
-format = '🕙 [\[ $time \]]($style) '
+format = '[$time]($style) '
 time_format = '%T'
-utc_time_offset = '-5'
-# time_range = '10:00:00-14:00:00'
+
+[username]
+format = "[$user]($style) on "
+style_user = "bold cyan"
