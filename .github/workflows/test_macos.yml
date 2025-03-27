@@ -58,11 +58,6 @@ jobs:
             "nano",
             "python",
             "stow",
-            "ubuntu-dropbox",
-            "ubuntu-essential",
-            "ubuntu-locale-zhtw",
-            "ubuntu-ssh",
-            "ubuntu-tz-taipei",
             "zsh",
           ]
     steps:
