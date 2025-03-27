@@ -1,8 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-# Install Dracula theme for Tower
 FILE_PATH="${HOME}/Library/Application Support/com.fournova.Tower3/Themes/Dracula.towertheme"
+
+# Create parent directory
+mkdir -p "$(dirname "$FILE_PATH")"
+
+# Install Dracula theme for Tower
 curl -fsSL 'https://raw.githubusercontent.com/dracula/tower/master/Dracula.towertheme' >"${FILE_PATH}"
 
 # Apply settings
