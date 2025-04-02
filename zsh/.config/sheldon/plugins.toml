@@ -1,0 +1,31 @@
+shell = "zsh"
+apply = ["source"]
+
+# Plugins
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+[plugins.oh-my-zsh]
+github = "ohmyzsh/ohmyzsh"
+use = [
+    "plugins/colored-man-pages/*.plugin.zsh",
+    "plugins/colorize/*.plugin.zsh",          # ccat, cless
+    "plugins/command-not-found/*.plugin.zsh", # hook
+    "plugins/direnv/*.plugin.zsh",            # hook
+    "plugins/macos/*.plugin.zsh",             # commands
+    "plugins/pip/*.plugin.zsh",               # completions
+    "plugins/rbenv/*.plugin.zsh",             # hook
+    "plugins/starship/*.plugin.zsh",          # hook
+    "plugins/sudo/*.plugin.zsh",
+]
+
+[plugins.zsh-you-should-use]
+github = "MichaelAquilina/zsh-you-should-use"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
