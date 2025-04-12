@@ -6,11 +6,4 @@ compaudit | xargs chown "${USER}"
 
 # Remove cached files
 rm -f "${HOME}/.zcompdump*"
-rm -f "${HOME}/.antigen/init.zsh"
-rm -f "${HOME}/.antigen/init.zsh.zwc"
-
-# Reset antigen
-antigen reset
-
-# Reinitialize completions
-compinit
+rm -rf "${HOME}/.local/share/zinit"
