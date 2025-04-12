@@ -1,5 +1,14 @@
 #!/bin/zsh
 
+# Zinit
+if [[ -n "${HOMEBREW_PREFIX}" ]]; then
+    source "${HOMEBREW_PREFIX}/opt/zinit/zinit.zsh"
+elif [[ -n "${XDG_DATA_HOME}" ]]; then
+    source "${XDG_DATA_HOME}/zinit/zinit.zsh"
+else
+    source "${HOME}/.local/share/zinit/zinit.zsh"
+fi
+
 # Init zsh completions
 autoload -Uz compinit
 compinit
@@ -7,9 +16,6 @@ compinit
 # Init bash completions
 autoload -Uz bashcompinit
 bashcompinit
-
-# Zinit
-source "${HOMEBREW_PREFIX:-/usr/local}/opt/zinit/zinit.zsh"
 
 # Library
 zinit snippet OMZL::git.zsh
