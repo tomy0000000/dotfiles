@@ -20,15 +20,18 @@ bashcompinit
 # Library
 zinit snippet OMZL::git.zsh
 
+# Hotfix
+zinit snippet ${ZDOTDIR}/.zsh/fix_omz_plugin.zsh
+
 # Plugins
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::colorize # ccat, cless
 zinit snippet OMZP::direnv   # hook
 zinit snippet OMZP::kubectl  # completion
-zinit snippet OMZP::macos    # commands
 zinit snippet OMZP::starship # hook
 zinit snippet OMZP::sudo
+zinit lucid wait atpull"%atclone" atclone"_fix-omz-plugin" for OMZP::macos # commands
 zinit light MichaelAquilina/zsh-you-should-use
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
