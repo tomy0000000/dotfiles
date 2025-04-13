@@ -38,9 +38,19 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
 # Third-party integrations
-for script in "${ZDOTDIR}"/.zsh/*; do
-    source "${script}"
-done
+zinit snippet ${ZDOTDIR}/.zsh/autojump.zsh
+zinit snippet ${ZDOTDIR}/.zsh/az.zsh
+zinit snippet ${ZDOTDIR}/.zsh/brew.zsh
+zinit snippet ${ZDOTDIR}/.zsh/docker.zsh
+zinit snippet ${ZDOTDIR}/.zsh/go.zsh
+zinit snippet ${ZDOTDIR}/.zsh/iterm.zsh
+zinit snippet ${ZDOTDIR}/.zsh/javascript.zsh
+zinit snippet ${ZDOTDIR}/.zsh/macos-one-password.zsh
+zinit snippet ${ZDOTDIR}/.zsh/perl.zsh
+zinit snippet ${ZDOTDIR}/.zsh/python.zsh
+zinit snippet ${ZDOTDIR}/.zsh/ruby.zsh
+zinit snippet ${ZDOTDIR}/.zsh/thefuck.zsh
+zinit snippet ${ZDOTDIR}/.zsh/zsh-style.zsh
 
 # Autoload all functions
 for func in "${ZDOTDIR}"/.zfunc/*; do
@@ -48,6 +58,13 @@ for func in "${ZDOTDIR}"/.zfunc/*; do
 done
 
 # Alias
-for alias in "${ZDOTDIR}"/.zalias/*; do
-    source "${alias}"
-done
+zinit snippet ${ZDOTDIR}/.zalias/replacement.zsh
+zinit snippet ${ZDOTDIR}/.zalias/cd.zsh
+zinit snippet ${ZDOTDIR}/.zalias/configs.zsh
+zinit snippet ${ZDOTDIR}/.zalias/docker.zsh
+zinit snippet ${ZDOTDIR}/.zalias/editors.zsh
+zinit snippet ${ZDOTDIR}/.zalias/kubectl.zsh
+zinit snippet ${ZDOTDIR}/.zalias/ls.zsh
+zinit snippet ${ZDOTDIR}/.zalias/npm.zsh
+zinit snippet ${ZDOTDIR}/.zalias/pip.zsh
+zinit snippet ${ZDOTDIR}/.zalias/xattr.zsh
