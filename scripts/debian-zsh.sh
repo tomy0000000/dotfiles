@@ -4,7 +4,7 @@ set -euo pipefail
 # Install Zsh
 echo "Installing Zsh..."
 sudo apt-get update
-sudo apt-get install -y zsh
+sudo apt-get install -y file zsh
 
 # Install Zinit
 echo "Installing Zinit..."

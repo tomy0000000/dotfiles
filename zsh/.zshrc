@@ -20,6 +20,9 @@ bashcompinit
 # Library
 zinit snippet OMZL::git.zsh
 
+# Tools
+zinit snippet ${ZDOTDIR}/tools/direnv.zsh
+
 # Hotfix
 zinit snippet ${ZDOTDIR}/.zsh/fix_omz_plugin.zsh
 
@@ -27,7 +30,6 @@ zinit snippet ${ZDOTDIR}/.zsh/fix_omz_plugin.zsh
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::colorize # ccat, cless
-zinit snippet OMZP::direnv   # hook
 zinit snippet OMZP::kubectl  # completion
 zinit snippet OMZP::starship # hook
 zinit snippet OMZP::sudo
