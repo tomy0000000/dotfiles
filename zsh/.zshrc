@@ -41,16 +41,20 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit snippet ${ZDOTDIR}/.zsh/autojump.zsh
 zinit snippet ${ZDOTDIR}/.zsh/az.zsh
 zinit snippet ${ZDOTDIR}/.zsh/brew.zsh
-zinit snippet ${ZDOTDIR}/.zsh/docker.zsh
 zinit snippet ${ZDOTDIR}/.zsh/go.zsh
 zinit snippet ${ZDOTDIR}/.zsh/iterm.zsh
 zinit snippet ${ZDOTDIR}/.zsh/javascript.zsh
-zinit snippet ${ZDOTDIR}/.zsh/macos-one-password.zsh
 zinit snippet ${ZDOTDIR}/.zsh/perl.zsh
 zinit snippet ${ZDOTDIR}/.zsh/python.zsh
 zinit snippet ${ZDOTDIR}/.zsh/ruby.zsh
 zinit snippet ${ZDOTDIR}/.zsh/thefuck.zsh
 zinit snippet ${ZDOTDIR}/.zsh/zsh-style.zsh
+
+# Completions
+zinit snippet ${ZDOTDIR}/completion/docker.zsh
+zinit snippet ${ZDOTDIR}/completion/kubectl.zsh
+zinit snippet ${ZDOTDIR}/completion/op.zsh
+zinit snippet ${ZDOTDIR}/completion/poetry.zsh
 
 # Autoload all functions
 for func in "${ZDOTDIR}"/.zfunc/*; do
