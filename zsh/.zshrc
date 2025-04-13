@@ -22,6 +22,7 @@ zinit snippet OMZL::git.zsh
 
 # Tools
 zinit snippet ${ZDOTDIR}/tools/direnv.zsh
+zinit snippet ${ZDOTDIR}/tools/starship.zsh
 
 # Hotfix
 zinit snippet ${ZDOTDIR}/.zsh/fix_omz_plugin.zsh
@@ -31,7 +32,6 @@ zinit snippet ${ZDOTDIR}/.zsh/fix_omz_plugin.zsh
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::colorize # ccat, cless
 zinit snippet OMZP::kubectl  # completion
-zinit snippet OMZP::starship # hook
 zinit snippet OMZP::sudo
 zinit lucid wait atpull"%atclone" atclone"_fix-omz-plugin" for OMZP::macos # commands
 zinit light MichaelAquilina/zsh-you-should-use
