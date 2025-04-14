@@ -3,6 +3,16 @@
 # Zsh
 ZDOTDIR="${HOME}/.dotfiles/zsh"
 
+# XDG Base Directory
+# https://specifications.freedesktop.org/basedir-spec/latest/
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_STATE_HOME="${HOME}/.local/state"
+# export XDG_DATA_DIRS=""
+# export XDG_CONFIG_DIRS=""
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_RUNTIME_DIR="${HOME}/.local/run"
+
 # Language
 export LANG="en_US.UTF-8"   # English
 export LANG="zh_TW.UTF-8"   # Chinese (Taiwan)

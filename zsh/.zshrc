@@ -1,37 +1,62 @@
 #!/bin/zsh
 
-# Antigen
-source "${HOMEBREW_PREFIX:-/usr/local}/share/antigen/antigen.zsh"
-antigen use oh-my-zsh # this implicitly runs compinit
+# Zinit
+if [[ -n "${HOMEBREW_PREFIX}" ]]; then
+    source "${HOMEBREW_PREFIX}/opt/zinit/zinit.zsh"
+elif [[ -n "${XDG_DATA_HOME}" ]]; then
+    source "${XDG_DATA_HOME}/zinit/zinit.zsh"
+else
+    source "${HOME}/.local/share/zinit/zinit.zsh"
+fi
+
+# Init zsh completions
+autoload -Uz compinit
+compinit
 
 # Init bash completions
-autoload -U +X bashcompinit
+autoload -Uz bashcompinit
 bashcompinit
 
-# Theme
-antigen theme "dracula/zsh"
+# Library
+zinit snippet OMZL::git.zsh
+
+# Tools
+zinit snippet ${ZDOTDIR}/tools/direnv.zsh
+zinit snippet ${ZDOTDIR}/tools/starship.zsh
+
+# Hotfix
+zinit snippet ${ZDOTDIR}/.zsh/fix_omz_plugin.zsh
 
 # Plugins
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
-antigen bundle colored-man-pages
-antigen bundle colorize # ccat, cless
-antigen bundle direnv   # hook
-antigen bundle macos    # commands
-antigen bundle starship # hook
-antigen bundle sudo
-antigen bundle MichaelAquilina/zsh-you-should-use
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle atuinsh/atuin@main
-
-# Apply antigen bundles
-antigen apply
+zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::colorize # ccat, cless
+zinit snippet OMZP::kubectl  # completion
+zinit snippet OMZP::sudo
+zinit lucid wait atpull"%atclone" atclone"_fix-omz-plugin" for OMZP::macos # commands
+zinit light MichaelAquilina/zsh-you-should-use
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
 
 # Third-party integrations
-for script in "${ZDOTDIR}"/.zsh/*; do
-    source "${script}"
-done
+zinit snippet ${ZDOTDIR}/.zsh/autojump.zsh
+zinit snippet ${ZDOTDIR}/.zsh/az.zsh
+zinit snippet ${ZDOTDIR}/.zsh/brew.zsh
+zinit snippet ${ZDOTDIR}/.zsh/go.zsh
+zinit snippet ${ZDOTDIR}/.zsh/iterm.zsh
+zinit snippet ${ZDOTDIR}/.zsh/javascript.zsh
+zinit snippet ${ZDOTDIR}/.zsh/perl.zsh
+zinit snippet ${ZDOTDIR}/.zsh/python.zsh
+zinit snippet ${ZDOTDIR}/.zsh/ruby.zsh
+zinit snippet ${ZDOTDIR}/.zsh/thefuck.zsh
+zinit snippet ${ZDOTDIR}/.zsh/zsh-style.zsh
+
+# Completions
+zinit snippet ${ZDOTDIR}/completion/docker.zsh
+zinit snippet ${ZDOTDIR}/completion/kubectl.zsh
+zinit snippet ${ZDOTDIR}/completion/op.zsh
+zinit snippet ${ZDOTDIR}/completion/poetry.zsh
 
 # Autoload all functions
 for func in "${ZDOTDIR}"/.zfunc/*; do
@@ -39,6 +64,13 @@ for func in "${ZDOTDIR}"/.zfunc/*; do
 done
 
 # Alias
-for alias in "${ZDOTDIR}"/.zalias/*; do
-    source "${alias}"
-done
+zinit snippet ${ZDOTDIR}/.zalias/replacement.zsh
+zinit snippet ${ZDOTDIR}/.zalias/cd.zsh
+zinit snippet ${ZDOTDIR}/.zalias/configs.zsh
+zinit snippet ${ZDOTDIR}/.zalias/docker.zsh
+zinit snippet ${ZDOTDIR}/.zalias/editors.zsh
+zinit snippet ${ZDOTDIR}/.zalias/kubectl.zsh
+zinit snippet ${ZDOTDIR}/.zalias/ls.zsh
+zinit snippet ${ZDOTDIR}/.zalias/npm.zsh
+zinit snippet ${ZDOTDIR}/.zalias/pip.zsh
+zinit snippet ${ZDOTDIR}/.zalias/xattr.zsh

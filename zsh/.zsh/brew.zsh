@@ -6,4 +6,4 @@
 eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 
 # homebrew-command-not-found hook
-antigen bundle command-not-found
+zinit snippet OMZP::command-not-found
