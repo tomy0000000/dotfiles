@@ -32,7 +32,6 @@ zinit snippet ${ZDOTDIR}/.zsh/fix_omz_plugin.zsh
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::colorize # ccat, cless
 zinit snippet OMZP::kubectl  # completion
-zinit snippet OMZP::sudo
 zinit lucid wait atpull"%atclone" atclone"_fix-omz-plugin" for OMZP::macos # commands
 zinit light MichaelAquilina/zsh-you-should-use
 zinit light zsh-users/zsh-completions
@@ -48,8 +47,10 @@ zinit snippet ${ZDOTDIR}/.zsh/javascript.zsh
 zinit snippet ${ZDOTDIR}/.zsh/perl.zsh
 zinit snippet ${ZDOTDIR}/.zsh/python.zsh
 zinit snippet ${ZDOTDIR}/.zsh/ruby.zsh
-zinit snippet ${ZDOTDIR}/.zsh/thefuck.zsh
 zinit snippet ${ZDOTDIR}/.zsh/zsh-style.zsh
+
+# Alias
+zinit lucid wait for OMZP::thefuck # fuck function + ESC-ESC combo
 
 # Completions
 zinit snippet ${ZDOTDIR}/completion/docker.zsh
