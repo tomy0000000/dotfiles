@@ -23,6 +23,7 @@ zinit snippet OMZL::git.zsh
 # Tools
 zinit snippet ${ZDOTDIR}/tools/direnv.zsh
 zinit snippet ${ZDOTDIR}/tools/starship.zsh
+zinit snippet ${ZDOTDIR}/tools/zoxide.zsh
 
 # Hotfix
 zinit snippet ${ZDOTDIR}/.zsh/fix_omz_plugin.zsh
@@ -38,7 +39,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
 # Third-party integrations
-zinit snippet ${ZDOTDIR}/.zsh/autojump.zsh
 zinit snippet ${ZDOTDIR}/.zsh/brew.zsh
 zinit snippet ${ZDOTDIR}/.zsh/go.zsh
 zinit snippet ${ZDOTDIR}/.zsh/iterm.zsh

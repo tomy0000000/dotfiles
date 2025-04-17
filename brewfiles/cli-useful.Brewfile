@@ -1,4 +1,3 @@
-brew "autojump"
 brew "chroma"
 brew "thefuck"
 brew "trash-cli"
