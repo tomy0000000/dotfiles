@@ -34,7 +34,6 @@ zinit snippet OMZP::colorize # ccat, cless
 zinit snippet OMZP::kubectl  # completion
 zinit lucid wait atpull"%atclone" atclone"_fix-omz-plugin" for OMZP::macos # commands
 zinit light MichaelAquilina/zsh-you-should-use
-zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
@@ -55,6 +54,7 @@ zinit lucid wait for OMZP::thefuck # fuck function + ESC-ESC combo
 # Completions
 zinit snippet ${ZDOTDIR}/completion/docker.zsh
 zinit snippet ${ZDOTDIR}/completion/kubectl.zsh
+zinit snippet ${ZDOTDIR}/completion/misc.zsh
 zinit snippet ${ZDOTDIR}/completion/op.zsh
 zinit snippet ${ZDOTDIR}/completion/poetry.zsh
 
