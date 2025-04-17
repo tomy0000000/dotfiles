@@ -41,7 +41,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 # Third-party integrations
 zinit snippet ${ZDOTDIR}/.zsh/autojump.zsh
-zinit snippet ${ZDOTDIR}/.zsh/az.zsh
 zinit snippet ${ZDOTDIR}/.zsh/brew.zsh
 zinit snippet ${ZDOTDIR}/.zsh/go.zsh
 zinit snippet ${ZDOTDIR}/.zsh/iterm.zsh
