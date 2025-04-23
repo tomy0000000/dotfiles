@@ -13,12 +13,9 @@ fi
 autoload -Uz compinit
 compinit
 
-# Init bash completions
-autoload -Uz bashcompinit
-bashcompinit
-
 # Library
-zinit snippet OMZL::git.zsh
+zinit light-mode lucid for OMZL::completion.zsh # Includes bashcompinit
+zinit light-mode lucid for OMZL::git.zsh
 
 # Tools
 zinit snippet ${ZDOTDIR}/tools/direnv.zsh
