@@ -51,6 +51,9 @@ zinit snippet ${ZDOTDIR}/.zsh/zsh-style.zsh
 # Alias
 zinit lucid wait for OMZP::thefuck # fuck function + ESC-ESC combo
 
+# Configs
+zinit snippet ${ZDOTDIR}/config/keybindings.zsh
+
 # Completions
 zinit snippet ${ZDOTDIR}/completion/docker.zsh
 zinit snippet ${ZDOTDIR}/completion/kubectl.zsh
