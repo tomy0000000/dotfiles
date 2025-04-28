@@ -179,6 +179,14 @@ defaults write com.apple.universalaccess com.apple.custommenu.apps -array \
     com.apple.Photos \
     abnerworks.Typora
 
+# Keyboard Shortcuts... > App Shortcuts > All Applications > Fill
+# shellcheck disable=SC2016
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add 'Fill' '@~^\\U2191'
+
+# Keyboard Shortcuts... > App Shortcuts > All Applications > Center
+# shellcheck disable=SC2016
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add 'Center' '@~^\\U21a9'
+
 # Keyboard Shortcuts... > App Shortcuts > All Applications > Read Later with Reeder
 # shellcheck disable=SC2016
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add 'Read Later with Reeder' '@$s'
