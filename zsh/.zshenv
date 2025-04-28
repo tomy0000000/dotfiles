@@ -51,7 +51,7 @@ export HIST_STAMPS="yyyy-mm-dd"
 
 # Starship
 # https://starship.rs/config/#config-file-location
-export STARSHIP_CONFIG="${ZDOTDIR}/.config/starship.toml"
+export STARSHIP_CONFIG="${ZDOTDIR}/starship.toml"
 
 # Third-party integrations
 if [ -n "$(ls -A "${ZDOTDIR}/.zenv")" ]; then
