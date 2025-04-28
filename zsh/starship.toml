@@ -5,22 +5,25 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
-# Use the color palette
-palette = "dracula"
+# Continuation Prompt
+# https://starship.rs/advanced-config/#continuation-prompt
+continuation_prompt = '▶▶ '
 
-# Define Dracula color palette
-[palettes.dracula]
-background = "#282a36"
-current_line = "#44475a"
-foreground = "#f8f8f2"
-comment = "#6272a4"
-cyan = "#8be9fd"
-green = "#50fa7b"
-orange = "#ffb86c"
-pink = "#ff79c6"
-purple = "#bd93f9"
-red = "#ff5555"
-yellow = "#f1fa8c"
+# Color palette: Dracula Pro
+palette = "dracula-pro"
+
+[palettes.dracula-pro]
+# Other implicit colors from terminal:
+# - black
+# - red
+# - green
+# - blue (= purple for Dracula Pro)
+# - yellow
+# - cyan (light blue)
+# - white
+orange = "#ffca80"
+purple = "#9580ff"
+magenta = "#ff80bf" # pink
 
 [aws]
 style = "bold orange"
@@ -30,11 +33,8 @@ disabled = true
 error_symbol = "[λ](bold red)"
 success_symbol = "[λ](bold green)"
 
-[cmd_duration]
-style = "bold yellow"
-
 [directory]
-style = "bold green"
+style = "bold purple"
 
 [docker_context]
 disabled = true
@@ -43,19 +43,26 @@ disabled = true
 disabled = true
 
 [git_branch]
-style = "bold pink"
+style = "bold magenta"
 
-[git_status]
+[ocaml]
+style = "bold orange"
+
+[openstack]
 style = "bold red"
 
-[hostname]
-style = "bold purple"
+[python]
+style = "bold green"
 
 [time]
 disabled = false
 format = '[$time]($style) '
+style = "bold cyan"
 time_format = '%T'
 
 [username]
 format = "[$user]($style) on "
 style_user = "bold cyan"
+
+[zig]
+style = "bold orange"
