@@ -128,9 +128,6 @@ macos-zsh: macos-brew macos-stow
 	$(eval BREW_BIN := $(shell bin/brew_bin))
 	${BREW_BIN}/brew bundle --file brewfiles/zsh.Brewfile
 	xscript "scripts/macos-zsh.sh"
-	mkdir -p "${HOME}/.config"
-	${BREW_BIN}/stow --dir=zsh --no-folding --target "${HOME}/.config" .config
-	ln -s .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
 
 ###############################################################################
 # Dev                                                                         #
