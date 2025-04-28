@@ -23,6 +23,8 @@ if [ "${USER_SHELL}" != "${ZSH_BIN}" ]; then
 fi
 
 # Install zsh dotfiles
-git clean -dfX zsh/
+echo "Installing zsh dotfiles..."
+mkdir -p "${HOME}/.config" # Make sure XDG_CONFIG_HOME exists
+ln -s .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
 
 unset ZSH_BIN USER_SHELL

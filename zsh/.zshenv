@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Zsh
-ZDOTDIR="${HOME}/.dotfiles/zsh"
+export ZDOTDIR="${HOME}/.dotfiles/zsh"
 
 # XDG Base Directory
 # https://specifications.freedesktop.org/basedir-spec/latest/
@@ -43,11 +43,15 @@ export FPATH="${ZDOTDIR}/.zfunc:${FPATH}"
 
 # Additional INFOPATHs
 
-# Oh My Zsh library settings
+# Oh My Zsh
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#library-settings
-HYPHEN_INSENSITIVE="true"
-COMPLETION_WAITING_DOTS="true"
-HIST_STAMPS="yyyy-mm-dd"
+export HYPHEN_INSENSITIVE="true"
+export COMPLETION_WAITING_DOTS="true"
+export HIST_STAMPS="yyyy-mm-dd"
+
+# Starship
+# https://starship.rs/config/#config-file-location
+export STARSHIP_CONFIG="${ZDOTDIR}/.config/starship.toml"
 
 # Third-party integrations
 if [ -n "$(ls -A "${ZDOTDIR}/.zenv")" ]; then

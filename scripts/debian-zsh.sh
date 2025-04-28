@@ -16,6 +16,5 @@ sudo chsh -s "$(which zsh)" "$(whoami)"
 
 # Install zsh dotfiles
 echo "Installing zsh dotfiles..."
-mkdir -p "${HOME}/.config"
-stow --dir=zsh --no-folding --target "${HOME}/.config" .config
+mkdir -p "${HOME}/.config" # Make sure XDG_CONFIG_HOME exists
 ln -s .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
