@@ -1,5 +1,17 @@
 #!/bin/zsh
 
+# Additional PATHs
+#
+# Since macOS modify path with /etc/paths after ~/.zshenv, before .zshrc
+# and places all paths at the beginning
+# The only place to add paths at beginning would be here
+source "${ZDOTDIR}/.zenv/brew.zsh"       # Homebrew
+export PATH="${HOME}/.local/bin:${PATH}" # User executables
+# export PATH="/opt/iterm2/bin:${PATH}"            # iTerm2 utilities
+# export PATH="/usr/local/opt/openjdk/bin:${PATH}" # java
+export PATH="${PYENV_ROOT}/bin:${PATH}" # pyenv
+export PATH="${GOENV_ROOT}/bin:${PATH}" # goenv
+
 # Zinit
 if [[ -n "${HOMEBREW_PREFIX}" ]]; then
     source "${HOMEBREW_PREFIX}/opt/zinit/zinit.zsh"
@@ -44,13 +56,11 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
 # Third-party integrations
-zinit snippet ${ZDOTDIR}/.zsh/brew.zsh
 zinit snippet ${ZDOTDIR}/.zsh/go.zsh
 zinit snippet ${ZDOTDIR}/.zsh/iterm.zsh
 zinit snippet ${ZDOTDIR}/.zsh/javascript.zsh
 zinit snippet ${ZDOTDIR}/.zsh/perl.zsh
 zinit snippet ${ZDOTDIR}/.zsh/python.zsh
-zinit snippet ${ZDOTDIR}/.zsh/ruby.zsh
 zinit snippet ${ZDOTDIR}/.zsh/zsh-style.zsh
 
 # Alias

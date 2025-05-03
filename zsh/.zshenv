@@ -32,10 +32,6 @@ export EDITOR="subl" # Sublime Text
 # Terminal
 export TERM="xterm-256color"
 
-# Additional PATHs
-export PATH="/opt/iterm2/bin:${PATH}"            # iTerm2 utilities
-export PATH="/usr/local/opt/openjdk/bin:${PATH}" # java
-
 # Additional FPATHs
 export FPATH="${ZDOTDIR}/.zfunc:${FPATH}"
 
@@ -54,9 +50,8 @@ export HIST_STAMPS="yyyy-mm-dd"
 # https://starship.rs/config/#config-file-location
 export STARSHIP_CONFIG="${ZDOTDIR}/starship.toml"
 
-# Third-party integrations
-if [ -n "$(ls -A "${ZDOTDIR}/.zenv")" ]; then
-    for script in "${ZDOTDIR}"/.zenv/*; do
-        source "${script}"
-    done
-fi
+# pyenv
+export PYENV_ROOT="${HOME}/.pyenv"
+
+# goenv
+export GOENV_ROOT="${HOME}/.goenv"
