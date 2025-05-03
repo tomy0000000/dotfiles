@@ -13,9 +13,15 @@ fi
 autoload -Uz compinit
 compinit
 
-# Library
-zinit light-mode lucid for OMZL::completion.zsh # Includes bashcompinit
-zinit light-mode lucid for OMZL::git.zsh
+# Libraries
+zinit light-mode lucid for OMZL::cli.zsh         # Oh My Zsh functions
+zinit light-mode lucid for OMZL::clipboard.zsh   # clipcopy & clippaste functions
+zinit light-mode lucid for OMZL::completion.zsh  # Includes bashcompinit
+zinit light-mode lucid for OMZL::correction.zsh  # File corrections
+zinit light-mode lucid for OMZL::directories.zsh # ls + cd alias
+zinit light-mode lucid for OMZL::functions.zsh   # take function
+zinit light-mode lucid for OMZL::git.zsh         # prompt functions
+zinit light-mode lucid for OMZL::history.zsh     # history with time stamps
 
 # Tools
 zinit snippet ${ZDOTDIR}/tools/direnv.zsh
@@ -67,12 +73,10 @@ done
 
 # Alias
 zinit snippet ${ZDOTDIR}/.zalias/replacement.zsh
-zinit snippet ${ZDOTDIR}/.zalias/cd.zsh
 zinit snippet ${ZDOTDIR}/.zalias/configs.zsh
 zinit snippet ${ZDOTDIR}/.zalias/docker.zsh
 zinit snippet ${ZDOTDIR}/.zalias/editors.zsh
 zinit snippet ${ZDOTDIR}/.zalias/kubectl.zsh
-zinit snippet ${ZDOTDIR}/.zalias/ls.zsh
 zinit snippet ${ZDOTDIR}/.zalias/npm.zsh
 zinit snippet ${ZDOTDIR}/.zalias/pip.zsh
 zinit snippet ${ZDOTDIR}/.zalias/xattr.zsh

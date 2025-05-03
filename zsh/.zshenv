@@ -45,8 +45,9 @@ export FPATH="${ZDOTDIR}/.zfunc:${FPATH}"
 
 # Oh My Zsh
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#library-settings
-export HYPHEN_INSENSITIVE="true"
-export COMPLETION_WAITING_DOTS="true"
+export HYPHEN_INSENSITIVE=true
+export COMPLETION_WAITING_DOTS=true
+export ENABLE_CORRECTION=true
 export HIST_STAMPS="yyyy-mm-dd"
 
 # Starship
