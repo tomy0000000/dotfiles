@@ -7,10 +7,8 @@
 # The only place to add paths at beginning would be here
 source "${ZDOTDIR}/.zenv/brew.zsh"       # Homebrew
 export PATH="${HOME}/.local/bin:${PATH}" # User executables
-# export PATH="/opt/iterm2/bin:${PATH}"            # iTerm2 utilities
-# export PATH="/usr/local/opt/openjdk/bin:${PATH}" # java
-export PATH="${PYENV_ROOT}/bin:${PATH}" # pyenv
-export PATH="${GOENV_ROOT}/bin:${PATH}" # goenv
+export PATH="${PYENV_ROOT}/bin:${PATH}"  # pyenv
+export PATH="${GOENV_ROOT}/bin:${PATH}"  # goenv
 
 # Zinit
 if [[ -n "${HOMEBREW_PREFIX}" ]]; then
