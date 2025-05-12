@@ -49,6 +49,7 @@ zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::colorize # ccat, cless
 zinit snippet OMZP::kubectl  # completion
 zinit lucid wait for OMZP::command-not-found
+zinit lucid wait for OMZP::gnu-utils
 zinit lucid wait for OMZP::rbenv
 zinit lucid wait atpull"%atclone" atclone"_fix-omz-plugin" for OMZP::macos # commands
 zinit light MichaelAquilina/zsh-you-should-use
