@@ -46,6 +46,10 @@ export COMPLETION_WAITING_DOTS=true
 export ENABLE_CORRECTION=true
 export HIST_STAMPS="yyyy-mm-dd"
 
+# zsh-autosuggestions
+# https://github.com/zsh-users/zsh-autosuggestions/blob/master/README.md#configuration
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=14" # Default: bright black (fg=8) which is typically gray
+
 # Starship
 # https://starship.rs/config/#config-file-location
 export STARSHIP_CONFIG="${ZDOTDIR}/starship.toml"
