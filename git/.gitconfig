@@ -1,4 +1,7 @@
 # https://git-scm.com/docs/git-config
+[branch]
+sort = -committerdate
+
 [color]
 interactive = "auto"
 ui = "auto"
@@ -46,6 +49,9 @@ unmerged = magenta bold reverse
 untracked = red
 updated = green bold
 
+[column]
+ui = auto
+
 [commit]
 template = "~/.git_commit_template"
 
@@ -55,15 +61,26 @@ excludesFile = "~/.gitignore_global"
 editor = "nano"
 
 [diff]
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/#better-diff
+algorithm = histogram
+colorMoved = plain
+mnemonicPrefix = true
+renames = true
 wordRegex = "."
+
+[fetch]
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/#better-fetching
+prune = true
+pruneTags = true
+all = true
 
 [grep]
 extendedRegexp = true
 lineNumber = true
 
 [help]
-# Autofix the command and execute after 3 secs
-autocorrect = 30
+# Suggest to autofix the command
+autocorrect = prompt
 
 [include]
 path = "~/.gitconfig-custom" # include the user block
@@ -80,6 +97,23 @@ date = "human"
 [merge]
 # https://nvie.com/posts/a-successful-git-branching-model/#incorporating-a-finished-feature-on-develop
 ff = false
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/#better-merge-conflicts
+conflictstyle = zdiff3
 
 [pull]
 ff = only
+
+[push]
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/#better-pushing
+default = simple
+autoSetupRemote = true
+followTags = true
+
+[rebase]
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/#slightly-nicer-rebase
+autoSquash = true
+autoStash = true
+updateRefs = true
+
+[tag]
+sort = version:refname
