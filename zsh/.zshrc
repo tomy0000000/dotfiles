@@ -9,6 +9,7 @@ source "${ZDOTDIR}/.zenv/brew.zsh"       # Homebrew
 export PATH="${HOME}/.local/bin:${PATH}" # User executables
 export PATH="${PYENV_ROOT}/bin:${PATH}"  # pyenv
 export PATH="${GOENV_ROOT}/bin:${PATH}"  # goenv
+export PATH="${VOLTA_HOME}/bin:${PATH}"  # Volta
 
 # Zinit
 if [[ -n "${HOMEBREW_PREFIX}" ]]; then
@@ -57,7 +58,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 # Third-party integrations
 zinit snippet ${ZDOTDIR}/.zsh/go.zsh
 zinit snippet ${ZDOTDIR}/.zsh/iterm.zsh
-zinit snippet ${ZDOTDIR}/.zsh/javascript.zsh
 zinit snippet ${ZDOTDIR}/.zsh/perl.zsh
 zinit snippet ${ZDOTDIR}/.zsh/python.zsh
 zinit snippet ${ZDOTDIR}/.zsh/zsh-style.zsh

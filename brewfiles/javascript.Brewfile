@@ -1,1 +1,1 @@
-brew "pnpm"
+brew "volta"
