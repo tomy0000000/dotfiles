@@ -73,6 +73,7 @@ zinit snippet ${ZDOTDIR}/config/keybindings.zsh
 zinit snippet ${ZDOTDIR}/completion/docker.zsh
 zinit snippet ${ZDOTDIR}/completion/kubectl.zsh
 zinit snippet ${ZDOTDIR}/completion/misc.zsh
+zinit snippet ${ZDOTDIR}/completion/mise.zsh
 zinit snippet ${ZDOTDIR}/completion/op.zsh
 zinit snippet ${ZDOTDIR}/completion/poetry.zsh
 
