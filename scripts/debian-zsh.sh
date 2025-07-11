@@ -17,4 +17,8 @@ sudo chsh -s "$(which zsh)" "$(whoami)"
 # Install zsh dotfiles
 echo "Installing zsh dotfiles..."
 mkdir -p "${HOME}/.config" # Make sure XDG_CONFIG_HOME exists
-ln -s .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
+if [ -f "${HOME}/.zshenv" ]; then
+    mv "${HOME}/.zshenv" "${HOME}/.zshenv.bk"
+    echo "Warning: existing .zshenv found, backed up to .zshenv.bk"
+fi
+ln -sf .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
