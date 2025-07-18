@@ -68,8 +68,3 @@ fi
 
 # goenv
 export GOENV_ROOT="${HOME}/.goenv"
-
-# Volta
-# https://docs.volta.sh/advanced/installers#shim-directory
-export VOLTA_HOME="${HOME}/.volta"
-export VOLTA_FEATURE_PNPM="1"

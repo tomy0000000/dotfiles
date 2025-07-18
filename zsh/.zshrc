@@ -8,7 +8,6 @@
 source "${ZDOTDIR}/.zenv/brew.zsh"       # Homebrew
 export PATH="${HOME}/.local/bin:${PATH}" # User executables
 export PATH="${GOENV_ROOT}/bin:${PATH}"  # goenv
-export PATH="${VOLTA_HOME}/bin:${PATH}"  # Volta
 
 # Zinit
 if [[ -n "${HOMEBREW_PREFIX}" ]]; then
