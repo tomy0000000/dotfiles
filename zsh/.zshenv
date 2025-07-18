@@ -66,9 +66,6 @@ elif uname -s | grep -q "Darwin"; then
     export GREP_COLOR="1;38;2;255;85;85"
 fi
 
-# pyenv
-export PYENV_ROOT="${HOME}/.pyenv"
-
 # goenv
 export GOENV_ROOT="${HOME}/.goenv"
 

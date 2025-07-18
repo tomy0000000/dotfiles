@@ -1,9 +1,7 @@
 #!/bin/zsh
 
 tmppath="$(which "${1}")"
-if [[ "$tmppath" == *".pyenv"* ]]; then
-    pyenv which "${1}"
-elif [[ "$tmppath" == *".rbenv"* ]]; then
+if [[ "$tmppath" == *".rbenv"* ]]; then
     rbenv which "${1}"
 else
     realpath "$(which "${1}")"

@@ -7,7 +7,6 @@
 # The only place to add paths at beginning would be here
 source "${ZDOTDIR}/.zenv/brew.zsh"       # Homebrew
 export PATH="${HOME}/.local/bin:${PATH}" # User executables
-export PATH="${PYENV_ROOT}/bin:${PATH}"  # pyenv
 export PATH="${GOENV_ROOT}/bin:${PATH}"  # goenv
 export PATH="${VOLTA_HOME}/bin:${PATH}"  # Volta
 
