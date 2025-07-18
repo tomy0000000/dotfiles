@@ -6,4 +6,6 @@ compaudit | xargs chown "${USER}"
 
 # Remove cached files
 rm -f "${HOME}/.zcompdump*"
-rm -rf "${HOME}/.local/share/zinit"
+
+# Delete all compiled zinit plugins
+zinit delete --all
