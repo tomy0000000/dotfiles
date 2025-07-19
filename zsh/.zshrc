@@ -33,6 +33,7 @@ zinit light-mode lucid for OMZL::git.zsh         # prompt functions
 zinit light-mode lucid for OMZL::history.zsh     # history with time stamps
 
 # Tools
+zinit snippet ${ZDOTDIR}/tools/carapace.zsh
 zinit snippet ${ZDOTDIR}/tools/direnv.zsh
 zinit snippet ${ZDOTDIR}/tools/mise.zsh
 zinit snippet ${ZDOTDIR}/tools/starship.zsh
@@ -68,6 +69,7 @@ zinit lucid wait for OMZP::thefuck # fuck function + ESC-ESC combo
 zinit snippet ${ZDOTDIR}/config/keybindings.zsh
 
 # Completions
+zinit snippet ${ZDOTDIR}/completion/carapace.zsh # This should always be at the top
 zinit snippet ${ZDOTDIR}/completion/docker.zsh
 zinit snippet ${ZDOTDIR}/completion/kubectl.zsh
 zinit snippet ${ZDOTDIR}/completion/misc.zsh
