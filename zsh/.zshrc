@@ -7,15 +7,13 @@
 # The only place to add paths at beginning would be here
 source "${ZDOTDIR}/.zenv/brew.zsh"       # Homebrew
 export PATH="${HOME}/.local/bin:${PATH}" # User executables
-export PATH="${GOENV_ROOT}/bin:${PATH}"  # goenv
 
 # Zinit
 if [[ -n "${HOMEBREW_PREFIX}" ]]; then
     source "${HOMEBREW_PREFIX}/opt/zinit/zinit.zsh"
 elif [[ -n "${XDG_DATA_HOME}" ]]; then
     source "${XDG_DATA_HOME}/zinit/zinit.zsh"
-else
-    source "${HOME}/.local/share/zinit/zinit.zsh"
+else    source "${HOME}/.local/share/zinit/zinit.zsh"
 fi
 
 # Init zsh completions
@@ -56,7 +54,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
 # Third-party integrations
-zinit snippet ${ZDOTDIR}/.zsh/go.zsh
 zinit snippet ${ZDOTDIR}/.zsh/iterm.zsh
 zinit snippet ${ZDOTDIR}/.zsh/perl.zsh
 zinit snippet ${ZDOTDIR}/.zsh/python.zsh

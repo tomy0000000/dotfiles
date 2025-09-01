@@ -65,6 +65,3 @@ if grep --version 2>&1 | grep -q "GNU"; then
 elif uname -s | grep -q "Darwin"; then
     export GREP_COLOR="1;38;2;255;85;85"
 fi
-
-# goenv
-export GOENV_ROOT="${HOME}/.goenv"
