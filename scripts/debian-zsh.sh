@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+MISE_DIR="${XDG_CONFIG_HOME}/mise"
+trap 'unset ZSH_BIN USER_SHELL MISE_DIR' EXIT
+
 # Install Zsh
 echo "Installing Zsh..."
 sudo apt-get update
@@ -22,4 +25,7 @@ if [ -f "${HOME}/.zshenv" ]; then
     echo "Warning: existing .zshenv found, backed up to .zshenv.bk"
 fi
 ln -sf .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
-stow --no-folding --target "${XDG_CONFIG_HOME}/mise" 'mise'
+
+# Install mise dotfiles
+mkdir -p "${MISE_DIR}"
+stow --no-folding --target "${MISE_DIR}" 'mise'

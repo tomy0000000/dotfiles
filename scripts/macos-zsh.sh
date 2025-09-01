@@ -3,7 +3,8 @@ set -euo pipefail
 
 ZSH_BIN="${HOMEBREW_PREFIX}/bin/zsh" # Homebrew zsh
 USER_SHELL=$(dscl . -read "${HOME}" UserShell | awk '{print $2}')
-trap 'unset ZSH_BIN USER_SHELL' EXIT
+MISE_DIR="${XDG_CONFIG_HOME}/mise"
+trap 'unset ZSH_BIN USER_SHELL MISE_DIR' EXIT
 
 # Skip if running in CI
 if [ -n "${CI:-}" ]; then
@@ -27,4 +28,7 @@ fi
 echo "Installing zsh dotfiles..."
 mkdir -p "${HOME}/.config" # Make sure XDG_CONFIG_HOME exists
 ln -sf .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
-stow --no-folding --target "${XDG_CONFIG_HOME}/mise" 'mise'
+
+# Install mise dotfiles
+mkdir -p "${MISE_DIR}"
+stow --no-folding --target "${MISE_DIR}" 'mise'
