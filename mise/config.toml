@@ -1,0 +1,23 @@
+[tools]
+"node" = "lts"
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:@google/gemini-cli" = "latest"
+"npm:@trivago/prettier-plugin-sort-imports" = "latest"
+"npm:npm-run-all" = "latest"
+"npm:prettier-plugin-sort-json" = "latest"
+"npm:prettier-plugin-sql" = "latest"
+"npm:prettier-plugin-tailwindcss" = "latest"
+"npm:prettier" = "latest"
+"npm:serve" = "latest"
+"pipx:ansible-lint" = { version = "latest", pipx_args = "--include-deps" }
+"pipx:ansible" = { version = "latest", pipx_args = "--include-deps" }
+"pipx:black" = "latest"
+"pipx:pipdeptree" = "latest"
+"pipx:poetry" = "latest"
+"pipx:pre-commit" = "latest"
+"pnpm" = "10"
+"python" = "latest"
+"usage" = "latest"
+"yarn" = "4"
+"pipx:ruff" = "latest"
+go = "latest"

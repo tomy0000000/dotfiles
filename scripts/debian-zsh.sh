@@ -12,7 +12,7 @@ bash -c "NO_EDIT=true NO_TUTORIAL=true ZINIT_HOME=${HOME}/.local/share ZINIT_REP
 
 # Change default shell to zsh
 echo "Changing default shell to zsh..."
-sudo chsh -s "$(which zsh)" "$(whoami)"
+sudo chsh -s "$(which zsh)" "${USER}"
 
 # Install zsh dotfiles
 echo "Installing zsh dotfiles..."
@@ -22,3 +22,4 @@ if [ -f "${HOME}/.zshenv" ]; then
     echo "Warning: existing .zshenv found, backed up to .zshenv.bk"
 fi
 ln -sf .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
+stow --no-folding --target "${XDG_CONFIG_HOME}/mise" 'mise'
