@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# Load .zshenv to get XDG_CONFIG_HOME
+source 'zsh/.zshenv'
+
 MISE_DIR="${XDG_CONFIG_HOME}/mise"
 trap 'unset ZSH_BIN USER_SHELL MISE_DIR' EXIT
 
