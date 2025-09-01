@@ -2,7 +2,9 @@
 set -euo pipefail
 
 # Load .zshenv to get XDG_CONFIG_HOME
+set +u
 source 'zsh/.zshenv'
+set -u
 
 ZSH_BIN="${HOMEBREW_PREFIX}/bin/zsh" # Homebrew zsh
 USER_SHELL=$(dscl . -read "${HOME}" UserShell | awk '{print $2}')
