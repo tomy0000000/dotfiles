@@ -1,4 +1,4 @@
-tap "homebrew/autoupdate"
+tap "domt4/autoupdate"
 brew "coreutils" # ls, cp, mv, etc.
 brew "curl"
 brew "findutils"
