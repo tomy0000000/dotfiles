@@ -29,6 +29,8 @@ jobs:
             "macos-cli-useful",
             "macos-core",
             "macos-docker",
+            "macos-duti",
+            "macos-file-handler",
             "macos-finder",
             "macos-font",
             "macos-git",
