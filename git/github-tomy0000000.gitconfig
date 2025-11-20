@@ -1,0 +1,10 @@
+[user]
+name = "Tomy Hsieh"
+email = "git@tomy.me"
+signingkey = "6067E1A85CE97701A70403FA4E6AF0EEDD2205F8"
+
+[commit]
+gpgsign = true
+
+[gpg]
+program = /usr/local/MacGPG2/bin/gpg
