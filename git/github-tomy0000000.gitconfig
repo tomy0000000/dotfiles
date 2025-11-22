@@ -1,10 +1,13 @@
 [user]
 name = "Tomy Hsieh"
 email = "git@tomy.me"
-signingkey = "6067E1A85CE97701A70403FA4E6AF0EEDD2205F8"
+signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBhRK+rM/ZZm0zMjSiYO01I8D9aMn7+5Om689YKu7olZ" # 1Password Signing Key
 
 [commit]
 gpgsign = true
 
 [gpg]
-program = /usr/local/MacGPG2/bin/gpg
+format = ssh
+
+[gpg "ssh"]
+program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
