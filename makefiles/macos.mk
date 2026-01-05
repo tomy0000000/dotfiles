@@ -115,7 +115,7 @@ macos-git: macos-brew
 	brew bundle --file brewfiles/git.Brewfile
 
 macos-micro: macos-brew
-	brew bundle --file brewfiles/micro.Brewfile
+	brew install micro
 
 macos-nano: ;
 

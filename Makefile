@@ -19,7 +19,7 @@ zsh: $(OS)-zsh
 git: $(OS)-git
 	stow --no-folding --target "${HOME}" 'git'
 micro: $(OS)-micro
-	stow --no-folding --target "${HOME}" 'micro'
+	stow --no-folding --dir 'pkg/micro' --target "${HOME}" 'stow'
 ansible: stow
 	stow --no-folding --target "${HOME}" 'ansible'
 javascript: stow $(OS)-javascript
