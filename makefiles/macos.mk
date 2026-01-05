@@ -54,8 +54,8 @@ macos-alfred: macos-brew
 	xscript "scripts/macos-alfred.sh"
 
 macos-appcleaner: macos-brew
-	brew bundle --file brewfiles/appcleaner.Brewfile
-	defaults import net.freemacsoft.AppCleaner macos-appcleaner/net.freemacsoft.AppCleaner.plist
+	brew install --cask appcleaner
+	defaults import net.freemacsoft.AppCleaner pkg/macos-appcleaner/net.freemacsoft.AppCleaner.plist
 
 macos-cleanshot: macos-brew
 	brew bundle --file brewfiles/cleanshot.Brewfile
