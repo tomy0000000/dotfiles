@@ -17,7 +17,7 @@ stow: $(OS)-stow
 zsh: $(OS)-zsh
 
 git: $(OS)-git
-	stow --no-folding --target "${HOME}" 'git'
+	ln -sf '.dotfiles/pkg/git/.gitconfig' "${HOME}"
 micro: $(OS)-micro
 	stow --no-folding --dir 'pkg/micro' --target "${HOME}" 'stow'
 ansible: stow

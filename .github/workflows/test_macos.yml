@@ -17,7 +17,7 @@ jobs:
             "clean",
             "cli-network",
             "core",
-            # "git", # CI machine contains existed .gitconfig file
+            "git",
             "javascript",
             # "macos-alfred", # Script error to be fixed
             # "macos-app-dev", # Depends on `git`
