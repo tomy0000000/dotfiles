@@ -20,9 +20,9 @@ jobs:
             "git",
             "javascript",
             # "macos-alfred", # Script error to be fixed
-            # "macos-app-dev", # Depends on `git`
-            # "macos-app-private", # Depends on `git`
-            # "macos-app-work", # Depends on `git`
+            "macos-app-dev",
+            "macos-app-private",
+            "macos-app-work",
             "macos-appcleaner",
             "macos-brew",
             "macos-c-cpp",
