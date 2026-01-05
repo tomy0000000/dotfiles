@@ -23,7 +23,7 @@ micro: $(OS)-micro
 ansible: stow
 	stow --no-folding --target "${HOME}" 'ansible'
 javascript: stow $(OS)-javascript
-	stow --no-folding --target "${HOME}" 'javascript'
+	stow --no-folding --dir 'pkg/javascript' --target "${HOME}" 'stow'
 python: stow
 	stow --no-folding --target "${HOME}" 'python'
 
