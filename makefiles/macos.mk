@@ -144,8 +144,8 @@ macos-javascript: macos-brew
 	echo "Installed node with `pnpm env add --global lts`"
 
 macos-perl: macos-stow
-	stow --no-folding --target "${HOME}" 'perl'
-	xscript "scripts/macos-perl.sh"
+	stow --no-folding --dir 'pkg/perl' --target "${HOME}" 'stow'
+	xscript "pkg/perl/macos-perl.sh"
 
 ###############################################################################
 # Misc                                                                        #
