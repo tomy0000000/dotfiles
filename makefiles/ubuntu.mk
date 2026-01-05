@@ -26,7 +26,7 @@ ubuntu-locale-zhtw:
 	xscript "scripts/debian-locale-zhtw.sh"
 
 ubuntu-micro: ubuntu-stow
-	xscript "scripts/debian-micro.sh"
+	xscript "pkg/micro/debian-micro.sh"
 
 ubuntu-nano:
 	sudo apt-get update
