@@ -152,8 +152,8 @@ macos-file-handler: macos-duti
 	xscript "scripts/macos-file-handler.sh"
 
 macos-font: macos-brew
-	brew bundle --file brewfiles/ext-font.Brewfile
-	cp -r macos-font/collection/ "${HOME}/Library/FontCollections"
+	brew bundle --file pkg/macos-font/macos-font.Brewfile
+	cp -r pkg/macos-font/collection/ "${HOME}/Library/FontCollections"
 
 macos-icon: macos-cli-useful
 	xscript "scripts/macos-icons.sh"
