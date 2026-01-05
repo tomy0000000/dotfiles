@@ -20,7 +20,7 @@ ubuntu-git: ubuntu-stow
 	xargs sudo apt-get install -y < aptfiles/git.Aptfile
 
 ubuntu-javascript:
-	echo "NOT IMPLEMENTED!"
+	echo "dotfiles are installed, but not the runtime environments."
 
 ubuntu-locale-zhtw:
 	xscript "scripts/debian-locale-zhtw.sh"
