@@ -17,7 +17,7 @@ ubuntu-essential: ubuntu-core ubuntu-locale-zhtw ubuntu-tz-taipei ubuntu-ssh
 	sudo apt-get install -y build-essential
 
 ubuntu-git: ubuntu-stow
-	xargs sudo apt-get install -y < aptfiles/git.Aptfile
+	xargs sudo apt-get install -y < pkg/git/git.Aptfile
 
 ubuntu-javascript:
 	echo "NOT IMPLEMENTED!"

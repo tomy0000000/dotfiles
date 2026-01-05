@@ -55,11 +55,11 @@ updated = green bold
 ui = auto
 
 [commit]
-template = "~/.git_commit_template"
+template = "~/.dotfiles/pkg/git/.git_commit_template"
 
 [core]
-attributesFile = "~/.gitattributes"
-excludesFile = "~/.gitignore_global"
+attributesFile = "~/.dotfiles/pkg/git/.gitattributes"
+excludesFile = "~/.dotfiles/pkg/git/.gitignore"
 editor = "nano"
 
 [diff]
@@ -85,11 +85,11 @@ lineNumber = true
 autocorrect = prompt
 
 [include]
-path = "~/.gitconfig-custom" # include other customizations
-path = "~/.gitalias"
+path = "~/.dotfiles/pkg/git/custom/custom.gitconfig" # include other customizations
+path = "~/.dotfiles/pkg/git/alias.gitconfig"
 
 [includeIf "hasconfig:remote.*.url:https://github.com/**"]
-path = "~/github-tomy0000000.gitconfig" # include the user block
+path = "~/.dotfiles/pkg/git/github-tomy0000000.gitconfig" # include the user block
 
 [init]
 # https://github.blog/changelog/2020-10-01-the-default-branch-for-newly-created-repositories-is-now-main/

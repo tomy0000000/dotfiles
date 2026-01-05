@@ -35,6 +35,7 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/macos,nova
 
 # Custom
+/pkg/git/custom/custom.gitconfig
 /zsh/.zcompdump
 /zsh/.zsh_history
 /zsh/.zsh_sessions
