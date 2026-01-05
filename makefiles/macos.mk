@@ -65,8 +65,8 @@ macos-finder:
 	xscript "scripts/macos-finder.sh"
 
 macos-hammerspoon: macos-brew macos-stow
-	brew bundle --file brewfiles/hammerspoon.Brewfile
-	stow --no-folding --target "${HOME}" 'hammerspoon'
+	brew install --cask hammerspoon
+	stow --no-folding --dir 'pkg' --target "${HOME}" 'macos-hammerspoon'
 
 macos-iterm: macos-brew
 	brew bundle --file brewfiles/iterm.Brewfile
