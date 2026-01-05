@@ -10,4 +10,4 @@ mkdir -p "$(dirname "$FILE_PATH")"
 curl -fsSL 'https://raw.githubusercontent.com/dracula/tower/master/Dracula.towertheme' >"${FILE_PATH}"
 
 # Apply settings
-defaults import com.fournova.Tower3 macos-tower/com.fournova.Tower3.plist
+defaults import com.fournova.Tower3 pkg/macos-tower/com.fournova.Tower3.plist
