@@ -25,6 +25,6 @@ ansible: stow
 javascript: stow $(OS)-javascript
 	stow --no-folding --target "${HOME}" 'javascript'
 python: stow
-	stow --no-folding --target "${HOME}" 'python'
+	stow --no-folding --dir 'pkg/python' --target "${HOME}" 'stow'
 
 include makefiles/*.mk
