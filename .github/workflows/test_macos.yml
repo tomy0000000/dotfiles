@@ -2,6 +2,8 @@ name: Test macOS features
 
 on:
   push:
+    branches:
+      - main
   pull_request:
 
 jobs:
