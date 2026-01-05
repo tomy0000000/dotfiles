@@ -93,8 +93,8 @@ macos-terminal: macos-brew
 	brew bundle --file brewfiles/terminal.Brewfile
 
 macos-tower: macos-brew macos-git
-	brew bundle --file brewfiles/tower.Brewfile
-	xscript "scripts/macos-tower.sh"
+	brew install --cask tower
+	xscript "pkg/macos-tower/macos-tower.sh"
 
 macos-xcode: macos-brew
 	brew bundle --file brewfiles/xcode.Brewfile
