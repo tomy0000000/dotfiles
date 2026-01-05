@@ -54,7 +54,7 @@ jobs:
             "macos-shellcheck",
             "macos-stow",
             # "macos-sublime", # Script error to be fixed
-            # "macos-terminal", # Dracula theme upstream error, see https://github.com/dracula/homebrew-install/pull/18
+            "macos-terminal",
             "macos-touch-id-sudo",
             "macos-tower",
             # "macos-xcode", # mas can't run without login on GitHub Actions
