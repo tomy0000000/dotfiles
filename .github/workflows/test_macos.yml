@@ -25,6 +25,7 @@ jobs:
             # "macos-app-work", # Depends on `git`
             "macos-appcleaner",
             "macos-brew",
+            "macos-c-cpp",
             "macos-clean",
             # "macos-cleanshot", # Script error to be fixed
             "macos-cli-network",

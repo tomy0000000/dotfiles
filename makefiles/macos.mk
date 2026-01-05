@@ -136,6 +136,9 @@ macos-zsh: macos-brew macos-stow
 # Dev                                                                         #
 ###############################################################################
 
+macos-c-cpp: macos-brew
+	brew install cling
+
 macos-javascript: macos-brew
 	brew bundle --file brewfiles/javascript.Brewfile
 	echo "Installed node with `pnpm env add --global lts`"
