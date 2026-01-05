@@ -165,7 +165,7 @@ macos-screensaver: macos-brew
 	brew bundle --file brewfiles/ext-screensaver.Brewfile
 
 macos-service-workflow: macos-stow
-	stow --target "${HOME}/Library/Services" 'macos-services'
+	stow --dir 'pkg' --target "${HOME}/Library/Services" 'macos-services'
 
 macos-settings:
 	xscript "scripts/macos-settings.sh"
