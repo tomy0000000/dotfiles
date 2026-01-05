@@ -140,7 +140,7 @@ macos-c-cpp: macos-brew
 	brew install cling
 
 macos-javascript:
-	echo "echo "dotfiles are installed, but not the runtime environments."
+	echo "dotfiles are installed, but not the runtime environments."
 
 macos-perl: macos-stow
 	stow --no-folding --target "${HOME}" 'perl'
