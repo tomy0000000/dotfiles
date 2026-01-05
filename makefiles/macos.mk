@@ -69,8 +69,8 @@ macos-hammerspoon: macos-brew macos-stow
 	stow --no-folding --target "${HOME}" 'hammerspoon'
 
 macos-iterm: macos-brew
-	brew bundle --file brewfiles/iterm.Brewfile
-	exists imgcat || xscript "scripts/macos-iterm.sh"
+	brew bundle --file pkg/macos-iterm/macos-iterm.Brewfile
+	exists imgcat || xscript "pkg/macos-iterm/macos-iterm.sh"
 
 macos-markedit: macos-brew
 	brew bundle --file brewfiles/markedit.Brewfile
