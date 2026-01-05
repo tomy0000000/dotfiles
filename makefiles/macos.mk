@@ -121,7 +121,7 @@ macos-nano: ;
 
 macos-shellcheck: macos-brew macos-stow
 	exists shellcheck || brew install shellcheck
-	stow --no-folding --target "${HOME}" 'shellcheck'
+	stow --no-folding --dir 'pkg/shellcheck' --target "${HOME}" 'stow'
 
 macos-stow: macos-brew macos-clean
 	$(eval BREW_BIN := $(shell bin/brew_bin))
