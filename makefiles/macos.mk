@@ -139,9 +139,8 @@ macos-zsh: macos-brew macos-stow
 macos-c-cpp: macos-brew
 	brew install cling
 
-macos-javascript: macos-brew
-	brew bundle --file brewfiles/javascript.Brewfile
-	echo "Installed node with `pnpm env add --global lts`"
+macos-javascript:
+	echo "echo "dotfiles are installed, but not the runtime environments."
 
 macos-perl: macos-stow
 	stow --no-folding --target "${HOME}" 'perl'
