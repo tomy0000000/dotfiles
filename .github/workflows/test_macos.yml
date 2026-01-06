@@ -53,7 +53,7 @@ jobs:
             # "macos-settings", # Script error to be fixed
             "macos-shellcheck",
             "macos-stow",
-            # "macos-sublime", # Script error to be fixed
+            "macos-sublime",
             "macos-terminal",
             "macos-touch-id-sudo",
             "macos-tower",
