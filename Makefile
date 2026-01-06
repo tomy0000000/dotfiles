@@ -21,7 +21,7 @@ git: $(OS)-git
 micro: $(OS)-micro
 	stow --no-folding --dir 'pkg/micro' --target "${HOME}" 'stow'
 ansible: stow
-	stow --no-folding --target "${HOME}" 'ansible'
+	stow --no-folding --dir 'pkg/ansible' --target "${HOME}" 'stow'
 javascript: stow $(OS)-javascript
 	stow --no-folding --dir 'pkg/javascript' --target "${HOME}" 'stow'
 python: stow
