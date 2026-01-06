@@ -84,10 +84,8 @@ macos-popclip: macos-brew
 	xscript "scripts/macos-popclip.sh"
 
 macos-sublime: macos-brew macos-stow
-	brew bundle --file brewfiles/sublime.Brewfile
-	xscript "scripts/macos-sublime.sh"
-	stow --no-folding --target "${HOME}/Library/Application Support/Sublime Text" 'sublime'
-	stow --no-folding --dir 'private' --target "${HOME}/Library/Application Support/Sublime Text" 'sublime'
+	brew install --cask sublime-text
+	xscript "pkg/sublime/macos-sublime.sh"
 
 macos-terminal: macos-brew
 	brew bundle --file brewfiles/terminal.Brewfile
