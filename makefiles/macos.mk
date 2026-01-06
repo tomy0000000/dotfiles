@@ -5,13 +5,7 @@
 macos-core: macos-brew macos-stow macos-zsh
 
 macos-brew:
-	$(eval BREW_BIN := $(shell bin/brew_bin))
-	exists brew || xscript "scripts/macos-brew.sh"
-	${BREW_BIN}/brew bundle --file brewfiles/core.Brewfile
-	${BREW_BIN}/stow --no-folding --target "${HOME}" macos-brew
-	@if ${BREW_BIN}/brew autoupdate status | grep -q "stopped"; then \
-		${BREW_BIN}/brew autoupdate start; \
-	fi
+	xscript "pkg/brew/macos-brew.sh"
 
 macos-clean:
 	find . -name ".DS_Store" -delete
