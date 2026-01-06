@@ -3,6 +3,7 @@ set -euo pipefail
 
 # Create preferred directories
 PREFERENCES_DIR="${HOME}/Library/Application Support/Sublime Text"
+mkdir -p "${PREFERENCES_DIR}/Packages"
 mkdir -p "${PREFERENCES_DIR}/Installed Packages"
 
 # Install Package Control
