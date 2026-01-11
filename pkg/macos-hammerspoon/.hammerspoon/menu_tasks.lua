@@ -19,6 +19,13 @@ Install:andUse("TaskHammer",
                         PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
                     }
                 },
+                {
+                    name = "Archive Files",
+                    cmd = "~/.dotfiles/scripts/macos-archive-file.sh",
+                    env = {
+                        PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+                    }
+                },
             }
         }
     }
