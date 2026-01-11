@@ -11,3 +11,4 @@ format = ssh
 
 [gpg "ssh"]
 program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+allowedSignersFile = "~/.dotfiles/pkg/git/allowed-signers.txt"
