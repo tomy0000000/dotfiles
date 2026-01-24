@@ -2,7 +2,7 @@
 
 # Reset source directories permissions
 compaudit | xargs chmod g-w,o-w
-compaudit | xargs chown "${USER}"
+compaudit | xargs chown "$(whoami)"
 
 # Remove cached files
 rm -f "${HOME}/.zcompdump*"

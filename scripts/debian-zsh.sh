@@ -3,6 +3,7 @@ set -euo pipefail
 
 # Load .zshenv to get XDG_CONFIG_HOME
 set +u
+# shellcheck disable=SC1091
 source 'zsh/.zshenv'
 set -u
 
@@ -20,7 +21,7 @@ bash -c "NO_EDIT=true NO_TUTORIAL=true ZINIT_HOME=${HOME}/.local/share ZINIT_REP
 
 # Change default shell to zsh
 echo "Changing default shell to zsh..."
-sudo chsh -s "$(which zsh)" "${USER}"
+sudo chsh -s "$(which zsh)" "$(whoami)"
 
 # Install zsh dotfiles
 echo "Installing zsh dotfiles..."
