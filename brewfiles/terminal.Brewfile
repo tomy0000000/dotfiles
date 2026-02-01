@@ -1,2 +1,2 @@
 tap "dracula/install"
-# cask "dracula-terminal"
+cask "dracula-terminal"
