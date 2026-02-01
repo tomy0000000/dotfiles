@@ -1,133 +1,89 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+# Directory of this script (works even when called via symlink)
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-function prompt_yes_no {
-	read -r -p "${1} [y/N] " response
-	case "${response}" in
-	[yY][eE][sS] | [yY])
-		true
-		;;
-	*)
-		false
-		;;
-	esac
-}
+LOG_LEVEL=10   # DEBUG+
+LOG_TIME=1
+LOG_PREFIX="dotfiles-install"
+LOG_COLOR=1
+# shellcheck source=lib/log.sh
+. "$SCRIPT_DIR/lib/log.sh"
+# shellcheck source=lib/distro.sh
+. "$SCRIPT_DIR/lib/distro.sh"
 
-function check_command {
-	if ! command -v "${1}" &>/dev/null; then
-		echo "${YELLOW}Command ${1} is not available, install now...${NC}"
-		if [ "${1}" = 'sudo' ]; then
-			apt-get install -qqq -y sudo >/dev/null
-		else
-			sudo apt-get install -qqq -y "${1}" >/dev/null
-		fi
+function ensure {
+	if command -v "${1}" &>/dev/null; then
+		return 0
 	fi
-}
 
-function setup_user {
-	# Prompt for username
-	while true; do
-		read -r -p 'Enter username: ' username
-		if id "${username}" &>/dev/null; then
-			echo "${RED}User ${username} already exists, please choose another one${NC}"
-		else
-			break
-		fi
-	done
-
-	# Prompt for password
-	while true; do
-		read -r -p 'Enter password (leave blank to generate): ' password
-		if [ -z "${password}" ]; then
-			break
-		else
-			read -r -p 'Confirm password: ' confirm_password
-			if [ "${password}" = "${confirm_password}" ]; then
-				break
-			else
-				echo "${RED}Password does not match, please try again${NC}"
-			fi
-		fi
-	done
-
-	# Create user
-	home="/home/${username}"
-	useradd "${username}" --shell="/bin/bash" --groups="root,sudo" --home-dir="${home}"
-	echo "${username}:${password}" | chpasswd
-	echo "root:${password}" | chpasswd
-
-	# Setup home directory
-	cp -r /etc/skel/. "${home}"
-	chown "${username}:${username}" -R "${home}"
-
-	echo "export PATH=\"${home}/.local/bin:"'${PATH}'"\"" >>"${home}/.bashrc"
-	echo "User created: ${GREEN}${username}${NC}"
-	if [ -f "/root/.ssh/authorized_keys" ]; then
-		mkdir -p "${home}/.ssh"
-		cp "/root/.ssh/authorized_keys" "${home}/.ssh/authorized_keys"
-		chown "${username}:${username}" "${home}/.ssh"
-		chmod 700 "${home}/.ssh"
+	if [ "${1}" = 'sudo' ]; then
+		apt-get install -qqq -y sudo >/dev/null
 	else
-		echo "${YELLOW}No authorized_keys for root${NC}"
-		echo "${YELLOW}Make user to run 'make ubuntu-ssh' to setup SSH Key later${NC}"
+		sudo apt-get install -qqq -y "${1}" >/dev/null
 	fi
+
+	log_info "${1} is installed"
+}
+
+function prepare_ubuntu {
+	log_info "Preparing Ubuntu environment..."
+
+	if [ "${EUID}" -eq 0 ]; then
+		apt-get update -qq
+		ensure 'sudo'
+		log_warn "You are running as root!"
+	else
+		sudo apt-get update -qq
+	fi
+
+	# Install crucial commands
+	ensure 'git'
+	ensure 'make'
+}
+
+function prepare_macos {
+	log_info "Preparing macOS environment..."
+
+	# Check developer tools with git
+	if git --version >/dev/null 2>&1; then
+		return 0
+	fi
+
+	# Wait for developer tools to be installed
+	log_info "Installing Developer tools..."
+	xcode-select --install
+	until git --version >/dev/null 2>&1; do
+		sleep 5
+		log_info "Waiting for developer tools to be installed..."
+	done
 }
 
 function main {
+	# Check existed clone
+	if [ -d "${HOME}/.dotfiles" ]; then
+		log_error "dotfiles already cloned at ${HOME}/.dotfiles"
+		exit 1
+	fi
+
 	# Check OS
-	OS=$(uname)
-	case "${OS}" in
-	Linux)
-		distro=$(
-			. /etc/os-release
-			echo "${NAME}"
-		)
-		case "${distro}" in
-		'Ubuntu')
-			if [ "${EUID}" -eq 0 ]; then
-				apt-get update -qq
-				check_command 'sudo'
-				echo "You are running as root."
-				prompt_yes_no 'Do you want to create a new user?' && setup_user
-			else
-				sudo apt-get update -qq
-			fi
-			# Install crucial commands
-			check_command 'git'
-			check_command 'make'
-			;;
-		*)
-			echo 'Unsupported distro'
-			exit 1
-			;;
-		esac
+	case "$(distro)" in
+	ubuntu)
+		prepare_ubuntu
 		;;
-	Darwin)
-		# Check developer tools with git
-		if ! git --version >/dev/null 2>&1; then
-			echo "${YELLOW}Developer tools are not available, install now...${NC}"
-			xcode-select --install
-			# Wait for developer tools to be installed
-			until git --version >/dev/null 2>&1; do
-				sleep 5
-				echo "${YELLOW}Waiting for developer tools to be installed...${NC}"
-			done
-		fi
+	macos)
+		prepare_macos
 		;;
 	*)
-		echo 'Unsupported OS'
+		log_error 'Unsupported OS'
 		exit 1
 		;;
 	esac
 
 	# Clone dotfiles
 	git clone -q 'https://github.com/tomy0000000/dotfiles.git' "${HOME}/.dotfiles"
-	echo "dotfiles is ready to be installed at ${GREEN}${HOME}/.dotfiles${NC}"
+	log_info "dotfiles is ready at ${HOME}/.dotfiles"
 }
 
-main
+main "$@"
