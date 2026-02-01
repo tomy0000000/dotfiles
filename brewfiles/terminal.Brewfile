@@ -1,2 +1,1 @@
-tap "dracula/install"
-cask "dracula-terminal"
+cask "dracula/install/dracula-terminal"
