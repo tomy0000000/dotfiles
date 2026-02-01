@@ -1,3 +1,5 @@
 cask "aerial"
 cask "google-trends"
-cask "save-hollywood"
+# Disabled
+# https://github.com/Homebrew/homebrew-cask/pulls?q=sort:updated-desc+is:pr+save-hollywood+in:title
+# cask "save-hollywood"
