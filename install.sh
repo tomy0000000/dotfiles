@@ -7,7 +7,6 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 LOG_LEVEL=10   # DEBUG+
 LOG_TIME=1
 LOG_PREFIX="dotfiles-install"
-LOG_COLOR=1
 # shellcheck source=lib/log.sh
 . "$SCRIPT_DIR/lib/log.sh"
 # shellcheck source=lib/distro.sh

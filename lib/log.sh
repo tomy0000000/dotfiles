@@ -13,12 +13,10 @@ __LOG_SH_LOADED=1
 #   LOG_LEVEL=20              # INFO and above
 #   LOG_TIME=1                # enable timestamps
 #   LOG_PREFIX="mytool"       # prefix tag
-#   LOG_COLOR=1               # enable ANSI color (best-effort)
 
 : "${LOG_LEVEL:=20}"          # 10=DEBUG, 20=INFO, 30=WARN, 40=ERROR
 : "${LOG_TIME:=0}"            # 0/1
 : "${LOG_PREFIX:=}"           # e.g. "mytool"
-: "${LOG_COLOR:=0}"           # 0/1 (best-effort)
 
 # --- Internal helpers (POSIX-safe) -------------------------------------------
 
@@ -26,11 +24,14 @@ _log_level_num() {
   # Map a level name to its numeric value.
   # Usage: _log_level_num "INFO"
   case "$1" in
-    DEBUG) printf '%s' 10 ;;
-    INFO)  printf '%s' 20 ;;
-    WARN)  printf '%s' 30 ;;
-    ERROR) printf '%s' 40 ;;
-    *)     printf '%s' 0  ;;
+    DEBUG)  printf '%s' 10 ;;
+    INFO)   printf '%s' 20 ;;
+    WARN)   printf '%s' 30 ;;
+    ERROR)  printf '%s' 40 ;;
+    DIVIDER)       printf '%s' 20 ;;
+    DIVIDER_END_OK)  printf '%s' 20 ;;
+    DIVIDER_END_ERR) printf '%s' 20 ;;
+    *)              printf '%s' 0  ;;
   esac
 }
 
@@ -42,9 +43,9 @@ _log_now() {
 }
 
 _log_use_color() {
-  # Best-effort: use color only when LOG_COLOR=1, stderr/stdout are TTY, and not in CI/non‑TTY/dumb/no_color.
+  # Best-effort: use color when stderr is TTY and not in CI/dumb/no_color.
   # `-t` is POSIX for test in many shells; if unsupported, this will just fail false-ish.
-  [ "${LOG_COLOR}" = "1" ] && [ -t 1 ] && [ -z "${NO_COLOR-}" ] && [ -n "${TERM-}" ] && [ "${TERM-}" != "dumb" ]
+  [ -t 2 ] && [ -z "${NO_COLOR-}" ] && [ -n "${TERM-}" ] && [ "${TERM-}" != "dumb" ]
 }
 
 _log_fmt_prefix() {
@@ -85,11 +86,14 @@ _log_print() {
   # Colour (best-effort, stderr only)
   if _log_use_color; then
     case "$lvl" in
-      DEBUG) c_start="$(printf '🐛 \033[36m')" ;; # cyan
-      INFO)  c_start="$(printf 'ℹ️ \033[32m')" ;; # green
-      WARN)  c_start="$(printf '⚠️ \033[33m')" ;; # yellow
-      ERROR) c_start="$(printf '🛑 \033[31m')" ;; # red
-      *)     c_start="" ;;
+      DEBUG)   c_start="$(printf '🐛 \033[36m')" ;; # cyan
+      INFO)    c_start="$(printf 'ℹ️ \033[32m')" ;; # green
+      WARN)    c_start="$(printf '⚠️ \033[33m')" ;; # yellow
+      ERROR)   c_start="$(printf '🛑 \033[31m')" ;; # red
+      DIVIDER)         c_start="$(printf '\033[32m')" ;; # green (⌛️ in title)
+      DIVIDER_END_OK)  c_start="$(printf '\033[32m')" ;; # green (✅ in title)
+      DIVIDER_END_ERR) c_start="$(printf '\033[31m')" ;; # red (🛑 in title)
+      *)               c_start="" ;;
     esac
     c_end="$(printf '\033[0m')"
   else
@@ -99,13 +103,58 @@ _log_print() {
 
   # Print to stderr (so logs don’t pollute stdout pipelines)
   # Shellcheck note: we intentionally want "$*" to preserve spaces as one message.
-  prefix="$(_log_fmt_prefix "$lvl")"
+  case "$lvl" in
+    DIVIDER|DIVIDER_END_OK|DIVIDER_END_ERR) prefix="" ;;
+    *) prefix="$(_log_fmt_prefix "$lvl")" ;;
+  esac
   # If message is empty, still print prefix.
   if [ "$#" -gt 0 ]; then
-    printf '%s%s %s%s\n' "$c_start" "$prefix" "$*" "$c_end" >&2
+    if [ -n "$prefix" ]; then
+      printf '%s%s %s%s\n' "$c_start" "$prefix" "$*" "$c_end" >&2
+    else
+      printf '%s%s%s\n' "$c_start" "$*" "$c_end" >&2
+    fi
   else
     printf '%s%s%s\n' "$c_start" "$prefix" "$c_end" >&2
   fi
+}
+
+_log_terminal_width() {
+  # Best-effort: COLUMNS, then tput cols, then stty size, else 80.
+  w="${COLUMNS:-}"
+  if [ -z "$w" ]; then
+    w="$(tput cols 2>/dev/null)" || w=""
+  fi
+  if [ -z "$w" ]; then
+    w="$(stty size 2>/dev/null | awk '{print $2}')" || w=""
+  fi
+  case "$w" in
+    ''|*[!0-9]*) printf '%s' 80 ;;
+    *)          printf '%s' "$w" ;;
+  esac
+}
+
+_log_divider() {
+  # Arg 1: begin | end. Arg 2: script path. Arg 3 (end only): exit code (0 = success → green ✅, else red 🛑).
+  kind="$1"
+  path="$2"
+  exit_code="${3:-0}"
+  case "$kind" in
+    begin) title="⌛️ BEGIN $path"; lvl="DIVIDER" ;;
+    end)   if [ "$exit_code" = "0" ]; then title="✅ END $path"; lvl="DIVIDER_END_OK"; else title="🛑 END $path"; lvl="DIVIDER_END_ERR"; fi ;;
+    *)     title="$path"; lvl="DIVIDER" ;;
+  esac
+  w="$(_log_terminal_width)"
+  len=$(printf '%s' " $title " | wc -c | tr -d ' ')
+  left_n=$(( (w - len) / 2 ))
+  right_n=$(( w - len - left_n ))
+  [ "$left_n" -lt 0 ] && left_n=0
+  [ "$right_n" -lt 0 ] && right_n=0
+  left=""
+  i=0; while [ "$i" -lt "$left_n" ]; do left="${left}="; i=$((i+1)); done
+  right=""
+  i=0; while [ "$i" -lt "$right_n" ]; do right="${right}="; i=$((i+1)); done
+  _log_print "$lvl" "$left $title $right"
 }
 
 # --- Public API --------------------------------------------------------------
@@ -115,6 +164,19 @@ log_info()  { _log_print INFO  "$*"; }
 log_warn()  { _log_print WARN  "$*"; }
 log_error() { _log_print ERROR "$*"; }
 
+run() {
+  # run "path/to/script"
+  # Execute a script with pre-configured log (LOG_* exported; script runs in current shell and can use log_*).
+  [ -z "$1" ] && { log_error "run: missing script path"; return 1; }
+  [ ! -r "$1" ] && { log_error "run: not readable or not found: $1"; return 1; }
+  export LOG_LEVEL LOG_TIME LOG_PREFIX
+  _log_divider begin "$1"
+  ( . "$1" )   # Run in subshell
+  ret=$?
+  _log_divider end "$1" "$ret"
+  return $ret
+}
+
 die() {
   # die "message" [exit_code]
   # Returns non-zero if sourced; if executed in a subshell, exit is up to the caller.
@@ -122,20 +184,4 @@ die() {
   code="${2:-1}"
   log_error "$msg"
   return "$code"
-}
-
-# Convenience: assert command exists
-require_cmd() {
-  # require_cmd curl git jq
-  # Returns non-zero (and logs) if any command is missing.
-  missing=""
-  for cmd in "$@"; do
-    command -v "$cmd" >/dev/null 2>&1 || missing="${missing} ${cmd}"
-  done
-
-  if [ -n "$missing" ]; then
-    log_error "missing required command(s):${missing}"
-    return 127
-  fi
-  return 0
 }

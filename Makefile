@@ -1,7 +1,7 @@
-SHELL = /bin/bash
+ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+SHELL = $(ROOT_DIR)/bin/make-shell
 OS := $(shell bin/distro)
 PATH := bin:$(PATH)
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 .PHONY: clean git macos-brew
 

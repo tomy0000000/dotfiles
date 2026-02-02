@@ -5,7 +5,7 @@
 macos-core: macos-brew macos-stow macos-zsh
 
 macos-brew:
-	xscript "pkg/brew/macos-brew.sh"
+	run "pkg/brew/macos-brew.sh"
 
 macos-clean:
 	find . -name ".DS_Store" -delete
@@ -45,7 +45,7 @@ macos-cli-useful: macos-brew
 
 macos-alfred: macos-brew
 	brew bundle --file brewfiles/alfred.Brewfile
-	xscript "scripts/macos-alfred.sh"
+	run "scripts/macos-alfred.sh"
 
 macos-appcleaner: macos-brew
 	brew install --cask appcleaner
@@ -53,10 +53,10 @@ macos-appcleaner: macos-brew
 
 macos-cleanshot: macos-brew
 	brew bundle --file brewfiles/cleanshot.Brewfile
-	xscript "scripts/macos-cleanshot.sh"
+	run "scripts/macos-cleanshot.sh"
 
 macos-finder:
-	xscript "scripts/macos-finder.sh"
+	run "scripts/macos-finder.sh"
 
 macos-hammerspoon: macos-brew macos-stow
 	brew install --cask hammerspoon
@@ -64,33 +64,33 @@ macos-hammerspoon: macos-brew macos-stow
 
 macos-iterm: macos-brew
 	brew bundle --file pkg/macos-iterm/macos-iterm.Brewfile
-	exists imgcat || xscript "pkg/macos-iterm/macos-iterm.sh"
+	exists imgcat || (run "pkg/macos-iterm/macos-iterm.sh")
 
 macos-markedit: macos-brew
 	brew bundle --file brewfiles/markedit.Brewfile
-	xscript "scripts/macos-markedit.sh"
+	run "scripts/macos-markedit.sh"
 
 macos-one-password: macos-brew
 	brew bundle --file brewfiles/one-password.Brewfile
 
 macos-popclip: macos-brew
 	brew bundle --file brewfiles/popclip.Brewfile
-	xscript "scripts/macos-popclip.sh"
+	run "scripts/macos-popclip.sh"
 
 macos-sublime: macos-brew macos-stow
 	brew install --cask sublime-text
-	xscript "pkg/sublime/macos-sublime.sh"
+	run "pkg/sublime/macos-sublime.sh"
 
 macos-terminal: macos-brew
 	brew bundle --file brewfiles/terminal.Brewfile
 
 macos-tower: macos-brew macos-git
 	brew install --cask tower
-	xscript "pkg/macos-tower/macos-tower.sh"
+	run "pkg/macos-tower/macos-tower.sh"
 
 macos-vscode: macos-brew
 	brew install --cask visual-studio-code
-	xscript "pkg/vscode/macos-vscode.sh"
+	run "pkg/vscode/macos-vscode.sh"
 
 macos-xcode: macos-brew
 	brew bundle --file brewfiles/xcode.Brewfile
@@ -126,7 +126,7 @@ macos-stow: macos-brew macos-clean
 macos-zsh: macos-brew macos-stow
 	$(eval BREW_BIN := $(shell bin/brew_bin))
 	${BREW_BIN}/brew bundle --file brewfiles/zsh.Brewfile
-	xscript "scripts/macos-zsh.sh"
+	run "scripts/macos-zsh.sh"
 
 ###############################################################################
 # Dev                                                                         #
@@ -140,21 +140,21 @@ macos-javascript:
 
 macos-perl: macos-stow
 	stow --no-folding --dir 'pkg/perl' --target "${HOME}" 'stow'
-	xscript "pkg/perl/macos-perl.sh"
+	run "pkg/perl/macos-perl.sh"
 
 ###############################################################################
 # Misc                                                                        #
 ###############################################################################
 
 macos-file-handler: macos-duti
-	xscript "scripts/macos-file-handler.sh"
+	run "scripts/macos-file-handler.sh"
 
 macos-font: macos-brew
 	brew bundle --file pkg/macos-font/macos-font.Brewfile
 	cp -r pkg/macos-font/collection/ "${HOME}/Library/FontCollections"
 
 macos-icon: macos-cli-useful
-	xscript "scripts/macos-icons.sh"
+	run "scripts/macos-icons.sh"
 
 macos-quicklook: macos-brew
 	brew bundle --file brewfiles/ext-quicklook.Brewfile
@@ -166,7 +166,7 @@ macos-service-workflow: macos-stow
 	stow --dir 'pkg' --target "${HOME}/Library/Services" 'macos-services'
 
 macos-settings:
-	xscript "scripts/macos-settings.sh"
+	run "scripts/macos-settings.sh"
 
 macos-touch-id-sudo:
-	xscript "scripts/macos-touch-id-sudo.sh"
+	run "scripts/macos-touch-id-sudo.sh"

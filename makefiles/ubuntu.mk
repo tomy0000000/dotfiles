@@ -30,7 +30,7 @@ ubuntu-cli-network:
 ###############################################################################
 
 ubuntu-dropbox: ubuntu-essential
-	xscript "scripts/dropbox.sh"
+	run "scripts/dropbox.sh"
 
 ###############################################################################
 # CLIs                                                                        #
@@ -40,7 +40,7 @@ ubuntu-git: ubuntu-stow
 	xargs sudo apt-get install -y < pkg/git/git.Aptfile
 
 ubuntu-micro: ubuntu-stow
-	xscript "pkg/micro/debian-micro.sh"
+	run "pkg/micro/debian-micro.sh"
 
 ubuntu-nano:
 	sudo apt-get update
@@ -51,7 +51,7 @@ ubuntu-stow:
 	sudo apt-get install -y stow
 
 ubuntu-zsh: ubuntu-stow
-	xscript "scripts/debian-zsh.sh"
+	run "scripts/debian-zsh.sh"
 
 ###############################################################################
 # Dev                                                                         #
@@ -65,10 +65,10 @@ ubuntu-javascript:
 ###############################################################################
 
 ubuntu-locale-zhtw:
-	xscript "scripts/debian-locale-zhtw.sh"
+	run "scripts/debian-locale-zhtw.sh"
 
 ubuntu-ssh:
-	xscript "scripts/debian-ssh.sh"
+	run "scripts/debian-ssh.sh"
 
 ubuntu-tz-taipei:
-	xscript "scripts/debian-tz-taipei.sh"
+	run "scripts/debian-tz-taipei.sh"
