@@ -1,0 +1,537 @@
+{
+  "C_Cpp.doxygen.generatedStyle": "/**",
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "Lua.workspace.library": ["～/.hammerspoon/Spoons/EmmyLua.spoon/annotations"],
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [100],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "docker.docker"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "docker.docker"
+  },
+  "[gemfile]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[jinja]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "other": "on",
+      "strings": "on"
+    }
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[proto3]": {
+    "editor.defaultFormatter": "DrBlury.protobuf-vsc"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnType": true
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.tabSize": 2
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[snippets]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[twig]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml",
+    "editor.tabSize": 2
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "chat.commandCenter.enabled": false,
+  "chat.editing.confirmEditRequestRemoval": false,
+  "chat.editing.confirmEditRequestRetry": false,
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    "/tmp/postman-collections-post-response.instructions.md": true,
+    "/tmp/postman-collections-pre-request.instructions.md": true,
+    "/tmp/postman-folder-post-response.instructions.md": true,
+    "/tmp/postman-folder-pre-request.instructions.md": true,
+    "/tmp/postman-http-request-post-response.instructions.md": true,
+    "/tmp/postman-http-request-pre-request.instructions.md": true
+  },
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "debug.onTaskErrors": "showErrors",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "docker.extension.enableComposeLanguageServer": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "'MesloLGS Nerd Font Propo', Menlo, Monaco, 'Droid Sans Mono', 'Courier New', monospace",
+  "editor.fontSize": 15,
+  "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlineSuggest.enabled": true,
+  "editor.largeFileOptimizations": false,
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderLineHighlight": "gutter",
+  "editor.rulers": [88],
+  "editor.scrollBeyondLastLine": false,
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.preview": true,
+  "editor.suggest.showMethods": true,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 4,
+  "editor.tokenColorCustomizations": {
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "textMateRules": [
+      {
+        "scope": "keyword.other.dotenv",
+        "settings": {
+          "foreground": "#FF000000"
+        }
+      }
+    ]
+  },
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.wordBasedSuggestions": "off",
+  "emmet.excludeLanguages": [],
+  "emmet.includeLanguages": {
+    "erb": "html",
+    "hugo-html": "html",
+    "markdown": "html",
+    "mdx": "html",
+    "njk": "html",
+    "twig": "html"
+  },
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
+  "explorer.excludeGitIgnore": true,
+  "explorer.fileNesting.patterns": {
+    "*.db": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.s3db": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.ts": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "tsconfig.json": "tsconfig.*.json"
+  },
+  "files.associations": {
+    ".env": "dotenv",
+    ".env*": "dotenv",
+    ".gitalias": "properties",
+    ".vercelignore": "ignore",
+    "*.Brewfile": "ruby",
+    "*.dropboxignore": "ignore",
+    "*.gitalias": "properties",
+    "*.Makefile": "makefile",
+    "*.mdx": "mdx",
+    "*.njk": "njk",
+    "*.plist": "xml",
+    "*.sublime-keymap": "jsonc",
+    "*.sublime-settings": "jsonc"
+  },
+  "files.autoGuessEncoding": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/*.pyc": true
+  },
+  "git.autoStash": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.editor.temporalContext.enabled": true,
+  "github.copilot.chat.edits.temporalContext.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "html": true,
+    "markdown": true,
+    "plaintext": true,
+    "python": true,
+    "scminput": false,
+    "yaml": true
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "stash-push:command",
+    "branch-create:command"
+  ],
+  "gitlens.views.repositories.showContributors": false,
+  "gitlens.views.repositories.showRemotes": false,
+  "gitlens.views.repositories.showStashes": true,
+  "gitlens.views.repositories.showTags": false,
+  "gitlens.views.repositories.showWorktrees": false,
+  "gitlens.views.scm.grouped.views": {
+    "branches": false,
+    "commits": true,
+    "contributors": true,
+    "fileHistory": false,
+    "launchpad": false,
+    "remotes": true,
+    "repositories": true,
+    "searchAndCompare": false,
+    "stashes": false,
+    "tags": true,
+    "worktrees": true
+  },
+  "gitlens.views.stashes.files.layout": "tree",
+  "go.toolsManagement.autoUpdate": true,
+  "iconify.languageIds": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "svelte",
+    "html",
+    "pug",
+    "json",
+    "yaml",
+    "markdown",
+    "mdx"
+  ],
+  "jest.runMode": "on-demand",
+  "jupyter.askForKernelRestart": false,
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "pdflatex",
+      "tools": ["pdflatex"]
+    },
+    {
+      "name": "latexmk 🔃",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "latexmk (latexmkrc)",
+      "tools": ["latexmk_rconly"]
+    },
+    {
+      "name": "latexmk (lualatex)",
+      "tools": ["lualatexmk"]
+    },
+    {
+      "name": "latexmk (xelatex)",
+      "tools": ["xelatexmk"]
+    },
+    {
+      "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "Compile Rnw files",
+      "tools": ["rnw2tex", "latexmk"]
+    },
+    {
+      "name": "Compile Jnw files",
+      "tools": ["jnw2tex", "latexmk"]
+    },
+    {
+      "name": "tectonic",
+      "tools": ["tectonic"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "%DOC%"
+      ],
+      "command": "xelatex",
+      "name": "xelatex"
+    },
+    {
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "command": "latexmk",
+      "env": {},
+      "name": "latexmk"
+    },
+    {
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-lualatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "command": "latexmk",
+      "env": {},
+      "name": "lualatexmk"
+    },
+    {
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-xelatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "command": "latexmk",
+      "env": {},
+      "name": "xelatexmk"
+    },
+    {
+      "args": ["%DOC%"],
+      "command": "latexmk",
+      "env": {},
+      "name": "latexmk_rconly"
+    },
+    {
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "command": "pdflatex",
+      "env": {},
+      "name": "pdflatex"
+    },
+    {
+      "args": ["%DOCFILE%"],
+      "command": "bibtex",
+      "env": {},
+      "name": "bibtex"
+    },
+    {
+      "args": [
+        "-e",
+        "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+      ],
+      "command": "Rscript",
+      "env": {},
+      "name": "rnw2tex"
+    },
+    {
+      "args": ["-e", "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"],
+      "command": "julia",
+      "env": {},
+      "name": "jnw2tex"
+    },
+    {
+      "args": [
+        "-e",
+        "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+      ],
+      "command": "julia",
+      "env": {},
+      "name": "jnw2texmintex"
+    },
+    {
+      "args": ["--synctex", "--keep-logs", "%DOC%.tex"],
+      "command": "tectonic",
+      "env": {},
+      "name": "tectonic"
+    }
+  ],
+  "makefile.configureOnOpen": true,
+  "markdown.extension.toc.levels": "2..6",
+  "markdown.preview.doubleClickToSwitchToEditor": false,
+  "mypy-type-checker.reportingScope": "workspace",
+  "notebook.formatOnCellExecution": true,
+  "notebook.lineNumbers": "on",
+  "prettier.resolveGlobalModules": true,
+  "protobuf.protoc.path": "/usr/bin/protoc",
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.extraPaths": [],
+  "python.analysis.typeCheckingMode": "standard",
+  "python.defaultInterpreterPath": "/Users/tomyhsieh/.pyenv/versions/3.12.0/bin/python",
+  "python.languageServer": "Default",
+  "python.terminal.activateEnvironment": false,
+  "python.venvPath": "~/Library/Caches/pypoetry/virtualenvs",
+  "redhat.telemetry.enabled": false,
+  "remote.SSH.connectTimeout": 1800,
+  "remote.SSH.lockfilesInTmp": true,
+  "remote.autoForwardPorts": false,
+  "scm.defaultViewMode": "tree",
+  "search.exclude": {
+    "**/env": true,
+    "**/envs": true
+  },
+  "search.useGlobalIgnoreFiles": true,
+  "security.workspace.trust.emptyWindow": false,
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "settingsSync.ignoredSettings": [
+    "remote.SSH.configFile",
+    "-python.venvFolders",
+    "-python.venvPath",
+    "remote.SSH.remotePlatform"
+  ],
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "erb": "erb",
+    "hugo-html": "gohtml",
+    "njk": "njk",
+    "twig": "twig"
+  },
+  "task.allowAutomaticTasks": "on",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders",
+    "docker-desktop"
+  ],
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.defaultProfile.osx": "zsh (2)",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "args": ["-i"],
+      "path": "zsh"
+    }
+  },
+  "terminal.integrated.scrollback": 100000,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "update.mode": "manual",
+  "window.commandCenter": false,
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#44475A"
+  },
+  "workbench.colorTheme": "Dracula Pro",
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.enablePreview": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "*.md": "default",
+    "*.pdf": "default"
+  },
+  "workbench.enableExperiments": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "Dracula Pro",
+  "workbench.preferredLightColorTheme": "Dracula Pro (Alucard)",
+  "workbench.productIconTheme": "material-product-icons",
+  "workbench.startupEditor": "newUntitledFile"
+}

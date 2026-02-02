@@ -1,0 +1,118 @@
+{
+  "tasks": [
+    {
+      "args": [
+        "${workspaceFolder}"
+      ],
+      "command": "open",
+      "label": "🔎 Open Project in Finder",
+      "presentation": {
+        "focus": false,
+        "reveal": "silent"
+      },
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "args": [
+        "--reveal",
+        "${file}"
+      ],
+      "command": "open",
+      "label": "🔎 Open File in Finder",
+      "presentation": {
+        "focus": false,
+        "reveal": "silent"
+      },
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "args": [
+        "browse"
+      ],
+      "command": "git",
+      "label": "🌐 Open remote site",
+      "presentation": {
+        "focus": false,
+        "reveal": "silent"
+      },
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "args": [
+        "-a",
+        "Tower.app",
+        "&&",
+        "git",
+        "tower"
+      ],
+      "command": "open",
+      "label": "🗼 Open in Tower",
+      "presentation": {
+        "focus": false,
+        "reveal": "silent"
+      },
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "args": [
+        "-a",
+        "Typora",
+        "${file}"
+      ],
+      "command": "open",
+      "label": "⌨️ Open in Typora",
+      "presentation": {
+        "focus": false,
+        "reveal": "silent"
+      },
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "args": [
+        "-a",
+        "MarkEdit",
+        "${file}"
+      ],
+      "command": "open",
+      "label": "⌨️ Open in MarkEdit",
+      "presentation": {
+        "focus": false,
+        "reveal": "silent"
+      },
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "args": [
+        "${file}"
+      ],
+      "command": "subl",
+      "label": "⌨️ Open in Sublime Text",
+      "presentation": {
+        "focus": false,
+        "reveal": "silent"
+      },
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "args": [
+        "${file}"
+      ],
+      "command": "open",
+      "label": "🌐 Open in Browser",
+      "presentation": {
+        "focus": false,
+        "reveal": "silent"
+      },
+      "problemMatcher": [],
+      "type": "shell"
+    }
+  ],
+  "version": "2.0.0"
+}
