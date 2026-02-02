@@ -1,0 +1,9 @@
+{
+  "Insert Pagebreak": {
+    "body": [
+      "<div style=\"page-break-after: always;\"></div>"
+    ],
+    "description": "Pagebreak",
+    "prefix": "pagebreak"
+  }
+}

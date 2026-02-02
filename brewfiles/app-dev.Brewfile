@@ -1,9 +1,9 @@
 # macos-iterm
-# macos-tower
-# macos-xcode
 # macos-sublime
+# macos-tower
+# macos-vscode
+# macos-xcode
 cask "hex-fiend"
 cask "jupyter-notebook-viewer"
 cask "kaleidoscope"
 cask "postman"
-cask "visual-studio-code"

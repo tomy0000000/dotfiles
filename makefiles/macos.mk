@@ -26,7 +26,7 @@ macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner 
 macos-app-work: macos-brew macos-app-dev macos-appcleaner macos-alfred macos-popclip
 	brew bundle --file brewfiles/app-essential.Brewfile
 
-macos-app-dev: git macos-brew macos-iterm macos-sublime macos-terminal macos-xcode
+macos-app-dev: git macos-brew macos-iterm macos-sublime macos-terminal macos-vscode macos-xcode
 	brew bundle --file brewfiles/app-dev.Brewfile
 
 ###############################################################################
@@ -87,6 +87,10 @@ macos-terminal: macos-brew
 macos-tower: macos-brew macos-git
 	brew install --cask tower
 	xscript "pkg/macos-tower/macos-tower.sh"
+
+macos-vscode: macos-brew
+	brew install --cask visual-studio-code
+	xscript "pkg/vscode/macos-vscode.sh"
 
 macos-xcode: macos-brew
 	brew bundle --file brewfiles/xcode.Brewfile

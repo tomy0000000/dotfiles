@@ -1,0 +1,12 @@
+{
+  "from datetime import datetime": {
+    "body": "from datetime import datetime",
+    "description": "from datetime import datetime",
+    "prefix": "idt"
+  },
+  "from x import y": {
+    "body": "from $1 import $2",
+    "description": "import package from module",
+    "prefix": "fi"
+  }
+}
