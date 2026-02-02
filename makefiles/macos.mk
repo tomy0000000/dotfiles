@@ -90,7 +90,7 @@ macos-tower: macos-brew macos-git
 
 macos-vscode: macos-brew
 	brew install --cask visual-studio-code
-	xscript "pkg/vscode/macos-vscode.sh"
+	run "pkg/vscode/macos-vscode.sh"
 
 macos-xcode: macos-brew
 	brew bundle --file brewfiles/xcode.Brewfile
