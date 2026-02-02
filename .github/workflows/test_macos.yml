@@ -57,6 +57,7 @@ jobs:
             "macos-terminal",
             "macos-touch-id-sudo",
             "macos-tower",
+            "macos-vscode",
             # "macos-xcode", # mas can't run without login on GitHub Actions
             "macos-zsh",
             "micro",
