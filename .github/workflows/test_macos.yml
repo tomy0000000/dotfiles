@@ -6,71 +6,148 @@ on:
       - main
     paths-ignore:
       - "docs/**"
+      - "docs/**"
   pull_request:
-  schedule:
-    - cron: "0 2 * * *"
 
 jobs:
+  generate-matrix:
+    name: Generate matrix
+    runs-on: ubuntu-latest
+    outputs:
+      features: ${{ steps.build-matrix.outputs.features }}
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📄 Get list of changed files
+        id: changed-files
+        run: |
+          # Determine base and head commits using GitHub Actions contexts
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base="${{ github.event.pull_request.base.sha }}"
+            head="${{ github.event.pull_request.head.sha }}"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            base="${{ github.event.before }}"
+            head="${{ github.sha }}"
+          else
+            echo "Unsupported event: ${{ github.event_name }}"
+            base=""
+            head=""
+          fi
+
+          if [ -z "$base" ] || [ -z "$head" ]; then
+            echo "No base/head to diff; leaving paths empty."
+            echo "paths=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          files=$(git diff --name-only "$base" "$head" || true)
+
+          echo "Changed files:"
+          echo "$files"
+
+          {
+            echo 'paths<<EOF'
+            echo "$files"
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: 🧮 Generate feature matrix
+        id: build-matrix
+        run: |
+          # Extract feature names for any changed file under pkg/some-feature/*
+          changed_paths="${{ steps.changed-files.outputs.paths }}"
+          changed_features=$(
+            printf '%s\n' "$changed_paths" |
+              sed -n 's|^pkg/\([^/]*\).*|\1|p' |
+              sort -u
+          )
+
+          echo "Changed features from pkg/:"
+          echo "$changed_features"
+
+          features_json=$(
+            printf '%s\n' "$changed_features" |
+              jq -R -s -c 'split("\n") | map(select(length>0))'
+          )
+
+          echo "features=$features_json" >> "$GITHUB_OUTPUT"
+
+  add-fixed-features:
+    runs-on: ubuntu-latest
+    needs: generate-matrix
+    outputs:
+      features: ${{ steps.final-matrix.outputs.features }}
+    steps:
+      - name: Add fixed features
+        id: final-matrix
+        env:
+          FIXED_FEATURES: |
+            ansible
+            clean
+            cli-network
+            core
+            git
+            javascript
+            macos-appcleaner
+            macos-brew
+            macos-c-cpp
+            macos-clean
+            macos-cli-network
+            macos-cli-useful
+            macos-core
+            macos-docker
+            macos-duti
+            macos-file-handler
+            macos-finder
+            macos-font
+            macos-git
+            macos-hammerspoon
+            macos-icon
+            macos-iterm
+            macos-javascript
+            macos-markedit
+            macos-micro
+            macos-nano
+            macos-popclip
+            macos-quicklook
+            macos-screensaver
+            macos-service-workflow
+            macos-shellcheck
+            macos-stow
+            macos-sublime
+            macos-terminal
+            macos-touch-id-sudo
+            macos-tower
+            macos-vscode
+            macos-zsh
+            micro
+            nano
+            python
+            stow
+            zsh
+        run: |
+          # Get dynamic features from previous job (may be empty)
+          dynamic_features='${{ needs.generate-matrix.outputs.features }}'
+          fixed_features=$(printf '%s\n' \"$FIXED_FEATURES\" | jq -R -s -c 'split(\"\\n\") | map(select(length>0))')
+
+          # Merge and deduplicate features
+          merged_features=$(jq -s 'add | unique' <(echo "$dynamic_features") <(echo "$fixed_features"))
+
+          echo "Final features matrix:"
+          echo "$merged_features"
+
+          echo "features=$merged_features" >> "$GITHUB_OUTPUT"
+
   macOS:
     runs-on: macos-latest
+    needs: add-fixed-features
     strategy:
       fail-fast: false
       matrix:
-        features: [
-            "ansible",
-            "clean",
-            "cli-network",
-            "core",
-            "git",
-            "javascript",
-            # "macos-alfred", # Script error to be fixed
-            # "macos-app-dev", # Depends on `git`
-            # "macos-app-private", # Depends on `git`
-            # "macos-app-work", # Depends on `git`
-            "macos-appcleaner",
-            "macos-brew",
-            "macos-c-cpp",
-            "macos-clean",
-            # "macos-cleanshot", # Script error to be fixed
-            "macos-cli-network",
-            "macos-cli-useful",
-            "macos-core",
-            "macos-docker",
-            "macos-dropbox",
-            "macos-duti",
-            "macos-file-handler",
-            "macos-finder",
-            "macos-font",
-            "macos-git",
-            "macos-hammerspoon",
-            "macos-icon",
-            "macos-iterm",
-            "macos-javascript",
-            "macos-markedit",
-            "macos-micro",
-            "macos-nano",
-            # "macos-one-password", # mas can't run without login on GitHub Actions
-            # "macos-perl", # Script error to be fixed
-            "macos-popclip",
-            "macos-quicklook",
-            "macos-screensaver",
-            "macos-service-workflow",
-            # "macos-settings", # Script error to be fixed
-            "macos-shellcheck",
-            "macos-stow",
-            "macos-sublime",
-            "macos-terminal",
-            "macos-touch-id-sudo",
-            "macos-tower",
-            "macos-vscode",
-            # "macos-xcode", # mas can't run without login on GitHub Actions
-            "macos-zsh",
-            "micro",
-            "nano",
-            "python",
-            "stow",
-            "zsh",
-          ]
+        features: ${{ fromJson(needs.add-fixed-features.outputs.features) }}
     steps:
       - name: 🛒 Checkout
         uses: actions/checkout@v4
