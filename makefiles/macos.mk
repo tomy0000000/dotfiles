@@ -153,7 +153,7 @@ macos-quicklook: macos-brew
 macos-screensaver: macos-brew
 	run "pkg/macos-screensaver/macos-screensaver.sh"
 
-macos-service-workflow: macos-stow
+macos-services: macos-stow
 	stow --dir 'pkg' --target "${HOME}/Library/Services" 'macos-services'
 
 macos-settings:
