@@ -31,11 +31,11 @@ jobs:
 
       - name: 📊 Generate affected feature list
         id: affected-list
-        run: ./github/scripts/affected-list.sh '${{ steps.feature-list.outputs.features }}'
+        run: .github/scripts/affected-list.sh '${{ steps.feature-list.outputs.features }}'
 
       - name: 🔀 Merge with fixed features
         id: merge-features
-        run: ./github/scripts/merge-features.sh '${{ steps.affected-list.outputs.features }}'
+        run: .github/scripts/merge-features.sh '${{ steps.affected-list.outputs.features }}'
 
   macOS:
     runs-on: macos-latest
