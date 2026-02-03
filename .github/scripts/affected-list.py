@@ -1,6 +1,13 @@
 #!/usr/bin/env python
-# .github/scripts/affected-list.py 'changed_features_json' 'all_features_json'
 # Infer all affected features based on a list of changed features
+#
+# Usage in GitHub Actions:
+#
+# .github/scripts/affected-list.py 'changed_features_json' 'all_features_json'
+#
+# Usage in terminal:
+#
+# .github/scripts/affected-list.py '["macos-brew"]' "$(GITHUB_OUTPUT=/dev/null .github/scripts/all-features.sh)"
 
 import json
 import os
