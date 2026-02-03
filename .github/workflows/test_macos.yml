@@ -12,7 +12,7 @@ on:
 jobs:
   generate-matrix:
     name: 🌀 Generate matrix
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     outputs:
       features: ${{ steps.merge-features.outputs.features }}
     steps:
@@ -37,6 +37,7 @@ jobs:
         id: affected-list
         run: .github/scripts/affected-list.py '${{ steps.feature-list.outputs.features }}' '${{ steps.all-features.outputs.features }}'
 
+      # TODO: Remove this step when all features are moved under pkg/
       - name: 🔀 Merge with fixed features
         id: merge-features
         run: .github/scripts/merge-features.sh '${{ steps.affected-list.outputs.features }}'

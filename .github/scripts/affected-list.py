@@ -58,7 +58,7 @@ def output_to_github_actions(affected_features: list[str]) -> None:
     github_output_path = os.getenv("GITHUB_OUTPUT")
     if github_output_path:
         with open(github_output_path, "a") as gh_out:
-            gh_out.write(f"affected_features={json.dumps(affected_features)}\n")
+            gh_out.write(f"features={json.dumps(affected_features)}\n")
 
 
 def main() -> None:
