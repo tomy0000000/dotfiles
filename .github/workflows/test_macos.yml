@@ -21,6 +21,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: 🗂️ Get all features
+        id: all-features
+        run: .github/scripts/all-features.sh
+
       - name: 📄 List changed files
         id: changed-files
         run: .github/scripts/changed-files.sh '${{ toJson(github) }}'
@@ -31,12 +35,7 @@ jobs:
 
       - name: 📊 Generate affected feature list
         id: affected-list
-        # run: .github/scripts/affected-list.sh '${{ steps.feature-list.outputs.features }}'
-        run: |
-          which python
-          which python3
-          python --version
-          python3 --version
+        run: .github/scripts/affected-list.py '${{ steps.feature-list.outputs.features }}' '${{ steps.all-features.outputs.features }}'
 
       - name: 🔀 Merge with fixed features
         id: merge-features
