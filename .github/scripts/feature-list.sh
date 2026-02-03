@@ -19,7 +19,7 @@ changed_features=$(
     sort -u
 )
 
-echo "Changed features from pkg/:" >&2
+echo "Changed features:" >&2
 echo "$changed_features" >&2
 
 # Convert to JSON array
