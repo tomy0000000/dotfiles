@@ -26,7 +26,7 @@ macos-app-work: macos-brew macos-app-dev macos-appcleaner macos-alfred macos-pop
 	brew bundle --file brewfiles/app-essential.Brewfile
 
 macos-app-dev: git macos-brew macos-iterm macos-sublime macos-terminal macos-vscode macos-xcode
-	brew bundle --file brewfiles/app-dev.Brewfile
+	run "pkg/macos-app-dev/macos-app-dev.sh"
 
 ###############################################################################
 # CLI Suite                                                                   #
