@@ -15,3 +15,6 @@ else
     echo "micro installation failed"
     exit 1
 fi
+
+# Run global setup script
+bash pkg/micro/micro.sh
