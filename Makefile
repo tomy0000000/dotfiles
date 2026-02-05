@@ -1,9 +1,7 @@
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 SHELL = $(ROOT_DIR)/bin/make-shell
-OS := $(shell bin/distro)
+OS := $(shell distro)
 PATH := bin:$(PATH)
-
-.PHONY: clean git macos-brew
 
 all: $(OS)
 macos: macos-core
