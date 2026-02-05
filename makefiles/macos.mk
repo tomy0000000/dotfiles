@@ -108,7 +108,7 @@ macos-duti: macos-brew
 # This is a full suite of git plugins and configurations
 # Most other target that requires git don't need this
 macos-git: macos-brew
-	brew bundle --file pkg/git/git.Brewfile
+	run "pkg/git/macos-git.sh"
 
 macos-micro: macos-brew
 	brew install micro
