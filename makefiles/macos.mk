@@ -154,7 +154,7 @@ macos-icon: macos-cli-useful
 	run "scripts/macos-icons.sh"
 
 macos-quicklook: macos-brew
-	brew bundle --file brewfiles/ext-quicklook.Brewfile
+	run "pkg/macos-quicklook/macos-quicklook.sh"
 
 macos-screensaver: macos-brew
 	brew bundle --file brewfiles/ext-screensaver.Brewfile
