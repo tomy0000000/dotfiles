@@ -10,12 +10,11 @@ ubuntu: ubuntu-core
 core: $(OS)-core
 clean: $(OS)-clean
 cli-network: $(OS)-cli-network
+git: $(OS)-git
 nano: $(OS)-nano
 stow: $(OS)-stow
 zsh: $(OS)-zsh
 
-git: $(OS)-git
-	ln -sf '.dotfiles/pkg/git/.gitconfig' "${HOME}"
 micro: $(OS)-micro
 	stow --no-folding --dir 'pkg/micro' --target "${HOME}" 'stow'
 ansible: stow

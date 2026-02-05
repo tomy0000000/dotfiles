@@ -36,8 +36,8 @@ ubuntu-dropbox: ubuntu-essential
 # CLIs                                                                        #
 ###############################################################################
 
-ubuntu-git: ubuntu-stow
-	xargs sudo apt-get install -y < pkg/git/git.Aptfile
+ubuntu-git:
+	run "pkg/git/debian-git.sh"
 
 ubuntu-micro: ubuntu-stow
 	run "pkg/micro/debian-micro.sh"
