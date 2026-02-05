@@ -70,7 +70,7 @@ macos-markedit: macos-brew
 	run "pkg/macos-markedit/macos-markedit.sh"
 
 macos-one-password: macos-brew
-	brew bundle --file brewfiles/one-password.Brewfile
+	run "pkg/one-password/macos-one-password.sh"
 
 macos-popclip: macos-brew
 	run "pkg/macos-popclip/macos-popclip.sh"
