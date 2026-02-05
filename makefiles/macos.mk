@@ -52,8 +52,7 @@ macos-appcleaner: macos-brew
 	defaults import net.freemacsoft.AppCleaner pkg/macos-appcleaner/net.freemacsoft.AppCleaner.plist
 
 macos-cleanshot: macos-brew
-	brew bundle --file brewfiles/cleanshot.Brewfile
-	run "scripts/macos-cleanshot.sh"
+	run "pkg/macos-cleanshot/macos-cleanshot.sh"
 
 macos-finder:
 	run "scripts/macos-finder.sh"

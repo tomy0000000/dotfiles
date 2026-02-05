@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# Install CleanShot X
+brew install --cask cleanshot
+
 # Modify Shortcuts
 defaults export com.apple.symbolichotkeys - |
     # Save picture of screen as a file: Off
