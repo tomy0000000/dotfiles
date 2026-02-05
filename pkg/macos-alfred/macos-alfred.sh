@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# Install Alfred
+brew install --cask alfred
+
 # Modify Shortcuts
 defaults export com.apple.symbolichotkeys - |
     # Show Spotlight search: Off
