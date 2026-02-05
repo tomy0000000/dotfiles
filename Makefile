@@ -10,6 +10,7 @@ ubuntu: ubuntu-core
 core: $(OS)-core
 clean: $(OS)-clean
 cli-network: $(OS)-cli-network
+dropbox: $(OS)-dropbox
 git: $(OS)-git
 nano: $(OS)-nano
 stow: $(OS)-stow

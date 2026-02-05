@@ -30,7 +30,7 @@ ubuntu-cli-network:
 ###############################################################################
 
 ubuntu-dropbox: ubuntu-essential
-	run "scripts/dropbox.sh"
+	run "pkg/dropbox/ubuntu-dropbox.sh"
 
 ###############################################################################
 # CLIs                                                                        #

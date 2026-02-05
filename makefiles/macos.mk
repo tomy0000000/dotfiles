@@ -14,9 +14,8 @@ macos-clean:
 # App Suite                                                                   #
 ###############################################################################
 
-macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner macos-alfred macos-popclip macos-markedit
+macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner macos-alfred macos-dropbox macos-popclip macos-markedit
 	brew bundle --file brewfiles/app-essential.Brewfile
-	brew bundle --file brewfiles/app-private.Brewfile
 	brew bundle --file brewfiles/app-design.Brewfile
 	brew bundle --file brewfiles/app-multimedia.Brewfile
 	brew bundle --file brewfiles/app-productivity.Brewfile
@@ -52,6 +51,9 @@ macos-appcleaner: macos-brew
 
 macos-cleanshot: macos-brew
 	run "pkg/macos-cleanshot/macos-cleanshot.sh"
+
+macos-dropbox: macos-brew
+	run "pkg/dropbox/macos-dropbox.sh"
 
 macos-finder:
 	run "pkg/macos-finder/macos-finder.sh"
