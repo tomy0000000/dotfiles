@@ -91,7 +91,7 @@ macos-vscode: macos-brew
 	run "pkg/vscode/macos-vscode.sh"
 
 macos-xcode: macos-brew
-	brew bundle --file brewfiles/xcode.Brewfile
+	run "pkg/macos-xcode/macos-xcode.sh"
 
 ###############################################################################
 # CLIs                                                                        #
