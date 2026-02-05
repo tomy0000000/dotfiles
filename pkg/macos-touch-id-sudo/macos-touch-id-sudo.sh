@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-set -e
+#!/bin/bash
+set -euo pipefail
 
 TouchIDStatus=$(bioutil -rs | grep unlock | awk '{print $4}')
 if [[ "${TouchIDStatus}" = "1" ]]; then
