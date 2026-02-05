@@ -33,7 +33,7 @@ macos-app-dev: git macos-brew macos-iterm macos-sublime macos-terminal macos-vsc
 ###############################################################################
 
 macos-cli-network: macos-brew
-	brew bundle --file brewfiles/cli-network.Brewfile
+	run "pkg/cli-network/macos-cli-network.sh"
 
 macos-cli-useful: macos-brew
 	brew bundle --file brewfiles/cli-useful.Brewfile
