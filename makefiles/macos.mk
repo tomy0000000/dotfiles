@@ -108,8 +108,8 @@ macos-duti: macos-brew
 macos-git: macos-brew
 	run "pkg/git/macos-git.sh"
 
-macos-micro: macos-brew
-	brew install micro
+macos-micro: macos-brew macos-stow
+	run "pkg/micro/macos-micro.sh"
 
 macos-nano: ;
 

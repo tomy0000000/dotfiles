@@ -12,12 +12,11 @@ clean: $(OS)-clean
 cli-network: $(OS)-cli-network
 dropbox: $(OS)-dropbox
 git: $(OS)-git
+micro: $(OS)-micro
 nano: $(OS)-nano
 stow: $(OS)-stow
 zsh: $(OS)-zsh
 
-micro: $(OS)-micro
-	stow --no-folding --dir 'pkg/micro' --target "${HOME}" 'stow'
 ansible: stow
 	stow --no-folding --dir 'pkg/ansible' --target "${HOME}" 'stow'
 javascript: stow $(OS)-javascript
