@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# Install PopClip
+brew install --cask popclip
+
 # Notarized PopClip
 xattr -d -r com.apple.quarantine /Applications/PopClip.app
 
