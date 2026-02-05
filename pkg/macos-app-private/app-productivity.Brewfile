@@ -1,4 +1,5 @@
 cask "airtable"
+cask "brave-browser"
 cask "cardhop"
 cask "mailspring"
 cask "pdf-expert"
@@ -13,4 +14,3 @@ mac "Screens 5", id: 1663047912
 mas "Short Menu", id: 510109287
 mas "Things", id: 904280696
 mas "WireGuard", id: 1451685025
-# macos-markedit

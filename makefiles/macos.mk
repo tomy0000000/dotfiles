@@ -14,13 +14,8 @@ macos-clean:
 # App Suite                                                                   #
 ###############################################################################
 
-macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner macos-alfred macos-dropbox macos-popclip macos-markedit
-	brew bundle --file brewfiles/app-essential.Brewfile
-	brew bundle --file brewfiles/app-design.Brewfile
-	brew bundle --file brewfiles/app-multimedia.Brewfile
-	brew bundle --file brewfiles/app-productivity.Brewfile
-	brew bundle --file brewfiles/app-social.Brewfile
-	brew bundle --file brewfiles/app-utility.Brewfile
+macos-app-private: macos-brew macos-app-dev macos-app-work macos-one-password macos-appcleaner macos-alfred macos-dropbox macos-popclip macos-markedit
+	run "pkg/macos-app-private/macos-app-private.sh"
 
 macos-app-work: macos-brew macos-app-dev macos-appcleaner macos-alfred macos-popclip
 
