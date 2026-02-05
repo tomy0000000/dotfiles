@@ -157,7 +157,7 @@ macos-quicklook: macos-brew
 	run "pkg/macos-quicklook/macos-quicklook.sh"
 
 macos-screensaver: macos-brew
-	brew bundle --file brewfiles/ext-screensaver.Brewfile
+	run "pkg/macos-screensaver/macos-screensaver.sh"
 
 macos-service-workflow: macos-stow
 	stow --dir 'pkg' --target "${HOME}/Library/Services" 'macos-services'
