@@ -44,7 +44,7 @@ macos-cli-useful: macos-brew
 ###############################################################################
 
 macos-alfred: macos-brew
-	run "scripts/macos-alfred.sh"
+	run "pkg/macos-alfred/macos-alfred.sh"
 
 macos-appcleaner: macos-brew
 	brew install --cask appcleaner
