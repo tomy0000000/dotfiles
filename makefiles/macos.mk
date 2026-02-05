@@ -103,7 +103,7 @@ macos-docker: macos-brew
 	brew bundle --file brewfiles/docker.Brewfile
 
 macos-duti: macos-brew
-	brew bundle --file brewfiles/duti.Brewfile
+	run "pkg/macos-duti/macos-duti.sh"
 
 # This is a full suite of git plugins and configurations
 # Most other target that requires git don't need this
