@@ -98,7 +98,7 @@ macos-xcode: macos-brew
 ###############################################################################
 
 macos-docker: macos-brew
-	brew bundle --file brewfiles/docker.Brewfile
+	run "pkg/docker/macos-docker.sh"
 
 macos-duti: macos-brew
 	run "pkg/macos-duti/macos-duti.sh"
