@@ -66,8 +66,7 @@ macos-iterm: macos-brew
 	exists imgcat || (run "pkg/macos-iterm/macos-iterm.sh")
 
 macos-markedit: macos-brew
-	brew bundle --file brewfiles/markedit.Brewfile
-	run "scripts/macos-markedit.sh"
+	run "pkg/macos-markedit/macos-markedit.sh"
 
 macos-one-password: macos-brew
 	brew bundle --file brewfiles/one-password.Brewfile
