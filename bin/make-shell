@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
-# Wrapper used as make SHELL: sources lib/log.sh then runs the recipe.
-# So recipes can use run, log_info, etc. without defining RUN in the Makefile.
+# Wrapper used as make SHELL: sources all lib/*.sh then runs the recipe.
+# So recipes can use run, log_info, distro, etc. from any lib without defining them in the Makefile.
 [ "$1" = -c ] && shift
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-cd "$ROOT" && . ./lib/log.sh && eval "$@"
+cd "$ROOT" || exit $?
+for f in "$ROOT"/lib/*.sh; do
+  [ -f "$f" ] && . "$f"
+done
+eval "$@"
 exit $?
