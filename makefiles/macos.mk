@@ -82,7 +82,7 @@ macos-sublime: macos-brew macos-stow
 	run "pkg/sublime/macos-sublime.sh"
 
 macos-terminal: macos-brew
-	brew bundle --file brewfiles/terminal.Brewfile
+	run "pkg/macos-terminal/macos-terminal.sh"
 
 macos-tower: macos-brew macos-git
 	brew install --cask tower
