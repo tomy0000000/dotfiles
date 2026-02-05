@@ -36,7 +36,7 @@ macos-cli-network: macos-brew
 	run "pkg/cli-network/macos-cli-network.sh"
 
 macos-cli-useful: macos-brew
-	brew bundle --file brewfiles/cli-useful.Brewfile
+	run "pkg/cli-useful/macos-cli-useful.sh"
 
 ###############################################################################
 # Apps                                                                        #
