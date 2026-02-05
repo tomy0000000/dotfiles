@@ -123,7 +123,7 @@ macos-stow: macos-brew macos-clean
 
 macos-zsh: macos-brew macos-stow
 	$(eval BREW_BIN := $(shell bin/brew_bin))
-	${BREW_BIN}/brew bundle --file brewfiles/zsh.Brewfile
+	${BREW_BIN}/brew bundle --file pkg/zsh/zsh.Brewfile
 	run "scripts/macos-zsh.sh"
 
 ###############################################################################
