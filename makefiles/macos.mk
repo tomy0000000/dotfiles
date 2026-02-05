@@ -148,8 +148,7 @@ macos-file-handler: macos-duti
 	run "scripts/macos-file-handler.sh"
 
 macos-font: macos-brew
-	brew bundle --file pkg/macos-font/macos-font.Brewfile
-	cp -r pkg/macos-font/collection/ "${HOME}/Library/FontCollections"
+	run "pkg/macos-font/macos-font.sh"
 
 macos-icon: macos-cli-useful
 	run "scripts/macos-icons.sh"
