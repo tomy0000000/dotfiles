@@ -74,8 +74,7 @@ macos-one-password: macos-brew
 	brew bundle --file brewfiles/one-password.Brewfile
 
 macos-popclip: macos-brew
-	brew bundle --file brewfiles/popclip.Brewfile
-	run "scripts/macos-popclip.sh"
+	run "pkg/macos-popclip/macos-popclip.sh"
 
 macos-sublime: macos-brew macos-stow
 	brew install --cask sublime-text
