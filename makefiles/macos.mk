@@ -55,7 +55,7 @@ macos-cleanshot: macos-brew
 	run "pkg/macos-cleanshot/macos-cleanshot.sh"
 
 macos-finder:
-	run "scripts/macos-finder.sh"
+	run "pkg/macos-finder/macos-finder.sh"
 
 macos-hammerspoon: macos-brew macos-stow
 	brew install --cask hammerspoon
