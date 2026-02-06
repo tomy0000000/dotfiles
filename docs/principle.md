@@ -1,10 +1,12 @@
 # Principles
 
-## Target should be small, simple, and idempotent
+## Target checklist
 
-One target = One installation + one configuration setting.
-
-Divide complex feature as another new target. A target should not return error when installation is executed twice.
+- [ ] KISS: Keep It Simple Stupid. One target = One installation + one configuration setting.
+- [ ] Idempotent: Does installing target multiple times cause any issues?
+- [ ] Minimal dependencies: Avoid unnecessary dependencies between targets.
+- [ ] Cross-platform reusability: Factor out common install steps into OS-agnostic scripts. (See `git` target as an example.)
+- [ ] One single run in `Makefile`: A target should only have one single `run` command in `Makefile`.
 
 ## Pointer over Linker
 
