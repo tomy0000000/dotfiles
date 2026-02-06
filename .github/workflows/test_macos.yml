@@ -36,6 +36,7 @@ jobs:
             "macos-cli-useful",
             "macos-core",
             "macos-docker",
+            "macos-dropbox",
             "macos-duti",
             "macos-file-handler",
             "macos-finder",
