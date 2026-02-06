@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths-ignore:
-      - 'docs/**'
+      - "docs/**"
   pull_request:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: "0 2 * * *"
 
 jobs:
   macOS:
@@ -17,59 +17,58 @@ jobs:
       fail-fast: false
       matrix:
         features: [
-            "ansible",
-            "clean",
-            "cli-network",
-            "core",
-            "git",
-            "javascript",
-            # "macos-alfred", # Script error to be fixed
-            # "macos-app-dev", # Depends on `git`
-            # "macos-app-private", # Depends on `git`
-            # "macos-app-work", # Depends on `git`
-            "macos-appcleaner",
-            "macos-brew",
-            "macos-c-cpp",
-            "macos-clean",
-            # "macos-cleanshot", # Script error to be fixed
-            "macos-cli-network",
-            "macos-cli-useful",
-            "macos-core",
-            "macos-docker",
-            "macos-dropbox",
-            "macos-duti",
-            "macos-file-handler",
-            "macos-finder",
-            "macos-font",
-            "macos-git",
-            "macos-hammerspoon",
-            "macos-icon",
-            "macos-iterm",
-            "macos-javascript",
-            "macos-markedit",
-            "macos-micro",
-            "macos-nano",
-            # "macos-one-password", # mas can't run without login on GitHub Actions
-            # "macos-perl", # Script error to be fixed
-            "macos-popclip",
-            "macos-quicklook",
-            "macos-screensaver",
-            "macos-service-workflow",
-            # "macos-settings", # Script error to be fixed
-            "macos-shellcheck",
-            "macos-stow",
-            "macos-sublime",
-            "macos-terminal",
+            # "ansible",
+            # "clean",
+            # "cli-network",
+            # "core",
+            # "git",
+            # "javascript",
+            # # "macos-alfred", # Script error to be fixed
+            # # "macos-app-dev", # Depends on `git`
+            # # "macos-app-private", # Depends on `git`
+            # # "macos-app-work", # Depends on `git`
+            # "macos-appcleaner",
+            # "macos-brew",
+            # "macos-c-cpp",
+            # "macos-clean",
+            # # "macos-cleanshot", # Script error to be fixed
+            # "macos-cli-network",
+            # "macos-cli-useful",
+            # "macos-core",
+            # "macos-docker",
+            # "macos-duti",
+            # "macos-file-handler",
+            # "macos-finder",
+            # "macos-font",
+            # "macos-git",
+            # "macos-hammerspoon",
+            # "macos-icon",
+            # "macos-iterm",
+            # "macos-javascript",
+            # "macos-markedit",
+            # "macos-micro",
+            # "macos-nano",
+            # # "macos-one-password", # mas can't run without login on GitHub Actions
+            # # "macos-perl", # Script error to be fixed
+            # "macos-popclip",
+            # "macos-quicklook",
+            # "macos-screensaver",
+            # "macos-service-workflow",
+            # # "macos-settings", # Script error to be fixed
+            # "macos-shellcheck",
+            # "macos-stow",
+            # "macos-sublime",
+            # "macos-terminal",
             "macos-touch-id-sudo",
-            "macos-tower",
-            "macos-vscode",
-            # "macos-xcode", # mas can't run without login on GitHub Actions
-            "macos-zsh",
-            "micro",
-            "nano",
-            "python",
-            "stow",
-            "zsh",
+            # "macos-tower",
+            # "macos-vscode",
+            # # "macos-xcode", # mas can't run without login on GitHub Actions
+            # "macos-zsh",
+            # "micro",
+            # "nano",
+            # "python",
+            # "stow",
+            # "zsh",
           ]
     steps:
       - name: 🛒 Checkout
