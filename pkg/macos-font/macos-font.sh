@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Install fonts
-brew bundle --file pkg/macos-font/macos-font.Brewfile
+brew bundle --file pkg/macos-font/font.Brewfile
 
 # Copy font collections
 cp -r pkg/macos-font/collection/ "${HOME}/Library/FontCollections"
