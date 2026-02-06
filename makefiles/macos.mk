@@ -160,4 +160,4 @@ macos-settings:
 	run "scripts/macos-settings.sh"
 
 macos-touch-id-sudo:
-	run "scripts/macos-touch-id-sudo.sh"
+	run "pkg/macos-touch-id-sudo/macos-touch-id-sudo.sh"
