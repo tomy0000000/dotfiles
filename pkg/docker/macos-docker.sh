@@ -2,4 +2,4 @@
 set -euo pipefail
 
 # Install Docker
-brew bundle --file pkg/docker/macos-docker.Brewfile
+brew bundle --file pkg/docker/docker.Brewfile
