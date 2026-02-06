@@ -14,29 +14,23 @@ macos-clean:
 # App Suite                                                                   #
 ###############################################################################
 
-macos-app-private: macos-brew macos-app-dev macos-one-password macos-appcleaner macos-alfred macos-dropbox macos-popclip macos-markedit
-	brew bundle --file brewfiles/app-essential.Brewfile
-	brew bundle --file brewfiles/app-design.Brewfile
-	brew bundle --file brewfiles/app-multimedia.Brewfile
-	brew bundle --file brewfiles/app-productivity.Brewfile
-	brew bundle --file brewfiles/app-social.Brewfile
-	brew bundle --file brewfiles/app-utility.Brewfile
+macos-app-private: macos-brew macos-app-dev macos-app-work macos-one-password macos-appcleaner macos-alfred macos-dropbox macos-popclip macos-markedit
+	run "pkg/macos-app-private/macos-app-private.sh"
 
 macos-app-work: macos-brew macos-app-dev macos-appcleaner macos-alfred macos-popclip
-	brew bundle --file brewfiles/app-essential.Brewfile
 
 macos-app-dev: git macos-brew macos-iterm macos-sublime macos-terminal macos-vscode macos-xcode
-	brew bundle --file brewfiles/app-dev.Brewfile
+	run "pkg/macos-app-dev/macos-app-dev.sh"
 
 ###############################################################################
 # CLI Suite                                                                   #
 ###############################################################################
 
 macos-cli-network: macos-brew
-	brew bundle --file brewfiles/cli-network.Brewfile
+	run "pkg/cli-network/macos-cli-network.sh"
 
 macos-cli-useful: macos-brew
-	brew bundle --file brewfiles/cli-useful.Brewfile
+	run "pkg/cli-useful/macos-cli-useful.sh"
 
 ###############################################################################
 # Apps                                                                        #
@@ -70,7 +64,7 @@ macos-markedit: macos-brew
 	run "pkg/macos-markedit/macos-markedit.sh"
 
 macos-one-password: macos-brew
-	brew bundle --file brewfiles/one-password.Brewfile
+	run "pkg/one-password/macos-one-password.sh"
 
 macos-popclip: macos-brew
 	run "pkg/macos-popclip/macos-popclip.sh"
@@ -91,14 +85,14 @@ macos-vscode: macos-brew
 	run "pkg/vscode/macos-vscode.sh"
 
 macos-xcode: macos-brew
-	brew bundle --file brewfiles/xcode.Brewfile
+	run "pkg/macos-xcode/macos-xcode.sh"
 
 ###############################################################################
 # CLIs                                                                        #
 ###############################################################################
 
 macos-docker: macos-brew
-	brew bundle --file brewfiles/docker.Brewfile
+	run "pkg/docker/macos-docker.sh"
 
 macos-duti: macos-brew
 	run "pkg/macos-duti/macos-duti.sh"
@@ -123,7 +117,7 @@ macos-stow: macos-brew macos-clean
 
 macos-zsh: macos-brew macos-stow
 	$(eval BREW_BIN := $(shell bin/brew_bin))
-	${BREW_BIN}/brew bundle --file brewfiles/zsh.Brewfile
+	${BREW_BIN}/brew bundle --file pkg/zsh/zsh.Brewfile
 	run "scripts/macos-zsh.sh"
 
 ###############################################################################
@@ -148,17 +142,16 @@ macos-file-handler: macos-duti
 	run "scripts/macos-file-handler.sh"
 
 macos-font: macos-brew
-	brew bundle --file pkg/macos-font/macos-font.Brewfile
-	cp -r pkg/macos-font/collection/ "${HOME}/Library/FontCollections"
+	run "pkg/macos-font/macos-font.sh"
 
 macos-icon: macos-cli-useful
 	run "scripts/macos-icons.sh"
 
 macos-quicklook: macos-brew
-	brew bundle --file brewfiles/ext-quicklook.Brewfile
+	run "pkg/macos-quicklook/macos-quicklook.sh"
 
 macos-screensaver: macos-brew
-	brew bundle --file brewfiles/ext-screensaver.Brewfile
+	run "pkg/macos-screensaver/macos-screensaver.sh"
 
 macos-service-workflow: macos-stow
 	stow --dir 'pkg' --target "${HOME}/Library/Services" 'macos-services'

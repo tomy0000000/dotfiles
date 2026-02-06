@@ -1,8 +1,3 @@
-# macos-iterm
-# macos-sublime
-# macos-tower
-# macos-vscode
-# macos-xcode
 cask "hex-fiend"
 cask "jupyter-notebook-viewer"
 cask "kaleidoscope"
