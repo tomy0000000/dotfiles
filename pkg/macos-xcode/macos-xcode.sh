@@ -2,4 +2,4 @@
 set -euo pipefail
 
 # Install Xcode
-brew bundle --file pkg/xcode/macos-xcode.Brewfile
+brew bundle --file pkg/macos-xcode/xcode.Brewfile
