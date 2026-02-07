@@ -112,12 +112,10 @@ macos-shellcheck: macos-brew macos-stow
 	stow --no-folding --dir 'pkg/shellcheck' --target "${HOME}" 'stow'
 
 macos-stow: macos-brew macos-clean
-	$(eval BREW_BIN := $(shell bin/brew_bin))
-	exists stow || ${BREW_BIN}/brew install stow
+	exists stow || brew install stow
 
 macos-zsh: macos-brew macos-stow
-	$(eval BREW_BIN := $(shell bin/brew_bin))
-	${BREW_BIN}/brew bundle --file pkg/zsh/zsh.Brewfile
+	brew bundle --file pkg/zsh/zsh.Brewfile
 	run "scripts/macos-zsh.sh"
 
 ###############################################################################
