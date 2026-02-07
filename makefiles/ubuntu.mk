@@ -2,12 +2,8 @@
 # Basics                                                                      #
 ###############################################################################
 
-ubuntu-core:
-	echo "🖥 Operating System: Ubuntu"
-	sudo apt-get update
-	sudo apt-get upgrade -y
-	sudo apt-get dist-upgrade -f
-	xargs sudo apt-get install -y < aptfiles/core.Aptfile
+ubuntu-core: ubuntu-stow
+	run "pkg/core/debian-core.sh"
 
 ubuntu-clean: ;
 
