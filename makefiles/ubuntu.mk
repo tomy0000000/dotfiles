@@ -19,7 +19,7 @@ ubuntu-essential: ubuntu-core ubuntu-locale-zhtw ubuntu-tz-taipei ubuntu-ssh
 ###############################################################################
 
 ubuntu-cli-network:
-	xargs sudo apt-get install -y < aptfiles/cli-network.Aptfile
+	run "pkg/cli-network/debian-cli-network.sh"
 
 ###############################################################################
 # Apps                                                                        #
