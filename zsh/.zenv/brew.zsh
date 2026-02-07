@@ -1,19 +1,17 @@
 #!/bin/zsh
 
-UNAME_MACHINE="$(/usr/bin/uname -m)"
-if [[ "${UNAME_MACHINE}" == "arm64" ]]; then
-    # On ARM macOS, this script installs to /opt/homebrew only
-    PRE_BREW_PREFIX="/opt/homebrew"
-else
-    # On Intel macOS, this script installs to /usr/local only
-    PRE_BREW_PREFIX="/usr/local"
-fi
+# Source brew utilities
+# TODO: Remove this after global source lib
+source ${ZDOTDIR}/../lib/brew.sh
 
-# Check if Homebrew is installed
-if [ -f "${PRE_BREW_PREFIX}/bin/brew" ]; then
+# Setup Homebrew if available
+if brew_path="$(abs_brew)"; then
     # Core environment variables
-    eval "$(${PRE_BREW_PREFIX}/bin/brew shellenv)"
+    eval "$("${brew_path}" shellenv)"
 
     # In favor of homebrew-autoupdate
     export HOMEBREW_NO_AUTO_UPDATE=true
+    
+    # Clean up temporary variable
+    unset brew_path
 fi
