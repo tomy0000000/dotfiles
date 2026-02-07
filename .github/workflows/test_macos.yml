@@ -6,71 +6,50 @@ on:
       - main
     paths-ignore:
       - "docs/**"
+      - "docs/**"
   pull_request:
-  schedule:
-    - cron: "0 2 * * *"
 
 jobs:
-  macOS:
+  generate-matrix:
+    name: 🌀 Generate matrix
     runs-on: macos-latest
+    outputs:
+      features: ${{ steps.merge-features.outputs.features }}
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🗂️ Get all features
+        id: all-features
+        run: .github/scripts/all-features.sh
+
+      - name: 📄 List changed files
+        id: changed-files
+        run: .github/scripts/changed-files.sh '${{ toJson(github) }}'
+
+      - name: 🧮 Generate feature list
+        id: feature-list
+        run: .github/scripts/feature-list.sh '${{ steps.changed-files.outputs.paths }}'
+
+      - name: 📊 Generate affected feature list
+        id: affected-list
+        run: .github/scripts/affected-list.py '${{ steps.feature-list.outputs.features }}' '${{ steps.all-features.outputs.features }}'
+
+      # TODO: Remove this step when all features are moved under pkg/
+      - name: 🔀 Merge with fixed features
+        id: merge-features
+        run: .github/scripts/merge-features.sh '${{ steps.affected-list.outputs.features }}'
+
+  macos:
+    name: 🖥️ macOS Test
+    runs-on: macos-latest
+    needs: generate-matrix
     strategy:
       fail-fast: false
       matrix:
-        features: [
-            "ansible",
-            "clean",
-            "cli-network",
-            "core",
-            "git",
-            "javascript",
-            # "macos-alfred", # Script error to be fixed
-            # "macos-app-dev", # Depends on `git`
-            # "macos-app-private", # Depends on `git`
-            # "macos-app-work", # Depends on `git`
-            "macos-appcleaner",
-            "macos-brew",
-            "macos-c-cpp",
-            "macos-clean",
-            # "macos-cleanshot", # Script error to be fixed
-            "macos-cli-network",
-            "macos-cli-useful",
-            "macos-core",
-            "macos-docker",
-            "macos-dropbox",
-            "macos-duti",
-            "macos-file-handler",
-            "macos-finder",
-            "macos-font",
-            "macos-git",
-            "macos-hammerspoon",
-            "macos-icon",
-            "macos-iterm",
-            "macos-javascript",
-            "macos-markedit",
-            "macos-micro",
-            "macos-nano",
-            # "macos-one-password", # mas can't run without login on GitHub Actions
-            # "macos-perl", # Script error to be fixed
-            "macos-popclip",
-            "macos-quicklook",
-            "macos-screensaver",
-            "macos-service-workflow",
-            # "macos-settings", # Script error to be fixed
-            "macos-shellcheck",
-            "macos-stow",
-            "macos-sublime",
-            "macos-terminal",
-            "macos-touch-id-sudo",
-            "macos-tower",
-            "macos-vscode",
-            # "macos-xcode", # mas can't run without login on GitHub Actions
-            "macos-zsh",
-            "micro",
-            "nano",
-            "python",
-            "stow",
-            "zsh",
-          ]
+        features: ${{ fromJson(needs.generate-matrix.outputs.features) }}
     steps:
       - name: 🛒 Checkout
         uses: actions/checkout@v4
