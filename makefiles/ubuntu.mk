@@ -2,12 +2,8 @@
 # Basics                                                                      #
 ###############################################################################
 
-ubuntu-core:
-	echo "🖥 Operating System: Ubuntu"
-	sudo apt-get update
-	sudo apt-get upgrade -y
-	sudo apt-get dist-upgrade -f
-	xargs sudo apt-get install -y < aptfiles/core.Aptfile
+ubuntu-core: ubuntu-stow
+	run "pkg/core/debian-core.sh"
 
 ubuntu-clean: ;
 
@@ -23,7 +19,10 @@ ubuntu-essential: ubuntu-core ubuntu-locale-zhtw ubuntu-tz-taipei ubuntu-ssh
 ###############################################################################
 
 ubuntu-cli-network:
-	xargs sudo apt-get install -y < aptfiles/cli-network.Aptfile
+	run "pkg/cli-network/debian-cli-network.sh"
+
+ubuntu-cli-pipe:
+	run "pkg/cli-pipe/debian-cli-pipe.sh"
 
 ###############################################################################
 # Apps                                                                        #
