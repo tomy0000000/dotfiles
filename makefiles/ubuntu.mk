@@ -21,6 +21,9 @@ ubuntu-essential: ubuntu-core ubuntu-locale-zhtw ubuntu-tz-taipei ubuntu-ssh
 ubuntu-cli-network:
 	run "pkg/cli-network/debian-cli-network.sh"
 
+ubuntu-cli-pipe:
+	run "pkg/cli-pipe/debian-cli-pipe.sh"
+
 ###############################################################################
 # Apps                                                                        #
 ###############################################################################
