@@ -1,7 +1,6 @@
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 SHELL = $(ROOT_DIR)/bin/make-shell
 OS := $(shell distro)
-PATH := bin:$(PATH)
 
 all: $(OS)
 macos: macos-core
