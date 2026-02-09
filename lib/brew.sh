@@ -5,8 +5,8 @@
 (return 0 2>/dev/null) || exit 0
 
 # Idempotent import: Prevent multiple imports
-[ "${__DISTRO_SH_LOADED:-}" = "1" ] && return 0
-__DISTRO_SH_LOADED=1
+[ "${__BREW_SH_LOADED:-}" = "1" ] && return 0
+__BREW_SH_LOADED=1
 
 # --- Public API --------------------------------------------------------------
 
