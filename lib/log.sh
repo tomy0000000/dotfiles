@@ -171,6 +171,7 @@ run() {
   [ ! -r "$1" ] && { log_error "run: not readable or not found: $1"; return 1; }
   export LOG_LEVEL LOG_TIME LOG_PREFIX
   _log_divider begin "$1"
+  # shellcheck disable=SC1090
   ( . "$1" )   # Run in subshell
   ret=$?
   _log_divider end "$1" "$ret"
