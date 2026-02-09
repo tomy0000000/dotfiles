@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths-ignore:
-      - 'docs/**'
+      - "docs/**"
   pull_request:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: "0 2 * * *"
 
 jobs:
   Ubuntu:
@@ -17,24 +17,23 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-22.04, ubuntu-24.04, ubuntu-latest]
-        features:
-          [
-            "ansible",
-            "clean",
-            "cli-network",
+        features: [
+            # "ansible",
+            # "clean",
+            # "cli-network",
             "core",
-            "git",
-            "javascript",
-            "micro",
-            "nano",
-            "python",
-            "stow",
-            "ubuntu-dropbox",
-            "ubuntu-essential",
-            "ubuntu-locale-zhtw",
-            "ubuntu-ssh",
-            "ubuntu-tz-taipei",
-            "zsh",
+            # "git",
+            # "javascript",
+            # "micro",
+            # "nano",
+            # "python",
+            # "stow",
+            # "ubuntu-dropbox",
+            # "ubuntu-essential",
+            # "ubuntu-locale-zhtw",
+            # "ubuntu-ssh",
+            # "ubuntu-tz-taipei",
+            # "zsh",
           ]
     steps:
       - name: 🛒 Checkout

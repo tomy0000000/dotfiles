@@ -31,6 +31,9 @@ ubuntu-cli-pipe:
 ubuntu-dropbox: ubuntu-essential
 	run "pkg/dropbox/ubuntu-dropbox.sh"
 
+ubuntu-vscode: 
+	echo "TODO"
+
 ###############################################################################
 # CLIs                                                                        #
 ###############################################################################

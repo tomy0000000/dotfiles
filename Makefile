@@ -14,6 +14,7 @@ git: $(OS)-git
 micro: $(OS)-micro
 nano: $(OS)-nano
 stow: $(OS)-stow
+vscode: $(OS)-vscode
 zsh: $(OS)-zsh
 
 ansible: stow
