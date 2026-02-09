@@ -58,7 +58,7 @@ macos-hammerspoon: macos-brew macos-stow
 
 macos-iterm: macos-brew
 	brew bundle --file pkg/macos-iterm/macos-iterm.Brewfile
-	exists imgcat || (run "pkg/macos-iterm/macos-iterm.sh")
+	exist imgcat || (run "pkg/macos-iterm/macos-iterm.sh")
 
 macos-markedit: macos-brew
 	run "pkg/macos-markedit/macos-markedit.sh"
@@ -108,11 +108,11 @@ macos-micro: macos-brew macos-stow
 macos-nano: ;
 
 macos-shellcheck: macos-brew macos-stow
-	exists shellcheck || brew install shellcheck
+	exist shellcheck || brew install shellcheck
 	stow --no-folding --dir 'pkg/shellcheck' --target "${HOME}" 'stow'
 
 macos-stow: macos-brew macos-clean
-	exists stow || brew install stow
+	exist stow || brew install stow
 
 macos-zsh: macos-brew macos-stow
 	brew bundle --file pkg/zsh/zsh.Brewfile
