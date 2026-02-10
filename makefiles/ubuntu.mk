@@ -50,7 +50,7 @@ ubuntu-stow:
 	sudo apt-get install -y stow
 
 ubuntu-zsh: ubuntu-stow
-	run "scripts/debian-zsh.sh"
+	run "pkg/zsh/debian-zsh.sh"
 
 ###############################################################################
 # Dev                                                                         #
@@ -64,10 +64,10 @@ ubuntu-javascript:
 ###############################################################################
 
 ubuntu-locale-zhtw:
-	run "scripts/debian-locale-zhtw.sh"
+	run "pkg/locale-zhtw/debian-locale-zhtw.sh"
 
 ubuntu-ssh:
-	run "scripts/debian-ssh.sh"
+	run "pkg/ssh/debian-ssh.sh"
 
 ubuntu-tz-taipei:
-	run "scripts/debian-tz-taipei.sh"
+	run "pkg/tz-taipei/debian-tz-taipei.sh"

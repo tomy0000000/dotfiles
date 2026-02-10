@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Load .zshenv to get XDG_CONFIG_HOME
 set +u
-# shellcheck disable=SC1091
+# shellcheck source=zsh/.zshenv
 source 'zsh/.zshenv'
 set -u
 
