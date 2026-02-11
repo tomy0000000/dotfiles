@@ -43,7 +43,6 @@ jobs:
             "macos-font",
             "macos-git",
             "macos-hammerspoon",
-            "macos-icon",
             "macos-iterm",
             "macos-javascript",
             "macos-markedit",

@@ -115,8 +115,7 @@ macos-stow: macos-brew macos-clean
 	exist stow || brew install stow
 
 macos-zsh: macos-brew macos-stow
-	brew bundle --file pkg/zsh/zsh.Brewfile
-	run "scripts/macos-zsh.sh"
+	run "pkg/zsh/macos-zsh.sh"
 
 ###############################################################################
 # Dev                                                                         #
