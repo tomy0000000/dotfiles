@@ -11,6 +11,9 @@ USER_SHELL=$(dscl . -read "${HOME}" UserShell | awk '{print $2}')
 MISE_DIR="${XDG_CONFIG_HOME}/mise"
 trap 'unset ZSH_BIN USER_SHELL MISE_DIR' EXIT
 
+# Install Zsh and tools
+brew bundle --file pkg/zsh/zsh.Brewfile
+
 # Skip if running in CI
 if [ -n "${CI:-}" ]; then
     echo "📟 Skipping changing default shell to zsh"

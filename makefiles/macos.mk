@@ -115,8 +115,7 @@ macos-stow: macos-brew macos-clean
 	exist stow || brew install stow
 
 macos-zsh: macos-brew macos-stow
-	brew bundle --file pkg/zsh/zsh.Brewfile
-	run "scripts/macos-zsh.sh"
+	run "pkg/zsh/macos-zsh.sh"
 
 ###############################################################################
 # Dev                                                                         #
@@ -137,13 +136,10 @@ macos-perl: macos-stow
 ###############################################################################
 
 macos-file-handler: macos-duti
-	run "scripts/macos-file-handler.sh"
+	run "pkg/macos-file-handler/macos-file-handler.sh"
 
 macos-font: macos-brew
 	run "pkg/macos-font/macos-font.sh"
-
-macos-icon: macos-cli-useful
-	run "scripts/macos-icons.sh"
 
 macos-quicklook: macos-brew
 	run "pkg/macos-quicklook/macos-quicklook.sh"
@@ -155,7 +151,7 @@ macos-service-workflow: macos-stow
 	stow --dir 'pkg' --target "${HOME}/Library/Services" 'macos-services'
 
 macos-settings:
-	run "scripts/macos-settings.sh"
+	run "pkg/macos-settings/macos-settings.sh"
 
 macos-touch-id-sudo:
 	run "pkg/macos-touch-id-sudo/macos-touch-id-sudo.sh"
