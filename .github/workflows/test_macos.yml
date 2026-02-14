@@ -74,5 +74,8 @@ jobs:
       - name: 🛒 Checkout
         uses: actions/checkout@v4
 
-      - name: 🧪 Test "${{ matrix.features }}"
+      - name: 🧪 Test "${{ matrix.features }}" (run 1/2)
+        run: make ${{ matrix.features }}
+
+      - name: 🧪 Test "${{ matrix.features }}" (run 2/2)
         run: make ${{ matrix.features }}
