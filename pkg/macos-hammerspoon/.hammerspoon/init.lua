@@ -14,7 +14,7 @@ Install:andUse("EmmyLua")
 
 -- Auto reload config
 Install:andUse("ReloadConfiguration")
-spoon.ReloadConfiguration.watch_paths = { hs.configdir, "~/.dotfiles/hammerspoon/.hammerspoon" }
+spoon.ReloadConfiguration.watch_paths = { hs.configdir, "~/.dotfiles/pkg/macos-hammerspoon/.hammerspoon" }
 spoon.ReloadConfiguration:start()
 
 -- Auto switch input method
@@ -25,4 +25,3 @@ require('hotkeys')
 
 -- Menu tasks
 require('menu_tasks')
-
