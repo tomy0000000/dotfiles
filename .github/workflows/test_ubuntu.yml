@@ -40,5 +40,9 @@ jobs:
       - name: 🛒 Checkout
         uses: actions/checkout@v4
 
-      - name: 🧪 Test "${{ matrix.features }}"
-        run: make ${{ matrix.features }}
+      - name: 🧪 Test "${{ matrix.features }}" twice
+        run: |
+          for run in 1 2; do
+            echo "Run ${run}/2"
+            make ${{ matrix.features }}
+          done
