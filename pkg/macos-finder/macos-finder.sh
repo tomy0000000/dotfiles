@@ -56,12 +56,24 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 FINDER_PLIST=~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" "$FINDER_PLIST"
-/usr/libexec/PlistBuddy -c "Add :FK_StandardViewSettings:IconViewSettings dict" "$FINDER_PLIST" 2>/dev/null || true
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" "$FINDER_PLIST" \
-  || /usr/libexec/PlistBuddy -c "Add :FK_StandardViewSettings:IconViewSettings:arrangeBy string grid" "$FINDER_PLIST"
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" "$FINDER_PLIST"
 
+set_arrange_by_if_needed() {
+  local key="$1"
+  local current
+  current=$(/usr/libexec/PlistBuddy -c "Print :${key}:arrangeBy" "$FINDER_PLIST" 2>/dev/null || true)
+
+  if [ "$current" = "grid" ]; then
+    return
+  fi
+
+  /usr/libexec/PlistBuddy -c "Set :${key}:arrangeBy grid" "$FINDER_PLIST" 2>/dev/null \
+    || /usr/libexec/PlistBuddy -c "Add :${key}:arrangeBy string grid" "$FINDER_PLIST"
+}
+
+/usr/libexec/PlistBuddy -c "Add :FK_StandardViewSettings:IconViewSettings dict" "$FINDER_PLIST" 2>/dev/null || true
+set_arrange_by_if_needed "DesktopViewSettings:IconViewSettings"
+set_arrange_by_if_needed "FK_StandardViewSettings:IconViewSettings"
+set_arrange_by_if_needed "StandardViewSettings:IconViewSettings"
 ###############################################################################
 # Misc                                                                        #
 ###############################################################################
