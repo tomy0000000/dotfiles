@@ -1,3 +1,4 @@
+# Example: https://github.com/codespaces-examples/node
 FROM ubuntu:latest
 
 ENV USER_NAME=tomy0000000
@@ -23,14 +24,11 @@ USER $USER_NAME
 # Set the working directory
 WORKDIR /home/$USER_NAME/.dotfiles
 
-# Copy all dotfiles
-COPY --chown=$USER_NAME:$USER_NAME . .
+# Clone the latest dotfiles
+RUN bash -c "$(curl -fsSL https://init.tomy.tech)"
 
 # Install default targets
 RUN make all
 
 # Install Shell
 RUN make ubuntu-zsh
-
-# Start shell
-CMD ["zsh"]

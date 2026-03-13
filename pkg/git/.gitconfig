@@ -59,6 +59,7 @@ template = "~/.dotfiles/pkg/git/.git_commit_template"
 
 [core]
 attributesFile = "~/.dotfiles/pkg/git/.gitattributes"
+commentString = "//"
 excludesFile = "~/.dotfiles/pkg/git/.gitignore"
 editor = "nano"
 

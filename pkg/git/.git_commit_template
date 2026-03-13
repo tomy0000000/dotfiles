@@ -1,26 +1,26 @@
-# Title (50 chars)
-# <type>[optional scope]: <description>
-#
-# Add a ! after type is this is a BREAKING CHANGE.
-#
-# 🧹 chore: 
-# ⌛️ ci: 
-# 📖 docs: 
-# 🌟 feat: 
-# 🛠 fix: 
-# 🏎 perf: 
-# ❇️ refactor: 
-# 💅🏻 style: 
-# 🧪 test: 
-##################################################
-#
-# Body (Optional)
-#
+// Title (50 chars)
+// [type][optional scope] <description>
+//
+// Add a ! before type is this is a BREAKING CHANGE.
+//
+// 🧹 [chore][] 
+// ⌛️ [ci][] 
+// 📖 [docs][] 
+// 🌟 [feat][] 
+// 🛠 [fix][] 
+// 🏎 [perf][] 
+// ❇️ [refactor][] 
+// 💅🏻 [style][] 
+// 🧪 [test][] 
 
-#
-# Co-authored-by: Tomy Hsieh <git@tomy.me>
-# Co-authored-by: 
-#
-# Footer (Optional)
-# BREAKING CHANGE: 
-#
+//
+// Body (Optional)
+//
+
+//
+// Co-authored-by: Tomy Hsieh <git@tomy.me>
+// Co-authored-by: 
+//
+// Footer (Optional)
+// BREAKING CHANGE: 
+//
