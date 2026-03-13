@@ -19,8 +19,13 @@ export LANG="zh_TW.UTF-8"   # Chinese (Taiwan)
 export LC_ALL="en_US.UTF-8" # English
 
 # Editor
-export EDITOR="subl" # Sublime Text
-# export EDITOR="code"  # VS Code
+if [[ -n "$IS_CURSOR" ]]; then  # Cursor
+    export EDITOR="cursor --wait"  
+elif [[ "$TERM_PROGRAM" == "vscode" ]]; then  # VS Code
+    export EDITOR="code --wait"
+else
+    export EDITOR="subl --wait"  # Sublime Text
+fi
 # export EDITOR="micro" # micro
 # export EDITOR="nano"  # nano
 # export EDITOR="vim"   # vim

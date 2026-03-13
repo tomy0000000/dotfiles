@@ -60,8 +60,8 @@ template = "~/.dotfiles/pkg/git/.git_commit_template"
 [core]
 attributesFile = "~/.dotfiles/pkg/git/.gitattributes"
 commentString = "//"
+# editor = "micro"  # Just use $EDITOR
 excludesFile = "~/.dotfiles/pkg/git/.gitignore"
-editor = "nano"
 
 [diff]
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/#better-diff
