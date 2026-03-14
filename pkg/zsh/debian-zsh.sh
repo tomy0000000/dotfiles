@@ -7,8 +7,7 @@ set +u
 source 'pkg/zsh/.zshenv'
 set -u
 
-MISE_DIR="${XDG_CONFIG_HOME}/mise"
-trap 'unset ZSH_BIN USER_SHELL MISE_DIR' EXIT
+trap 'unset ZSH_BIN USER_SHELL' EXIT
 
 # Install Zsh
 echo "Installing Zsh..."
@@ -25,13 +24,9 @@ sudo chsh -s "$(which zsh)" "$(whoami)"
 
 # Install zsh dotfiles
 echo "Installing zsh dotfiles..."
-mkdir -p "${HOME}/.config" # Make sure XDG_CONFIG_HOME exists
+mkdir -p "${XDG_CONFIG_HOME}" # Make sure XDG_CONFIG_HOME exists
 if [ -f "${HOME}/.zshenv" ]; then
     mv "${HOME}/.zshenv" "${HOME}/.zshenv.bk"
     echo "Warning: existing .zshenv found, backed up to .zshenv.bk"
 fi
 ln -sf .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
-
-# Install mise dotfiles
-mkdir -p "${MISE_DIR}"
-stow --no-folding --target "${MISE_DIR}" 'mise'
