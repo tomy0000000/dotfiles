@@ -40,7 +40,7 @@ jobs:
             "macos-duti",
             "macos-file-handler",
             "macos-finder",
-            "macos-font",
+            # "macos-font",  # Disable temporarily due to `font-hanamin` error
             "macos-git",
             "macos-hammerspoon",
             "macos-iterm",
