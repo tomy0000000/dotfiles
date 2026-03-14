@@ -85,13 +85,6 @@ lineNumber = true
 # Suggest to autofix the command
 autocorrect = prompt
 
-[include]
-path = "~/.dotfiles/pkg/git/custom/custom.gitconfig" # include other customizations
-path = "~/.dotfiles/pkg/git/alias.gitconfig"
-
-[includeIf "hasconfig:remote.*.url:https://github.com/**"]
-path = "~/.dotfiles/pkg/git/github-tomy0000000.gitconfig" # include the user block
-
 [init]
 # https://github.blog/changelog/2020-10-01-the-default-branch-for-newly-created-repositories-is-now-main/
 defaultBranch = "main"
@@ -123,3 +116,15 @@ updateRefs = true
 
 [tag]
 sort = version:refname
+
+# All keys in this config file is sorted alphabetically
+# but include blocks always come at the end, so they can override defaults.
+[includeIf "hasconfig:remote.*.url:https://github.com/**"]
+path = "~/.dotfiles/pkg/git/github-tomy0000000.gitconfig" # include the user block
+
+[include]
+path = "~/.dotfiles/pkg/git/alias.gitconfig"
+
+[include]
+path = "~/.dotfiles/pkg/git/custom/custom.gitconfig" # include other customizations
+
