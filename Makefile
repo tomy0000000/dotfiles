@@ -12,6 +12,7 @@ cli-network: $(OS)-cli-network
 dropbox: $(OS)-dropbox
 git: $(OS)-git
 micro: $(OS)-micro
+mise: $(OS)-mise
 nano: $(OS)-nano
 stow: $(OS)-stow
 zsh: $(OS)-zsh
