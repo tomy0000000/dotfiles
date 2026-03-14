@@ -3,7 +3,8 @@ set -euo pipefail
 
 # Load .zshenv to get XDG_CONFIG_HOME
 set +u
-source 'zsh/.zshenv'
+# shellcheck source=pkg/zsh/.zshenv
+source 'pkg/zsh/.zshenv'
 set -u
 
 ZSH_BIN="${HOMEBREW_PREFIX}/bin/zsh" # Homebrew zsh

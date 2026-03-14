@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Zsh
-export ZDOTDIR="${HOME}/.dotfiles/zsh"
+export ZDOTDIR="${HOME}/.dotfiles/pkg/zsh"
 
 # XDG Base Directory
 # https://specifications.freedesktop.org/basedir-spec/latest/

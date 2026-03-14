@@ -1,5 +1,5 @@
-/pkg/git/custom/custom.gitconfig
-/zsh/.zcompdump*
-/zsh/.zsh_history
-/zsh/.zsh_sessions
-/zsh/.zshrc.zwc
+pkg/git/custom/custom.gitconfig
+pkg/zsh/.zcompdump*
+pkg/zsh/.zsh_history
+pkg/zsh/.zsh_sessions
+pkg/zsh/.zshrc.zwc

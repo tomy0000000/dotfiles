@@ -3,8 +3,8 @@ set -euo pipefail
 
 # Load .zshenv to get XDG_CONFIG_HOME
 set +u
-# shellcheck source=zsh/.zshenv
-source 'zsh/.zshenv'
+# shellcheck source=pkg/zsh/.zshenv
+source 'pkg/zsh/.zshenv'
 set -u
 
 MISE_DIR="${XDG_CONFIG_HOME}/mise"

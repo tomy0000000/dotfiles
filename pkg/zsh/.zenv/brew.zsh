@@ -2,7 +2,7 @@
 
 # Source brew utilities
 # TODO: Remove this after global source lib
-source ${ZDOTDIR}/../lib/brew.sh
+source ${ZDOTDIR}/../../lib/brew.sh
 
 # Setup Homebrew if available
 if brew_path="$(abs_brew)"; then
