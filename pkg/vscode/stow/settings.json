@@ -215,27 +215,27 @@
     "tsconfig.json": "tsconfig.*.json"
   },
   "files.associations": {
-    ".env": "dotenv",
-    ".env*": "dotenv",
-    ".gitalias": "properties",
-    ".vercelignore": "ignore",
     "*.Brewfile": "ruby",
+    "*.Makefile": "makefile",
     "*.dropboxignore": "ignore",
     "*.gitalias": "properties",
-    "*.Makefile": "makefile",
     "*.mdx": "mdx",
     "*.njk": "njk",
     "*.plist": "xml",
     "*.sublime-keymap": "jsonc",
-    "*.sublime-settings": "jsonc"
+    "*.sublime-settings": "jsonc",
+    ".env": "dotenv",
+    ".env*": "dotenv",
+    ".gitalias": "properties",
+    ".vercelignore": "ignore"
   },
   "files.autoGuessEncoding": true,
   "files.exclude": {
-    "**/__pycache__": true,
+    "**/*.pyc": true,
     "**/.classpath": true,
     "**/.factorypath": true,
     "**/.project": true,
-    "**/*.pyc": true
+    "**/__pycache__": true
   },
   "git.autoStash": true,
   "git.autofetch": true,
