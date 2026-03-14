@@ -24,5 +24,9 @@
         "keywordCase": "upper"
       }
     }
-  ]
+  ],
+  "jsonRecursiveSort": true,
+  "importOrder": ["^@/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

@@ -51,7 +51,7 @@
     "editor.tabSize": 2
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.json-language-features",
     "editor.tabSize": 2
   },
   "[less]": {
@@ -114,6 +114,7 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "cSpell.userWords": ["Aptfile", "brewfiles"],
   "chat.commandCenter.enabled": false,
   "chat.editing.confirmEditRequestRemoval": false,
   "chat.editing.confirmEditRequestRetry": false,
@@ -126,6 +127,8 @@
     "/tmp/postman-http-request-post-response.instructions.md": true,
     "/tmp/postman-http-request-pre-request.instructions.md": true
   },
+  "chat.viewSessions.orientation": "stacked",
+  "claudeCode.preferredLocation": "sidebar",
   "cmake.pinnedCommands": [
     "workbench.action.tasks.configureTaskRunner",
     "workbench.action.tasks.runTask"
@@ -256,6 +259,7 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.codeLens.enabled": false,
   "gitlens.gitCommands.skipConfirmations": [
     "fetch:command",
     "stash-push:command",
