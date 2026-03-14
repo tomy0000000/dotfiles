@@ -105,6 +105,9 @@ macos-git: macos-brew
 macos-micro: macos-brew macos-stow
 	run "pkg/micro/macos-micro.sh"
 
+macos-mise: macos-brew
+	run "pkg/mise/mise.sh"
+
 macos-nano: ;
 
 macos-shellcheck: macos-brew macos-stow

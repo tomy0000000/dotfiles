@@ -9,8 +9,7 @@ set -u
 
 ZSH_BIN="${HOMEBREW_PREFIX}/bin/zsh" # Homebrew zsh
 USER_SHELL=$(dscl . -read "${HOME}" UserShell | awk '{print $2}')
-MISE_DIR="${XDG_CONFIG_HOME}/mise"
-trap 'unset ZSH_BIN USER_SHELL MISE_DIR' EXIT
+trap 'unset ZSH_BIN USER_SHELL' EXIT
 
 # Install Zsh and tools
 brew bundle --file pkg/zsh/zsh.Brewfile
@@ -35,9 +34,5 @@ fi
 
 # Install zsh dotfiles
 echo "Installing zsh dotfiles..."
-mkdir -p "${HOME}/.config" # Make sure XDG_CONFIG_HOME exists
+mkdir -p "${XDG_CONFIG_HOME}" # Make sure XDG_CONFIG_HOME exists
 ln -sf .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
-
-# Install mise dotfiles
-mkdir -p "${MISE_DIR}"
-stow --no-folding --target "${MISE_DIR}" 'mise'

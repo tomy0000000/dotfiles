@@ -41,6 +41,9 @@ ubuntu-git:
 ubuntu-micro: ubuntu-stow
 	run "pkg/micro/debian-micro.sh"
 
+ubuntu-mise:
+	run "pkg/mise/mise.sh"
+
 ubuntu-nano:
 	sudo apt-get update
 	sudo apt-get install -y nano
