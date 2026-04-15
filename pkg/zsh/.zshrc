@@ -69,6 +69,7 @@ zinit snippet ${ZDOTDIR}/config/keybindings.zsh
 zinit snippet ${ZDOTDIR}/completion/carapace.zsh # This should always be at the top
 zinit snippet ${ZDOTDIR}/completion/docker.zsh
 zinit snippet ${ZDOTDIR}/completion/kubectl.zsh
+zinit snippet ${ZDOTDIR}/completion/gt.zsh
 zinit snippet ${ZDOTDIR}/completion/misc.zsh
 zinit snippet ${ZDOTDIR}/completion/mise.zsh
 zinit snippet ${ZDOTDIR}/completion/op.zsh
