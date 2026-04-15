@@ -90,8 +90,9 @@ autocorrect = prompt
 defaultBranch = "main"
 
 [log]
-abbrevCommit = true
+abbrevCommit = true # Affect `log`, `show`, `whatchanged`
 date = "human"
+decorate = "auto"
 
 [merge]
 # https://nvie.com/posts/a-successful-git-branching-model/#incorporating-a-finished-feature-on-develop
@@ -127,4 +128,3 @@ path = "~/.dotfiles/pkg/git/alias.gitconfig"
 
 [include]
 path = "~/.dotfiles/pkg/git/custom/custom.gitconfig" # include other customizations
-

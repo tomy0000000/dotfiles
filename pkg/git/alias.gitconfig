@@ -45,7 +45,19 @@ pruner = !"git prune --expire=now; git reflog expire --expire-unreachable=now --
 
 # Repack a repo the way Linus recommends
 # It does the equivalent of `git gc --aggressive` but done *properly*
-repacker = repack -a -d -f --depth=300 --window=300 --window-memory=1g
+repacker = "repack -a -d -f --depth=300 --window=300 --window-memory=1g"
+
+# clean everything to be pristine
+cleanest = "clean -ffdx"
+
+# Recent 5 commits
+log-recent = "!git --no-pager log -5 --name-only --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset' --date=human"
+
+# Topo Graph
+log-graph = "log --graph --topo-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
+
+# One-liner pager
+log-awesome = "log --oneline --date-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
 
 ###############################################################################
 # Commands                                                                    #
@@ -94,10 +106,50 @@ f = "fetch"
 
 ### grep ###
 
+### gui ###
+#! Not very useful
+
 ### log ###
-l = "log"
-l-g = "log --graph --topo-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
-l-ls = "log --oneline --date-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
+#! Favor GUI and AI tool
+# ┌─────────────────┬──────────────────────────────────────────────────────┐
+# │      flag       │                     what it does                     │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --oneline       │ one line per commit (short hash + subject)           │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --stat          │ adds files-changed summary below each commit         │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --name-only     │ lists changed file paths only, no stats              │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --patch / -p    │ adds full diff below each commit                     │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --pretty=...    │ custom colored format (replaces default)             │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --graph         │ ASCII branch graph on the left                       │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --decorate      │ shows branch/tag labels next to commits              │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --all           │ includes all branches and tags                       │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --no-merges     │ hides merge commits                                  │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --follow        │ tracks renames across a single file's history        │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --author=...    │ filters commits by author name/email                 │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --grep=...      │ filters commits by message text                      │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ --since/--until │ filters by date range (e.g. --since="2 weeks ago")   │
+# ├─────────────────┼──────────────────────────────────────────────────────┤
+# │ -n <N>          │ limit output to N most recent commits                │
+# └─────────────────┴──────────────────────────────────────────────────────┘
+
+### ls-files ###
+# ls = "ls-files --exclude-standard"
+# ls-new = "ls-files --others --exclude-standard"                 # Untracked
+# ls-untracked = "ls-files --others --exclude-standard"           # New
+# ls-modified = "ls-files --modified --exclude-standard"          # Tracked and modified
+# ls-stagable = "ls-files --modified --others --exclude-standard" # Untracked + modified
+# ls-ignored = "ls-files --ignored --others --exclude-standard"   # Ignored by .gitignore
 
 ### merge ###
 m = "merge"
@@ -123,16 +175,39 @@ rb-i = "rebase --interactive"
 ### rm ###
 #! Favor delete-and-add
 
+### show ###
+
 ### stash ###
-s = "stash --include-untracked" # Default to include untracked files
+s = "stash"
 s-l = "stash list"
+s-u = "stash --include-untracked"
 s-a = "stash apply"
 s-p = "stash pop"
+# Stash-revert: generates the inverse diff of current working changes into a new stash entry.
+# 1. commit so revert has a target
+# 2. generate the inverse
+# 3. stash the inverse
+# 4. nuke the temp commit
+# 5. restore original changes
+s-revert = !"f() { \
+  git add -A && \
+  git commit -m 'temp' && \
+  git revert HEAD --no-commit && \
+  git stash push -m 'revert' && \
+  git reset --hard HEAD~1 && \
+  git stash pop stash@{1}; \
+}; f"
 
 ### status ###
 #! Favor GUI
 
+### submodule ###
+
+### svn ###
+
+### switch ###
+
 ### tag ###
 
 ### whatchanged ###
-w = "whatchanged"
+#! Deprecated, use `log --raw --no-merges`
