@@ -11,6 +11,7 @@ clean: $(OS)-clean
 cli-network: $(OS)-cli-network
 dropbox: $(OS)-dropbox
 git: $(OS)-git
+javascript: $(OS)-javascript
 micro: $(OS)-micro
 mise: $(OS)-mise
 nano: $(OS)-nano
@@ -19,8 +20,6 @@ zsh: $(OS)-zsh
 
 ansible: stow
 	stow --no-folding --dir 'pkg/ansible' --target "${HOME}" 'stow'
-javascript: stow $(OS)-javascript
-	stow --no-folding --dir 'pkg/javascript' --target "${HOME}" 'stow'
 python: stow
 	stow --no-folding --dir 'pkg/python' --target "${HOME}" 'stow'
 

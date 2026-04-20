@@ -127,8 +127,8 @@ macos-zsh: macos-brew macos-stow
 macos-c-cpp: macos-brew
 	brew install cling
 
-macos-javascript:
-	echo "dotfiles are installed, but not the runtime environments."
+macos-javascript: macos-stow macos-mise
+	run "pkg/javascript/macos-javascript.sh"
 
 macos-perl: macos-stow
 	stow --no-folding --dir 'pkg/perl' --target "${HOME}" 'stow'

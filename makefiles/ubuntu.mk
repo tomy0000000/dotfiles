@@ -59,8 +59,8 @@ ubuntu-zsh: ubuntu-stow
 # Dev                                                                         #
 ###############################################################################
 
-ubuntu-javascript:
-	echo "dotfiles are installed, but not the runtime environments."
+ubuntu-javascript: ubuntu-stow
+	run "pkg/javascript/debian-javascript.sh"
 
 ###############################################################################
 # Misc                                                                        #
