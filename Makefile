@@ -6,6 +6,7 @@ all: $(OS)
 macos: macos-core
 ubuntu: ubuntu-core
 
+ai-config: $(OS)-ai-config
 core: $(OS)-core
 clean: $(OS)-clean
 cli-network: $(OS)-cli-network

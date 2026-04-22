@@ -36,6 +36,9 @@ macos-cli-useful: macos-brew
 # Apps                                                                        #
 ###############################################################################
 
+macos-ai-config:
+	run "pkg/ai-config/ai-config.sh"
+
 macos-alfred: macos-brew
 	run "pkg/macos-alfred/macos-alfred.sh"
 
