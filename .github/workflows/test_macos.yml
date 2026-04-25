@@ -17,6 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         features: [
+            "ai-config",
             "ansible",
             "clean",
             "cli-network",
@@ -47,6 +48,7 @@ jobs:
             "macos-javascript",
             "macos-markedit",
             "macos-micro",
+            "macos-mise",
             "macos-nano",
             # "macos-one-password", # mas can't run without login on GitHub Actions
             # "macos-perl", # Script error to be fixed

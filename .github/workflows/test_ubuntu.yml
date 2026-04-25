@@ -19,6 +19,7 @@ jobs:
         os: [ubuntu-22.04, ubuntu-24.04, ubuntu-latest]
         features:
           [
+            "ai-config",
             "ansible",
             "clean",
             "cli-network",
@@ -26,6 +27,7 @@ jobs:
             "git",
             "javascript",
             "micro",
+            "mise",
             "nano",
             "python",
             "stow",
