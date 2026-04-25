@@ -1,6 +1,4 @@
 # `mise`
 
-- Install `mise` CLI
+- Install `mise` CLI (Homebrew on macOS, APT on Debian/Ubuntu)
 - Symlink `mise`'s only config: `~/.config/mise/config.toml`
-
-Caveats: For now, `mise` is only available in Zsh, and the CLI is installed when `zsh` package is installed.

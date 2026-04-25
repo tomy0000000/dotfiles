@@ -42,7 +42,7 @@ ubuntu-micro: ubuntu-stow
 	run "pkg/micro/debian-micro.sh"
 
 ubuntu-mise:
-	run "pkg/mise/mise.sh"
+	run "pkg/mise/debian-mise.sh"
 
 ubuntu-nano:
 	sudo apt-get update

@@ -109,7 +109,7 @@ macos-micro: macos-brew macos-stow
 	run "pkg/micro/macos-micro.sh"
 
 macos-mise: macos-brew
-	run "pkg/mise/mise.sh"
+	run "pkg/mise/macos-mise.sh"
 
 macos-nano: ;
 

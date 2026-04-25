@@ -8,7 +8,7 @@ source 'pkg/zsh/.zshenv'
 set -u
 
 MISE_DIR="${XDG_CONFIG_HOME}/mise"
-CONFIG_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/config.toml"
+CONFIG_PATH="$(pwd)/pkg/mise/config.toml"
 trap 'unset MISE_DIR CONFIG_PATH' EXIT
 
 # Install dotfiles
