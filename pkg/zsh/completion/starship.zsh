@@ -1,11 +1,11 @@
 #!/bin/zsh
 
 zinit ice \
-    id-as"starship-activate" \
+    as"completion" \
+    id-as"starship-completion" \
     has"starship" \
-    atclone"starship init zsh > starship.zsh" \
+    atclone"starship completions zsh > _starship" \
     atpull"%atclone" \
     run-atpull \
-    src"starship.zsh" \
     nocompile
 zinit light zdharma-continuum/null

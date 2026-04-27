@@ -16,6 +16,7 @@ javascript: $(OS)-javascript
 micro: $(OS)-micro
 mise: $(OS)-mise
 nano: $(OS)-nano
+starship: $(OS)-starship
 stow: $(OS)-stow
 zsh: $(OS)-zsh
 

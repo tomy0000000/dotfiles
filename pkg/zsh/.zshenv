@@ -57,7 +57,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=14" # Default: bright black (fg=8) which is 
 
 # Starship
 # https://starship.rs/config/#config-file-location
-export STARSHIP_CONFIG="${ZDOTDIR}/starship.toml"
+export STARSHIP_CONFIG="${HOME}/.dotfiles/pkg/starship/starship.toml"
 
 # Dracula Theme for Docker
 # https://draculatheme.com/docker

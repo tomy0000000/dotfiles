@@ -114,6 +114,9 @@ macos-shellcheck: macos-brew macos-stow
 	exist shellcheck || brew install shellcheck
 	stow --no-folding --dir 'pkg/shellcheck' --target "${HOME}" 'stow'
 
+macos-starship: macos-brew
+	run "pkg/starship/macos-starship.sh"
+
 macos-stow: macos-brew macos-clean
 	exist stow || brew install stow
 

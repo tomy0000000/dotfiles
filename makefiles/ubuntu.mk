@@ -48,6 +48,9 @@ ubuntu-nano:
 	sudo apt-get update
 	sudo apt-get install -y nano
 
+ubuntu-starship:
+	run "pkg/starship/debian-starship.sh"
+
 ubuntu-stow:
 	sudo apt-get update
 	sudo apt-get install -y stow

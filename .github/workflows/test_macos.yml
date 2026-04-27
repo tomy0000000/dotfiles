@@ -69,6 +69,7 @@ jobs:
             "micro",
             "nano",
             "python",
+            "starship",
             "stow",
             "zsh",
           ]

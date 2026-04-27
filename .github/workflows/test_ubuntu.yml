@@ -30,6 +30,7 @@ jobs:
             "mise",
             "nano",
             "python",
+            "starship",
             "stow",
             "ubuntu-dropbox",
             "ubuntu-essential",
