@@ -8,7 +8,8 @@
 
 ## Prose conventions
 
-- Do not use em dashes (`—`), double em dashes (`——`), or semicolons (`;`) in user-facing prose (chat replies, commit messages, PR descriptions, READMEs, code comments)
+- Avoid using em dashes (`—`), double em dashes (`——`), or semicolons (`;`) in user-facing prose (chat replies, commit messages, PR descriptions, READMEs, code comments)
+- For lists, use colons (`:`) to separate main idea from details
 - Avoid other stereotypically AI-ish punctuation patterns
 - Rewrite with commas, periods, or parentheses instead
 - Applies to prose only. Keep punctuation inside code, config, or copied quotes untouched
