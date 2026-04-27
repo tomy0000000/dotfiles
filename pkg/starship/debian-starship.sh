@@ -8,4 +8,4 @@ set -euo pipefail
 
 # Install using official script
 # https://starship.rs/guide/#%F0%9F%9A%80-installation
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
