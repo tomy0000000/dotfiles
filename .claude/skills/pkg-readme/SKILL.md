@@ -18,9 +18,9 @@ Generate or update `pkg/{name}/README.md`.
    - `{name}.sh`, `{os}-{name}.sh` — scan for `defaults write`, `defaults import`, `duti -s`, `ln -sf`, stow invocations, mise/pipx/npm installs.
    - `stow/` contents — files symlinked into `$HOME`.
 2. Read `makefiles/{os}.mk` for the `{os}-{name}` target and its dependencies.
-3. Mirror the shape of existing READMEs (`pkg/git/README.md`, `pkg/zsh/README.md`) — don't invent a new structure.
+3. Populate from the following template.
 
-## Output shape
+## Output template
 
 ```markdown
 # `{name}`
@@ -29,20 +29,23 @@ One-sentence purpose.
 
 ## Installs
 
-- Brew: `<pkg>`, `<pkg>` (`{name}.Brewfile`)
-- APT: `<pkg>` (`{name}.Aptfile`)
-- mise / other: …
+| CLI       | macOS  | Debian |
+| --------- | ------ | ------ |
+| `<cli-1>` | `brew` | `apt`  |
+| `<cli-n>` | `brew` | `apt`  |
 
 ## Configures
 
 - `~/.foo` (stow)
 - `defaults write com.example.App ...`
 - File-type associations via `duti`
+
+## Notes
+
+- TODOs
+- Worth Noting
+
+## References
+
+- [<site> - <page>](url): Why this reference is important to be noted here
 ```
-
-## Rules
-
-- Factual. No marketing prose, no emoji.
-- Omit sections that don't apply.
-- Reference files by path (`pkg/{name}/{name}.sh`) so readers can jump in.
-- Keep under ~40 lines unless the package is genuinely complex.
