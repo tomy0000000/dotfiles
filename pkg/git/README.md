@@ -18,7 +18,7 @@ Git installation and opinionated global configuration with aliases, SSH commit s
 - `~/.dotfiles/pkg/git/.gitignore` — global ignore rules for macOS, Xcode, Dropbox, and VS Code artifacts
 - `~/.dotfiles/pkg/git/.gitattributes` — global line-ending normalization (`text=auto`, CRLF for `.bat`/`.cmd`, LF for `.sh`)
 - `~/.dotfiles/pkg/git/.git_commit_template` — Conventional Commits prompt template used for every new commit
-- `~/.dotfiles/pkg/git/alias.gitconfig` — extensive alias set (see Aliases below)
+- `~/.dotfiles/pkg/git/alias.gitconfig` — extensive alias set
 - `~/.dotfiles/pkg/git/github-tomy0000000.gitconfig` — user identity and SSH commit signing via 1Password, applied automatically for any GitHub remote
 - `~/.dotfiles/pkg/git/custom/custom.gitconfig` — optional machine-local overrides (not tracked)
 
@@ -34,27 +34,6 @@ Git installation and opinionated global configuration with aliases, SSH commit s
 | `rebase.autoSquash` / `autoStash` / `updateRefs` | `true`           | Stacks-friendly interactive rebase             |
 | `help.autocorrect`                               | `prompt`         | Prompts before running corrected command       |
 | `init.defaultBranch`                             | `main`           |                                                |
-
-### Aliases
-
-| Alias                                      | Expands to                                          |
-| ------------------------------------------ | --------------------------------------------------- |
-| `b` / `b-d` / `b-m`                        | `branch` / `branch -D` / `branch -m`                |
-| `c` / `c-b` / `c-m`                        | `checkout` / `checkout -b` / checkout main branch   |
-| `d`                                        | `diff`                                              |
-| `f`                                        | `fetch`                                             |
-| `m`                                        | `merge`                                             |
-| `p`                                        | `pull`                                              |
-| `ps` / `ps-f` / `ps-ff`                    | `push` / `push --force-with-lease` / `push --force` |
-| `s` / `s-l` / `s-u` / `s-a` / `s-p`        | stash / list / with-untracked / apply / pop         |
-| `s-revert`                                 | Stash the inverse of current working changes        |
-| `discard` / `unadd` / `uncommit`           | Undo helpers                                        |
-| `touch`                                    | Amend last commit timestamp to now                  |
-| `main-branch`                              | Print `main` or `master` from remote HEAD           |
-| `gen-ignore`                               | Fetch a `.gitignore` from gitignore.io              |
-| `log-recent` / `log-graph` / `log-awesome` | Formatted log views                                 |
-| `pruner`                                   | Expire all unreachable objects now                  |
-| `repacker`                                 | Aggressive repack (Linus-style)                     |
 
 ## Notes
 
