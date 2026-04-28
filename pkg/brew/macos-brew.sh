@@ -25,7 +25,7 @@ stow --dir 'pkg/brew' --target "${HOME}" 'stow'
 # Start autoupdate service
 if brew autoupdate status | grep -q 'stopped'; then
     echo "🍺 Starting Homebrew autoupdate service"
-    brew autoupdate start
+    brew autoupdate start 43200
 else
     echo "🍺 Homebrew autoupdate service is already running"
 fi
