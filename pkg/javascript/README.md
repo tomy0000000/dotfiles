@@ -1,11 +1,12 @@
-## `javascript`
+# `javascript`
 
 Sets up Node.js and npm defaults (author metadata, registry token, Prettier config).
 
 ## Installs
 
-- mise: `node@lts` (macOS only, `pkg/javascript/macos-javascript.sh`)
-- Debian: no Node install yet, see TODO in `pkg/javascript/debian-javascript.sh`
+| Tool       | macOS  | Debian |
+| ---------- | ------ | ------ |
+| `node@lts` | `mise` | TODO   |
 
 ## Configures
 

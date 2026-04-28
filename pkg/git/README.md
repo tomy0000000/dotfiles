@@ -14,7 +14,7 @@ Git installation and opinionated global configuration with aliases, SSH commit s
 
 ## Configures
 
-- `~/.gitconfig` — symlinked to `pkg/git/.gitconfig` via `ln -sf`
+- `~/.gitconfig` — symlinked to `pkg/git/.gitconfig`
 - `~/.dotfiles/pkg/git/.gitignore` — global ignore rules for macOS, Xcode, Dropbox, and VS Code artifacts
 - `~/.dotfiles/pkg/git/.gitattributes` — global line-ending normalization (`text=auto`, CRLF for `.bat`/`.cmd`, LF for `.sh`)
 - `~/.dotfiles/pkg/git/.git_commit_template` — Conventional Commits prompt template used for every new commit

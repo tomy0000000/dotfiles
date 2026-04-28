@@ -19,6 +19,7 @@ Generate or update `pkg/{name}/README.md`.
    - `stow/` contents — files symlinked into `$HOME`.
 2. Read `makefiles/{os}.mk` for the `{os}-{name}` target and its dependencies.
 3. Populate from the following template.
+4. Format the markdown with `prettier`.
 
 ## Output template
 
