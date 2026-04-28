@@ -10,7 +10,8 @@ Installs AppCleaner and imports its stored preferences.
 
 ## Configures
 
-- `defaults import net.freemacsoft.AppCleaner` from the bundled `net.freemacsoft.AppCleaner.plist`
+- `ProtectOpenedApps = false` — allows removing apps that are currently running
+- `ShowProtectedApps = true` — protected apps remain visible in the UI
 
 ## Notes
 
