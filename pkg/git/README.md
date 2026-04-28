@@ -4,13 +4,13 @@ Git installation and opinionated global configuration with aliases, SSH commit s
 
 ## Installs
 
-| Tool                    | macOS   | Debian |
-| ----------------------- | ------- | ------ |
-| `git`                   | `brew`  | `apt`  |
-| `git-delta`             | `brew`  | —      |
-| `git-extras`            | `brew`  | `apt`  |
-| `git-credential-manager`| `brew`  | —      |
-| `gpg-suite-no-mail`     | `brew`  | —      |
+| Tool                     | macOS  | Debian |
+| ------------------------ | ------ | ------ |
+| `git`                    | `brew` | `apt`  |
+| `git-delta`              | `brew` | —      |
+| `git-extras`             | `brew` | `apt`  |
+| `git-credential-manager` | `brew` | —      |
+| `gpg-suite-no-mail`      | `brew` | —      |
 
 ## Configures
 
@@ -24,37 +24,37 @@ Git installation and opinionated global configuration with aliases, SSH commit s
 
 ### Notable defaults
 
-| Setting | Value | Effect |
-|---|---|---|
-| `branch.sort` | `-committerdate` | Most recently used branches first |
-| `diff.algorithm` | `histogram` | Fewer spurious diff hunks |
-| `merge.conflictstyle` | `zdiff3` | Shows common ancestor in conflict markers |
-| `fetch.prune` / `pruneTags` / `all` | `true` | Auto-clean stale remote refs on every fetch |
-| `push.autoSetupRemote` | `true` | No need for `-u origin <branch>` on first push |
-| `rebase.autoSquash` / `autoStash` / `updateRefs` | `true` | Stacks-friendly interactive rebase |
-| `help.autocorrect` | `prompt` | Prompts before running corrected command |
-| `init.defaultBranch` | `main` | |
+| Setting                                          | Value            | Effect                                         |
+| ------------------------------------------------ | ---------------- | ---------------------------------------------- |
+| `branch.sort`                                    | `-committerdate` | Most recently used branches first              |
+| `diff.algorithm`                                 | `histogram`      | Fewer spurious diff hunks                      |
+| `merge.conflictstyle`                            | `zdiff3`         | Shows common ancestor in conflict markers      |
+| `fetch.prune` / `pruneTags` / `all`              | `true`           | Auto-clean stale remote refs on every fetch    |
+| `push.autoSetupRemote`                           | `true`           | No need for `-u origin <branch>` on first push |
+| `rebase.autoSquash` / `autoStash` / `updateRefs` | `true`           | Stacks-friendly interactive rebase             |
+| `help.autocorrect`                               | `prompt`         | Prompts before running corrected command       |
+| `init.defaultBranch`                             | `main`           |                                                |
 
 ### Aliases
 
-| Alias | Expands to |
-|---|---|
-| `b` / `b-d` / `b-m` | `branch` / `branch -D` / `branch -m` |
-| `c` / `c-b` / `c-m` | `checkout` / `checkout -b` / checkout main branch |
-| `d` | `diff` |
-| `f` | `fetch` |
-| `m` | `merge` |
-| `p` | `pull` |
-| `ps` / `ps-f` / `ps-ff` | `push` / `push --force-with-lease` / `push --force` |
-| `s` / `s-l` / `s-u` / `s-a` / `s-p` | stash / list / with-untracked / apply / pop |
-| `s-revert` | Stash the inverse of current working changes |
-| `discard` / `unadd` / `uncommit` | Undo helpers |
-| `touch` | Amend last commit timestamp to now |
-| `main-branch` | Print `main` or `master` from remote HEAD |
-| `gen-ignore` | Fetch a `.gitignore` from gitignore.io |
-| `log-recent` / `log-graph` / `log-awesome` | Formatted log views |
-| `pruner` | Expire all unreachable objects now |
-| `repacker` | Aggressive repack (Linus-style) |
+| Alias                                      | Expands to                                          |
+| ------------------------------------------ | --------------------------------------------------- |
+| `b` / `b-d` / `b-m`                        | `branch` / `branch -D` / `branch -m`                |
+| `c` / `c-b` / `c-m`                        | `checkout` / `checkout -b` / checkout main branch   |
+| `d`                                        | `diff`                                              |
+| `f`                                        | `fetch`                                             |
+| `m`                                        | `merge`                                             |
+| `p`                                        | `pull`                                              |
+| `ps` / `ps-f` / `ps-ff`                    | `push` / `push --force-with-lease` / `push --force` |
+| `s` / `s-l` / `s-u` / `s-a` / `s-p`        | stash / list / with-untracked / apply / pop         |
+| `s-revert`                                 | Stash the inverse of current working changes        |
+| `discard` / `unadd` / `uncommit`           | Undo helpers                                        |
+| `touch`                                    | Amend last commit timestamp to now                  |
+| `main-branch`                              | Print `main` or `master` from remote HEAD           |
+| `gen-ignore`                               | Fetch a `.gitignore` from gitignore.io              |
+| `log-recent` / `log-graph` / `log-awesome` | Formatted log views                                 |
+| `pruner`                                   | Expire all unreachable objects now                  |
+| `repacker`                                 | Aggressive repack (Linus-style)                     |
 
 ## Notes
 
