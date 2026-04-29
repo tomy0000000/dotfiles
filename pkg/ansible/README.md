@@ -20,9 +20,3 @@ Ansible separately (e.g. `pip install ansible` or via your OS package manager).
   with real hosts before running any playbooks.
 - `gathering = explicit` means facts are only collected when explicitly
   requested, which speeds up playbook runs.
-
-## Usage
-
-```sh
-make ansible
-```
