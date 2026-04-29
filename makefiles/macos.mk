@@ -53,8 +53,7 @@ macos-finder:
 	run "pkg/macos-finder/macos-finder.sh"
 
 macos-hammerspoon: macos-brew macos-stow
-	brew install --cask hammerspoon
-	stow --no-folding --dir 'pkg' --target "${HOME}" 'macos-hammerspoon'
+	run "pkg/macos-hammerspoon/macos-hammerspoon.sh"
 
 macos-iterm: macos-brew
 	brew bundle --file pkg/macos-iterm/macos-iterm.Brewfile

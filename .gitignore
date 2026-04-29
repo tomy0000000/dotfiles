@@ -1,4 +1,5 @@
 pkg/git/custom/custom.gitconfig
+pkg/macos-hammerspoon/stow/.hammerspoon/Spoons
 pkg/zsh/.zcompdump*
 pkg/zsh/.zsh_history
 pkg/zsh/.zsh_sessions

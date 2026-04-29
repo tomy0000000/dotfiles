@@ -176,6 +176,7 @@ main() {
 	archive_to_dir "$HOME/Desktop" "$db_doc"
 	archive_to_dir "$HOME/Downloads" "$db_doc"
 	archive_to_dir "$db_doc" "$db_ltm" "is_too_old"
+	# TODO: archive old numbers spreadsheet
 }
 
 # Run main only when executed directly (not when sourced)
