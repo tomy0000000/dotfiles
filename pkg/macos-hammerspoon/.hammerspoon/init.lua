@@ -20,6 +20,9 @@ spoon.ReloadConfiguration:start()
 -- Auto switch input method
 require('auto_ime')
 
+-- Auto connect to speak
+require('auto_speaker_connect')
+
 -- Hotkeys
 require('hotkeys')
 
