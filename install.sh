@@ -82,6 +82,12 @@ function main {
 
 	# Clone dotfiles
 	git clone -q 'https://github.com/tomy0000000/dotfiles.git' "${HOME}/.dotfiles"
+
+	# Ensure any external libs (git submodules) are available before sourcing.
+	# Private submodule can be missing on fresh installs, so do not fail.
+	if command -v git >/dev/null 2>&1; then
+		git -C "${HOME}/.dotfiles" submodule update --init --recursive -q || true
+	fi
 	log_info "dotfiles is ready at ${HOME}/.dotfiles"
 }
 
