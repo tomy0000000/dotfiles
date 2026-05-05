@@ -10,3 +10,5 @@ Shares a single `AGENTS.md` across AI coding agents and installs reusable skills
   - `find-skills` from `vercel-labs/skills`
   - `skill-creator` from `anthropics/skills`
   - every skill under `pkg/ai-config/skills/`
+- Claude settings
+- Claude status line with `starship-claude`

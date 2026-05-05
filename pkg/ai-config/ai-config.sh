@@ -20,3 +20,10 @@ SKILLS_PARAMS=(--agent universal --agent claude-code --global --yes)
 npx skills add vercel-labs/skills --skill find-skills "${SKILLS_PARAMS[@]}"
 npx skills add anthropics/skills --skill skill-creator "${SKILLS_PARAMS[@]}"
 npx skills add ./pkg/ai-config/skills --skill '*' "${SKILLS_PARAMS[@]}"
+
+# Install Claude status bar
+stow --adopt --no-folding --dir 'pkg/ai-config' --target "${HOME}" 'stow'
+git checkout -- 'pkg/ai-config/stow'
+
+claude plugin marketplace add martinemde/starship-claude
+claude plugin install starship-claude@starship-claude

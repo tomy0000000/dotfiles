@@ -1,0 +1,47 @@
+{
+  "agentPushNotifEnabled": true,
+  "effortLevel": "high",
+  "enabledPlugins": {
+    "claude-code-setup@claude-plugins-official": true,
+    "starship-claude@starship-claude": true
+  },
+  "extraKnownMarketplaces": {
+    "starship-claude": {
+      "source": {
+        "repo": "martinemde/starship-claude",
+        "source": "github"
+      }
+    }
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "command": "${HOME}/.claude/notification.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "[ -f \"${HOME}/.claude/CLAUDE-work.md\" ] && cat \"${HOME}/.claude/CLAUDE-work.md\" || true",
+            "type": "command"
+          }
+        ],
+        "matcher": "startup"
+      }
+    ]
+  },
+  "model": "opus",
+  "statusLine": {
+    "command": "~/.local/bin/starship-claude",
+    "padding": 0,
+    "type": "command"
+  },
+  "voiceEnabled": true
+}
