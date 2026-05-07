@@ -140,7 +140,7 @@ macos-perl: macos-stow
 # Misc                                                                        #
 ###############################################################################
 
-macos-ai-config:
+macos-ai-config: macos-stow
 	run "pkg/ai-config/ai-config.sh"
 
 macos-file-handler: macos-duti

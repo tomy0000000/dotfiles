@@ -68,7 +68,7 @@ ubuntu-javascript: ubuntu-stow
 # Misc                                                                        #
 ###############################################################################
 
-ubuntu-ai-config:
+ubuntu-ai-config: ubuntu-stow
 	run "pkg/ai-config/ai-config.sh"
 
 ubuntu-locale-zhtw:
