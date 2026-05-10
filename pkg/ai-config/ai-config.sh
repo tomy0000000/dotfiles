@@ -2,6 +2,8 @@
 set -euo pipefail
 
 AGENTS_MD="$(pwd)/pkg/ai-config/AGENTS.md"
+STARSHIP_CLAUDE_DIR="${HOME}/.local/bin"
+STARSHIP_CLAUDE_PATH="${STARSHIP_CLAUDE_DIR}/starship-claude"
 
 link_agents_md() {
   local target="$1"
@@ -22,8 +24,9 @@ npx skills add anthropics/skills --skill skill-creator "${SKILLS_PARAMS[@]}"
 npx skills add ./pkg/ai-config/skills --skill '*' "${SKILLS_PARAMS[@]}"
 
 # Install Claude status bar
-curl -fsSL https://raw.githubusercontent.com/martinemde/starship-claude/main/plugin/bin/starship-claude -o ~/.local/bin/starship-claude
-chmod +x ~/.local/bin/starship-claude
+mkdir -p "${STARSHIP_CLAUDE_DIR}"
+curl -fsSL https://raw.githubusercontent.com/martinemde/starship-claude/main/plugin/bin/starship-claude -o "${STARSHIP_CLAUDE_PATH}"
+chmod +x "${STARSHIP_CLAUDE_PATH}"
 
 # Install Claude settings and configs
 stow --adopt --no-folding --dir 'pkg/ai-config' --target "${HOME}" 'stow'
