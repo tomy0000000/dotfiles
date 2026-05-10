@@ -73,7 +73,6 @@ macos-terminal: macos-brew
 	run "pkg/macos-terminal/macos-terminal.sh"
 
 macos-tower: macos-brew macos-git
-	brew install --cask tower
 	run "pkg/macos-tower/macos-tower.sh"
 
 macos-vscode: macos-brew
