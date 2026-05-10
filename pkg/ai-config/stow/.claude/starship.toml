@@ -1,17 +1,38 @@
-# Minimal Text Template
+# https://starship.rs/config/
+# See also pkg/starship/starship.toml
+# Get editor completions based on the config schema
 "$schema" = "https://starship.rs/config-schema.json"
 
-palette = "custom"
+format = """
+📁 $directory \
+🤖 ${env_var.CLAUDE_MODEL_DISPLAY_NAME} \
+🧠 ${env_var.CLAUDE_CONTEXT} \
+💰 ${env_var.CLAUDE_COST} \
+\n \
+(🕔 ${env_var.CLAUDE_RATE_5H}) \
+(📆 ${env_var.CLAUDE_RATE_7D}) \
+"""
+
 add_newline = false
 
-# dir git model context cost
-format = """
-$directory \
-$git_branch$git_status \
-${env_var.CLAUDE_MODEL} \
-${env_var.CLAUDE_CONTEXT} \
-${env_var.CLAUDE_COST}\
-"""
+# Color palette: Dracula Pro
+palette = "dracula-pro"
+
+[palettes.dracula-pro]
+directory = "#80FFEA"
+directory_bg = "#22212C"
+
+claude = "#FF9580"
+claude_bg = "#22212C"
+
+context = "#FFCA80"
+context_bg = "#454158"
+
+cost = "#8AFF80"
+cost_bg = "#454158"
+
+usage = "#9580FF"
+usage_bg = "#22212C"
 
 [directory]
 style = "fg:directory"
@@ -19,19 +40,10 @@ format = "[$path]($style)"
 truncation_length = 2
 truncate_to_repo = true
 
-[git_branch]
-symbol = ""
-style = "fg:git_branch"
-format = "[$branch]($style)"
-
-[git_status]
-style = "fg:git_status"
-format = "[($all_status$ahead_behind)]($style)"
-
-[env_var.CLAUDE_MODEL]
-variable = "CLAUDE_MODEL"
+[env_var.CLAUDE_MODEL_DISPLAY_NAME]
+variable = "CLAUDE_MODEL_DISPLAY_NAME"
 format = "[$env_value]($style)"
-style = "fg:model"
+style = "fg:claude"
 
 [env_var.CLAUDE_CONTEXT]
 variable = "CLAUDE_CONTEXT"
@@ -43,26 +55,12 @@ variable = "CLAUDE_COST"
 format = "[$env_value]($style)"
 style = "fg:cost"
 
-## Custom palette
-#
+[env_var.CLAUDE_RATE_5H]
+variable = "CLAUDE_RATE_5H"
+format = "[$env_value]($style)"
+style = "fg:usage"
 
-# Dracula
-[palettes.custom]
-claude = "#D97757"
-claude_bg = "#44475a"
-
-directory = "#8be9fd"
-directory_bg = "#282a36"
-
-git_branch = "#bd93f9"
-git_status = "#ff6e6e"
-git_bg = "#44475a"
-
-model = "#8be9fd"
-model_bg = "#282a36"
-
-context = "#ffb86c"
-context_bg = "#44475a"
-
-cost = "#50fa7b"
-cost_bg = "#4d4f68"
+[env_var.CLAUDE_RATE_7D]
+variable = "CLAUDE_RATE_7D"
+format = "[$env_value]($style)"
+style = "fg:usage"
