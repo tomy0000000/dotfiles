@@ -122,7 +122,7 @@ macos-zsh: macos-brew macos-stow
 ###############################################################################
 
 macos-c-cpp: macos-brew
-	brew install cling
+	run "pkg/c-cpp/macos-c-cpp.sh"
 
 macos-javascript: macos-stow macos-mise
 	run "pkg/javascript/macos-javascript.sh"
