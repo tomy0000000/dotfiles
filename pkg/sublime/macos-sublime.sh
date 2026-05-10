@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# Install Sublime Text if not installed yet
+exist subl || brew install --cask sublime-text
+
 # Create preferred directories
 PREFERENCES_DIR="${HOME}/Library/Application Support/Sublime Text"
 mkdir -p "${PREFERENCES_DIR}/Packages"

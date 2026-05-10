@@ -67,7 +67,6 @@ macos-popclip: macos-brew
 	run "pkg/macos-popclip/macos-popclip.sh"
 
 macos-sublime: macos-brew macos-stow
-	brew install --cask sublime-text
 	run "pkg/sublime/macos-sublime.sh"
 
 macos-terminal: macos-brew
