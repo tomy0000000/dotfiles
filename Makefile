@@ -21,7 +21,7 @@ stow: $(OS)-stow
 zsh: $(OS)-zsh
 
 ansible: stow
-	stow --no-folding --dir 'pkg/ansible' --target "${HOME}" 'stow'
+	run "pkg/ansible/ansible.sh"
 python: stow
 	stow --no-folding --dir 'pkg/python' --target "${HOME}" 'stow'
 
