@@ -45,8 +45,7 @@ ubuntu-mise:
 	run "pkg/mise/debian-mise.sh"
 
 ubuntu-nano:
-	sudo apt-get update
-	sudo apt-get install -y nano
+	run "pkg/nano/debian-nano.sh"
 
 ubuntu-starship:
 	run "pkg/starship/debian-starship.sh"
