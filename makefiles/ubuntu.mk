@@ -12,7 +12,7 @@ ubuntu-clean: ;
 ###############################################################################
 
 ubuntu-essential: ubuntu-core ubuntu-locale-zhtw ubuntu-tz-taipei ubuntu-ssh
-	sudo apt-get install -y build-essential
+	run "pkg/ubuntu-essential/ubuntu-essential.sh"
 
 ###############################################################################
 # CLI Suite                                                                   #
