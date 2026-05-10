@@ -40,8 +40,7 @@ macos-alfred: macos-brew
 	run "pkg/macos-alfred/macos-alfred.sh"
 
 macos-appcleaner: macos-brew
-	brew install --cask appcleaner
-	defaults import net.freemacsoft.AppCleaner pkg/macos-appcleaner/net.freemacsoft.AppCleaner.plist
+	run "pkg/macos-appcleaner/macos-appcleaner.sh"
 
 macos-cleanshot: macos-brew
 	run "pkg/macos-cleanshot/macos-cleanshot.sh"
