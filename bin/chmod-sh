@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+
+# Pre-commit hook: ensure staged .sh files have the executable bit set in
+# both the working tree and the index, so Makefile recipes invoking
+# pkg/**/*.sh do not break on a missing exec bit after fresh checkouts.
+
+for f in "$@"; do
+  chmod +x "$f"
+  git update-index --chmod=+x -- "$f"
+done

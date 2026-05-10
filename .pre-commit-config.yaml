@@ -2,7 +2,7 @@ repos:
   - repo: local
     hooks:
       - id: eslint-json
-        name: ESLint (JSON)
+        name: JSON should be formatted and sorted
         entry: eslint
         language: node
         additional_dependencies:
@@ -10,3 +10,8 @@ repos:
           - "@eslint/json"
         files: \.json$
         types: [file]
+      - id: chmod-sh
+        name: Shell script should be executable
+        entry: bin/chmod-sh
+        language: system
+        files: \.sh$
