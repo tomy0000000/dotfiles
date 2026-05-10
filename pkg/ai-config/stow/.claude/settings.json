@@ -2,16 +2,7 @@
   "agentPushNotifEnabled": true,
   "effortLevel": "high",
   "enabledPlugins": {
-    "claude-code-setup@claude-plugins-official": true,
-    "starship-claude@starship-claude": true
-  },
-  "extraKnownMarketplaces": {
-    "starship-claude": {
-      "source": {
-        "repo": "martinemde/starship-claude",
-        "source": "github"
-      }
-    }
+    "claude-code-setup@claude-plugins-official": true
   },
   "hooks": {
     "Notification": [

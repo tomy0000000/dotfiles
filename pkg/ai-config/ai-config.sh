@@ -22,8 +22,9 @@ npx skills add anthropics/skills --skill skill-creator "${SKILLS_PARAMS[@]}"
 npx skills add ./pkg/ai-config/skills --skill '*' "${SKILLS_PARAMS[@]}"
 
 # Install Claude status bar
+curl -fsSL https://raw.githubusercontent.com/martinemde/starship-claude/main/plugin/bin/starship-claude -o ~/.local/bin/starship-claude
+chmod +x ~/.local/bin/starship-claude
+
+# Install Claude settings and configs
 stow --adopt --no-folding --dir 'pkg/ai-config' --target "${HOME}" 'stow'
 git checkout -- 'pkg/ai-config/stow'
-
-claude plugin marketplace add martinemde/starship-claude
-claude plugin install starship-claude@starship-claude
