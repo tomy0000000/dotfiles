@@ -127,7 +127,6 @@ macos-javascript: macos-stow macos-mise
 	run "pkg/javascript/macos-javascript.sh"
 
 macos-perl: macos-stow
-	stow --no-folding --dir 'pkg/perl' --target "${HOME}" 'stow'
 	run "pkg/perl/macos-perl.sh"
 
 ###############################################################################
