@@ -105,8 +105,7 @@ macos-mise: macos-brew
 macos-nano: ;
 
 macos-shellcheck: macos-brew macos-stow
-	exist shellcheck || brew install shellcheck
-	stow --no-folding --dir 'pkg/shellcheck' --target "${HOME}" 'stow'
+	run "pkg/shellcheck/macos-shellcheck.sh"
 
 macos-starship: macos-brew
 	run "pkg/starship/macos-starship.sh"
