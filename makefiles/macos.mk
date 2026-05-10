@@ -56,8 +56,7 @@ macos-hammerspoon: macos-brew macos-stow
 	run "pkg/macos-hammerspoon/macos-hammerspoon.sh"
 
 macos-iterm: macos-brew
-	brew bundle --file pkg/macos-iterm/macos-iterm.Brewfile
-	exist imgcat || (run "pkg/macos-iterm/macos-iterm.sh")
+	run "pkg/macos-iterm/macos-iterm.sh"
 
 macos-markedit: macos-brew
 	run "pkg/macos-markedit/macos-markedit.sh"
