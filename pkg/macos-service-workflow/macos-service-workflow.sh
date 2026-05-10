@@ -2,4 +2,4 @@
 set -euo pipefail
 
 # Stow Automator workflows into ~/Library/Services
-stow --dir 'pkg' --target "${HOME}/Library/Services" 'macos-services'
+stow --dir 'pkg' --target "${HOME}/Library/Services" 'macos-service-workflow'
