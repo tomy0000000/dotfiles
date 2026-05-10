@@ -111,7 +111,7 @@ macos-starship: macos-brew
 	run "pkg/starship/macos-starship.sh"
 
 macos-stow: macos-brew macos-clean
-	exist stow || brew install stow
+	run "pkg/stow/macos-stow.sh"
 
 macos-zsh: macos-brew macos-stow
 	run "pkg/zsh/macos-zsh.sh"
