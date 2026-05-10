@@ -76,7 +76,6 @@ macos-tower: macos-brew macos-git
 	run "pkg/macos-tower/macos-tower.sh"
 
 macos-vscode: macos-brew
-	brew install --cask visual-studio-code
 	run "pkg/vscode/macos-vscode.sh"
 
 macos-xcode: macos-brew
