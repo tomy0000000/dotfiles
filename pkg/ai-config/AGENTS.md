@@ -5,6 +5,10 @@
 - Never prefix git commands with `cd /path/to/root &&`
 - Instead use `git -C /path/to/root <subcommand>` if a specific cwd is needed
 - Prefer repo-root-relative paths explicitly over cd'ing
+- To check whether an env var is set, use `printenv SOME_ENV` (never `env | grep` or bare `env`)
+- Use `rg` (ripgrep) instead of `grep` for searching: faster, respects `.gitignore`, and has better defaults
+- Use `fd` instead of `find` for file lookups: faster, respects `.gitignore`, and has saner syntax
+- Use `/tmp` freely for scratch files (logs, intermediate output, sentinels). Never write secrets, tokens, keys, or credentials there: it's world-readable and survives across processes
 
 ## Prose conventions
 
