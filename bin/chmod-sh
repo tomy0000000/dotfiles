@@ -5,7 +5,8 @@ set -euo pipefail
 # both the working tree and the index, so Makefile recipes invoking
 # pkg/**/*.sh do not break on a missing exec bit after fresh checkouts.
 
-for f in "$@"; do
-  chmod +x "$f"
-  git update-index --chmod=+x -- "$f"
+for file in "$@"; do
+  [[ -x "$file" ]] || chmod +x "$file"
+  mode=$(git ls-files --stage -- "$file" | awk '{print $1}')
+  [[ "$mode" == "100755" ]] || git update-index --chmod=+x -- "$file"
 done
