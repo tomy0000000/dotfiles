@@ -1,10 +1,11 @@
-# Global `AGNETS.md`
+# Global AI Instruction
+
+## Alternative context
+
+Check both `AGENTS.md` / `CLAUDE.md` in the project directory.
 
 ## Shell conventions
 
-- Never prefix git commands with `cd /path/to/root &&`
-- Instead use `git -C /path/to/root <subcommand>` if a specific cwd is needed
-- Prefer repo-root-relative paths explicitly over cd'ing
 - To check whether an env var is set, use `printenv SOME_ENV` (never `env | grep` or bare `env`)
 - Use `rg` (ripgrep) instead of `grep` for searching: faster, respects `.gitignore`, and has better defaults
 - Use `fd` instead of `find` for file lookups: faster, respects `.gitignore`, and has saner syntax
@@ -18,6 +19,11 @@
 - Rewrite with commas, periods, or parentheses instead
 - Applies to prose only. Keep punctuation inside code, config, or copied quotes untouched
 
+## Self-Improvement
+
+- If you believe the `AGENTS.md` / `CLAUDE.md` you've read is outdated or not aligned with what you've found, proposed fix at the end of the task.
+- If a skill is invoked to complete the task and the output required corrections or the user expressed dissatisfaction, ask user if they want to update
+
 ## Language conventions
 
-- If the prompt is in Chinese, respond with Traditional Chinese characters, and think/research as a Taiwanese
+- If the prompt is in Chinese, respond with Traditional Chinese characters, and think/research as a Taiwanese.

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-AGENTS_MD="$(pwd)/pkg/ai-config/AGENTS.md"
+AGENTS_MD="$(pwd)/pkg/ai-config/GLOBAL-AGENTS.md"
 STARSHIP_CLAUDE_DIR="${HOME}/.local/bin"
 STARSHIP_CLAUDE_PATH="${STARSHIP_CLAUDE_DIR}/starship-claude"
 
@@ -19,9 +19,9 @@ link_agents_md "${HOME}/.claude/CLAUDE.md"
 
 # Install skills
 SKILLS_PARAMS=(--agent universal --agent claude-code --global --yes)
-npx skills add vercel-labs/skills --skill find-skills "${SKILLS_PARAMS[@]}"
-npx skills add anthropics/skills --skill skill-creator "${SKILLS_PARAMS[@]}"
-npx skills add ./pkg/ai-config/skills --skill '*' "${SKILLS_PARAMS[@]}"
+npx --yes skills add vercel-labs/skills --skill find-skills "${SKILLS_PARAMS[@]}"
+npx --yes skills add anthropics/skills --skill skill-creator "${SKILLS_PARAMS[@]}"
+npx --yes skills add ./pkg/ai-config/skills --skill '*' "${SKILLS_PARAMS[@]}"
 
 # Install Claude status bar
 mkdir -p "${STARSHIP_CLAUDE_DIR}"
