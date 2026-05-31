@@ -65,6 +65,10 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
+## Coding conventions
+
+- Use test-driven-development (TDD) whenever possible. Always start with a testing plan. If you can't come up a simple testing plan, it's probably a sign that the code is too complex.
+
 ## Shell conventions
 
 - To check whether an env var is set, use `printenv SOME_ENV` (never `env | grep` or bare `env`)
