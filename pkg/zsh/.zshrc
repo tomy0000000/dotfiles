@@ -13,7 +13,8 @@ if [[ -n "${HOMEBREW_PREFIX}" ]]; then
     source "${HOMEBREW_PREFIX}/opt/zinit/zinit.zsh"
 elif [[ -n "${XDG_DATA_HOME}" ]]; then
     source "${XDG_DATA_HOME}/zinit/zinit.zsh"
-else    source "${HOME}/.local/share/zinit/zinit.zsh"
+else
+    source "${HOME}/.local/share/zinit/zinit.zsh"
 fi
 
 # Init zsh completions
@@ -42,9 +43,8 @@ zinit snippet ${ZDOTDIR}/.zsh/fix_omz_plugin.zsh
 
 # Plugins
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
-zinit snippet OMZP::colored-man-pages
-zinit snippet OMZP::colorize # ccat, cless
-zinit snippet OMZP::kubectl  # completion
+zinit lucid wait for OMZP::colored-man-pages
+zinit lucid wait for OMZP::colorize # ccat, cless
 zinit lucid wait for OMZP::command-not-found
 zinit lucid wait for OMZP::gnu-utils
 zinit lucid wait for OMZP::rbenv
