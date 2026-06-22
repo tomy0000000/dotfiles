@@ -21,6 +21,7 @@ jobs:
             "ansible",
             "clean",
             "cli-network",
+            "cli-pipe",
             "core",
             "git",
             "javascript",
@@ -34,6 +35,7 @@ jobs:
             "macos-clean",
             # "macos-cleanshot", # Script error to be fixed
             "macos-cli-network",
+            "macos-cli-pipe",
             "macos-cli-useful",
             "macos-core",
             "macos-docker",

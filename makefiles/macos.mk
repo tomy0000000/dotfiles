@@ -29,6 +29,9 @@ macos-app-dev: git macos-brew macos-iterm macos-sublime macos-terminal macos-vsc
 macos-cli-network: macos-brew
 	run "pkg/cli-network/macos-cli-network.sh"
 
+macos-cli-pipe: macos-brew
+	run "pkg/cli-pipe/macos-cli-pipe.sh"
+
 macos-cli-useful: macos-brew
 	run "pkg/cli-useful/macos-cli-useful.sh"
 

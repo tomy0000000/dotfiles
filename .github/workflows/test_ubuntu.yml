@@ -23,6 +23,7 @@ jobs:
             "ansible",
             "clean",
             "cli-network",
+            "cli-pipe",
             "core",
             "git",
             "javascript",

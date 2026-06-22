@@ -10,6 +10,7 @@ ai-config: $(OS)-ai-config
 core: $(OS)-core
 clean: $(OS)-clean
 cli-network: $(OS)-cli-network
+cli-pipe: $(OS)-cli-pipe
 dropbox: $(OS)-dropbox
 git: $(OS)-git
 javascript: $(OS)-javascript
