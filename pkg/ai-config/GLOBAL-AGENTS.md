@@ -65,15 +65,20 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
-## Coding conventions
+## Context Sync
 
-- Use test-driven-development (TDD) whenever possible. Always start with a testing plan. If you can't come up a simple testing plan, it's probably a sign that the code is too complex.
+When planning, scoping, working on a high-context task, make sure to pause at critical check points,
+and sync context with the user, make them a part of the decision making process, and ask for
+feedback.
 
 ## Shell conventions
 
+- Do not use `-C` flag in `git` commands. Always run from the repo root, and use absolute paths to files/dirs in the repo.
+- Prevent pipe unless you have to
 - To check whether an env var is set, use `printenv SOME_ENV` (never `env | grep` or bare `env`)
 - Use `rg` (ripgrep) instead of `grep` for searching: faster, respects `.gitignore`, and has better defaults
 - Use `fd` instead of `find` for file lookups: faster, respects `.gitignore`, and has saner syntax
+- When running `bazel` commands, always use absolute paths to the workspace root, never `cd` into the workspace first. For example, use `bazel build //pkg/ai-config:target` instead of `cd /path/to/workspace && bazel build //pkg/ai-config:target`
 - Use `/tmp` freely for scratch files (logs, intermediate output, sentinels). Never write secrets, tokens, keys, or credentials there: it's world-readable and survives across processes
 
 ## Prose conventions
@@ -88,6 +93,11 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 - If you believe the `AGENTS.md` / `CLAUDE.md` you've read is outdated or not aligned with what you've found, proposed fix at the end of the task.
 - If a skill is invoked to complete the task and the output required corrections or the user expressed dissatisfaction, ask user if they want to update
+
+## Repetitive Tasks
+
+- When asked to do something repetitive, even if it's just a one-time task, always first evaluate if automation is possible. e.g. Script or agent skill.
+- Always prefer script over agent skill
 
 ## Language conventions
 
