@@ -24,7 +24,9 @@ A package should be safe to run multiple times without causing issues. This will
 
 ## Minimal dependencies
 
-Avoid unnecessary dependencies between targets.
+Avoid unnecessary dependencies between targets, especially when it's nested.
+
+For CLI tools that concerns versioning, manage and install with `mise`. Otherwise, use the system package manager.
 
 ## Shell script conventions
 
