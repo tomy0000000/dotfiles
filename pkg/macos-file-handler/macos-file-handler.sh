@@ -29,8 +29,13 @@ duti -s com.apple.FaceTime tel
 # duti -s com.microsoft.rdc.macos rdp
 
 # Default browser (http/https) can't be set via duti
-exist defaultbrowser || brew install defaultbrowser
-defaultbrowser browser
+# CI has no browser installed, and setting it triggers a GUI confirmation prompt
+if [ -n "${CI:-}" ]; then
+    log_info "Skipping default browser"
+else
+    exist defaultbrowser || brew install defaultbrowser
+    defaultbrowser browser
+fi
 
 # MIME Types
 
