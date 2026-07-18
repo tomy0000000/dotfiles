@@ -57,7 +57,7 @@ macos-finder:
 macos-hammerspoon: macos-brew macos-stow
 	run "pkg/macos-hammerspoon/macos-hammerspoon.sh"
 
-macos-iterm: macos-brew
+macos-iterm: macos-brew macos-duti
 	run "pkg/macos-iterm/macos-iterm.sh"
 
 macos-markedit: macos-brew
@@ -69,7 +69,7 @@ macos-one-password: macos-brew
 macos-popclip: macos-brew
 	run "pkg/macos-popclip/macos-popclip.sh"
 
-macos-sublime: macos-brew macos-stow
+macos-sublime: macos-brew macos-stow macos-duti
 	run "pkg/sublime/macos-sublime.sh"
 
 macos-terminal: macos-brew
@@ -78,7 +78,7 @@ macos-terminal: macos-brew
 macos-tower: macos-brew macos-git
 	run "pkg/macos-tower/macos-tower.sh"
 
-macos-vscode: macos-brew
+macos-vscode: macos-brew macos-duti
 	run "pkg/vscode/macos-vscode.sh"
 
 macos-xcode: macos-brew

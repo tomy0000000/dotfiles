@@ -23,3 +23,7 @@ else
     echo "⚠️ Private submodule is missing. Partial preferences have been installed."
     echo "⚠️ Hint: Run 'git submodule update --init --recursive' and try again."
 fi
+
+# Default file handlers (duti)
+duti -s com.sublimetext.4 text/csv all
+duti -s com.sublimetext.4 text/plain all
