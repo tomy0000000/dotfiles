@@ -160,5 +160,8 @@ macos-service-workflow: macos-stow
 macos-settings:
 	run "pkg/macos-settings/macos-settings.sh"
 
+macos-text-replacement:
+	run "pkg/macos-text-replacement/macos-text-replacement.sh"
+
 macos-touch-id-sudo:
 	run "pkg/macos-touch-id-sudo/macos-touch-id-sudo.sh"

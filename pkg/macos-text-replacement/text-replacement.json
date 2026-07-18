@@ -1,0 +1,270 @@
+[
+  {
+    "phrase": "",
+    "shortcut": "applemark"
+  },
+  {
+    "phrase": "฿",
+    "shortcut": "baht"
+  },
+  {
+    "phrase": "≠",
+    "shortcut": "bdy"
+  },
+  {
+    "phrase": "₫",
+    "shortcut": "dong"
+  },
+  {
+    "phrase": "°",
+    "shortcut": "du"
+  },
+  {
+    "phrase": "℃",
+    "shortcut": "duc"
+  },
+  {
+    "phrase": "℉",
+    "shortcut": "duf"
+  },
+  {
+    "phrase": "÷",
+    "shortcut": "dv"
+  },
+  {
+    "phrase": "≑",
+    "shortcut": "dydy"
+  },
+  {
+    "phrase": "↑",
+    "shortcut": "jss"
+  },
+  {
+    "phrase": "↓",
+    "shortcut": "jx"
+  },
+  {
+    "phrase": "→",
+    "shortcut": "jy"
+  },
+  {
+    "phrase": "→",
+    "shortcut": "->"
+  },
+  {
+    "phrase": "↗︎",
+    "shortcut": "jys"
+  },
+  {
+    "phrase": "↘︎",
+    "shortcut": "jyx"
+  },
+  {
+    "phrase": "↔︎",
+    "shortcut": "jyz"
+  },
+  {
+    "phrase": "←",
+    "shortcut": "jz"
+  },
+  {
+    "phrase": "←",
+    "shortcut": "<-"
+  },
+  {
+    "phrase": "↖︎",
+    "shortcut": "jzs"
+  },
+  {
+    "phrase": "↙︎",
+    "shortcut": "jzx"
+  },
+  {
+    "phrase": "↔︎",
+    "shortcut": "jzy"
+  },
+  {
+    "phrase": "↔︎",
+    "shortcut": "<->"
+  },
+  {
+    "phrase": "−",
+    "shortcut": "mn"
+  },
+  {
+    "phrase": "×",
+    "shortcut": "mt"
+  },
+  {
+    "phrase": "ˊ",
+    "shortcut": "u2"
+  },
+  {
+    "phrase": "ˇ",
+    "shortcut": "u3"
+  },
+  {
+    "phrase": "ˋ",
+    "shortcut": "u4"
+  },
+  {
+    "phrase": "˙",
+    "shortcut": "u5"
+  },
+  {
+    "phrase": "ㄚ",
+    "shortcut": "uaa"
+  },
+  {
+    "phrase": "ㄞ",
+    "shortcut": "uai"
+  },
+  {
+    "phrase": "ㄢ",
+    "shortcut": "uan"
+  },
+  {
+    "phrase": "ㄤ",
+    "shortcut": "uang"
+  },
+  {
+    "phrase": "ㄠ",
+    "shortcut": "uao"
+  },
+  {
+    "phrase": "ㄅ",
+    "shortcut": "ubb"
+  },
+  {
+    "phrase": "ㄘ",
+    "shortcut": "ucc"
+  },
+  {
+    "phrase": "ㄔ",
+    "shortcut": "uch"
+  },
+  {
+    "phrase": "ㄉ",
+    "shortcut": "udd"
+  },
+  {
+    "phrase": "ㄝ",
+    "shortcut": "ue"
+  },
+  {
+    "phrase": "ㄜ",
+    "shortcut": "ue"
+  },
+  {
+    "phrase": "ㄟ",
+    "shortcut": "uei"
+  },
+  {
+    "phrase": "ㄣ",
+    "shortcut": "uen"
+  },
+  {
+    "phrase": "ㄥ",
+    "shortcut": "ueng"
+  },
+  {
+    "phrase": "ㄦ",
+    "shortcut": "uer"
+  },
+  {
+    "phrase": "ㄈ",
+    "shortcut": "uf"
+  },
+  {
+    "phrase": "ㄍ",
+    "shortcut": "ug"
+  },
+  {
+    "phrase": "ㄏ",
+    "shortcut": "uh"
+  },
+  {
+    "phrase": "ㄐ",
+    "shortcut": "uj"
+  },
+  {
+    "phrase": "ㄎ",
+    "shortcut": "ukk"
+  },
+  {
+    "phrase": "ㄌ",
+    "shortcut": "ul"
+  },
+  {
+    "phrase": "ㄇ",
+    "shortcut": "um"
+  },
+  {
+    "phrase": "ㄋ",
+    "shortcut": "unn"
+  },
+  {
+    "phrase": "ㄛ",
+    "shortcut": "uo"
+  },
+  {
+    "phrase": "ㄡ",
+    "shortcut": "uou"
+  },
+  {
+    "phrase": "ㄆ",
+    "shortcut": "upp"
+  },
+  {
+    "phrase": "ㄑ",
+    "shortcut": "uq"
+  },
+  {
+    "phrase": "ㄖ",
+    "shortcut": "ur"
+  },
+  {
+    "phrase": "ㄕ",
+    "shortcut": "ush"
+  },
+  {
+    "phrase": "ㄙ",
+    "shortcut": "uss"
+  },
+  {
+    "phrase": "ㄊ",
+    "shortcut": "utt"
+  },
+  {
+    "phrase": "ㄨ",
+    "shortcut": "uwu"
+  },
+  {
+    "phrase": "ㄒ",
+    "shortcut": "ux"
+  },
+  {
+    "phrase": "ㄧ",
+    "shortcut": "uyi"
+  },
+  {
+    "phrase": "ㄩ",
+    "shortcut": "uyu"
+  },
+  {
+    "phrase": "ㄗ",
+    "shortcut": "uz"
+  },
+  {
+    "phrase": "ㄓ",
+    "shortcut": "uzh"
+  },
+  {
+    "phrase": "ʕ•̀ω•́ʔ✧",
+    "shortcut": "xkff"
+  },
+  {
+    "phrase": "٩(˃̶͈̀௰˂̶͈́)و",
+    "shortcut": "xkff"
+  }
+]

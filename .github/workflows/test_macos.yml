@@ -64,6 +64,7 @@ jobs:
             "macos-stow",
             "macos-sublime",
             "macos-terminal",
+            "macos-text-replacement",
             "macos-touch-id-sudo",
             "macos-tower",
             "macos-vscode",
