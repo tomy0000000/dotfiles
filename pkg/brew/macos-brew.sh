@@ -17,6 +17,9 @@ fi
 echo "🍺 Installing Homebrew packages"
 brew bundle --file pkg/brew/brew.Brewfile
 
+# Trust autoupdate
+brew trust --command domt4/autoupdate/autoupdate
+
 # Install aliases
 # Do folding here to sync new aliases back to dotfiles
 echo "🍺 Stowing Homebrew aliases"
