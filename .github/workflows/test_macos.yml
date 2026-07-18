@@ -32,6 +32,7 @@ jobs:
             "macos-appcleaner",
             "macos-brew",
             "macos-c-cpp",
+            "macos-character-viewer",
             "macos-clean",
             # "macos-cleanshot", # Script error to be fixed
             "macos-cli-network",

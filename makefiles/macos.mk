@@ -139,6 +139,9 @@ macos-perl: macos-stow
 macos-ai-config: macos-stow
 	run "pkg/ai-config/ai-config.sh"
 
+macos-character-viewer:
+	run "pkg/macos-character-viewer/macos-character-viewer.sh"
+
 macos-file-handler: macos-duti
 	run "pkg/macos-file-handler/macos-file-handler.sh"
 
