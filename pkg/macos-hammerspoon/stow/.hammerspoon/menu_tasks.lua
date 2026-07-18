@@ -33,6 +33,20 @@ Install:andUse("TaskHammer",
                         PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
                     }
                 },
+                {
+                    name = "Upgrade Claude Code",
+                    cmd = "~/.dotfiles/pkg/macos-hammerspoon/stow/.hammerspoon/scripts/brew-upgrade-claude-code.sh",
+                    env = {
+                        PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+                    }
+                },
+                {
+                    name = "Toggle Desktop Icons",
+                    cmd = "~/.dotfiles/pkg/macos-hammerspoon/stow/.hammerspoon/scripts/macos-toggle-desktop-icons.sh",
+                    env = {
+                        PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+                    }
+                },
             }
         }
     }
