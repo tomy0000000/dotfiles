@@ -1,7 +1,0 @@
-{
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "name": "Ubuntu",
-  "postCreateCommand": "make"
-}
