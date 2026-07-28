@@ -56,7 +56,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 # Third-party integrations
 zinit snippet ${ZDOTDIR}/.zsh/iterm.zsh
 zinit snippet ${ZDOTDIR}/.zsh/perl.zsh
-zinit snippet ${ZDOTDIR}/.zsh/python.zsh
 zinit snippet ${ZDOTDIR}/.zsh/zsh-style.zsh
 
 # Alias
