@@ -50,6 +50,7 @@ zinit lucid wait for OMZP::gnu-utils
 zinit lucid wait for OMZP::rbenv
 zinit lucid wait atpull"%atclone" atclone"_fix-omz-plugin" for OMZP::macos # commands
 zinit light MichaelAquilina/zsh-you-should-use
+zinit light zdharma-continuum/history-search-multi-word # Ctrl-R history search
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
