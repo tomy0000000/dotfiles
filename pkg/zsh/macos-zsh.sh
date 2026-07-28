@@ -35,4 +35,4 @@ fi
 # Install zsh dotfiles
 echo "Installing zsh dotfiles..."
 mkdir -p "${XDG_CONFIG_HOME}" # Make sure XDG_CONFIG_HOME exists
-ln -sf .dotfiles/zsh/.zshenv "${HOME}/.zshenv"
+ln -sf .dotfiles/pkg/zsh/.zshenv "${HOME}/.zshenv"
