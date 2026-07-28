@@ -75,6 +75,7 @@ zinit snippet ${ZDOTDIR}/completion/mise.zsh
 zinit snippet ${ZDOTDIR}/completion/op.zsh
 zinit snippet ${ZDOTDIR}/completion/poetry.zsh
 zinit snippet ${ZDOTDIR}/completion/starship.zsh
+zinit snippet ${ZDOTDIR}/completion/uv.zsh
 
 # Autoload all functions
 for func in "${ZDOTDIR}"/.zfunc/*; do
