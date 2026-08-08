@@ -46,7 +46,6 @@ Custom autoloaded functions:
 | `fpath`     | Prints `$FPATH` entries one per line                      |
 | `kill_port` | Kills the process bound to a given port via `pnpm dlx`    |
 | `manpath`   | Prints `$MANPATH` entries one per line                    |
-| `path`      | Prints `$PATH` entries one per line                       |
 | `reset_zsh` | Fixes `compaudit` permissions, clears caches, wipes Zinit |
 
 ### `lib/` functions
@@ -55,6 +54,7 @@ Custom autoloaded functions:
 
 | Function  | Library          | Description                         |
 | --------- | ---------------- | ----------------------------------- |
+| `path`    | `lib/path.sh`    | Prints `$PATH` entries one per line |
 | `realcmd` | `lib/realcmd.sh` | Resolves the real path of a command |
 
 ## Notes

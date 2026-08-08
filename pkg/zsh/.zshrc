@@ -96,6 +96,7 @@ _lib_lazy() {
 }
 
 _lib_lazy "${ZDOTDIR}/../../lib/realcmd.sh" realcmd
+_lib_lazy "${ZDOTDIR}/../../lib/path.sh" path
 
 # Alias
 zinit snippet ${ZDOTDIR}/.zalias/replacement.zsh

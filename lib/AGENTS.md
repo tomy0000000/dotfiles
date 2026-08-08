@@ -9,6 +9,7 @@
 | `distro.sh`  | OS detection                 | `distro` → `macos`, `ubuntu`, `debian`, …              |
 | `brew.sh`    | Homebrew path detection      | `abs_brew` → resolves Intel vs ARM path                |
 | `realcmd.sh` | Real path of a command       | `realcmd <cmd>` → resolves shims and symlinks          |
+| `path.sh`    | `$PATH` inspection           | `path` → prints entries one per line                   |
 
 ## Usage
 
