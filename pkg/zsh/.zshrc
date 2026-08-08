@@ -82,6 +82,21 @@ for func in "${ZDOTDIR}"/.zfunc/*; do
     autoload -U ${func:t}
 done
 
+# Lazily expose functions from .dotfiles/lib so they live in one place and stay
+# usable by the install scripts (which source lib/*.sh through bin/make-shell).
+# Usage: _lib_lazy <lib file> <function name>...
+# The first call to any stub sources the file, which replaces every stub it
+# declares. Never stub a lib that is also sourced eagerly: its import guard
+# makes the re-source a no-op and the stub has already unfunction'd itself.
+_lib_lazy() {
+    local file="${1}" fn
+    for fn in "${@[2,-1]}"; do
+        eval "${fn}() { unfunction ${fn}; source ${file}; ${fn} \"\$@\" }"
+    done
+}
+
+_lib_lazy "${ZDOTDIR}/../../lib/realcmd.sh" realcmd
+
 # Alias
 zinit snippet ${ZDOTDIR}/.zalias/replacement.zsh
 zinit snippet ${ZDOTDIR}/.zalias/configs.zsh

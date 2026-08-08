@@ -47,8 +47,15 @@ Custom autoloaded functions:
 | `kill_port` | Kills the process bound to a given port via `pnpm dlx`    |
 | `manpath`   | Prints `$MANPATH` entries one per line                    |
 | `path`      | Prints `$PATH` entries one per line                       |
-| `realcmd`   | Resolves the real path of a command                       |
 | `reset_zsh` | Fixes `compaudit` permissions, clears caches, wipes Zinit |
+
+### `lib/` functions
+
+`_lib_lazy` (in `.zshrc`, next to the `.zfunc` autoload loop) installs a stub for each named function that sources the matching `.dotfiles/lib/*.sh` on first call. Shared with the install scripts, which get the same files through `bin/make-shell`.
+
+| Function  | Library          | Description                         |
+| --------- | ---------------- | ----------------------------------- |
+| `realcmd` | `lib/realcmd.sh` | Resolves the real path of a command |
 
 ## Notes
 

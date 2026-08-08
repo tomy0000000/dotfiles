@@ -1,8 +1,0 @@
-#!/bin/zsh
-
-tmppath="$(which "${1}")"
-if [[ "$tmppath" == *".rbenv"* ]]; then
-    rbenv which "${1}"
-else
-    realpath "$(which "${1}")"
-fi
