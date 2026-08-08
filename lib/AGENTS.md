@@ -11,6 +11,7 @@
 | `realcmd.sh` | Real path of a command       | `realcmd <cmd>` → resolves shims and symlinks          |
 | `path.sh`    | `$PATH` inspection           | `path` → prints entries one per line                   |
 | `manpath.sh` | `$MANPATH` inspection        | `manpath` → prints entries one per line                |
+| `fpath.sh`   | `$FPATH` inspection (zsh)    | `fpath` → prints entries one per line                  |
 
 ## Usage
 

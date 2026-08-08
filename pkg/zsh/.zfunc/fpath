@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-echo $FPATH | sed 's/:/\n/g'
