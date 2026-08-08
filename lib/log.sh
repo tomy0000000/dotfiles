@@ -51,6 +51,7 @@ _log_use_color() {
 _log_fmt_prefix() {
   # Build prefix: optional [timestamp] [LEVEL] [prefix]
   # Output WITHOUT trailing space (caller adds it).
+  local lvl ts
   lvl="$1"
 
   if [ "${LOG_TIME}" = "1" ]; then
@@ -69,6 +70,7 @@ _log_fmt_prefix() {
 
 _log_print() {
   # _log_print LEVEL "message..."
+  local lvl lvl_num min_level c_start c_end prefix
   lvl="$1"
   shift
 
@@ -121,6 +123,7 @@ _log_print() {
 
 _log_terminal_width() {
   # Best-effort: COLUMNS, then tput cols, then stty size, else 80.
+  local w
   w="${COLUMNS:-}"
   if [ -z "$w" ]; then
     w="$(tput cols 2>/dev/null)" || w=""
@@ -136,13 +139,16 @@ _log_terminal_width() {
 
 _log_divider() {
   # Arg 1: begin | end. Arg 2: script path. Arg 3 (end only): exit code (0 = success → green ✅, else red 🛑).
+  # Note: never name a variable `path` here. zsh ties lowercase `path` to `PATH`,
+  # so assigning to it wipes the caller's PATH.
+  local kind script_path exit_code title lvl w len left_n right_n left right i
   kind="$1"
-  path="$2"
+  script_path="$2"
   exit_code="${3:-0}"
   case "$kind" in
-    begin) title="⌛️ BEGIN $path"; lvl="DIVIDER" ;;
-    end)   if [ "$exit_code" = "0" ]; then title="✅ END $path"; lvl="DIVIDER_END_OK"; else title="🛑 END $path"; lvl="DIVIDER_END_ERR"; fi ;;
-    *)     title="$path"; lvl="DIVIDER" ;;
+    begin) title="⌛️ BEGIN $script_path"; lvl="DIVIDER" ;;
+    end)   if [ "$exit_code" = "0" ]; then title="✅ END $script_path"; lvl="DIVIDER_END_OK"; else title="🛑 END $script_path"; lvl="DIVIDER_END_ERR"; fi ;;
+    *)     title="$script_path"; lvl="DIVIDER" ;;
   esac
   w="$(_log_terminal_width)"
   len=$(printf '%s' " $title " | wc -c | tr -d ' ')
@@ -169,6 +175,7 @@ run() {
   # Execute a script with pre-configured log (LOG_* exported; script runs in current shell and can use log_*).
   [ -z "$1" ] && { log_error "run: missing script path"; return 1; }
   [ ! -r "$1" ] && { log_error "run: not readable or not found: $1"; return 1; }
+  local ret
   export LOG_LEVEL LOG_TIME LOG_PREFIX
   _log_divider begin "$1"
   # shellcheck disable=SC1090
@@ -181,6 +188,7 @@ run() {
 die() {
   # die "message" [exit_code]
   # Returns non-zero if sourced; if executed in a subshell, exit is up to the caller.
+  local msg code
   msg="$1"
   code="${2:-1}"
   log_error "$msg"
