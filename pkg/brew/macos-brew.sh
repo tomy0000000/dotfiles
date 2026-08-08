@@ -8,7 +8,8 @@ if ! command -v brew &>/dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     # Polyfill this shell session so we can use brew immediately
-    eval "$(abs_brew shellenv)"
+    brew_path="$(abs_brew)"
+    eval "$("${brew_path}" shellenv)"
 else
     echo "🍺 Homebrew is already installed"
 fi
