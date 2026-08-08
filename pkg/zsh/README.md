@@ -42,7 +42,6 @@ Custom autoloaded functions:
 | Function    | Description                                               |
 | ----------- | --------------------------------------------------------- |
 | `benchmark` | Times 10 interactive Zsh startups via `/usr/bin/time`     |
-| `dns_purge` | Flushes DNS cache (`dscacheutil -flushcache`, macOS only) |
 | `kill_port` | Kills the process bound to a given port via `pnpm dlx`    |
 | `reset_zsh` | Fixes `compaudit` permissions, clears caches, wipes Zinit |
 
@@ -50,12 +49,13 @@ Custom autoloaded functions:
 
 `_lib_lazy` (in `.zshrc`, next to the `.zfunc` autoload loop) installs a stub for each named function that sources the matching `.dotfiles/lib/*.sh` on first call. Shared with the install scripts, which get the same files through `bin/make-shell`.
 
-| Function  | Library          | Description                              |
-| --------- | ---------------- | ---------------------------------------- |
-| `fpath`   | `lib/fpath.sh`   | Prints `$FPATH` entries one per line     |
-| `manpath` | `lib/manpath.sh` | Prints `$MANPATH` entries one per line   |
-| `path`    | `lib/path.sh`    | Prints `$PATH` entries one per line      |
-| `realcmd` | `lib/realcmd.sh` | Resolves the real path of a command      |
+| Function    | Library            | Description                                               |
+| ----------- | ------------------ | --------------------------------------------------------- |
+| `dns_purge` | `lib/dns_purge.sh` | Flushes DNS cache (`dscacheutil -flushcache`, macOS only) |
+| `fpath`     | `lib/fpath.sh`     | Prints `$FPATH` entries one per line                      |
+| `manpath`   | `lib/manpath.sh`   | Prints `$MANPATH` entries one per line                    |
+| `path`      | `lib/path.sh`      | Prints `$PATH` entries one per line                       |
+| `realcmd`   | `lib/realcmd.sh`   | Resolves the real path of a command                       |
 
 ## Notes
 
