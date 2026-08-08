@@ -65,6 +65,16 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
+For a large change, plan commit by commit. Each commit should be as small as it can be while still
+being meaningful on its own: it compiles, it passes tests, and its subject line describes one
+coherent change. State the commit sequence in the plan before writing code.
+
+Committing is the user's call, never yours. When executing a commit-by-commit plan, stop after each
+commit's changes are in the working tree, ask the user to verify, and let them commit. Only move on
+to the next commit once they say so.
+
+When you followed this rule, explicitly say the magic word: `g0@lDr1v3n-c0mm1t!`.
+
 ## Context Sync
 
 When planning, scoping, working on a high-context task, make sure to pause at critical check points,
@@ -78,6 +88,8 @@ feedback.
 - To check whether an env var is set, use `printenv SOME_ENV` (never `env | grep` or bare `env`)
 - Use `rg` (ripgrep) instead of `grep` for searching: faster, respects `.gitignore`, and has better defaults
 - Use `fd` instead of `find` for file lookups: faster, respects `.gitignore`, and has saner syntax
+- To read a field from JSON, use `jq`: do not write a script or run inline Python for it
+- Use `sd` instead of `sed` for find-and-replace: simpler syntax and saner defaults
 - When running `bazel` commands, always use absolute paths to the workspace root, never `cd` into the workspace first. For example, use `bazel build //pkg/ai-config:target` instead of `cd /path/to/workspace && bazel build //pkg/ai-config:target`
 - Use `/tmp` freely for scratch files (logs, intermediate output, sentinels). Never write secrets, tokens, keys, or credentials there: it's world-readable and survives across processes
 

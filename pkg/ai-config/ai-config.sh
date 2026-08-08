@@ -19,11 +19,12 @@ link_agents_md "${HOME}/.claude/CLAUDE.md"
 
 # Install skills
 SKILLS_PARAMS=(--agent universal --agent claude-code --global --yes)
-npx --yes skills add vercel-labs/skills --skill find-skills "${SKILLS_PARAMS[@]}"
-npx --yes skills add anthropics/skills --skill skill-creator "${SKILLS_PARAMS[@]}"
-npx --yes skills add shadcn/ui --skill shadcn "${SKILLS_PARAMS[@]}"
-npx --yes skills add vercel-labs/agent-browser --skill agent-browser "${SKILLS_PARAMS[@]}"
-npx --yes skills add ./pkg/ai-config/skills --skill '*' "${SKILLS_PARAMS[@]}"
+npx skills add vercel-labs/skills --skill find-skills "${SKILLS_PARAMS[@]}"
+npx skills add anthropics/skills --skill skill-creator "${SKILLS_PARAMS[@]}"
+npx skills add shadcn/ui --skill shadcn "${SKILLS_PARAMS[@]}"
+npx skills add fastapi/fastapi --skill fastapi "${SKILLS_PARAMS[@]}"
+npx skills add vercel-labs/agent-browser --skill agent-browser "${SKILLS_PARAMS[@]}"
+npx skills add ./pkg/ai-config/skills --skill '*' "${SKILLS_PARAMS[@]}"
 
 # Install Claude status bar
 mkdir -p "${STARSHIP_CLAUDE_DIR}"
