@@ -13,6 +13,7 @@
 | `manpath.sh` | `$MANPATH` inspection        | `manpath` → prints entries one per line                |
 | `fpath.sh`   | `$FPATH` inspection (zsh)    | `fpath` → prints entries one per line                  |
 | `dns_purge.sh` | DNS cache flush (macOS)    | `dns_purge` → `sudo dscacheutil -flushcache`           |
+| `kill_port.sh` | Free a bound TCP port      | `kill_port <port>` → needs `pnpm`                      |
 
 ## Usage
 

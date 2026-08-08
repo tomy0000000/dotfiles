@@ -42,7 +42,6 @@ Custom autoloaded functions:
 | Function    | Description                                               |
 | ----------- | --------------------------------------------------------- |
 | `benchmark` | Times 10 interactive Zsh startups via `/usr/bin/time`     |
-| `kill_port` | Kills the process bound to a given port via `pnpm dlx`    |
 | `reset_zsh` | Fixes `compaudit` permissions, clears caches, wipes Zinit |
 
 ### `lib/` functions
@@ -53,6 +52,7 @@ Custom autoloaded functions:
 | ----------- | ------------------ | --------------------------------------------------------- |
 | `dns_purge` | `lib/dns_purge.sh` | Flushes DNS cache (`dscacheutil -flushcache`, macOS only) |
 | `fpath`     | `lib/fpath.sh`     | Prints `$FPATH` entries one per line                      |
+| `kill_port` | `lib/kill_port.sh` | Kills the process bound to a given port via `pnpm dlx`    |
 | `manpath`   | `lib/manpath.sh`   | Prints `$MANPATH` entries one per line                    |
 | `path`      | `lib/path.sh`      | Prints `$PATH` entries one per line                       |
 | `realcmd`   | `lib/realcmd.sh`   | Resolves the real path of a command                       |
