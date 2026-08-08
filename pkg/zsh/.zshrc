@@ -101,6 +101,7 @@ _lib_lazy "${ZDOTDIR}/../../lib/manpath.sh" manpath
 _lib_lazy "${ZDOTDIR}/../../lib/fpath.sh" fpath
 _lib_lazy "${ZDOTDIR}/../../lib/dns_purge.sh" dns_purge
 _lib_lazy "${ZDOTDIR}/../../lib/kill_port.sh" kill_port
+_lib_lazy "${ZDOTDIR}/../../lib/benchmark.sh" benchmark
 
 # Alias
 zinit snippet ${ZDOTDIR}/.zalias/replacement.zsh

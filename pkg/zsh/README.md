@@ -41,7 +41,6 @@ Custom autoloaded functions:
 
 | Function    | Description                                               |
 | ----------- | --------------------------------------------------------- |
-| `benchmark` | Times 10 interactive Zsh startups via `/usr/bin/time`     |
 | `reset_zsh` | Fixes `compaudit` permissions, clears caches, wipes Zinit |
 
 ### `lib/` functions
@@ -50,6 +49,7 @@ Custom autoloaded functions:
 
 | Function    | Library            | Description                                               |
 | ----------- | ------------------ | --------------------------------------------------------- |
+| `benchmark` | `lib/benchmark.sh` | Times 10 interactive Zsh startups via `/usr/bin/time`     |
 | `dns_purge` | `lib/dns_purge.sh` | Flushes DNS cache (`dscacheutil -flushcache`, macOS only) |
 | `fpath`     | `lib/fpath.sh`     | Prints `$FPATH` entries one per line                      |
 | `kill_port` | `lib/kill_port.sh` | Kills the process bound to a given port via `pnpm dlx`    |
