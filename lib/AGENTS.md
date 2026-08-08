@@ -2,13 +2,13 @@
 
 ## Available libraries
 
-| File        | Purpose                      | Key API                                                |
-| ----------- | ---------------------------- | ------------------------------------------------------ |
-| `log.sh`    | Logging and script execution | `log_debug/info/warn/error`, `run "path"`, `die "msg"` |
-| `exist.sh`  | Command existence check      | `exist <cmd>`                                          |
-| `distro.sh` | OS detection                 | `distro` → `macos`, `ubuntu`, `debian`, …              |
-| `brew.sh`   | Homebrew path detection      | `abs_brew` → resolves Intel vs ARM path                |
-| `realcmd.sh`| Real path of a command       | `realcmd <cmd>` → resolves shims and symlinks          |
+| File         | Purpose                      | Key API                                                |
+| ------------ | ---------------------------- | ------------------------------------------------------ |
+| `log.sh`     | Logging and script execution | `log_debug/info/warn/error`, `run "path"`, `die "msg"` |
+| `exist.sh`   | Command existence check      | `exist <cmd>`                                          |
+| `distro.sh`  | OS detection                 | `distro` → `macos`, `ubuntu`, `debian`, …              |
+| `brew.sh`    | Homebrew path detection      | `abs_brew` → resolves Intel vs ARM path                |
+| `realcmd.sh` | Real path of a command       | `realcmd <cmd>` → resolves shims and symlinks          |
 
 ## Usage
 
@@ -18,6 +18,25 @@ The interactive shell opts into a named subset via `_lib_lazy` in `pkg/zsh/.zshr
 
 ## Adding a new library
 
-- Single responsibility — one concern per file
-- No side effects on source: guard executable logic with `if [[ "${BASH_SOURCE[0]}" == "${0}" ]]`
+- Single responsibility: one concern per file
 - Zero dependencies on other `lib/` files
+- Open with the two guards every existing lib uses:
+
+  ```bash
+  # Source guard: Exit if executed directly
+  (return 0 2>/dev/null) || exit 0
+
+  # Idempotent import: Prevent multiple imports
+  [ "${__NAME_SH_LOADED:-}" = "1" ] && return 0
+  __NAME_SH_LOADED=1
+  ```
+
+- Define functions only. Nothing should run or print at source time. Configuration defaults set with `: "${VAR:=default}"` are fine (see `log.sh`)
+
+### Keep it zsh-safe
+
+Libraries reach an interactive zsh through `_lib_lazy`, not just bash recipes, so they must behave in both shells.
+
+- Declare every function variable with `local`, or it leaks into the calling shell
+- Never name a variable `path`, `fpath`, `cdpath`, `manpath`, `argv`, or `status`. zsh ties those to special parameters, so a plain `path="$2"` replaces the caller's `PATH` and every external command disappears. This bit `log.sh` and is invisible in bash, which does not tie them
+- Do not use `BASH_SOURCE`, it does not exist in zsh
