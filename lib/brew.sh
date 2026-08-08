@@ -11,6 +11,8 @@ __BREW_SH_LOADED=1
 # --- Public API --------------------------------------------------------------
 
 abs_brew() {
+  local UNAME_MACHINE PREFIX
+
   # Detect architecture and set Homebrew prefix
   UNAME_MACHINE="$(/usr/bin/uname -m)"
   if [[ "${UNAME_MACHINE}" == "arm64" ]]; then

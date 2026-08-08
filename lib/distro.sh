@@ -11,6 +11,8 @@ __DISTRO_SH_LOADED=1
 # --- Public API --------------------------------------------------------------
 
 distro() {
+  local distro_name
+
   case "$(uname)" in
     Linux)
       distro_name=$(
