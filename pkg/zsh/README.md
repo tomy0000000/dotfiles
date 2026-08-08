@@ -45,17 +45,17 @@ Custom autoloaded functions:
 | `dns_purge` | Flushes DNS cache (`dscacheutil -flushcache`, macOS only) |
 | `fpath`     | Prints `$FPATH` entries one per line                      |
 | `kill_port` | Kills the process bound to a given port via `pnpm dlx`    |
-| `manpath`   | Prints `$MANPATH` entries one per line                    |
 | `reset_zsh` | Fixes `compaudit` permissions, clears caches, wipes Zinit |
 
 ### `lib/` functions
 
 `_lib_lazy` (in `.zshrc`, next to the `.zfunc` autoload loop) installs a stub for each named function that sources the matching `.dotfiles/lib/*.sh` on first call. Shared with the install scripts, which get the same files through `bin/make-shell`.
 
-| Function  | Library          | Description                         |
-| --------- | ---------------- | ----------------------------------- |
-| `path`    | `lib/path.sh`    | Prints `$PATH` entries one per line |
-| `realcmd` | `lib/realcmd.sh` | Resolves the real path of a command |
+| Function  | Library          | Description                            |
+| --------- | ---------------- | -------------------------------------- |
+| `manpath` | `lib/manpath.sh` | Prints `$MANPATH` entries one per line |
+| `path`    | `lib/path.sh`    | Prints `$PATH` entries one per line    |
+| `realcmd` | `lib/realcmd.sh` | Resolves the real path of a command    |
 
 ## Notes
 

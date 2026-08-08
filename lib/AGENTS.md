@@ -10,6 +10,7 @@
 | `brew.sh`    | Homebrew path detection      | `abs_brew` → resolves Intel vs ARM path                |
 | `realcmd.sh` | Real path of a command       | `realcmd <cmd>` → resolves shims and symlinks          |
 | `path.sh`    | `$PATH` inspection           | `path` → prints entries one per line                   |
+| `manpath.sh` | `$MANPATH` inspection        | `manpath` → prints entries one per line                |
 
 ## Usage
 
