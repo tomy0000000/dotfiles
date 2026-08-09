@@ -35,17 +35,9 @@ Installs Zsh and Zinit, sets Zsh as the default shell, and symlinks the dotfiles
 - Completions wired for: carapace, Docker, kubectl, gt, mise, 1Password CLI, Poetry, Starship
 - Alias groups: replacement (`rm`→`trash`, `cat`→`ccat`, `sed`→`gsed`), configs, docker, editors, kubectl, npm, pip, xattr
 
-### `.zfunc/`
-
-Custom autoloaded functions:
-
-| Function    | Description                                               |
-| ----------- | --------------------------------------------------------- |
-| `reset_zsh` | Fixes `compaudit` permissions, clears caches, wipes Zinit |
-
 ### `lib/` functions
 
-`_lib_lazy` (in `.zshrc`, next to the `.zfunc` autoload loop) installs a stub for each named function that sources the matching `.dotfiles/lib/*.sh` on first call. Shared with the install scripts, which get the same files through `bin/make-shell`.
+`_lib_lazy` (in `.zshrc`) installs a stub for each named function that sources the matching `.dotfiles/lib/*.sh` on first call. Shared with the install scripts, which get the same files through `bin/make-shell`.
 
 | Function    | Library            | Description                                               |
 | ----------- | ------------------ | --------------------------------------------------------- |
@@ -56,6 +48,7 @@ Custom autoloaded functions:
 | `manpath`   | `lib/manpath.sh`   | Prints `$MANPATH` entries one per line                    |
 | `path`      | `lib/path.sh`      | Prints `$PATH` entries one per line                       |
 | `realcmd`   | `lib/realcmd.sh`   | Resolves the real path of a command                       |
+| `reset_zsh` | `lib/reset_zsh.sh` | Fixes `compaudit` permissions, clears caches, wipes Zinit |
 
 ## Notes
 

@@ -15,6 +15,7 @@
 | `dns_purge.sh` | DNS cache flush (macOS)    | `dns_purge` → `sudo dscacheutil -flushcache`           |
 | `kill_port.sh` | Free a bound TCP port      | `kill_port <port>` → needs `pnpm`                      |
 | `benchmark.sh` | zsh startup timing         | `benchmark` → times 10 interactive startups            |
+| `reset_zsh.sh` | zsh cache repair (zsh)     | `reset_zsh` → fixes compaudit perms, wipes zinit       |
 
 ## Usage
 

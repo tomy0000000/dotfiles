@@ -38,7 +38,6 @@ fi
 export TERM="xterm-256color"
 
 # Additional FPATHs
-fpath=("${ZDOTDIR}/.zfunc" $fpath)
 
 # Additional MANPATHs
 

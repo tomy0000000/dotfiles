@@ -77,11 +77,6 @@ zinit snippet ${ZDOTDIR}/completion/poetry.zsh
 zinit snippet ${ZDOTDIR}/completion/starship.zsh
 zinit snippet ${ZDOTDIR}/completion/uv.zsh
 
-# Autoload all functions
-for func in "${ZDOTDIR}"/.zfunc/*; do
-    autoload -U ${func:t}
-done
-
 # Lazily expose functions from .dotfiles/lib so they live in one place and stay
 # usable by the install scripts (which source lib/*.sh through bin/make-shell).
 # Usage: _lib_lazy <lib file> <function name>...
@@ -102,6 +97,7 @@ _lib_lazy "${ZDOTDIR}/../../lib/fpath.sh" fpath
 _lib_lazy "${ZDOTDIR}/../../lib/dns_purge.sh" dns_purge
 _lib_lazy "${ZDOTDIR}/../../lib/kill_port.sh" kill_port
 _lib_lazy "${ZDOTDIR}/../../lib/benchmark.sh" benchmark
+_lib_lazy "${ZDOTDIR}/../../lib/reset_zsh.sh" reset_zsh
 
 # Alias
 zinit snippet ${ZDOTDIR}/.zalias/replacement.zsh
