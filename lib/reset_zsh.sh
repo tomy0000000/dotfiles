@@ -17,7 +17,7 @@ reset_zsh() {
   compaudit | xargs chown "$(whoami)"
 
   # Remove cached files
-  rm -f "${HOME}/.zcompdump*"
+  find "${ZDOTDIR:-${HOME}}" -maxdepth 1 -name '.zcompdump*' -delete
 
   # Delete all compiled zinit plugins
   zinit delete --all
