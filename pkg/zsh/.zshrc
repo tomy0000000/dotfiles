@@ -100,11 +100,11 @@ _lib_lazy "${ZDOTDIR}/../../lib/benchmark.sh" benchmark
 _lib_lazy "${ZDOTDIR}/../../lib/reset_zsh.sh" reset_zsh
 
 # Alias
-zinit snippet ${ZDOTDIR}/.zalias/replacement.zsh
-zinit snippet ${ZDOTDIR}/.zalias/configs.zsh
-zinit snippet ${ZDOTDIR}/.zalias/docker.zsh
-zinit snippet ${ZDOTDIR}/.zalias/editors.zsh
-zinit snippet ${ZDOTDIR}/.zalias/kubectl.zsh
-zinit snippet ${ZDOTDIR}/.zalias/npm.zsh
-zinit snippet ${ZDOTDIR}/.zalias/pip.zsh
-zinit snippet ${ZDOTDIR}/.zalias/xattr.zsh
+zinit snippet ${ZDOTDIR}/alias/replacement.zsh
+zinit snippet ${ZDOTDIR}/alias/configs.zsh
+zinit snippet ${ZDOTDIR}/alias/docker.zsh
+zinit snippet ${ZDOTDIR}/alias/editors.zsh
+zinit snippet ${ZDOTDIR}/alias/kubectl.zsh
+zinit snippet ${ZDOTDIR}/alias/npm.zsh
+zinit snippet ${ZDOTDIR}/alias/pip.zsh
+zinit snippet ${ZDOTDIR}/alias/xattr.zsh
