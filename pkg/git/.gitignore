@@ -14,8 +14,11 @@
 .AppleDouble
 .LSOverride
 
-# Icon must end with two \r
-Icon
+# The macOS custom-folder-icon file is literally named "Icon" plus a carriage
+# return. The upstream template writes a bare "Icon", which on a
+# case-insensitive filesystem also swallows any icon/ directory. Match the
+# trailing control character instead so only the real file is ignored.
+Icon[[:cntrl:]]
 
 
 # Thumbnails
