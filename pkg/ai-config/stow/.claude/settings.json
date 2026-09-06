@@ -18,6 +18,17 @@
         "matcher": ""
       }
     ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "${HOME}/.claude/shell-conventions.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      }
+    ],
     "SessionStart": [
       {
         "hooks": [
@@ -30,6 +41,7 @@
       }
     ]
   },
+  "inputNeededNotifEnabled": true,
   "permissions": {
     "allow": [
       "Bash(awk:*)",

@@ -14,4 +14,8 @@ Shares a single `AGENTS.md` across AI coding agents and installs reusable skills
   - `skill-creator` from `anthropics/skills`
   - every skill under `pkg/ai-config/skills/`
 - Claude settings
+- `~/.claude/shell-conventions.sh`
+  - `PreToolUse` hook on `Bash`: denies commands that break the shell conventions in `GLOBAL-AGENTS.md`
+  - Covers `git -C`, bare `env`, `grep`, `find`, `sed`, and `cd` before `bazel`
+  - Each denial names the tool to use instead
 - Claude status line with `starship-claude`
