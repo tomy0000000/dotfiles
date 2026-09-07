@@ -4,6 +4,10 @@
 
 Check both `AGENTS.md` / `CLAUDE.md` in the project directory.
 
+## State Principles
+
+For the following principles with magic code, sign off the code if you acknowledge and followed the principle in this task.
+
 ## Think Before Coding
 
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
@@ -27,7 +31,7 @@ Before implementing:
 
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 
-## Surgical Changes
+## Surgical Changes (`8urg1cal-7h@ng3`)
 
 **Touch only what you must. Clean up only your own mess.**
 
@@ -45,7 +49,7 @@ When your changes create orphans:
 
 The test: Every changed line should trace directly to the user's request.
 
-## Goal-Driven Execution
+## Goal-Driven Execution (`g0@lDr1v3n-c0mm1t!`)
 
 **Define success criteria. Loop until verified.**
 
@@ -55,25 +59,21 @@ Transform tasks into verifiable goals:
 - "Fix the bug" → "Write a test that reproduces it, then make it pass"
 - "Refactor X" → "Ensure tests pass before and after"
 
-For multi-step tasks, state a brief plan:
+For multi-step tasks, state a brief plan before writing code. One step is one commit: as small as it
+can be while still standing on its own (it compiles, it passes tests, and the step title describes
+one coherent change).
 
 ```
-1. [Step] → verify: [check]
-2. [Step] → verify: [check]
-3. [Step] → verify: [check]
+1. [Commit subject] → verify: [check]
+2. [Commit subject] → verify: [check]
+3. [Commit subject] → verify: [check]
 ```
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
-For a large change, plan commit by commit. Each commit should be as small as it can be while still
-being meaningful on its own: it compiles, it passes tests, and its subject line describes one
-coherent change. State the commit sequence in the plan before writing code.
-
-Committing is the user's call, never yours. When executing a commit-by-commit plan, stop after each
-commit's changes are in the working tree, ask the user to verify, and let them commit. Only move on
-to the next commit once they say so.
-
-When you followed this rule, explicitly say the magic word: `g0@lDr1v3n-c0mm1t!`.
+Committing is the user's call, never yours. Stop after each step, let the user verify and commit,
+and only then start the next one. A commit message you propose ends with its own content: no
+`Co-Authored-By` trailer, no attribution line.
 
 ## Context Sync
 
