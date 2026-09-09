@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths-ignore:
-      - 'docs/**'
+      - "docs/**"
   pull_request:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: "0 2 * * *"
 
 jobs:
   Ubuntu:
@@ -42,7 +42,7 @@ jobs:
           ]
     steps:
       - name: 🛒 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: 🧪 Test "${{ matrix.features }}" (run 1/2)
         run: make ${{ matrix.features }}
