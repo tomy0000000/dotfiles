@@ -35,6 +35,7 @@ zinit light-mode lucid for OMZL::history.zsh     # history with time stamps
 zinit snippet ${ZDOTDIR}/tools/carapace.zsh
 zinit snippet ${ZDOTDIR}/tools/direnv.zsh
 zinit snippet ${ZDOTDIR}/tools/mise.zsh
+zinit snippet ${ZDOTDIR}/tools/op.zsh
 zinit snippet ${ZDOTDIR}/tools/starship.zsh
 zinit snippet ${ZDOTDIR}/tools/zoxide.zsh
 
