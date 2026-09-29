@@ -75,10 +75,6 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 Committing is the user's call, never yours. Stop after each step, let the user verify and commit,
 and only then start the next one.
 
-## No Attribution (`n0-@tr1but10n`)
-
-Any artifacts (commit message, PR, or issue, etc.) you propose should never include Claude's attribution.
-
 ## Context Sync
 
 When planning, scoping, working on a high-context task, make sure to pause at critical check points,
