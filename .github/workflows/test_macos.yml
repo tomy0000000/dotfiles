@@ -63,7 +63,7 @@ jobs:
             "macos-shellcheck",
             "macos-stow",
             "macos-sublime",
-            # "macos-terminal", # Upstream dracula cask calls `Plist`, no longer autoloaded by Homebrew
+            "macos-terminal",
             "macos-text-replacement",
             "macos-touch-id-sudo",
             "macos-tower",
