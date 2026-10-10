@@ -1,5 +1,6 @@
 [tools]
 "bun" = "latest"
+"doctl" = "latest"
 "go" = "latest"
 "node" = "lts"
 "npm:@trivago/prettier-plugin-sort-imports" = "latest"
@@ -18,6 +19,7 @@
 "pipx:ruff" = "latest"
 "pnpm" = "10"
 "python" = "latest"
+"terraform" = "latest"
 "usage" = "latest"
 "uv" = "latest"
 "yarn" = "4"
