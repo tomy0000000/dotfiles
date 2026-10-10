@@ -31,6 +31,10 @@ mkdir -p "${STARSHIP_CLAUDE_DIR}"
 curl -fsSL https://raw.githubusercontent.com/martinemde/starship-claude/main/plugin/bin/starship-claude -o "${STARSHIP_CLAUDE_PATH}"
 chmod +x "${STARSHIP_CLAUDE_PATH}"
 
+# Install Claude Dracula theme
+mkdir -p "${HOME}/.claude/themes"
+curl -fsSL https://raw.githubusercontent.com/dracula/claude-code-cli/main/Dracula.json -o "${HOME}/.claude/themes/dracula.json"
+
 # Install Claude settings and configs
 stow --adopt --no-folding --dir 'pkg/ai-config' --target "${HOME}" 'stow'
 git checkout -- 'pkg/ai-config/stow'

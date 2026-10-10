@@ -19,3 +19,4 @@ Shares a single `AGENTS.md` across AI coding agents and installs reusable skills
   - Covers `git -C`, bare `env`, `grep`, `find`, `sed`, and `cd` before `bazel`
   - Each denial names the tool to use instead
 - Claude status line with `starship-claude`
+- Claude Dracula theme from [dracula/claude-code-cli](https://github.com/dracula/claude-code-cli)
