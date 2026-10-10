@@ -16,6 +16,10 @@ defaults export com.apple.symbolichotkeys - |
     plutil -replace AppleSymbolicHotKeys.31.enabled -bool NO -o - - |
     # Screenshot and recording options: Off
     plutil -replace AppleSymbolicHotKeys.184.enabled -bool NO -o - - |
+    # Ask Siri about selected area: Off
+    plutil -replace AppleSymbolicHotKeys.261.enabled -bool NO -o - - |
+    # Ask Siri about active window: Off
+    plutil -replace AppleSymbolicHotKeys.263.enabled -bool NO -o - - |
     defaults import com.apple.symbolichotkeys -
 
 # Reload Shortcuts
