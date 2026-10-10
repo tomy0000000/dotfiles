@@ -6,6 +6,7 @@ set -euo pipefail
 # https://github.com/pawelgrzybek/dotfiles/blob/master/setup-macos.sh
 # https://gist.github.com/brandonb927/3195465/
 # https://gist.github.com/mkhl/455002
+# https://github.com/adamdotdevin/dotfiles/blob/main/macos/set-defaults.sh
 
 # Require Full Disk Access for Terminal
 # References:
@@ -38,26 +39,21 @@ while true; do
 done 2>/dev/null &
 
 ###############################################################################
-# Sound                                                                       #
-###############################################################################
-
-# Play feedback when volume is changed
-defaults write -globalDomain com.apple.sound.beep.feedback -int 1
-
-###############################################################################
 # General > Software Update                                                   #
 ###############################################################################
 
-# Check for updates
-# TODO
-# Download new updates when available
-# TODO
-# Install macOS updates
-# TODO
-# Install application updates from the App Store
-# TODO
-# Install Security Responses and system files
-# TODO
+# Check for updates: On
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
+# Download new updates when available: On
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool true
+
+# Install macOS updates: On
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticallyInstallMacOSUpdates -bool true
+
+# Install system data files and security updates: On
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate ConfigDataInstall -bool true
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
 
 ###############################################################################
 # General > Language & Region                                                 #
@@ -88,12 +84,12 @@ defaults write com.apple.AppleMultitouchTrackpad HIDScrollZoomModifierMask -int 
 ###############################################################################
 
 # Use trackpad for dragging
-# TODO: this is not working
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true
+defaults write com.apple.AppleMultitouchTrackpad Dragging -bool true
 
 # Dragging style: Three Finger Drag
-# TODO: this is not working
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 
 ###############################################################################
 # Desktop & Dock                                                              #
@@ -134,20 +130,31 @@ defaults write com.apple.dock wvous-bl-corner -int 2
 defaults write com.apple.dock wvous-br-corner -int 1
 
 ###############################################################################
-# Lock Screen                                                                 #
+# Wallpaper                                                                   #
 ###############################################################################
 
-# Start Screen Saver when inactive: For 5 minutes
+# Screen Saver... > Start Screen Saver...: After 5 minutes
 defaults -currentHost write com.apple.screensaver idleTime -int 300
+
+###############################################################################
+# Sound                                                                       #
+###############################################################################
+
+# Play feedback when volume is changed
+defaults write -globalDomain com.apple.sound.beep.feedback -int 1
+
+###############################################################################
+# Lock Screen                                                                 #
+###############################################################################
 
 # Turn display off on battery when inactive: For 10 minutes
 sudo pmset -b displaysleep 10
 
 # Turn display off on power adapter when inactive: For 20 minutes
-sudo pmset -a displaysleep 20
+sudo pmset -c displaysleep 20
 
 # Require password after screen saver begins or display is turned off: Immediately
-# TODO: Can't find this field in defaults or pmset
+sysadminctl -screenLock immediate -password -
 
 ###############################################################################
 # Keyboard                                                                    #
@@ -174,52 +181,39 @@ defaults export com.apple.symbolichotkeys - |
 defaults write com.apple.universalaccess com.apple.custommenu.apps -array \
     NSGlobalDomain \
     com.brave.Browser \
-    com.stairways.keyboardmaestro.editor \
     com.readdle.PDFExpert-Mac \
     com.apple.Photos \
     abnerworks.Typora
 
-# Keyboard Shortcuts... > App Shortcuts > All Applications > Fill
+# Keyboard Shortcuts... > App Shortcuts > All Applications > Fill: ⌃⌥⌘↑
 # shellcheck disable=SC2016
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add 'Fill' '@~^\\U2191'
 
-# Keyboard Shortcuts... > App Shortcuts > All Applications > Center
+# Keyboard Shortcuts... > App Shortcuts > All Applications > Center: ⌃⌥⌘↩
 # shellcheck disable=SC2016
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add 'Center' '@~^\\U21a9'
 
-# Keyboard Shortcuts... > App Shortcuts > All Applications > Read Later with Reeder
-# shellcheck disable=SC2016
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add 'Read Later with Reeder' '@$s'
-
-# Keyboard Shortcuts... > App Shortcuts > Brave Browser > Duplicate Tab
+# Keyboard Shortcuts... > App Shortcuts > Brave Browser > Duplicate Tab: ⇧⌘E
 # shellcheck disable=SC2016
 defaults write com.brave.Browser NSUserKeyEquivalents -dict-add 'Duplicate Tab' '@$e'
 
-# Keyboard Shortcuts... > App Shortcuts > Brave Browser > New Tab to the Right
+# Keyboard Shortcuts... > App Shortcuts > Brave Browser > New Tab to the Right: ⌥⇧T
 # shellcheck disable=SC2016
 defaults write com.brave.Browser NSUserKeyEquivalents -dict-add 'New Tab to the Right' '~$t'
 
-# Keyboard Shortcuts... > App Shortcuts > Keyboard Maestro > Start Editing Macros
-# shellcheck disable=SC2016
-defaults write com.stairways.keyboardmaestro.editor NSUserKeyEquivalents -dict-add 'Start Editing Macros' '@e'
-
-# Keyboard Shortcuts... > App Shortcuts > Keyboard Maestro > Stop Editing Macros
-# shellcheck disable=SC2016
-defaults write com.stairways.keyboardmaestro.editor NSUserKeyEquivalents -dict-add 'Start Editing Macros' '@s'
-
-# Keyboard Shortcuts... > App Shortcuts > PDF Expert > Change Password...
+# Keyboard Shortcuts... > App Shortcuts > PDF Expert > Change Password...: ⇧⌘C
 # shellcheck disable=SC2016
 defaults write com.readdle.PDFExpert-Mac NSUserKeyEquivalents -dict-add 'Change Password...' '@$c'
 
-# Keyboard Shortcuts... > App Shortcuts > Photos > Export Unmodified Original For 1 Photo
+# Keyboard Shortcuts... > App Shortcuts > Photos > Export Unmodified Original For 1 Photo: ⌥⌘E
 # shellcheck disable=SC2016
 defaults write com.apple.Photos NSUserKeyEquivalents -dict-add 'Export Unmodified Original For 1 Photo' '@~e'
 
-# Keyboard Shortcuts... > App Shortcuts > Typora > PDF
+# Keyboard Shortcuts... > App Shortcuts > Typora > PDF: ⌘E
 # shellcheck disable=SC2016
 defaults write abnerworks.Typora NSUserKeyEquivalents -dict-add 'PDF' '@e'
 
-# Keyboard Shortcuts... > App Shortcuts > Typora > Refresh All Math Expressions
+# Keyboard Shortcuts... > App Shortcuts > Typora > Refresh All Math Expressions: ⌘R
 # shellcheck disable=SC2016
 defaults write abnerworks.Typora NSUserKeyEquivalents -dict-add 'Refresh All Math Expressions' '@r'
 
@@ -234,10 +228,21 @@ defaults write -globalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write -globalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Text Input > Edit... > Add Shuangpin - Traditional
-# TODO: This is not working
 defaults export com.apple.HIToolbox - |
     plutil -replace AppleEnabledInputSources -json '[{"Bundle ID":"com.apple.inputmethod.TCIM","Input Mode":"com.apple.inputmethod.TCIM.Shuangpin","InputSourceKind":"Input Mode"},{"InputSourceKind":"Keyboard Layout","KeyboardLayout Name":"ABC","KeyboardLayout ID":252},{"Bundle ID":"com.apple.inputmethod.TCIM","InputSourceKind":"Keyboard Input Method"}]' -o - - |
     defaults import com.apple.HIToolbox -
+
+# Text Input > Edit... > Add Shuangpin - Traditional > Shuangpin layout: Xiaohe
+defaults write com.apple.inputmethod.CoreChineseEngineFramework shuangpinLayout -int 4
+
+# Text Input > Edit... > Add Shuangpin - Traditional > Candidate window > Orientation: Vertical
+defaults write com.apple.inputmethod.CoreChineseEngineFramework CandidateWindowDirection -int 1
+
+# Text Input > Edit... > Add Shuangpin - Traditional > Correct fuzzy pinyin: Off
+defaults write com.apple.inputmethod.CoreChineseEngineFramework fuzzyPinyinEnabled -bool false
+
+# Text Input > Edit... > Add Shuangpin - Traditional > Adjust word frequency: On
+defaults write com.apple.inputmethod.CoreChineseEngineFramework adjustWordFrequency -bool true
 
 # Dictation: On
 defaults write com.apple.assistant.support "Dictation Enabled" -bool true
@@ -254,13 +259,22 @@ defaults export com.apple.symbolichotkeys - |
 ###############################################################################
 
 # Point & Click > Secondary click: Click or Tap with Two Fingers
-# TODO: Add this
+defaults write -globalDomain ContextMenuGesture -int 1
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 
 # More Gestures > Swipe between pages: Scroll left or right with two fingers
 defaults write -globalDomain AppleEnableSwipeNavigateWithScrolls -bool true
 
 # More Gestures > App Exposé: Swipe down with four fingers
 defaults write com.apple.dock showAppExposeGestureEnabled -bool true
+
+###############################################################################
+# Misc                                                                        #
+###############################################################################
+
+# Unhide ~/Library folder
+chflags nohidden ~/Library
 
 ###############################################################################
 # Apply                                                                       #
