@@ -34,10 +34,39 @@
 	<false/>
 	<key>BootstrapDaemon</key>
 	<false/>
+	<key>ClaudeCodeTriggersInstalled</key>
+	<true/>
 	<key>ClosingTmuxTabKillsTmuxWindows</key>
 	<false/>
 	<key>ClosingTmuxTabKillsTmuxWindows_selection</key>
 	<integer>0</integer>
+	<key>CodeReviewSavedPrompts</key>
+	<data>
+	W3sidGV4dCI6IlJldmlldyB0aGUgcGVuZGluZyBjaGFuZ2VzIGluIHRoaXMgcmVwby4g
+	RmxhZyBpc3N1ZXMgYSBjYXJlZnVsIG1haW50YWluZXIgd291bGQgYmxvY2sgb24gYmVm
+	b3JlIG1lcmdlLCBpbiByb3VnaGx5IHRoaXMgb3JkZXI6XG4gIDEuIENvcnJlY3RuZXNz
+	IOKAlCBsb2dpYyBlcnJvcnMsIGJyb2tlbiBpbnZhcmlhbnRzLCBtaXNzZWQgZWRnZSBj
+	YXNlcywgb2ZmLWJ5LW9uZSwgcmFjZXMsIGxpZmV0aW1lXC9tZW1vcnkgYnVncywgZXJy
+	b3IgcGF0aHMgdGhhdCBzd2FsbG93IGZhaWx1cmVzLlxuICAyLiBTZWN1cml0eSDigJQg
+	aW5qZWN0aW9uLCBhdXRoblwvYXV0aHogbWlzdGFrZXMsIHNlY3JldCBoYW5kbGluZywg
+	dW5zYWZlIGRlc2VyaWFsaXphdGlvbiwgdW5zYWZlIGRlZmF1bHRzLCBUT0NUT1UuXG4g
+	IDMuIFJlbGlhYmlsaXR5ICYgcGVyZm9ybWFuY2Ug4oCUIGJsb2NraW5nIHRoZSB3cm9u
+	ZyB0aHJlYWQsIHVuYm91bmRlZCByZXNvdXJjZSB1c2UsIGFjY2lkZW50YWwgTyhOwrIp
+	LCByZXRyaWVzIHdpdGhvdXQgYmFja29mZiwgc2lsZW50IGZhaWx1cmUgcGF0aHMuXG4g
+	IDQuIENvbnRyYWN0IHJpc2sg4oCUIGJlaGF2aW9yIGNoYW5nZXMgY2FsbGVycyByZWx5
+	IG9uLCBzaWxlbnRseSBjaGFuZ2VkIGRlZmF1bHRzLCBicm9rZW4gYmFja3dhcmQgY29t
+	cGF0aWJpbGl0eSwgbWlzc2luZyBtaWdyYXRpb25zLlxuXG5Gb3IgZWFjaCBmaW5kaW5n
+	IGNpdGUgYGZpbGU6bGluZWAsIGV4cGxhaW4gKndoeSogaXQgaXMgd3JvbmcgKG5vdCB3
+	aGF0IHRoZSBjb2RlIGRvZXMpLCBhbmQgcHJvcG9zZSBhIGNvbmNyZXRlIGZpeCB3aGVu
+	IG9uZSBpcyBvYnZpb3VzLiBCZSBjYWxpYnJhdGVkOiBpZiBhIGZpbmRpbmcgaXMgbm90
+	IGhpZ2gtY29uZmlkZW5jZSwgc2F5IHNvIG9yIHNraXAgaXQuIFZlcmlmeSBjbGFpbXMg
+	YWdhaW5zdCB0aGUgYWN0dWFsIGNvZGUgcmF0aGVyIHRoYW4gaW5mZXJyaW5nIGZyb20g
+	bmFtZXMuXG5cblNraXAgcHVyZSBzdHlsZSwgZm9ybWF0dGluZywgbmFtaW5nLCBhbmQg
+	YW55dGhpbmcgYSBsaW50ZXIgb3IgQ0kgYWxyZWFkeSBlbmZvcmNlcy5cblxuSWYgeW91
+	IGZpbmQgbm90aGluZyB3b3J0aCBmaXhpbmcsIHNheSBzbyBwbGFpbmx5LiIsIm5hbWUi
+	OiJEZWZhdWx0IiwidXVpZCI6IkM5QzBBRkM1LTNGNTktNDQ1My1CQzQ0LUJGNTQwRkUx
+	NzUwNCJ9XQ==
+	</data>
 	<key>CopySelection</key>
 	<false/>
 	<key>Custom Color Presets</key>
@@ -789,6 +818,8 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>EnableAPIServer</key>
+	<true/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>EnableProxyIcon</key>
@@ -2615,6 +2646,53 @@
 			<integer>2</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Triggers</key>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>iTermEnterWorkgroupTrigger</string>
+					<key>contentregex</key>
+					<string></string>
+					<key>disabled</key>
+					<false/>
+					<key>eventParams</key>
+					<dict>
+						<key>jobName</key>
+						<string>claude</string>
+					</dict>
+					<key>matchType</key>
+					<integer>113</integer>
+					<key>parameter</key>
+					<string>builtin.claudeCode</string>
+					<key>partial</key>
+					<false/>
+					<key>regex</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>iTermExitWorkgroupTrigger</string>
+					<key>contentregex</key>
+					<string></string>
+					<key>disabled</key>
+					<false/>
+					<key>eventParams</key>
+					<dict>
+						<key>jobName</key>
+						<string>claude</string>
+						<key>leaderOnly</key>
+						<true/>
+					</dict>
+					<key>matchType</key>
+					<integer>114</integer>
+					<key>parameter</key>
+					<string></string>
+					<key>partial</key>
+					<false/>
+					<key>regex</key>
+					<string></string>
+				</dict>
+			</array>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -3314,6 +3392,53 @@
 			<integer>2</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Triggers</key>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>iTermEnterWorkgroupTrigger</string>
+					<key>contentregex</key>
+					<string></string>
+					<key>disabled</key>
+					<false/>
+					<key>eventParams</key>
+					<dict>
+						<key>jobName</key>
+						<string>claude</string>
+					</dict>
+					<key>matchType</key>
+					<integer>113</integer>
+					<key>parameter</key>
+					<string>builtin.claudeCode</string>
+					<key>partial</key>
+					<false/>
+					<key>regex</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>iTermExitWorkgroupTrigger</string>
+					<key>contentregex</key>
+					<string></string>
+					<key>disabled</key>
+					<false/>
+					<key>eventParams</key>
+					<dict>
+						<key>jobName</key>
+						<string>claude</string>
+						<key>leaderOnly</key>
+						<true/>
+					</dict>
+					<key>matchType</key>
+					<integer>114</integer>
+					<key>parameter</key>
+					<string></string>
+					<key>partial</key>
+					<false/>
+					<key>regex</key>
+					<string></string>
+				</dict>
+			</array>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -3403,8 +3528,6 @@
 	<true/>
 	<key>SmartPlacement</key>
 	<false/>
-	<key>Snippets</key>
-	<array/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -3432,6 +3555,7 @@
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Snippets</string>
+		<string>Session Status</string>
 	</array>
 	<key>URLHandlersByGuid</key>
 	<dict>
@@ -3456,8 +3580,39 @@
 	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>Workgroups</key>
+	<data>
+	W3sibmFtZSI6IkNsYXVkZSBDb2RlIiwic2Vzc2lvbnMiOlt7ImNvbW1hbmQiOiIiLCJw
+	ZXJGaWxlQ29tbWFuZCI6IiIsInVybFN0cmluZyI6IiIsIm1vZGUiOiJyZWd1bGFyIiwi
+	dG9vbGJhckl0ZW1zIjpbeyJraW5kIjoibW9kZVN3aXRjaGVyIn0seyJraW5kIjoiZ2l0
+	U3RhdHVzIn0seyJraW5kIjoiYXV0b1JlcXVlc3RSZXZpZXdXaGVuSWRsZSJ9XSwia2lu
+	ZCI6eyJraW5kIjoicm9vdCJ9LCJ1bmlxdWVJZGVudGlmaWVyIjoiYnVpbHRpbi5jbGF1
+	ZGVDb2RlLm1haW4iLCJkaXNwbGF5TmFtZSI6IkNoYXQifSx7ImNvbW1hbmQiOiJnaXQg
+	ZGlmZnRvb2wgLXkgLXggdmltZGlmZiBcXChnaXRCYXNlKSIsInBlckZpbGVDb21tYW5k
+	IjoiZ2l0IGRpZmZ0b29sIC15IC14IHZpbWRpZmYgXFwoZ2l0QmFzZSkgLS0gXFwoZmls
+	ZSkiLCJ1cmxTdHJpbmciOiIiLCJtb2RlIjoiZGlmZiIsInRvb2xiYXJJdGVtcyI6W3si
+	a2luZCI6Im1vZGVTd2l0Y2hlciJ9LHsia2luZCI6ImNoYW5nZWRGaWxlU2VsZWN0b3Ii
+	fSx7ImtpbmQiOiJnaXRCYXNlU2VsZWN0b3IifSx7ImJhY2tTaG9ydGN1dCI6eyJzZXJp
+	YWxpemVkIjoiMHhmNzAyLTB4MzQwMDAwLTB4N2IifSwia2luZCI6Im5hdmlnYXRpb24i
+	LCJmb3J3YXJkU2hvcnRjdXQiOnsic2VyaWFsaXplZCI6IjB4ZjcwMy0weDM0MDAwMC0w
+	eDdjIn0sInJlbG9hZFNob3J0Y3V0Ijp7InNlcmlhbGl6ZWQiOiIweDcyLTB4MTAwMDAw
+	LTB4ZiJ9fV0sImtpbmQiOnsia2luZCI6InBlZXIifSwicGFyZW50SUQiOiJidWlsdGlu
+	LmNsYXVkZUNvZGUubWFpbiIsInVuaXF1ZUlkZW50aWZpZXIiOiJidWlsdGluLmNsYXVk
+	ZUNvZGUuZGlmZiIsImRpc3BsYXlOYW1lIjoiRGlmZiJ9LHsiY29tbWFuZCI6ImNsYXVk
+	ZSBcXChjb2RlUmV2aWV3UHJvbXB0KSAtLWFwcGVuZC1zeXN0ZW0tcHJvbXB0LWZpbGUg
+	J1xcKGNvZGVSZXZpZXdTeXN0ZW1Qcm9tcHRGaWxlKScgLS1zZXR0aW5ncyAnXFwoaXRl
+	cm0yLmFwcEJ1bmRsZVBhdGgpXC9Db250ZW50c1wvUmVzb3VyY2VzXC9jb2RlLXJldmll
+	dy1zZXR0aW5ncy50eHQnIiwicGVyRmlsZUNvbW1hbmQiOiIiLCJ1cmxTdHJpbmciOiIi
+	LCJtb2RlIjoiY29kZVJldmlldyIsInRvb2xiYXJJdGVtcyI6W3sia2luZCI6Im1vZGVT
+	d2l0Y2hlciJ9LHsia2luZCI6InJlbG9hZCIsInNob3J0Y3V0Ijp7InNlcmlhbGl6ZWQi
+	OiIweDcyLTB4MTAwMDAwLTB4ZiJ9fSx7ImtpbmQiOiJhdXRvU2VuZENsaXBwaW5nc1do
+	ZW5JZGxlIn1dLCJraW5kIjp7ImtpbmQiOiJwZWVyIn0sInBhcmVudElEIjoiYnVpbHRp
+	bi5jbGF1ZGVDb2RlLm1haW4iLCJ1bmlxdWVJZGVudGlmaWVyIjoiYnVpbHRpbi5jbGF1
+	ZGVDb2RlLnJldmlldyIsImRpc3BsYXlOYW1lIjoiQ29kZSBSZXZpZXcifV0sInVuaXF1
+	ZUlkZW50aWZpZXIiOiJidWlsdGluLmNsYXVkZUNvZGUifV0=
+	</data>
 	<key>findMode_iTerm</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
