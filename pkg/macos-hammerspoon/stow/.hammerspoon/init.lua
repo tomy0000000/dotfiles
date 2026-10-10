@@ -17,6 +17,9 @@ Install:andUse("ReloadConfiguration")
 spoon.ReloadConfiguration.watch_paths = { hs.configdir, "~/.dotfiles/pkg/macos-hammerspoon/stow/.hammerspoon" }
 spoon.ReloadConfiguration:start()
 
+-- Enable hc CLI
+require("hs.ipc")
+
 -- Auto switch input method
 require('auto_ime')
 
