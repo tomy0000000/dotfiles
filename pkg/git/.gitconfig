@@ -54,9 +54,6 @@ updated = green bold
 [column]
 ui = auto
 
-[commit]
-template = "~/.dotfiles/pkg/git/.git_commit_template"
-
 [core]
 attributesFile = "~/.dotfiles/pkg/git/.gitattributes"
 commentString = "//"
