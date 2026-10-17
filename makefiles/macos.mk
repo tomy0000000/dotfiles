@@ -151,9 +151,6 @@ macos-font: macos-brew
 macos-quicklook: macos-brew
 	run "pkg/macos-quicklook/macos-quicklook.sh"
 
-macos-screensaver: macos-brew
-	run "pkg/macos-screensaver/macos-screensaver.sh"
-
 macos-service-workflow: macos-stow
 	run "pkg/macos-service-workflow/macos-service-workflow.sh"
 

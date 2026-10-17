@@ -57,7 +57,6 @@ jobs:
             # "macos-perl", # Script error to be fixed
             "macos-popclip",
             "macos-quicklook",
-            "macos-screensaver",
             "macos-service-workflow",
             # "macos-settings", # Script error to be fixed
             "macos-shellcheck",
