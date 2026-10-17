@@ -30,18 +30,6 @@ if [[ ${cmd} =~ ${head}env[[:space:]]*($|[|;&]) ]]; then
   deny "Shell convention: to check whether an env var is set, use 'printenv SOME_ENV'. Never bare 'env' or 'env | grep'."
 fi
 
-if [[ ${cmd} =~ ${head}grep([[:space:]]|$) ]]; then
-  deny "Shell convention: use 'rg' (ripgrep) instead of grep: faster, respects .gitignore, better defaults."
-fi
-
-if [[ ${cmd} =~ ${head}find([[:space:]]|$) ]]; then
-  deny "Shell convention: use 'fd' instead of find: faster, respects .gitignore, saner syntax."
-fi
-
-if [[ ${cmd} =~ ${head}sed([[:space:]]|$) ]]; then
-  deny "Shell convention: use 'sd' instead of sed for find-and-replace. To read part of a file, use the Read tool with offset/limit."
-fi
-
 if [[ ${cmd} =~ ${head}cd[[:space:]].*(\&\&|;)[[:space:]]*bazel[[:space:]] ]]; then
   deny "Shell convention: never cd into the workspace before bazel. Use an absolute workspace path, e.g. 'bazel build //pkg/ai-config:target'."
 fi
