@@ -159,19 +159,8 @@
     ],
     "deny": [
       "Bash(env)",
-      "Bash(find:*)",
-      "Bash(grep:*)",
-      "Bash(sed:*)",
       "Bash(git push --force:*)",
       "Bash(git push -f:*)",
-      "Bash(fd * -x *)",
-      "Bash(fd * --exec *)",
-      "Bash(fd * -X *)",
-      "Bash(fd * --exec-batch *)",
-      "Bash(fd * -uu*)",
-      "Bash(fd * --no-ignore*)",
-      "Bash(fd * -H*)",
-      "Bash(fd * --hidden*)",
       "Bash(printenv)",
       "Bash(printenv * | *)",
       "Bash(printenv *TOKEN*)",
@@ -179,10 +168,17 @@
       "Bash(printenv *ID*)",
       "Bash(printenv *DATABASE_URL*)",
       "Read(.env)",
-      "Read(.env.*)",
+      "Read(.env.local)",
+      "Read(.env.*.local)",
+      "Read(.env.production)",
+      "Read(.env.development)",
+      "Read(.env.test)",
       "Read(~/.aws/credentials)",
       "Read(~/.ssh/**)"
     ]
+  },
+  "sandbox": {
+    "enabled": true
   },
   "skipAutoPermissionPrompt": true,
   "statusLine": {

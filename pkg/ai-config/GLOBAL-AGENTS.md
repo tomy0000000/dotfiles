@@ -75,6 +75,10 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 Committing is the user's call, never yours. Stop after each step, let the user verify and commit,
 and only then start the next one.
 
+## Minimal Inline Comments (`M1n1m@l-1nL1n3-c0mm3nt$`)
+
+At most one sentence inline comment per section of code. If you need more, that means the code is too complex. Move the explanation to the commit message or PR description.
+
 ## Context Sync
 
 When planning, scoping, working on a high-context task, make sure to pause at critical check points,
@@ -86,10 +90,6 @@ feedback.
 - Do not use `-C` flag in `git` commands. Always run from the repo root, and use absolute paths to files/dirs in the repo.
 - Prevent pipe unless you have to
 - To check whether an env var is set, use `printenv SOME_ENV` (never `env | grep` or bare `env`)
-- Use `rg` (ripgrep) instead of `grep` for searching: faster, respects `.gitignore`, and has better defaults
-- Use `fd` instead of `find` for file lookups: faster, respects `.gitignore`, and has saner syntax
-- To read a field from JSON, use `jq`: do not write a script or run inline Python for it
-- Use `sd` instead of `sed` for find-and-replace: simpler syntax and saner defaults
 - When running `bazel` commands, always use absolute paths to the workspace root, never `cd` into the workspace first. For example, use `bazel build //pkg/ai-config:target` instead of `cd /path/to/workspace && bazel build //pkg/ai-config:target`
 - Use `/tmp` freely for scratch files (logs, intermediate output, sentinels). Never write secrets, tokens, keys, or credentials there: it's world-readable and survives across processes
 
